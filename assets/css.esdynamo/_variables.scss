@@ -1,0 +1,28 @@
+//
+// Variables
+
+// Colors
+$color-background 	: #282c37;
+$color-text			: #848d96;
+$color-link			: $color-text;
+$color-highlight		: #eee;
+$color-link-hover	: #fff;
+
+// Breakpoints
+$bp-desktop 		: 1200px;
+$bp-tablet 			: 812px;
+$bp-mobile 			: 500px;
+
+// Images
+
+
+//
+// CSS Variables
+:root {
+	// Colors
+	--color-background 	: #282c37;
+	--color-text			: #848d96;
+	--color-highlight	: #eee;
+	--color-link			: var(--color-text);
+	--color-link-hover	: #fff;
+}
