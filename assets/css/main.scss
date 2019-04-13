@@ -17,6 +17,7 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeSpeed;
+	font-feature-settings: "liga";
 	-moz-font-feature-settings: "liga" on;
 }
 
@@ -104,10 +105,11 @@ body {
 // Column - Content
 .o-contentCol {
 	width: 50vw;
+	width: 100vw;
 	height: 100vh;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	// align-items: center;
+	// justify-content: center;
 	overflow: auto;
 	padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
