@@ -156,11 +156,16 @@ body a:hover {
 
 .o-contentCol {
   width: 50vw;
-  width: 100vw;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow: auto;
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
