@@ -82,7 +82,6 @@ body {
 	@media (max-width: $bp-tablet) {
 		position: fixed;
 		z-index: -1;
-
 		width: 100vw;
 
 		&:after {
@@ -104,7 +103,6 @@ body {
 // Column - Content
 .o-contentCol {
 	width: 50vw;
-	// width: 100vw;
 	height: 100vh;
 	display: flex;
 	align-items: center;
@@ -131,7 +129,6 @@ body {
 .m-introduction {
 	h1 {
 		margin-bottom: 40px;
-
 		color: $color-highlight;
 		color: var(--color-highlight);
 		font-size: 16px;
@@ -159,7 +156,6 @@ body {
 // Biography
 .m-biography {
 	margin-bottom: 40px;
-
 	font-size: 20px;
 	line-height: 1.5;
 }
@@ -171,7 +167,6 @@ body {
 	&__item {
 		width: 49.5%;
 		display: inline-block;
-
 		vertical-align: top;
 		@media (max-width: $bp-mobile) {
 			width: 100%;
@@ -184,7 +179,6 @@ body {
 
 		h3 {
 			margin-bottom: 16px;
-
 			color: $color-highlight;
 			color: var(--color-highlight);
 			font-weight: 400;
