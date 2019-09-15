@@ -1,25 +1,45 @@
 //
 // Variables
 
-// Colors
-$color-background: #282c37;
-$color-text: #bbb;
-$color-link: $color-text;
-$color-highlight: #eee;
-$color-link-hover: #fff;
-
 // Breakpoints
 $bp-desktop: 1200px;
 $bp-tablet: 812px;
 $bp-mobile: 500px;
 
+// Colors
+$color-background: #fafafa;
+$color-text: #666;
+$color-link: $color-text;
+$color-highlight: #333;
+$color-link-hover: #111;
+
 //
 // CSS Variables
 :root {
 	// Colors
-	--color-background: #282c37;
-	--color-text: #bbb;
-	--color-highlight: #eee;
+	--color-background: #fafafa;
+	--color-text: #666;
+	--color-highlight: #333;
 	--color-link: var(--color-text);
-	--color-link-hover: #fff;
+	--color-link-hover: #111;
+}
+
+@media (prefers-color-scheme: dark) {
+	// Colors
+	$color-background: #282c37;
+	$color-text: #bbb;
+	$color-link: $color-text;
+	$color-highlight: #eee;
+	$color-link-hover: #fff;
+
+	//
+	// CSS Variables
+	:root {
+		// Colors
+		--color-background: #282c37;
+		--color-text: #bbb;
+		--color-highlight: #eee;
+		--color-link: var(--color-text);
+		--color-link-hover: #fff;
+	}
 }
