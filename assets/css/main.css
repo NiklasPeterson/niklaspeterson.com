@@ -55,7 +55,7 @@ table {
   }
 }
 
-@-webkit-keyframes fadein {
+@-webkit-keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -64,7 +64,7 @@ table {
   }
 }
 
-@keyframes fadein {
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -99,6 +99,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
+  overflow: hidden;
 }
 
 @media (max-width: 812px) {
