@@ -7,39 +7,37 @@ $bp-tablet: 812px;
 $bp-mobile: 500px;
 
 // Colors
-$color-background: #fafafa;
-$color-text: #666;
+$color-background: #282c37;
+$color-text: #bbb;
 $color-link: $color-text;
-$color-highlight: #333;
-$color-link-hover: #111;
+$color-highlight: #eee;
+$color-link-hover: #fafafa;
 
 //
 // CSS Variables
 :root {
-	// Colors
-	--color-background: #fafafa;
-	--color-text: #666;
-	--color-highlight: #333;
+	--color-background: #282c37;
+	--color-text: #bbb;
+	--color-highlight: #eee;
 	--color-link: var(--color-text);
-	--color-link-hover: #111;
+	--color-link-hover: #fafafa;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
 	// Colors
-	$color-background: #282c37;
-	$color-text: #bbb;
+	$color-background: #fafafa;
+	$color-text: #666;
 	$color-link: $color-text;
-	$color-highlight: #eee;
-	$color-link-hover: #fff;
+	$color-highlight: #333;
+	$color-link-hover: #111;
 
 	//
 	// CSS Variables
 	:root {
-		// Colors
-		--color-background: #282c37;
-		--color-text: #bbb;
-		--color-highlight: #eee;
+		--color-background: #fafafa;
+		--color-text: #666;
+		--color-highlight: #333;
 		--color-link: var(--color-text);
-		--color-link-hover: #fff;
+		--color-link-hover: #111;
 	}
 }
