@@ -39,7 +39,7 @@ table {
 
 :root {
   --color-background: #282c37;
-  --color-text: #bbb;
+  --color-text: #848d96;
   --color-highlight: #eee;
   --color-link: var(--color-text);
   --color-link-hover: #fafafa;
@@ -93,7 +93,7 @@ body {
           animation: fadein 2s;
   background-color: #282c37;
   background-color: var(--color-background);
-  color: #bbb;
+  color: #848d96;
   color: var(--color-text);
   font-family: "Nunito Sans", sans-serif;
   font-size: 16px;
@@ -111,13 +111,13 @@ body {
 }
 
 body a {
-  border-bottom: 1px dotted #bbb;
+  border-bottom: 1px dotted #848d96;
   border-bottom: 1px dotted var(--color-link);
   -webkit-box-shadow: none;
           box-shadow: none;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
-  color: #bbb;
+  color: #848d96;
   color: var(--color-link);
   text-decoration: none;
 }
