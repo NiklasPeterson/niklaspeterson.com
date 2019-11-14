@@ -259,6 +259,11 @@ body a:hover {
   text-transform: uppercase;
 }
 
+.m-list__item h4 {
+  color: #eee;
+  font-weight: 400;
+}
+
 .m-list__item ul li {
   margin-bottom: 16px;
 }
