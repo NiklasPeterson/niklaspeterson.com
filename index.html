@@ -49,12 +49,55 @@
 		/>
 
 		<!-- Google Fonts -->
+		<!--
+		- 1. Preemptively warm up the fonts’ origin.
+		-
+		- 2. Initiate a high-priority, asynchronous fetch for the CSS file. Works in
+		-    most modern browsers.
+		-
+		- 3. Initiate a low-priority, asynchronous fetch that gets applied to the page
+		-    only after it’s arrived. Works in all browsers with JavaScript enabled.
+		-
+		- 4. In the unlikely event that a visitor has intentionally disabled
+		-    JavaScript, fall back to the original method. The good news is that,
+		-    although this is a render-blocking request, it can still make use of the
+		-    preconnect which makes it marginally faster than the default.
+		-->
+		<!-- [1] -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<!-- [2] -->
 		<link
-			href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400"
-			rel="stylesheet"
+			rel="preload"
+			as="style"
+			href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400&display=swap"
 		/>
 
+		<!-- [3] -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400&display=swap"
+			media="print"
+			onload="this.media='all'"
+		/>
+
+		<!-- [4] -->
+		<noscript>
+			<link
+				rel="stylesheet"
+				href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400&display=swap"
+			/>
+		</noscript>
+		<!-- End Google Fonts -->
+
 		<!-- Styles -->
+		<link
+			rel="preload"
+			as="style"
+			href="assets/css/main.css"
+			type="text/css"
+			media="screen"
+		/>
 		<link
 			rel="stylesheet"
 			href="assets/css/main.css"
@@ -103,12 +146,16 @@
 							class="highlight"
 							href="https://dribbble.com/niklaspeterson"
 							title="Niklas Peterson on Dribbble"
+							target="_blank"
+							rel="noopener"
 							>Dribbble</a
 						>, follow my life on
 						<a
 							class="highlight"
 							href="https://www.instagram.com/niklas.peterson/"
 							title="Niklas Peterson on Instagram"
+							target="_blank"
+							rel="noopener"
 							>Instagram</a
 						>
 						& connect with me through
@@ -116,14 +163,17 @@
 							class="highlight"
 							href="https://twitter.com/niklas_peterson"
 							title="Niklas Peterson on Twitter"
+							target="_blank"
+							rel="noopener"
 							>Twitter</a
 						>
 						or
 						<a
 							class="highlight"
-							target="_blank"
 							href="https://linkedin.com/in/niklaspeterson/"
 							title="Niklas Peterson on LinkedIn"
+							target="_blank"
+							rel="noopener"
 							>LinkedIn</a
 						>
 					</p>
@@ -137,8 +187,9 @@
 							<li>
 								<h4>Designer</h4>
 								<a
-									target="_blank"
 									href="http://www.cityweb.se/uk/home"
+									target="_blank"
+									rel="noreferrer"
 									>Cityweb</a
 								>
 								| 2015 ->
@@ -147,8 +198,9 @@
 							<li>
 								<h4>Web Developer consultant</h4>
 								<a
-									target="_blank"
 									href="https://www.ericsson.com"
+									target="_blank"
+									rel="noreferrer"
 									>Ericsson</a
 								>
 								| 2015
@@ -156,7 +208,10 @@
 
 							<li>
 								<h4>UI designer intern</h4>
-								<a target="_blank" href="http://www.black.se"
+								<a
+									href="http://www.black.se"
+									target="_blank"
+									rel="noreferrer"
 									>Black & Co.</a
 								>
 								| 2014 & 2015
@@ -165,8 +220,9 @@
 							<li>
 								<h4>Web designer intern</h4>
 								<a
-									target="_blank"
 									href="http://jimdavislabs.com"
+									target="_blank"
+									rel="noreferrer"
 									>JimDavisLabs</a
 								>
 								| 2014
