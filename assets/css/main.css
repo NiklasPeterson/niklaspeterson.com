@@ -261,6 +261,7 @@ body a:hover {
 
 .m-list__item h4 {
   color: #eee;
+  color: var(--color-highlight);
   font-weight: 400;
 }
 
