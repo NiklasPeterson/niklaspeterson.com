@@ -1,5 +1,4 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -71,18 +70,6 @@ body {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.5;
-
-	#root {
-		display: flex;
-		height: 100vh;
-		width: 100vw;
-
-		@media (max-width: 812px) {
-			flex-wrap: wrap;
-			height: auto;
-			min-height: 100vh;
-		}
-	}
 }
 `;
 

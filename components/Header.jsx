@@ -1,5 +1,5 @@
-import Heading1 from "./Heading/Heading1";
-import Tagline from "./Tagline";
+import Heading1 from '@components/Heading/Heading1';
+import Tagline from '@components/Tagline';
 
 export default function Header() {
     return (
