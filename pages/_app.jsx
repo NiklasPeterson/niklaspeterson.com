@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components'
-import { GlobalStyle, theme } from '../components/GlobalStyle'
+import { GlobalStyle, theme } from '@components/GlobalStyle'
 
 			// async function supportsWebp() {
 			// 	if (!self.createImageBitmap) return false;

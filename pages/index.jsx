@@ -1,87 +1,16 @@
-import Head from 'next/head'
+import Heading2 from "@components/Heading/Heading2";
+import Article from "@components/Article";
+import Copyright from "@components/Copyright";
+import Footer from "@components/Footer";
+import List from "@components/List/List";
+import ListItem from "@components/List/ListItem";
+import Link from "@components/Link";
+import Layout from "@components/Layout";
+import Header from "@components/Header";
 
-import Heading2 from "../components/Heading/Heading2";
-import Article from "../components/Article";
-import Copyright from "../components/Copyright";
-import Footer from "../components/Footer";
-import List from "../components/List/List";
-import ListItem from "../components/List/ListItem";
-import Link from "../components/Link";
-import Layout from "../components/Layout";
-import Header from "../components/Header";
-
-export default function Home() {
+export default function Home(props) {
   return (
-
-    <>
-      <Head>
-        <meta charSet="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1, viewport-fit=cover, shrink-to-fit=no"
-        />
-        <meta name="HandheldFriendly" content="true" />
-        <meta name="theme-color" content="#282c37" />
-
-        {/* SEO */}
-        <title>Niklas Peterson Designer.</title>
-        <meta name="author" content="Niklas Peterson" />
-        <meta
-          name="description"
-          content="Niklas Peterson is a designer who loves to create illustrations on his spare time. During my daytime job I design, develop websites & apps."
-        />
-
-        <meta name="robots" content="index, follow" />
-        <meta name="referrer" content="always" />
-
-        <link href="https://dribbble.com/niklaspeterson" rel="me" />
-        <link href="https://instagram.com/niklas.peterson" rel="me" />ontent="initial-scale=1.0, width=device-width"/>
-
-        {/* Google Fonts */}
-        {/*
-        - 1. Preemptively warm up the fonts’ origin.
-        -
-        - 2. Initiate a high-priority, asynchronous fetch for the CSS file. Works in
-        -    most modern browsers.
-        -
-        - 3. Initiate a low-priority, asynchronous fetch that gets applied to the page
-        -    only after it’s arrived. Works in all browsers with JavaScript enabled.
-        -
-        - 4. In the unlikely event that a visitor has intentionally disabled
-        -    JavaScript, fall back to the original method. The good news is that,
-        -    although this is a render-blocking request, it can still make use of the
-        -    preconnect which makes it marginally faster than the default.
-        */}
-
-        {/* [1] */}
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-        {/* [2] */}
-        <link
-          rel="preload"
-          as="style"
-          href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400&display=swap"
-        />
-
-        {/* [3] */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400&display=swap"
-          media="print"
-          onload="this.media='all'"
-        />
-
-        {/* [4] */}
-        <noscript>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400&display=swap"
-          />
-        </noscript>
-        {/* End Google Fonts */}
-      </Head>
-      <Layout>
+      <Layout pageTitle={props.title} pageDescription={props.description} pageAuthor={props.author} dribbbleLink={props.dribbble} githubLink={props.github} twitterLink={props.twitter} instagramLink={props.instagram}>
           <Header/>
           <Article>
             <Heading2
@@ -198,6 +127,22 @@ export default function Home() {
             <Copyright text="&copy;2020 Niklas Peterson" />
           </Footer>
       </Layout>
-    </>
   );
+}
+
+
+export async function getStaticProps() {
+  const config = await import(`../siteconfig.json`)
+
+  return {
+    props: {
+      title: config.default.title,
+      author: config.default.author,
+      description: config.default.description,
+      dribbble: config.default.dribbble,
+      github: config.default.github,
+      twitter: config.default.twitter,
+      instagram: config.default.instagram
+    },
+  }
 }
