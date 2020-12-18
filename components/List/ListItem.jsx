@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import Link from "../Link";
-import Heading3 from "../Heading/Heading3";
-import Heading4 from "../Heading/Heading4";
+import Link from '@components/Link';
+import Heading3 from '@components/Heading/Heading3';
+import Heading4 from '@components/Heading/Heading4';
 
 const ListItem = (props) => (
 	<ScListItem>
