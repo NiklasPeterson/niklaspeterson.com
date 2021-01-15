@@ -9,7 +9,7 @@ const ScList = styled.ul`
 	display: inline-block;
 
 	vertical-align: top;
-	@media (max-width:500px) {
+	@media (max-width: 500px) {
 		width: 100%;
 		margin-top: 24px;
 
