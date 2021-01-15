@@ -20,7 +20,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 @font-face {
   font-family: 'Nunito Sans Light';
-  src: url('/NunitoSans-EXTRALight.ttf') format('woff');
+  src: url('/NunitoSans-ExtraLight.ttf') format('woff');
   font-style: normal;
   font-weight: 200;
 }
@@ -35,7 +35,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-background: #282c37;
+		--color-background: #1e2024;
 		--color-text: #848d96;
 		--color-highlight: #eee;
 		--color-link: var(--color-text);
@@ -71,10 +71,10 @@ body {
 	font-weight: 400;
 	line-height: 1.5;
 }
-`;
+`
 
 export const theme = {
-	colors: {
-	  primary: '#0070f3',
-	},
-  }
+  colors: {
+    primary: '#0070f3',
+  },
+}

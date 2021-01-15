@@ -6,17 +6,14 @@ import Nav from '@components/Nav'
 
 const Blog = ({ posts, title, description, ...props }) => {
   return (
-      <Layout pageTitle={`${title} | Blog`} description={description}>
-        <Nav/>
-        <h1 className="title">Welcome to my Blog!</h1>
+    <Layout pageTitle={`${title} | Blog`} description={description}>
+      <Nav />
+      <h1 className="title">Welcome to my Blog!</h1>
 
-        <p className="description">
-          {description}
-        </p>
+      <p className="description">{description}</p>
 
-        <PostList posts={posts} />
-
-      </Layout>
+      <PostList posts={posts} />
+    </Layout>
   )
 }
 
