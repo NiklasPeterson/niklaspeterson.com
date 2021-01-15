@@ -1,4 +1,0 @@
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Sitemap: https://niklaspeterson.com/sitemap.xml
-Disallow: 
