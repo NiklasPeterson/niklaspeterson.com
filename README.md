@@ -1,4 +1,4 @@
-# Niklas Peterson Next - My website built with Next.js
+# NiklasPeterson.com - My website built with Next.js
 
 ## Badges
 
@@ -9,6 +9,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a99a8993-3c88-4f89-a0ff-8ccae3ea01f9/deploy-status)](https://app.netlify.com/sites/niklaspeterson-next/deploys)
 
 ## Development
+
 Clone the repository:
 `git clone git@github.com:niklaspeterson/niklaspeterson-next.git`
 
