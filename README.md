@@ -6,7 +6,7 @@
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a99a8993-3c88-4f89-a0ff-8ccae3ea01f9/deploy-status)](https://app.netlify.com/sites/niklaspeterson-next/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a99a8993-3c88-4f89-a0ff-8ccae3ea01f9/deploy-status)](https://app.netlify.com/sites/niklaspeterson/deploys)
 
 ## Development
 
