@@ -29,6 +29,30 @@ export default function Layout(props) {
         <link href={props.twitterLink} rel="me" />
         <link href={props.instagramLink} rel="me" />
 
+        {/*  Open Graph */}
+        {/* <meta property="og:title" content="Niklas Peterson Designer." />
+	    	<meta property="og:description" content="Niklas Peterson is a designer who focuses on UI & UX design, but he also develops websites & iOS / Android apps." />
+	    	<meta property="og:site_name" content="Niklas Peterson">
+	    	<meta property="og:type" content="website" />
+	    	<meta property="og:image" content="assets/images/niklas_peterson_card.png">
+	    	<meta property="og:url" content="https://niklaspeterson.com" /> */}
+
+        {/* Favicon */}
+        {/* <link
+        rel="shortcut icon"
+        type="image/x-icon"
+        href="assets/icons/favicon.ico"
+        sizes="16x16 24x24 32x32 64x64 192x192"
+      /> */}
+
+        {/* Pinned Tab Icon */}
+        {/* <link rel="mask-icon" href="assets/icons/pd_pin.svg" color="#4a4a4a" />
+
+      <link
+        href="/assets/images/apple-touch-icon-precomposed.png"
+        rel="apple-touch-icon-precomposed"
+      /> */}
+
         {/* Google Fonts */}
         {/*
         - 1. Preemptively warm up the fonts’ origin.
