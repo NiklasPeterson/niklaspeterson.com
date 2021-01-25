@@ -1,7 +1,17 @@
 {
   "name": "niklaspeterson.com",
   "version": "1.0.0",
+  "description": "Personal website of Niklas Peterson",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiklasPeterson/NiklasPeterson.com.git"
+  },
+  "author": "Niklas Peterson",
+  "bugs": {
+    "url": "https://github.com/NiklasPeterson/NiklasPeterson.com/issues"
+  },
+  "homepage": "https://github.com/NiklasPeterson/NiklasPeterson.com#readme",
   "scripts": {
     "dev": "next",
     "build": "next build",
