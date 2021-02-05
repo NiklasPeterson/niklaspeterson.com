@@ -19,7 +19,7 @@ Clone the repository:
 `git clone git@github.com:niklaspeterson/niklaspeterson-next.git`
 
 `cd` into the directory:
-`cd niklaspeterson-next`
+`cd NiklasPeterson.com`
 
 Install dependencies:
 `yarn`
