@@ -4,7 +4,7 @@ Landing page for Niklas Peterson.
 
 Niklas Peterson is a designer. During my daytime job I design, develop websites & apps.
 1
-
+2
 ## Badges
 
 [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=555555)](https://github.com/styled-components/styled-components)
