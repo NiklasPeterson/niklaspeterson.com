@@ -2,7 +2,7 @@
 
 Landing page for Niklas Peterson.
 
-Niklas Peterson is a designer. During my daytime job I design, develop websites & apps.
+My name is Niklas Peterson and I'm a designer. I both design and develop websites and apps for iOS/Android.
 
 
 ## Badges
