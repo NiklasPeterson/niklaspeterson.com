@@ -13,7 +13,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 @font-face {
   font-family: 'Inter';
-  src: url('/fonts/Inter-regular.woff2') format('woff');
+  src: url('/fonts/Inter-Regular.woff2') format('woff');
   font-style: normal;
   font-weight: 400;
 }
