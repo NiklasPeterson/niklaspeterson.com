@@ -7,7 +7,7 @@ const ScTagline = styled.span`
   display: block;
   margin-bottom: 40px;
 
-  font-family: 'Nunito Sans Light';
+  font-family: 'Inter Extra Light', sans-serif;
   font-size: 64px;
   line-height: 1.25;
   letter-spacing: -2px;

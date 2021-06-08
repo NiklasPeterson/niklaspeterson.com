@@ -12,15 +12,15 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /* CSS Variables */
 
 @font-face {
-  font-family: 'Nunito Sans';
-  src: url('/NunitoSans-Regular.ttf') format('woff');
+  font-family: 'Inter';
+  src: url('/fonts/Inter-regular.woff2') format('woff');
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Nunito Sans Light';
-  src: url('/NunitoSans-ExtraLight.ttf') format('woff');
+  font-family: 'Inter Extra Light';
+  src: url('/fonts/Inter-ExtraLight.woff2') format('woff');
   font-style: normal;
   font-weight: 200;
 }
@@ -66,7 +66,7 @@ body {
 	animation: fadeIn 2s;
 	background-color: var(--color-background);
 	color: var(--color-text);
-	font-family: "Nunito Sans", sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.5;
