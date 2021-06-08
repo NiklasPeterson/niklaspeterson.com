@@ -62,7 +62,7 @@ export default function Layout(props) {
 
       <link
         rel="preload"
-        href="/fonts/Inter-Regular.woff2'"
+        href="/fonts/Inter-Regular.woff2"
         as="font"
         crossOrigin=""
       />
