@@ -4,6 +4,6 @@ const Footer = (props) => <ScFooter>{props.children}</ScFooter>
 
 export default Footer
 
-const ScFooter = styled.article`
+const ScFooter = styled.footer`
   margin-top: 40px;
 `
