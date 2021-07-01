@@ -1,17 +1,20 @@
 import styled from 'styled-components'
+import Image from 'next/image'
 
-const Aside = (props) => <ScAside image={props.image} />
+const ProfileImage = (props) => (
+  <ScProfileImage>
+    <Image src={props.image} alt="Picture of the author" layout="fill" objectPosition="center center" objectFit="cover" loading="lazy" placeholder="blur" />
+  </ScProfileImage>
+)
 
-export default Aside
+export default ProfileImage
 
-const ScAside = styled.aside`
+const ScProfileImage = styled.div`
   position: relative;
   width: 50vw;
   height: 100vh;
   overflow: hidden;
   transition: 0.1s ease;
-  background: url('${(props) => props.image}.jpg') no-repeat center center;
-  background-size: cover;
 
   @media (max-width: 812px) {
     position: fixed;
