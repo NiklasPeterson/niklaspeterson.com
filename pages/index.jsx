@@ -35,7 +35,7 @@ export default function Home(props) {
           >
             Dribbble
           </Link>
-          , checkout what I'm currently building on{' '}
+          , checkout what I&apos;m currently building on{' '}
           <Link
             href="https://github.com/NiklasPeterson"
             title="Niklas Peterson on GitHub"
