@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import Head from 'next/head'
 
-import Aside from '@components/Aside'
+import ProfileImage from '@components/ProfileImage'
+
+import profilePic from '../public/images/niklas-peterson.jpg'
 
 export default function Layout(props) {
   return (
@@ -71,7 +73,7 @@ export default function Layout(props) {
       <ScLayout>
         <ScInnerContainer>{props.children}</ScInnerContainer>
       </ScLayout>
-      <Aside image={'/images/niklas-peterson'} />
+      <ProfileImage image={profilePic} />
     </ScPageWrapper>
   )
 }
