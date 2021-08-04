@@ -19,7 +19,7 @@ export default function Home(props) {
       twitterLink={props.twitter}
       instagramLink={props.instagram}
     >
-      <Header />
+      <Header heading="Niklas Peterson" tagline="Designer." />
       <Article>
         <Heading2
           text="My name is Niklas Peterson, and I'm a designer who focuses on UI
