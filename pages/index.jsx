@@ -18,6 +18,7 @@ export default function Home(props) {
       githubLink={props.github}
       twitterLink={props.twitter}
       instagramLink={props.instagram}
+      image='/images/niklas-peterson'
     >
       <Header heading="Niklas Peterson" tagline="Designer." />
       <Article>
@@ -131,7 +132,7 @@ export default function Home(props) {
       </List>
 
       <Footer>
-        <Copyright text="&copy;2021 Niklas Peterson" />
+        <Copyright text="&copy; 2021 Niklas Peterson" />
       </Footer>
     </Layout>
   )

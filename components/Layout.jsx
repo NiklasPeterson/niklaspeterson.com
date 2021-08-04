@@ -71,7 +71,7 @@ export default function Layout(props) {
       <ScLayout>
         <ScInnerContainer>{props.children}</ScInnerContainer>
       </ScLayout>
-      <Aside image={'/images/niklas-peterson'} />
+      <Aside image={props.image} video={props.video} videoUrl={props.videoUrl} />
     </ScPageWrapper>
   )
 }
