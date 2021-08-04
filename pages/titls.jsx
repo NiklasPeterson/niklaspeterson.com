@@ -41,9 +41,9 @@ export async function getStaticProps() {
 
   return {
     props: {
-      title: config.default.title,
+      title: "Titls | " + config.default.title,
       author: config.default.author,
-      description: config.default.description,
+      description: "Titls is an small iOS app that lets you create titles and then use widgets to organise your iOS homescreens.",
       dribbble: config.default.dribbble,
       github: config.default.github,
       twitter: config.default.twitter,
