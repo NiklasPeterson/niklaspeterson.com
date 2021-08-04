@@ -76,6 +76,39 @@ export default function Home(props) {
       </Article>
 
       <List>
+        <ListItem heading="Side Projects" />
+
+        {/* <ListItem
+          title="Titls"
+          linkUrl="https://niklaspeterson.com/titls"
+          linkText="iOS Widget App"
+        /> */}
+
+        <ListItem
+          title="Minimalist icons"
+          linkUrl="https://niklaspeterson.gumroad.com/l/minimalist-icons"
+          linkText="iOS Icons"
+        />
+
+        <ListItem
+          title="iOS iMessage Stickers Template"
+          linkUrl="https://www.figma.com/community/file/894284318358585629/iOS-iMessage-Stickers-Template"
+          linkText="Figma Template"
+        />
+
+        <ListItem
+          title="iOS iMessage Stickers app"
+          linkUrl="https://github.com/NiklasPeterson/ios-message-stickers-template"
+          linkText="Swift Template"
+        />
+
+
+
+
+        <ListItem />
+      </List>
+
+      <List>
         <ListItem heading="Experience" />
 
         <ListItem
@@ -111,7 +144,7 @@ export default function Home(props) {
         />
       </List>
 
-      <List>
+      {/* <List>
         <ListItem heading="Education" />
 
         <ListItem title="UI & UX design" text="NTI" afterText="| 2015" />
@@ -129,7 +162,7 @@ export default function Home(props) {
         />
 
         <ListItem />
-      </List>
+      </List> */}
 
       <Footer>
         <Copyright text="&copy; 2021 Niklas Peterson" />
