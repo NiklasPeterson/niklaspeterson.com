@@ -20,7 +20,7 @@ const ScAside = styled.aside`
   ${(props) =>
     props.video &&
     css`
-      text-align: right;
+      text-align: center;
 
       @media (max-width: 812px) {
         width: 100vw;
