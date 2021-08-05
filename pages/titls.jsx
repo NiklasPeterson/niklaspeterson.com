@@ -4,7 +4,9 @@ import Copyright from '@components/Copyright'
 import Footer from '@components/Footer'
 import Layout from '@components/Layout'
 import Header from '@components/Header'
+import Link from '@components/Link'
 import AppStoreButton from '@components/AppStoreButton'
+import Heading3 from '@components/Heading/Heading3'
 
 // import AppStoreWhite from '/images/App_store-white.svg';
 // import AppStoreBlack from '/images/App_store-black.svg';
@@ -26,6 +28,19 @@ export default function Home(props) {
         <Heading2
           text="Titls is an small iOS app that lets you create titles and then use widgets to organise your iOS homescreens."
         />
+
+        <Heading3 text="Support/Feedback"/>
+        <p style={{marginBottom: 16}}>
+          If you have any questions or suggestions reach out to {' '}
+          <Link
+            href="https://twitter.com/niklas_peterson"
+            title="Niklas Peterson on Twitter"
+            target="_blank"
+            rel="noopener"
+          >
+            @niklas_peterson
+          </Link>{' '} on Twitter.
+        </p>
           <AppStoreButton url="https://apps.apple.com/us/app/titls/id1579078964"/>
       </Article>
 
