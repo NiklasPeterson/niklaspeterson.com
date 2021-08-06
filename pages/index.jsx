@@ -78,11 +78,11 @@ export default function Home(props) {
       <List>
         <ListItem heading="Side Projects" />
 
-        {/* <ListItem
+        <ListItem
           title="Titls"
           linkUrl="https://niklaspeterson.com/titls"
           linkText="iOS Widget App"
-        /> */}
+        />
 
         <ListItem
           title="Minimalist icons"
