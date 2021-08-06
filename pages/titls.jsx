@@ -26,7 +26,7 @@ export default function Home(props) {
       <Header heading="Titls" tagline="iOS widget" />
       <Article>
         <Heading2
-          text="Titls is an small iOS app that lets you create titles and then use widgets to organise your iOS homescreens."
+          text="Titls is an small iOS app that lets you create titles and then use widgets to organize your iOS homescreens."
         />
 
         <Heading3 text="Support/Feedback"/>
