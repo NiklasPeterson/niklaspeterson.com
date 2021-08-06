@@ -88,18 +88,21 @@ export default function Home(props) {
           title="Minimalist icons"
           linkUrl="https://niklaspeterson.gumroad.com/l/minimalist-icons"
           linkText="iOS Icons"
+          target="_blank"
         />
 
         <ListItem
           title="iOS iMessage Stickers Template"
           linkUrl="https://www.figma.com/community/file/894284318358585629/iOS-iMessage-Stickers-Template"
           linkText="Figma Template"
+          target="_blank"
         />
 
         <ListItem
           title="iOS iMessage Stickers app"
           linkUrl="https://github.com/NiklasPeterson/ios-message-stickers-template"
           linkText="Swift Template"
+          target="_blank"
         />
 
 

@@ -13,7 +13,7 @@ const ListItem = (props) => (
 			<Link
 				href={props.linkUrl}
 				title={props.linkTitle}
-				target="_blank"
+				target={props.target}
 				rel={props.linkRel}
 			>
 				{props.linkText}
