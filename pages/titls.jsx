@@ -26,7 +26,7 @@ export default function Home(props) {
       <Header heading="Titls" tagline="iOS widget" />
       <Article>
         <Heading2
-          text="Titls is an small iOS app that lets you create titles and then use widgets to organize your iOS homescreens."
+          text="Titls is a small iOS app that lets you create titles and then use widgets to organize your iOS home screens."
         />
 
         <Heading3 text="Support/Feedback"/>
@@ -58,7 +58,7 @@ export async function getStaticProps() {
     props: {
       title: "Titls | " + config.default.title,
       author: config.default.author,
-      description: "Titls is an small iOS app that lets you create titles and then use widgets to organise your iOS homescreens.",
+      description: "Titls is a small iOS app that lets you create titles and then use widgets to organize your iOS home screens.",
       dribbble: config.default.dribbble,
       github: config.default.github,
       twitter: config.default.twitter,
