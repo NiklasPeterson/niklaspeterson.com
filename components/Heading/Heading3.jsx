@@ -5,7 +5,7 @@ const Heading3 = (props) => <ScH3>{props.text}</ScH3>
 export default Heading3
 
 const ScH3 = styled.h3`
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   color: var(--color-highlight);
   font-weight: 400;
   font-size: 16px;

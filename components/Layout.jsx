@@ -3,8 +3,6 @@ import Head from 'next/head'
 
 import ProfileImage from '@components/ProfileImage'
 
-import profilePic from '../public/images/niklas-peterson.jpg'
-
 export default function Layout(props) {
   return (
     <ScPageWrapper>
@@ -73,7 +71,7 @@ export default function Layout(props) {
       <ScLayout>
         <ScInnerContainer>{props.children}</ScInnerContainer>
       </ScLayout>
-      <ProfileImage image={profilePic} />
+      <ProfileImage image={props.image} video={props.video} videoUrl={props.videoUrl} />
     </ScPageWrapper>
   )
 }
