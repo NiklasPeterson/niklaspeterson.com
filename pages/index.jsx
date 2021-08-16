@@ -8,6 +8,8 @@ import Link from '@components/Link'
 import Layout from '@components/Layout'
 import Header from '@components/Header'
 
+import profilePic from '../public/images/niklas-peterson.jpg'
+
 export default function Home(props) {
   return (
     <Layout
@@ -18,7 +20,7 @@ export default function Home(props) {
       githubLink={props.github}
       twitterLink={props.twitter}
       instagramLink={props.instagram}
-      image='/images/niklas-peterson'
+      image={profilePic}
     >
       <Header heading="Niklas Peterson" tagline="Designer." />
       <Article>

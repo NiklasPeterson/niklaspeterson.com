@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Head from 'next/head'
 
-import ProfileImage from '@components/ProfileImage'
+import Aside from '@components/Aside'
 
 export default function Layout(props) {
   return (
@@ -71,7 +71,7 @@ export default function Layout(props) {
       <ScLayout>
         <ScInnerContainer>{props.children}</ScInnerContainer>
       </ScLayout>
-      <ProfileImage image={props.image} video={props.video} videoUrl={props.videoUrl} />
+      <Aside image={props.image} video={props.video} videoUrl={props.videoUrl} />
     </ScPageWrapper>
   )
 }
