@@ -168,7 +168,7 @@ export default function Home(props) {
       </List> */}
 
       <Footer>
-        <Copyright text="&copy; 2021 Niklas Peterson" />
+        <Copyright text="&copy; 2021 Niklas Peterson." />
       </Footer>
     </Layout>
   )

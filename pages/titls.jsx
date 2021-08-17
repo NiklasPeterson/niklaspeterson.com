@@ -45,7 +45,7 @@ export default function Home(props) {
       </Article>
 
       <Footer>
-        <Copyright text="&copy; 2021 Niklas Peterson" />
+        <Copyright text="&copy; 2021 Niklas Peterson." />
       </Footer>
     </Layout>
   )
