@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components'
 import Image from 'next/image'
 
-const Aside = (props) => {
+const Media = (props) => {
   return (
     
-    <ScAside image={props.image} video={props.video}>
+    <ScMedia image={props.image} video={props.video}>
 
   {props.image &&
-    <Image src={props.image} alt="Picture of the author" layout="fill" objectPosition="center center" objectFit="cover" loading="lazy" placeholder="blur" />
+    <Image src={props.image} alt={props.altText} layout="fill" objectPosition="center center" objectFit="cover" placeholder="blur" priority={true}/>
   }
   {props.video &&
     <video style={{height: '100%'}} playsInline muted autoPlay loop >
@@ -15,12 +15,12 @@ const Aside = (props) => {
       Your browser does not support the video tag.
     </video>
   }
-</ScAside>
+</ScMedia>
   )};
 
-export default Aside
+export default Media
 
-const ScAside = styled.div`
+const ScMedia = styled.div`
   position: relative;
   width: 50vw;
   height: 100vh;

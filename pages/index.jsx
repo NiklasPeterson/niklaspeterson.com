@@ -8,7 +8,7 @@ import Link from '@components/Link'
 import Layout from '@components/Layout'
 import Header from '@components/Header'
 
-import profilePic from '../public/images/niklas-peterson.jpg'
+import profilePic from '../public/images/niklas-peterson.webp'
 
 export default function Home(props) {
   return (
@@ -21,6 +21,7 @@ export default function Home(props) {
       twitterLink={props.twitter}
       instagramLink={props.instagram}
       image={profilePic}
+      altText="Photo of Niklas Peterson"
     >
       <Header heading="Niklas Peterson" tagline="Designer." />
       <Article>
