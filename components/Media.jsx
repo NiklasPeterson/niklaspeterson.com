@@ -26,34 +26,6 @@ const ScMedia = styled.div`
   height: 100vh;
   overflow: hidden;
 
-  @media (max-width: 812px) {
-    position: fixed;
-    z-index: -1;
-    width: 100vw;
-
-    &:after {
-      content: '';
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: var(--color-background);
-      opacity: 0.88;
-    }
-  }
-
-  ${(props) =>
-    props.video &&
-    css`
-      text-align: center;
-
-      @media (max-width: 812px) {
-        width: 100vw;
-        text-align: center;
-      }
-    `};
-
   ${(props) =>
     props.image &&
     css`
@@ -77,7 +49,18 @@ const ScMedia = styled.div`
           opacity: 0.88;
         }
       }
-    `};
+    `
+  };
 
-  
+  ${(props) =>
+    props.video &&
+    css`
+      text-align: center;
+
+      @media (max-width: 812px) {
+        width: 100vw;
+        text-align: center;
+      }
+    `
+  };
 `
