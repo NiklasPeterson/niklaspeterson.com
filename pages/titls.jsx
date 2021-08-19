@@ -41,7 +41,7 @@ export default function Home(props) {
             @niklas_peterson
           </Link>{' '} on Twitter.
         </p>
-          <AppStoreButton url="https://apps.apple.com/us/app/titls/id1579078964"/>
+          <AppStoreButton url="https://apps.apple.com/app/titls/id1579078964"/>
       </Article>
 
       <Footer>
