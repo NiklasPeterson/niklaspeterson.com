@@ -82,6 +82,12 @@ export default function Home(props) {
         <ListItem heading="Side Projects" />
 
         <ListItem
+          title="GitNot"
+          linkUrl="https://niklaspeterson.com/gitnot"
+          linkText="macOS Menubar App, that shows GitHub Notifications"
+        />
+        
+        <ListItem
           title="Titls"
           linkUrl="https://niklaspeterson.com/titls"
           linkText="iOS Widget App"
