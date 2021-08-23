@@ -20,7 +20,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@netlify/plugin-nextjs": "^3.6.2",
+    "@netlify/plugin-nextjs": "^3.8.0",
     "gray-matter": "^4.0.3",
     "next": "latest",
     "raw-loader": "^4.0.2",
