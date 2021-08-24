@@ -30,7 +30,7 @@ export default function Home(props) {
               & UX design, but I also develop websites & iOS/Android apps."
         />
         <p>
-          See what  I'v been up to on{' '}
+          See what I have been up to on{' '}
           <Link
             href="https://polywork.com/NiklasPeterson"
             title="Niklas Peterson on Polywork"
