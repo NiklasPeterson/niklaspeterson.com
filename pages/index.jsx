@@ -48,7 +48,7 @@ export default function Home(props) {
           >
             Dribbble
           </Link>
-          & check what I&apos;m currently building on{' '}
+          {' '}& check what I&apos;m currently building on{' '}
           <Link
             href="https://github.com/NiklasPeterson"
             title="Niklas Peterson on GitHub"
