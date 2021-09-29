@@ -14,7 +14,8 @@ export default function Layout(props) {
           content="width=device-width,initial-scale=1, viewport-fit=cover, shrink-to-fit=no"
         />
         <meta name="HandheldFriendly" content="true" />
-        <meta name="theme-color" content="#282c37" />
+        <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)"/>
+        <meta name="theme-color" content="#1e2024" media="(prefers-color-scheme: dark)" />
 
         {/* SEO */}
         <title>{props.pageTitle}</title>
@@ -109,4 +110,5 @@ const ScInnerContainer = styled.div`
   max-width: 680px;
   margin-top: auto;
   margin-bottom: auto;
+  position: relative;
 `
