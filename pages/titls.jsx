@@ -11,7 +11,7 @@ import Heading3 from '@components/Heading/Heading3'
 // import AppStoreWhite from '/images/App_store-white.svg';
 // import AppStoreBlack from '/images/App_store-black.svg';
 
-export default function Home(props) {
+export default function Titls(props) {
   return (
     <Layout
       pageTitle={props.title}
