@@ -1,43 +1,19 @@
-import Heading2 from '@components/Heading/Heading2'
-import Article from '@components/Article'
+import styled from 'styled-components';
 import Copyright from '@components/Copyright'
 import Footer from '@components/Footer'
-import Layout from '@components/Layout'
-import Header from '@components/Header'
-import Link from '@components/Link'
-import AppStoreButton from '@components/AppStoreButton'
-import Heading3 from '@components/Heading/Heading3'
-
-// import AppStoreWhite from '/images/App_store-white.svg';
-// import AppStoreBlack from '/images/App_store-black.svg';
 
 export default function Titls(props) {
   return (
-    <Layout
-      pageTitle={props.title}
-      pageDescription={props.description}
-      pageAuthor={props.author}
-      dribbbleLink={props.dribbble}
-      githubLink={props.github}
-      twitterLink={props.twitter}
-      instagramLink={props.instagram}
-      video={'/titls_app-preview.mp4'}
-    >
-      <Header heading="Titls" tagline="iOS widget" />
-      <Article>
-        
-
-        <a rel="ar" href="/assets/images/if.usdz">
- 			AR
-             {/* <img src="/assets/images/wireless_charger.png" />
- 			<img width="240" src="/assets/images/wireless_charger.png" /> */}
- 		</a>
-      </Article>
-
+   <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginTop: 24}}>
+      <ScH1>Invisible Friends <br/> AR Logo</ScH1>
+        <p style={{textAlign: "center"}}>Press on the Cool Dude below (Might only work on iPhone)</p>
+        <a style={{textAlign: "center"}} rel="ar" href="/images/if.usdz">
+          <img width="100%" src="/images/if.png" alt="Invisible Friends AR Logo" />
+        </a>
       <Footer>
         <Copyright text="&copy; 2021 Niklas Peterson." />
       </Footer>
-    </Layout>
+    </div>
   )
 }
 
@@ -56,3 +32,22 @@ export async function getStaticProps() {
     },
   }
 }
+
+
+const ScH1 = styled.h1`
+  display: block;
+  margin-bottom: 40px;
+
+  font-family: 'Inter Extra Light', sans-serif;
+  font-size: 64px;
+  line-height: 1.25;
+  letter-spacing: -2px;
+  color: var(--color-highlight);
+  text-transform: uppercase;
+  text-align: center;
+
+  @media (max-width: 812px) {
+    font-size: 40px;
+    line-height: 1.25;
+  }
+`;
