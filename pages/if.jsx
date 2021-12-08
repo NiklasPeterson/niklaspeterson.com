@@ -5,7 +5,7 @@ import Footer from '@components/Footer'
 export default function Titls(props) {
   return (
    <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginTop: 24, paddingRight: 16, paddingLeft: 16}}>
-      <ScH1>Invisible Friends <br/> AR Logo</ScH1>
+      <ScH1>Invisible Friends AR</ScH1>
         <p style={{textAlign: "center"}}>Press on the Cool Dude below (Might only work on iPhone)</p>
         <a style={{textAlign: "center"}} rel="ar" href="/images/if.usdz">
           <img width="100%" src="/images/if.png" alt="Invisible Friends AR Logo" />
