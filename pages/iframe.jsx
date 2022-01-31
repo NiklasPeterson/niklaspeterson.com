@@ -4,11 +4,9 @@ import Footer from '@components/Footer'
 
 export default function Titls(props) {
   return (
-   <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginTop: 24, paddingRight: 16, paddingLeft: 16}}>
       <div width={1366} height={1024} style={{width: 1366, height: 1024, overflow: "hidden"}}>
         <iframe style={{border: "none", transform: "translate(-50px, -50px)"}} width={1566} height={1224} src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F3YveU02SD7KP4lntipm6pv%2FShine-test%3Fnode-id%3D17%253A6"></iframe>
       </div>
-    </div>
   )
 }
 
