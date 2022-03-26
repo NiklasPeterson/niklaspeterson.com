@@ -104,14 +104,14 @@ export default function Home(props) {
         />
 
         <ListItem
-          title="iOS iMessage Stickers Template"
+          title="iMessage Stickers Template"
           linkUrl="https://www.figma.com/community/file/894284318358585629/iOS-iMessage-Stickers-Template"
           linkText="Figma Template"
           target="_blank"
         />
 
         <ListItem
-          title="iOS iMessage Stickers app"
+          title="iMessage Stickers app"
           linkUrl="https://github.com/NiklasPeterson/ios-message-stickers-template"
           linkText="Swift Template"
           target="_blank"
@@ -180,7 +180,7 @@ export default function Home(props) {
       </List> */}
 
       <Footer>
-        <Copyright text="&copy; 2021 Niklas Peterson." />
+        <Copyright text="&copy; 2022 Niklas Peterson." />
       </Footer>
     </Layout>
   )
