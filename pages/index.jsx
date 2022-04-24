@@ -26,7 +26,7 @@ export default function Home(props) {
       <Header heading="Niklas Peterson" tagline="Designer." />
       <Article>
         <Heading2
-          text="My name is Niklas Peterson, and I'm a designer who focuses on UI
+          text="My name is Niklas Peterson, I'm a designer who focuses on UI
               & UX design, but I also develop websites & iOS/Android apps."
         />
         <p>
