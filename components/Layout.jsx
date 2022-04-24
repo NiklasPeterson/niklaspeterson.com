@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Head from 'next/head'
 
-import Media from '@components/Media'
+import Media from '@/components/Media'
 
 export default function Layout(props) {
   return (

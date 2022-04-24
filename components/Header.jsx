@@ -1,5 +1,5 @@
-import Heading1 from '@components/Heading/Heading1'
-import Tagline from '@components/Tagline'
+import Heading1 from '@/components/Heading/Heading1'
+import Tagline from '@/components/Tagline'
 
 export default function Header(props) {
   return (

@@ -1,12 +1,12 @@
-import Heading2 from '@components/Heading/Heading2'
-import Article from '@components/Article'
-import Copyright from '@components/Copyright'
-import Footer from '@components/Footer'
-import Layout from '@components/Layout'
-import Header from '@components/Header'
-import Link from '@components/Link'
-import AppStoreButton from '@components/AppStoreButton'
-import Heading3 from '@components/Heading/Heading3'
+import Heading2 from '@/components/Heading/Heading2'
+import Article from '@/components/Article'
+import Copyright from '@/components/Copyright'
+import Footer from '@/components/Footer'
+import Layout from '@/components/Layout'
+import Header from '@/components/Header'
+import Link from '@/components/Link'
+import AppStoreButton from '@/components/AppStoreButton'
+import Heading3 from '@/components/Heading/Heading3'
 
 // import AppStoreWhite from '/images/App_store-white.svg';
 // import AppStoreBlack from '/images/App_store-black.svg';
