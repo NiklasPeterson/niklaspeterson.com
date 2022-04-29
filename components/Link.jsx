@@ -6,6 +6,7 @@ const Link = (props) => (
     target={props.target}
     rel={props.rel}
     title={props.title}
+    style={{}}
   >
     {props.children}
   </ScLink>
