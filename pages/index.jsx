@@ -27,7 +27,7 @@ export default function Home(props) {
       <Article>
         <Heading2
           text="My name is Niklas Peterson, I'm a designer who focuses on UI
-              & UX design, but I also develop websites & iOS/Android apps."
+              & UX design, but I also develop websites & apps."
         />
         <p>
           See what I have been up to on{' '}
@@ -38,17 +38,8 @@ export default function Home(props) {
             rel="noopener"
           >
             Polywork
-          </Link>.
-          See my latest work on{' '}
-          <Link
-            href="https://dribbble.com/niklaspeterson"
-            title="Niklas Peterson on Dribbble"
-            target="_blank"
-            rel="noopener"
-          >
-            Dribbble
-          </Link>
-          {' '}& check what I&apos;m currently building on{' '}
+          </Link>,
+          check what I&apos;m currently building on{' '}
           <Link
             href="https://github.com/NiklasPeterson"
             title="Niklas Peterson on GitHub"
@@ -57,16 +48,7 @@ export default function Home(props) {
           >
             GitHub
           </Link>
-          . Follow my life on{' '}
-          <Link
-            href="https://www.instagram.com/niklas.peterson/"
-            title="Niklas Peterson on Instagram"
-            target="_blank"
-            rel="noopener"
-          >
-            Instagram
-          </Link>{' '}
-          & connect with me through{' '}
+          {' '}& connect with me through{' '}
           <Link
             href="https://twitter.com/niklas_peterson"
             title="Niklas Peterson on Twitter"
@@ -117,9 +99,6 @@ export default function Home(props) {
           target="_blank"
         />
 
-
-
-
         <ListItem />
       </List>
 
@@ -127,35 +106,47 @@ export default function Home(props) {
         <ListItem heading="Experience" />
 
         <ListItem
-          title="Designer"
-          linkUrl="http://www.cityweb.se/uk/home"
-          linkText="Cityweb"
-          afterText="| 2015 - Current"
+          title="UX/UI Designer"
+          linkUrl="https://www.bueno.art"
+          linkText="Bueno"
+          afterText="| 2022 Nov - Current"
           linkRel="noreferrer"
         />
 
         <ListItem
-          title="Web Developer consultant"
+          title="Designer"
+          linkUrl="https://www.shinedigital.se"
+          linkText="Shine Digital"
+          afterText="| 2015 - 2022 Nov"
+          linkRel="noreferrer"
+          target="_blank"
+        />
+
+        <ListItem
+          title="Web Developer Consultant"
           linkUrl="https://www.ericsson.com"
           linkText="Ericsson"
           afterText="| 2015"
           linkRel="noreferrer"
+          target="_blank"
         />
 
         <ListItem
-          title="UI designer intern"
+          title="UI Designer Intern"
           linkUrl="http://www.black.se"
           linkText="Black & Co."
           afterText="| 2014 & 2015"
           linkRel="noreferrer"
+          target="_blank"
         />
 
         <ListItem
-          title="Web designer intern"
+          title="Web Designer Intern"
           linkUrl="http://jimdavislabs.com"
           linkText="JimDavisLabs"
           afterText="| 2014"
           linkRel="noreferrer"
+          target="_blank"
         />
       </List>
 
