@@ -1,13 +1,22 @@
 import styled, { css } from 'styled-components'
-import Image from 'next/legacy/image'
+import Image from "next/image";
 
 const Media = (props) => {
   return (
-    
     <ScMedia image={props.image} video={props.video}>
 
   {props.image &&
-    <Image src={props.image} alt={props.altText} layout="fill" objectPosition="center center" objectFit="cover" placeholder="blur" priority={true}/>
+    <Image
+      src={props.image}
+      alt={props.altText}
+      placeholder="blur"
+      priority={true}
+      fill
+      sizes="100vw"
+      style={{
+        objectFit: "cover",
+        objectPosition: "center center"
+      }} />
   }
   {props.video &&
     <video style={{height: '100%'}} playsInline muted autoPlay loop >
@@ -16,7 +25,7 @@ const Media = (props) => {
     </video>
   }
 </ScMedia>
-  )};
+  );};
 
 export default Media
 
