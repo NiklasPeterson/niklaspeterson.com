@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Link from 'next/link'
 
-const Copyright = (props) => <ScCopyright><Link href="/"><a>{props.text}</a></Link></ScCopyright>
+const Copyright = (props) => <ScCopyright><Link href="/">{props.text}</Link></ScCopyright>
 
 export default Copyright
 

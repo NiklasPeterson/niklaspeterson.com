@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 const Media = (props) => {
   return (
