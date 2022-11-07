@@ -106,7 +106,7 @@ export default function Home(props) {
         <ListItem heading="Experience" />
 
         <ListItem
-          title="UX/UI Designer"
+          title="Product Designer"
           linkUrl="https://www.bueno.art"
           linkText="Bueno"
           afterText="| 2022 Nov - Current"
