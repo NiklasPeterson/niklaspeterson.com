@@ -73,6 +73,12 @@ export default function Home(props) {
         <ListItem heading="Side Projects" />
 
         <ListItem
+          title="Timestamps"
+          linkUrl="https://timestamps.app"
+          linkText="Discord Timestamp Generator"
+        />
+        
+        <ListItem
           title="Titls"
           linkUrl="https://niklaspeterson.com/titls"
           linkText="iOS Widget App"
