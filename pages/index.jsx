@@ -76,8 +76,9 @@ export default function Home(props) {
           title="Timestamps"
           linkUrl="https://timestamps.app"
           linkText="Discord Timestamp Generator"
+          target="_blank"
         />
-        
+
         <ListItem
           title="Titls"
           linkUrl="https://niklaspeterson.com/titls"
