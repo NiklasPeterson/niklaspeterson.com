@@ -30,16 +30,7 @@ export default function Home(props) {
               & UX design, but I also develop websites & apps."
         />
         <p>
-          See what I have been up to on{' '}
-          <Link
-            href="https://polywork.com/NiklasPeterson"
-            title="Niklas Peterson on Polywork"
-            target="_blank"
-            rel="noopener"
-          >
-            Polywork
-          </Link>,
-          check what I&apos;m currently building on{' '}
+          See what I&apos;m currently building on{' '}
           <Link
             href="https://github.com/NiklasPeterson"
             title="Niklas Peterson on GitHub"
@@ -47,7 +38,16 @@ export default function Home(props) {
             rel="noopener"
           >
             GitHub
-          </Link>
+          </Link>,
+          <Link
+            href="https://www.buymeacoffee.com/niklaspeterson"
+            title="Support my work"
+            target="_blank"
+            rel="noopener"
+          >
+            Support my work
+          </Link>,
+
           {' '}& connect with me through{' '}
           <Link
             href="https://twitter.com/niklas_peterson"
