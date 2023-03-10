@@ -66,7 +66,7 @@ export default function Home(props) {
             rel="noopener"
           >
             support my work
-          </Link>? ❤️
+          </Link>?
         </p>
       </Article>
 
