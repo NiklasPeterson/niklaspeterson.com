@@ -39,16 +39,8 @@ export default function Home(props) {
           >
             GitHub
           </Link>,
-          <Link
-            href="https://www.buymeacoffee.com/niklaspeterson"
-            title="Support my work"
-            target="_blank"
-            rel="noopener"
-          >
-            Support my work
-          </Link>,
 
-          {' '}& connect with me through{' '}
+          {' '}connect with me through{' '}
           <Link
             href="https://twitter.com/niklas_peterson"
             title="Niklas Peterson on Twitter"
@@ -65,7 +57,16 @@ export default function Home(props) {
             rel="noopener"
           >
             Linkedin
-          </Link>
+          </Link>,
+          {' '}or maybe you just want to{' '}
+          <Link
+            href="https://www.buymeacoffee.com/niklaspeterson"
+            title="Support my work"
+            target="_blank"
+            rel="noopener"
+          >
+            support my work
+          </Link>? ❤️
         </p>
       </Article>
 
