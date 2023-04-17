@@ -88,7 +88,7 @@ export default function Home(props) {
 
         <ListItem
           title="Minimalist icons"
-          linkUrl="https://niklaspeterson.gumroad.com/l/minimalist-icons"
+          linkUrl="https://www.buymeacoffee.com/niklaspeterson/e/113327"
           linkText="iOS Icons"
           target="_blank"
         />
