@@ -13,10 +13,9 @@
   },
   "homepage": "https://github.com/NiklasPeterson/NiklasPeterson.com#readme",
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
     "lint": "next lint"
   },
   "dependencies": {
