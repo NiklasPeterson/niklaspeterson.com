@@ -4,20 +4,18 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <svg width="58" height="40" viewBox="0 0 58 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg id="logo" width="58" height="40" viewBox="0 0 58 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
-            id="first"
             fill="none"
             d="M1 36C5.27925 30.0845 23 9.95764 18.6834 9.97834C14.3668 9.99904 2.16421 36 11.6037 36C19.1239 36 26.707 12.3068 29.3501 5.95081"
-            stroke-width="2"
-            stroke-linecap="round"
+            strokeWidth="2"
+            strokeLinecap="round"
           />
           <path
-            id="second"
             fill="none"
             d="M39.9552 13.5873C38.5025 21.0603 34.3544 35.9905 29.2256 35.9905C22.8067 35.9905 25.0407 7.48312 44.4233 4.30513C60.0299 1.75648 62.7674 15.727 29.0683 25.607"
-            stroke-width="2"
-            stroke-linecap="round"
+            strokeWidth="2"
+            strokeLinecap="round"
           />
         </svg>
 
