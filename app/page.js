@@ -74,7 +74,7 @@ export default function Home() {
             <p className='text-xl'>
               I'm <span className='font-semibold text-black dark:text-white'>Niklas Peterson</span>, a father of two, passionate about interior and digital design. I work as a <span className='font-semibold text-black dark:text-white'>Product Designer</span> at <span className='font-semibold text-black dark:text-white'>Bueno</span>, focusing on <span className='font-semibold text-black dark:text-white'>Musho.ai</span>, our Figma plugin that leverages AI to jumpstart your designs, letting you concentrate on those final touches.
               <br /><br />
-              Outside work, you’ll find me cherishing quality time with my family. In my free moments, I enjoy exploring design and coding. I've created two iOS apps, <span className='font-semibold text-black dark:text-white'>Hydrify</span> and <span className='font-semibold text-black dark:text-white'>Titls</span>. These are personal projects that let me scratch that creative itch by seamlessly blending design, development, and tech.</p>
+              Outside work, you&apos;ll find me cherishing quality time with my family. In my free moments, I enjoy exploring design and coding. I've created two iOS apps, <span className='font-semibold text-black dark:text-white'>Hydrify</span> and <span className='font-semibold text-black dark:text-white'>Titls</span>. These are personal projects that let me scratch that creative itch by seamlessly blending design, development, and tech.</p>
           </div>
 
           <div className="flex gap-2">
