@@ -2,49 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 svg#logo path {
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-name: draw;
-  animation-timing-function: ease-in-out;
-
-  stroke: rgb(var(--foreground-rgb));
   stroke-dasharray: 160;
   stroke-dashoffset: 160;
-  animation-duration: 2s;
+}
+
+svg#logo path:nth-child(1) {
+  animation-timing-function: ease-in;
+  animation-duration: 1250ms;
 }
 
 svg#logo path:nth-child(2)  {
-  animation-delay: 1.5s;
-}
-
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
+  animation-delay: 1000ms;
+  animation-timing-function: ease-out;
+  animation-duration: 1500ms;
 }
 
