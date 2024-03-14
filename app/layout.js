@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
     lang="en"
     className={cx(
       inter.className,
-      'bg-zinc-50 text-zinc-700 dark:bg-zinc-950 dark:text-zinc-300')}>
+      'bg-white text-zinc-700 dark:bg-black dark:text-zinc-300')}>
 
       <body className="antialiased w-full flex justify-center">{children}</body>
     </html>
