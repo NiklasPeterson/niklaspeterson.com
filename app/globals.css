@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .btn-primary {
+    @apply text-sm font-medium rounded-full h-10 px-5 py-3 flex gap-1 items-center text-zinc-50 bg-zinc-900 hover:bg-zinc-700 focus:outline-none focus:ring-4 focus:ring-zinc-300 dark:text-zinc-950 dark:bg-zinc-50 dark:hover:bg-zinc-200 dark:focus:ring-zinc-100;
+  }
+  .btn-secondary {
+    @apply text-sm font-medium rounded-full h-10 px-5 py-3 flex gap-1 items-center border border-zinc-900 text-zinc-950 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-zinc-200 dark:text-zinc-50 dark:border-zinc-50 dark:hover:bg-zinc-900 dark:focus:ring-zinc-700;
+  }
+}
+
 @keyframes draw {
   to {
     stroke-dashoffset: 0;
