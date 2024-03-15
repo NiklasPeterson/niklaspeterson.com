@@ -156,7 +156,7 @@ export default function Home() {
       <Motion className='flex w-full flex-col gap-10 relative px-4 py-20 lg:px-20 md:py-32'>
           <div className='flex flex-col gap-20 md:justify-between md:flex-row'>
             <div className='flex flex-col gap-4'>
-              <h2 className='text-4xl md:text-6xl leading-tight font-bold text-zinc-950 dark:text-zinc-50 max-w-xl'>Let's get to know each other!</h2>
+              <h2 className='text-4xl md:text-6xl leading-tight font-bold text-zinc-950 dark:text-zinc-50 max-w-xl'>Let&apos;s get to know each other!</h2>
               <p className='text-lg md:text-xl'>
                 Feel free to shoot me a message anytime— <br />
                 I&apos;m all ears for cool and creative ideas!
