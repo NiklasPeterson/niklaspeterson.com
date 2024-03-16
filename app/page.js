@@ -33,7 +33,7 @@ export default function Home() {
         </a>
       </nav>
 
-      <Motion className='flex flex-col justify-center gap-4 px-4 h-[640px] lg:px-20 md:py-32 md:h-[720px]'>
+      <Motion className='flex flex-col justify-center gap-4 px-4 h-[560px] sm:h-[640px] lg:px-20 md:py-32 md:h-[720px]'>
         <div className="absolute top-0 left-0 right-0 -z-10 blur-[120px] max-w-full overflow-hidden flex justify-center"><LottieAnimation /></div>
         <h1 className='text-4xl md:text-[64px] font-bold leading-tight text-zinc-950 dark:text-zinc-50 max-w-4xl'>Bringing creativity to life through pixels and code</h1>
         <p className='text-xl md:text-2xl'>Niklas Peterson, <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Product Designer</span> and founder from Sweden</p>
@@ -41,7 +41,7 @@ export default function Home() {
 
       <section className='flex flex-wrap gap-12 px-4 pb-20 lg:px-20 md:pb-32'>
 
-        <Motion className='group flex flex-col w-full h-[320px] sm:h-[480px] md:h-[640px]'>
+        <Motion className='group flex flex-col w-full h-[320px] sm:h-[480px] md:h-[640px] xl:h-[720px]'>
           <a className='group flex flex-col gap-4 w-full h-full' href='https://musho.ai' target='_blank' rel='noopener'>
             <div className='rounded-2xl md:rounded-3xl overflow-hidden relative h-full'>
               <Image
@@ -65,7 +65,7 @@ export default function Home() {
           </a>
         </Motion>
 
-        <Motion className="flex w-full h-[400px] sm:h-[560px] md:flex-1">
+        <Motion className="flex w-full h-[400px] sm:h-[560px] xl:h-[640px] md:flex-1">
           <a href='https://apps.apple.com/app/hydrify/id6450311759' target='_blank' rel='noopener' className='group flex flex-col gap-4 w-full h-full'>
             <div className='rounded-2xl md:rounded-3xl overflow-hidden relative h-full'>
               <Image
@@ -89,7 +89,7 @@ export default function Home() {
           </a>
         </Motion>
 
-        <Motion className="flex w-full h-[400px] sm:h-[560px] md:flex-1">
+        <Motion className="flex w-full h-[400px] sm:h-[560px] xl:h-[640px] md:flex-1">
           <a href='https://apps.apple.com/app/titls/id1579078964' target='_blank' rel='noopener' className='group flex flex-col gap-4 w-full h-full'>
             <div className='rounded-xl md:rounded-3xl overflow-hidden relative h-full'>
               <Image
