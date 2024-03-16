@@ -14,7 +14,7 @@ export default function Home() {
       loop
       mode="normal"
       src="/animation.json"
-      style={{ width: "1440px", height: "800px" }}
+      style={{ minWidth: "1440px", width: "1440px", height: "800px" }}
     ></lottie-player>
   );
 }
