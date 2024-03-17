@@ -6,9 +6,9 @@ import MotionDown from './components/MotionDown';
 export default function Home() {
 
   return (
-    <main className="w-full max-w-7xl flex flex-col">
+    <main className="w-full max-w-[1440px] flex flex-col">
 
-      <MotionDown className="w-full max-w-7xl flex items-center justify-between py-4 px-4 lg:px-20 t-0 absolute">
+      <MotionDown className="w-full max-w-[1440px] flex items-center justify-between py-4 px-4 lg:px-20 t-0 absolute">
         <svg className='text-zinc-950 dark:text-zinc-50' id="logo" width="58" height="40" viewBox="0 0 58 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d='M1 36C5.27925 30.0845 23 9.95764 18.6834 9.97834C14.3668 9.99904 2.16421 36 11.6037 36C19.1239 36 26.707 12.3068 29.3501 5.95081'
@@ -143,13 +143,14 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='relative h-[320px] w-full sm:h-[400] sm:w-[320px]'>
+        <div className='relative h-[320px] w-full sm:h-[400px] sm:w-[320px]'>
           <Image
             className='rounded-2xl md:rounded-3xl'
             src="/niklas-peterson.jpg"
             alt="Picture of Niklas Peterson"
             fill={true}
             style={{ objectFit: "cover" }}
+            unoptimized
           />
         </div>
       </Motion>
