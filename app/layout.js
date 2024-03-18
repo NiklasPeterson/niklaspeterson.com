@@ -5,12 +5,12 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   metadataBase: new URL('https://niklaspeterson.com'),
-  title: 'Niklas Peterson',
-  description: 'Product Designer from Sweden.',
+  title: 'Niklas Peterson—Product Designer and founder',
+  description: 'Niklas Peterson, Product Designer and founder from Sweden. Who brings creativity to life through pixels and code.',
   openGraph: {
-    title: 'Niklas Peterson',
-    description: 'Designer and creator.',
-    url: 'https://niklaspeterson.co',
+    title: 'Niklas Peterson—Product Designer and founder',
+    description: 'Niklas Peterson, Product Designer and founder from Sweden. Who brings creativity to life through pixels and code.',
+    url: 'https://niklaspeterson.com',
     siteName: 'Niklas Peterson',
     locale: 'en_US',
     type: 'website',
@@ -27,8 +27,8 @@ export const metadata = {
     },
   },
   twitter: {
-    title: 'Niklas Peterson',
-    // card: 'summary_large_image',
+    title: 'Niklas Peterson—Product Designer and founder',
+    description: 'Niklas Peterson, Product Designer and founder from Sweden. Who brings creativity to life through pixels and code.',
   }
 }
 
