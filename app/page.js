@@ -61,7 +61,7 @@ export default function Home() {
 
             <div className='flex flex-col gap-1 max-w-2xl'>
               <h4 className="font-bold text-xl text-zinc-950 dark:text-zinc-50">Musho</h4>
-              <p className='text-md md:text-lg'>Musho turns your prompts into nearly-complete, dev-ready websites with simple layouts, great copy, and gorgeous images.</p>
+              <p className='text-md md:text-lg'>Turns prompts into nearly-complete, dev-ready websites with simple layouts, great copy, and gorgeous images.</p>
             </div>
           </a>
         </Motion>
