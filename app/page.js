@@ -186,9 +186,6 @@ export default function Home() {
               ))}
             </div>
 
-
-
-
             <div className='flex flex-col gap-6'>
               <div className='uppercase text-xs font-normal tracking-widest text-zinc-700 dark:text-zinc-300'>Contact</div>
 
