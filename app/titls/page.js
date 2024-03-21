@@ -2,6 +2,11 @@ import Image from 'next/image'
 import LottieAnimation from '../components/LottieAnimation';
 import Motion from '../components/Motion';
 
+export const metadata = {
+  title: 'Titls',
+  description: 'organize your iOS home screens',
+}
+
 export default function Home() {
 
   return (
