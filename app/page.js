@@ -50,6 +50,7 @@ export default function Home() {
                 src="/musho.png"
                 alt="Musho"
                 fill={true}
+                priority={true}
                 style={{ objectFit: "cover" }}
               />
               <div className='flex items-center justify-center w-12 h-12 rounded-xl text-zinc-950 bg-zinc-50 absolute top-4 right-4 rotate-45 opacity-0 transition duration-300 group-hover:opacity-100 group-hover:rotate-0 group-hover:scale-105'>
