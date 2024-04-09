@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import { Inter } from 'next/font/google'
@@ -46,6 +47,7 @@ export default function RootLayout({ children }) {
 
       <body className="antialiased w-full flex justify-center">
         {children}
+        <Analytics />
         <SpeedInsights />
         </body>
     </html>
