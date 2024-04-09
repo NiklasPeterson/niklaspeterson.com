@@ -1,3 +1,5 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -42,7 +44,10 @@ export default function RootLayout({ children }) {
         inter.className,
         'bg-white text-zinc-700 dark:bg-black dark:text-zinc-300')}>
 
-      <body className="antialiased w-full flex justify-center">{children}</body>
+      <body className="antialiased w-full flex justify-center">
+        {children}
+        <SpeedInsights />
+        </body>
     </html>
   )
 }
