@@ -37,10 +37,10 @@ const cx = (...classes) => classes.filter(Boolean).join(' ');
 export default function RootLayout({ children }) {
   return (
     <html
-    lang="en"
-    className={cx(
-      inter.className,
-      'bg-white text-zinc-700 dark:bg-black dark:text-zinc-300')}>
+      lang="en"
+      className={cx(
+        inter.className,
+        'bg-white text-zinc-700 dark:bg-black dark:text-zinc-300')}>
 
       <body className="antialiased w-full flex justify-center">{children}</body>
     </html>

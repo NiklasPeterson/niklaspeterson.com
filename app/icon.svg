@@ -1,9 +1,0 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-<style>
-    @media (prefers-color-scheme: dark) {
-     .f { stroke: #ffffff }
-     }
-   </style>
-<path class="f" d="M40 384C74.234 336.676 216 175.827 181.467 175.827C146.934 175.827 49.3137 384 124.83 384C184.991 384 245.656 194.454 266.8 143.606" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
-<path class="f" d="M351.641 204.699C340.02 264.482 306.835 383.924 265.805 383.924C214.454 383.924 232.326 155.865 387.386 130.441C512.239 110.052 534.139 221.816 264.546 300.856" stroke="#000000" stroke-width="16" stroke-linecap="round"/>
-</svg>
