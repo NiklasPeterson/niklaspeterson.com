@@ -223,7 +223,7 @@ export default function Home() {
             ))}
           </div>
 
-          <small className='text-sm'><Link href="/">© 2024 Niklas Peterson</Link></small>
+          <small className='text-sm'><Link href="/">© {new Date().getFullYear()} Niklas Peterson</Link></small>
 
         </div>
         <div className="h-full absolute bottom-0 left-0 right-0 -z-10 blur-[120px] rotate-180 max-w-full overflow-hidden flex justify-center"><LottieAnimation /></div>
