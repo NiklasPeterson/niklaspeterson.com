@@ -10,11 +10,11 @@
     @apply transition-colors ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center border border-zinc-400 text-zinc-950 hover:bg-zinc-200 dark:border-zinc-600 dark:text-zinc-50 dark:hover:bg-zinc-800;
   }
   .btn-ghost {
-    @apply transition-colors ease-out font-medium px-5 py-3 rounded-full flex gap-1 text-zinc-950 hover:bg-zinc-200 dark:text-zinc-50 dark:hover:bg-zinc-800;
+    @apply transition-colors ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center text-zinc-950 hover:bg-zinc-200 dark:text-zinc-50 dark:hover:bg-zinc-800;
   }
  
   .btn-link {
-    @apply transition-colors ease-out font-medium flex gap-2 text-zinc-950 hover:text-zinc-400 dark:text-zinc-50 dark:hover:text-zinc-600;
+    @apply transition-colors ease-out font-medium flex gap-2 items-center text-zinc-950 hover:text-zinc-400 dark:text-zinc-50 dark:hover:text-zinc-600;
   }
 }
 
