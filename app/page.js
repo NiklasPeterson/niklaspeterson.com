@@ -38,7 +38,7 @@ export default function Home() {
       <MotionDown className='flex flex-col justify-center gap-4 px-4 h-[560px] sm:h-[640px] lg:px-20 md:py-32 md:h-[720px]'>
         <div className="absolute top-0 left-0 right-0 -z-10 blur-[120px] max-w-full overflow-hidden flex justify-center"><LottieAnimation /></div>
         <h1 className='text-4xl md:text-[64px] font-bold leading-tight text-zinc-950 dark:text-zinc-50 max-w-4xl'>Bringing creativity to life through pixels and code</h1>
-        <p className='text-xl md:text-2xl'>Niklas Peterson, <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Product Designer</span> and founder from Sweden</p>
+        <p className='text-xl md:text-2xl'>Niklas Peterson, <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Product Designer</span> and creator from Sweden</p>
       </MotionDown>
 
       <section className='flex flex-wrap gap-12 px-4 pb-20 lg:px-20 md:pb-32'>
