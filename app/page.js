@@ -123,7 +123,7 @@ export default function Home() {
           <div className='flex flex-col gap-4'>
             <h3 className='text-4xl md:text-6xl leading-tight font-bold text-zinc-950 dark:text-zinc-50'>About me</h3>
             <p className='text-lg md:text-xl'>
-              I&apos;m <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Niklas Peterson</span>, a father of two, passionate about digital design, technology and innovation. I work as a <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Product Designer</span> at <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Bueno</span>, focusing on <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Musho.ai</span>, our Figma plugin that leverages AI to jumpstart your designs, letting you concentrate on those final touches.
+              I&apos;m <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Niklas Peterson</span>, a father of two, passionate about digital design, technology and innovation.
               <br /><br />
               Outside work, you&apos;ll find me cherishing quality time with my family. In my free moments, I enjoy exploring design and coding. I&apos;ve created two iOS apps, <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Hydrify</span> and <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Titls</span>. These are personal projects that let me scratch that creative itch by seamlessly blending design, development, and tech.</p>
           </div>
