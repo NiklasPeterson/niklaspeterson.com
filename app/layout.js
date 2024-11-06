@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: "Niklas Peterson — Product Designer and creator",
-  description: "Niklas Peterson, Product Designer and creator from Sweden. Who brings creativity to life through pixels and code.",
+  description: "Niklas Peterson, Product Designer and creator from Sweden. Who brings digital products to life through pixels and code.",
 };
 
 export default function RootLayout({ children }) {
