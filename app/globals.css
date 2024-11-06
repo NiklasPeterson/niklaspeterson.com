@@ -108,62 +108,6 @@ svg#logo path:nth-child(2) {
   animation-duration: 1.5s
 }
 
-.modal {
-  position: fixed;
-  background: rgba(0,0,0,0.25);
-  z-index: 10;
-  top:0;
-  right: 0;
-  bottom:0;
-  left:0;
-  height: 100vh;
-  width: 100vw;
-  overflow: auto;
-
-  @media (min-width: 768px) {
-    padding: 16px;
-  }
-}
-
-.modal-content {
-  min-height:100%;
-  @media (min-width: 768px) {
-    min-height: auto;
-  
-    @media (prefers-color-scheme: dark) {
-        border: 1px solid #333;
-    }
-  }
-}
-
-.gallery-images {
-  @media (min-width: 768px) {
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-  }
-
-  img {
-    width: 100%;
-    object-fit: contain;
-  }
-
-  div {
-    @media (min-width: 768px) {
-      scroll-snap-align: center;
-    }
-  }
-  
-  img,
-  video {
-    max-height: 60vh; /* Allow image to be as tall as the viewport */
-    width: auto; /* Maintain aspect ratio */
-    max-width: calc(100vw - 32px);
-    @media (min-width: 768px) {
-      max-width: 80vw; /* Limit image width to viewport width */
-    }
-  }
-}
-
 /* Animations */
 @keyframes fadeSlideIn {
   0% {
