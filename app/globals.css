@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
 @layer components {
   .btn-primary {
     @apply transition-colors ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center bg-zinc-900 text-zinc-50 hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-300;
@@ -19,9 +37,55 @@
 }
 
 
+.btn-link {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(9 9 11/var(--tw-text-opacity));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-duration: .15s;
+  transition-timing-function:cubic-bezier(0, 0, .2, 1)
+}
+
+.btn-link:hover {
+  --tw-text-opacity: 1;
+  color:rgb(161 161 170/var(--tw-text-opacity))
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-link {
+    --tw-text-opacity: 1;
+    color:rgb(250 250 250/var(--tw-text-opacity))
+  }
+
+  .btn-link:hover {
+    --tw-text-opacity: 1;
+    color:rgb(82 82 91/var(--tw-text-opacity))
+  }
+}
+
+/* custom CSS */
+
+.f-1-1-40 {
+  flex: 1 1 40%;
+}
+
+.styledBorder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgb(255 255 255 / 5%);
+  pointer-events: none;
+  z-index: 1;
+  border-radius: inherit;
+}
+
 @keyframes draw {
   to {
-    stroke-dashoffset: 0;
+      stroke-dashoffset:0
   }
 }
 
@@ -30,16 +94,141 @@ svg#logo path {
   animation-iteration-count: 1;
   animation-name: draw;
   stroke-dasharray: 160;
-  stroke-dashoffset: 160;
+  stroke-dashoffset: 160
 }
 
-svg#logo path:nth-child(1) {
+svg#logo path:first-child {
   animation-timing-function: ease-in;
-  animation-duration: 1250ms;
+  animation-duration: 1.25s
 }
 
-svg#logo path:nth-child(2)  {
-  animation-delay: 1000ms;
+svg#logo path:nth-child(2) {
+  animation-delay: 1s;
   animation-timing-function: ease-out;
-  animation-duration: 1500ms;
+  animation-duration: 1.5s
+}
+
+.modal {
+  position: fixed;
+  background: rgba(0,0,0,0.25);
+  z-index: 10;
+  top:0;
+  right: 0;
+  bottom:0;
+  left:0;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+
+  @media (min-width: 768px) {
+    padding: 16px;
+  }
+}
+
+.modal-content {
+  min-height:100%;
+  @media (min-width: 768px) {
+    min-height: auto;
+  
+    @media (prefers-color-scheme: dark) {
+        border: 1px solid #333;
+    }
+  }
+}
+
+.gallery-images {
+  @media (min-width: 768px) {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  div {
+    @media (min-width: 768px) {
+      scroll-snap-align: center;
+    }
+  }
+  
+  img,
+  video {
+    max-height: 60vh; /* Allow image to be as tall as the viewport */
+    width: auto; /* Maintain aspect ratio */
+    max-width: calc(100vw - 32px);
+    @media (min-width: 768px) {
+      max-width: 80vw; /* Limit image width to viewport width */
+    }
+  }
+}
+
+/* Animations */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Fade-in and slide-up */
+.fade-slide-in {
+  animation: fadeSlideIn 0.25s ease-in-out forwards;
+}
+
+/* Fade-out and slide-down */
+.fade-slide-out {
+  animation: fadeSlideOut 0.25s ease-in-out forwards;
+}
+
+/* Staggered animations for each element */
+@keyframes fadeSlideInSequential {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gallery Header */
+.fadeSlideInSequential-delay-0 {
+  animation: fadeSlideInSequential 0.5s ease-in-out forwards;
+  animation-delay: 0s; /* No delay for the first element */
+}
+
+/* Gallery Text */
+.fadeSlideInSequential-delay-01 {
+  animation: fadeSlideInSequential 0.5s ease-in-out forwards;
+  animation-delay: 0.1s; /* Delayed after gallery images */
+}
+
+/* Gallery Images */
+.fadeSlideInSequential-delay-02 {
+  animation: fadeSlideInSequential 0.5s ease-in-out forwards;
+  animation-delay: 0.2s; /* Delayed after gallery header */
+}
+
+@media (min-width: 768px) {
+    .md\:flex-1-1-40 {
+        flex: 1 1 40%;
+    }
 }

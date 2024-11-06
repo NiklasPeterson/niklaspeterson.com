@@ -1,0 +1,147 @@
+[
+  {
+    "title": "Lummi Figma plugin",
+    "description": "Designed the Lummi Figma plugin with a focus on usability, simplicity, and ease of use, while ensuring it consistently reflected the Lummi web experience. Key features of the plugin include quick image insertion, the ability to randomly insert multiple images, and components such as the home feed, categories, filters, and creator profiles.",
+    "url": "https://www.figma.com/community/plugin/1326615072959029075/lummi",
+    "attachments": [
+      {
+        "type": "image",
+        "url": "/lummi-plugin.png",
+        "alt": "Image showing Lummi's Figma plugin",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "type": "video",
+        "url": "/lummi-plugin.mp4",
+        "alt": "",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "company": "Blush Design Inc.",
+    "year": 2024
+  },
+  {
+    "title": "Lummi web",
+    "description": "Designed and implemented the Lummi design system, ensuring consistency and usability across the product. Contributed to major features of the platform, such as filters, image detail view, and upload flow, among others, with a focus on creating a cohesive and efficient user experience throughout the entire product.",
+    "url": "https://lummi.ai/",
+    "attachments": [
+      {
+        "type": "image",
+        "url": "/lummi-startpage.png",
+        "alt": "Image showing the startpage of Lummi",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "type": "image",
+        "url": "/lummi-detail-page.png",
+        "alt": "Image showing the detail page of a photograph",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "type": "image",
+        "url": "/lummi-creator-profile.png",
+        "alt": "Image showing the creator profile page",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "type": "video",
+        "url": "/lummi.mp4",
+        "alt": "",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "company": "Blush Design Inc.",
+    "year": 2024
+  },
+  {
+    "title": "Musho",
+    "description": "Led the design of the Musho website, incorporating interactive elements and animations to enhance user engagement and overall user experience. Contributed to shaping the brand identity by refining the visual style, color palette, and typography, ensuring a cohesive and recognizable look across all touchpoints. Focused on creating a seamless, visually appealing interface that aligns with the brand values and goals.",
+    "url": "https://musho.ai/",
+    "attachments": [
+      {
+        "type": "image",
+        "url": "/musho.png",
+        "alt": "Image showing the UI for Musho's website ",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "type": "video",
+        "url": "/musho.mov",
+        "alt": "",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "type": "image",
+        "url": "/musho-grid-1.png",
+        "alt": "Image showing the full website in a grid part 1",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "type": "image",
+        "url": "/musho-grid-2.png",
+        "alt": "Image showing the full website in a grid part 2",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "company": "Blush Design Inc.",
+    "year": 2023
+  },
+  {
+    "title": "Musho Figma Plugin",
+    "description": "Created various components and views of the Figma plugin. Additionally, designed a concept for the plugin to use a chat-based AI interface instead of an action-based approach.",
+    "url": "https://www.figma.com/community/plugin/1302057916867700387/musho-ai",
+    "attachments": [
+      {
+        "type": "video",
+        "url": "/musho-plugin.mov",
+        "alt": "",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "company": "Blush Design Inc.",
+    "year": 2023
+  },
+  {
+    "title": "Buenoverse",
+    "description": "Designed the UI for avatar selection in Buenoverse, creating an intuitive, visually appealing interface for players and explorers. The design prioritizes ease of use and flexibility, enabling seamless avatar customization with advanced tools and dynamic visuals. I ensured smooth navigation, interactive feedback, and a cohesive aesthetic to enhance the user experience and foster creativity.",
+    "url": "https://worlds.bueno.art/",
+    "attachments": [
+      {
+        "type": "video",
+        "url": "/buenoverse.mov",
+        "alt": "",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "company": "Blush Design Inc.",
+    "year": 2023
+  },
+  {
+    "title": "Bueno Drops Figma Plugin",
+    "description": "As the lead designer for the Bueno Drops Figma Plugin, I was responsible for creating an intuitive user experience that allows artists to easily convert their designs in Figma into digital art without the need for coding. I streamlined the user flow, crafted a clean and accessible UI, and optimized the integration with Figma to ensure creators could launch digital collectibles in just a few clicks. My work focused on simplifying the process for both Open and Limited Edition drops, making digital collectibles creation fast and accessible for users of all skill levels.",
+    "url": "https://www.figma.com/community/plugin/1271396551618777105/bueno-drops",
+    "attachments": [
+      {
+        "type": "video",
+        "url": "/bueno-drops.mov",
+        "alt": "",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "company": "Blush Design Inc.",
+    "year": 2023
+  }
+]
