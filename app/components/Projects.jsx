@@ -146,9 +146,9 @@ function ProjectContent({ project, onOpen }) {
       })}
 
       <div className="flex flex-col gap-1 max-w-2xl">
-        <h4 className="font-bold text-xl text-zinc-950 dark:text-zinc-50">
+        <div className="font-bold text-xl text-zinc-950 dark:text-zinc-50">
           {project.title}
-        </h4>
+        </div>
 
         <div className="text-md md:text-lg line-clamp-2">
           {project.description}
