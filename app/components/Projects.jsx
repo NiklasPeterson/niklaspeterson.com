@@ -94,7 +94,7 @@ export default function Projects() {
                 <div key={i} className="relative md:snap-center">
                   {attachment.type === 'image' ? (
                       <Image
-                        className="rounded-lg max-h-[60vh] max-w-[calc(100vw-32px)] md:max-w-[80vw]"
+                        className="rounded-lg w-auto max-h-[60vh] max-w-[calc(100vw-32px)] md:max-w-[80vw]"
                         src={attachment.url}
                         alt={attachment.alt}
                         height={attachment.height}
@@ -102,7 +102,7 @@ export default function Projects() {
                       />
                   ) : (
                     <video
-                      className="rounded-lg max-h-[60vh] max-w-[calc(100vw-32px)] md:max-w-[80vw]"
+                      className="rounded-lg w-auto max-h-[60vh] max-w-[calc(100vw-32px)] md:max-w-[80vw]"
                       src={attachment.url}
                       height={attachment.height}
                       width={attachment.width}
