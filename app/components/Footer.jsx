@@ -9,7 +9,7 @@ export default function Footer() {
         <div className='flex flex-col gap-4'>
           <h2 className='text-4xl md:text-6xl leading-tight font-bold text-zinc-950 dark:text-zinc-50 max-w-xl'>Let&apos;s get to know each other!</h2>
           <p className='text-lg md:text-xl'>
-            Feel free to shoot me a message anytime— <br />
+            Feel free to drop me a message anytime— <br />
             I&apos;m all ears for cool and creative ideas!
           </p>
           <div className='flex gap-2 text-zinc-950 dark:text-zinc-50'>
