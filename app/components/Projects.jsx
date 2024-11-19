@@ -34,7 +34,7 @@ export default function Projects() {
         if (project.attachments.length < 1) { return null; }
 
         return (
-          <Motion key={index} className="group flex flex-col md:flex-1-1-40">
+          <Motion key={index} className="group cursor-pointer flex flex-col md:flex-1-1-40">
             <ProjectContent project={project} onOpen={openProject} />
           </Motion>
         )
