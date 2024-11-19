@@ -33,7 +33,7 @@ export default function Header() {
 
       <Motion position="down" className='flex flex-col justify-center gap-4 px-4 max-w-5xl h-[560px] sm:h-[640px] lg:px-20 md:py-32 md:h-[720px]'>
         <div className="absolute top-0 left-0 right-0 -z-10 blur-[120px] max-w-full overflow-hidden flex justify-center"><LottieAnimation /></div>
-        <div className="flex rounded-2xl gap-1 items-center bg-zinc-200 dark:bg-zinc-800 w-fit py-1 px-3">
+        <div className="hidden rounded-2xl gap-1 items-center bg-zinc-200 dark:bg-zinc-800 w-fit py-1 px-3">
           <div className="rounded-2xl w-3 h-3 bg-red-500"></div>
           <span className="mx-1 text-zinc-950 dark:text-zinc-50">Not open for work</span>
         </div>
