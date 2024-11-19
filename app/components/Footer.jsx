@@ -49,7 +49,7 @@ export default function Footer() {
           <div className='flex items-start flex-col gap-6'>
             <div className='uppercase text-xs font-normal tracking-widest text-zinc-600 dark:text-zinc-300'>Contact</div>
             {[
-              ['1', 'Mail', 'mailto:hello@niklaspeterson.com'],
+              ['1', 'Mail', 'mailto:mail@niklaspeterson.com'],
               ['2', 'x.com', 'https://x.com/niklas_peterson'],
               ['3', 'LinkedIn', 'https://www.linkedin.com/in/niklaspeterson'],
             ].map(([key, title, url]) => (
