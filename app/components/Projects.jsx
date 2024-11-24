@@ -29,6 +29,7 @@ export default function Projects() {
   };
 
   return (
+    <>
     <div className='flex flex-wrap gap-12 px-4 pb-20 lg:px-20 md:pb-32'>
       {projects.map((project, index) => {
         if (project.attachments.length < 1) { return null; }
@@ -39,12 +40,13 @@ export default function Projects() {
           </Motion>
         )
       })}
+    </div>
 
-      {selectedProject && (
-        <div className="fixed bg-black bg-opacity-25 backdrop-blur-lg z-10 top-0 right-0 bottom-0 left-0 h-svh w-svw overflow-auto md:p-4">
+    {selectedProject && (
+        <div className="fixed bg-black bg-opacity-25 backdrop-blur-lg z-10 top-0 right-0 bottom-0 left-0 h-screen w-screen overflow-auto md:p-4">
           <div className="min-h-full flex flex-col rounded-2xl py-6 md:py-10 gap-10 bg-white dark:bg-black opacity-0 dark:md:border dark:md:border-zinc-800 fade-slide-in">
 
-            <div className="flex flex-col gap-6 md:gap-10 px-4 md:px-10">
+            <div className="flex flex-col gap-6 md:gap-8 px-4 md:px-10">
 
               <div className="flex justify-between items-center">
                 <h3 className="font-bold text-2xl md:text-4xl text-zinc-950 dark:text-zinc-50">
@@ -120,8 +122,7 @@ export default function Projects() {
           </div>
         </div>
       )}
-
-    </div>
+    </>
   );
 }
 
