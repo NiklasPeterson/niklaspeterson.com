@@ -11,7 +11,7 @@ export default function About() {
           <p className='text-lg md:text-xl'>
             I&apos;m <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Niklas Peterson</span>, a father of two, passionate about digital design, technology and innovation.
             <br /><br />
-            Outside work, you&apos;ll find me cherishing quality time with my family. In my free moments, I enjoy exploring design and coding. I&apos;ve created two iOS apps, <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Hydrify</span> and <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Titls</span>. These are personal projects that let me scratch that creative itch by seamlessly blending design, development, and tech.</p>
+            Outside work, you&apos;ll find me cherishing quality time with my family. In my free moments, I enjoy exploring design and coding. I&apos;ve created two iOS apps, <a href="https://apps.apple.com/app/hydrify/id6450311759" target="_blank"  className='font-semibold underline text-zinc-950 dark:text-zinc-50'>Hydrify</a> and <a href="https://apps.apple.com/app/titls/id1579078964" target="_blank" className='font-semibold underline text-zinc-950 dark:text-zinc-50'>Titls</a>. These are personal projects that let me scratch that creative itch by seamlessly blending design, development, and tech.</p>
         </div>
         <div className="flex gap-2">
           <a href="https://www.buymeacoffee.com/niklaspeterson" target="_blank" className="h-10 text-sm btn-primary">
