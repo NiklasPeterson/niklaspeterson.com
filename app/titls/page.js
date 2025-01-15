@@ -105,7 +105,7 @@ export default function Home() {
             ))}
           </div>
 
-          <small className='text-sm'>© 2024 Niklas Peterson</small>
+          <small className='text-sm'>© 2024 <a href="https://niklaspeterson.com">Niklas Peterson</a></small>
 
         </div>
       </Motion>
