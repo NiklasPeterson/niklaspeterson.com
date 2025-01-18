@@ -69,10 +69,6 @@ body {
 
 /* custom CSS */
 
-.f-1-1-40 {
-  flex: 1 1 40%;
-}
-
 .styledBorder::after {
   content: '';
   position: absolute;
