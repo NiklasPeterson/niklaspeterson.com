@@ -3,6 +3,11 @@
 import Image from 'next/image';
 import Motion from '../components/Motion';
 
+export const metadata = {
+  title: "Niklas Peterson — Titls",
+  description: "Titls is a small iOS app that lets you create titles and then use widgets to organize your iOS home screens",
+};
+
 export default function Home() {
 
   return (
@@ -21,7 +26,7 @@ export default function Home() {
         </a>
       </Motion>
 
-      <Motion className='flex w-full justify-between px-4 my-20 gap-10 flex-col-reverse md:flex-row lg:gap-40 lg:px-20 md:my-32'>
+      <Motion className='flex w-full justify-between px-4 my-20 gap-10 flex-col md:flex-row lg:gap-40 lg:px-20 md:my-32'>
         <div className='flex flex-col justify-center gap-4 px-4'>
           {/* <div className="absolute top-0 left-0 right-0 -z-10 blur-[120px] max-w-full overflow-hidden flex justify-center"><LottieAnimation /></div> */}
           <h1 className='text-4xl md:text-[64px] font-bold leading-tight text-zinc-950 dark:text-zinc-50 max-w-4xl'>Titls, organize your <br /> home screens</h1>
@@ -76,7 +81,7 @@ export default function Home() {
           </a>
         </div>
         <video
-          className='rounded-[20px] overflow-hidden border border-zinc-100 dark:border-zinc-900 h-[320px] sm:h-[560px]'
+          className='rounded-[20px] overflow-hidden h-[320px] sm:h-[560px]'
           playsInline
           muted
           autoPlay
