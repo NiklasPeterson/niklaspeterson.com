@@ -26,8 +26,8 @@ export default function Home() {
         </a>
       </Motion>
 
-      <Motion className='flex w-full justify-between px-4 my-20 gap-10 flex-col md:flex-row lg:gap-40 lg:px-20 md:my-32'>
-        <div className='flex flex-col justify-center gap-4 px-4'>
+      <Motion className='flex w-full justify-between items-center px-4 my-20 gap-10 flex-col md:flex-row lg:gap-40 lg:px-20 md:my-32'>
+        <div className='flex flex-col justify-center gap-4 px-4 h-[400px] sm:h-[640px]md:h-[720px]'>
           {/* <div className="absolute top-0 left-0 right-0 -z-10 blur-[120px] max-w-full overflow-hidden flex justify-center"><LottieAnimation /></div> */}
           <h1 className='text-4xl md:text-[64px] font-bold leading-tight text-zinc-950 dark:text-zinc-50 max-w-4xl'>Titls, organize your <br /> home screens</h1>
           <p className='text-xl md:text-2xl'>Titls is a small iOS app that lets you create titles and then <br /> use widgets to organize your iOS home screens.</p>
