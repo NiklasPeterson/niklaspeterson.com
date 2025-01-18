@@ -1,6 +1,4 @@
 
-// import LottieAnimation from '../components/LottieAnimation';
-import Image from 'next/image';
 import Motion from '../components/Motion';
 
 export const metadata = {
@@ -19,7 +17,7 @@ export default function Home() {
         </svg>
 
         <a href='mailto:titls@niklaspeterson.com' className='text-base font-medium rounded-full px-5 py-3 flex gap-1 items-center text-zinc-50 bg-zinc-900 hover:bg-zinc-700 focus:outline-none focus:ring-4 focus:ring-zinc-300 dark:text-zinc-950 dark:bg-zinc-50 dark:hover:bg-zinc-200 dark:focus:ring-zinc-100'>
-          <span className='mx-1'>Contact</span>
+          <span className='mx-1'>Support</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z" />
           </svg>
@@ -28,7 +26,6 @@ export default function Home() {
 
       <Motion className='flex w-full justify-between items-center px-4 mt-20  flex-col md:flex-row lg:gap-40 lg:px-20 md:my-32'>
         <div className='flex flex-col justify-center gap-4 px-4 items-center h-[400px] sm:h-[640px]md:h-[720px] md:items-start'>
-          {/* <div className="absolute top-0 left-0 right-0 -z-10 blur-[120px] max-w-full overflow-hidden flex justify-center"><LottieAnimation /></div> */}
           <h1 className='text-4xl md:text-[64px] font-bold leading-tight text-zinc-950 dark:text-zinc-50 max-w-4xl text-center md:text-start'>Titls, organize your <br /> home screens</h1>
           <p className='text-xl md:text-2xl text-center md:text-start'>Titls is a small iOS app that lets you create titles and then <br /> use widgets to organize your iOS home screens.</p>
           <a href="https://apps.apple.com/app/titls/id1579078964" className='w-fit'>
