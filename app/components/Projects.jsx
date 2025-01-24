@@ -43,8 +43,8 @@ export default function Projects() {
     </div>
 
     {selectedProject && (
-        <div className="fixed bg-black bg-opacity-25 backdrop-blur-lg z-10 top-0 right-0 bottom-0 left-0 h-screen w-screen overflow-auto md:p-4">
-          <div className="min-h-full flex flex-col rounded-2xl py-6 md:py-10 gap-10 bg-white dark:bg-black opacity-0 dark:md:border dark:md:border-zinc-800 fade-slide-in">
+        <div className="fixed bg-white/25 dark:bg-black/25 backdrop-blur-lg z-10 top-0 right-0 bottom-0 left-0 h-screen w-screen overflow-auto md:p-4">
+          <div className="min-h-full flex flex-col rounded-2xl py-6 md:py-10 gap-10 opacity-0 md:border border-zinc-200 bg-white dark:bg-black dark:md:border-zinc-800 fade-slide-in">
 
             <div className="flex flex-col gap-6 md:gap-8 px-4 md:px-10">
 
