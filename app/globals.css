@@ -149,12 +149,12 @@ svg#logo path:nth-child(2) {
 
 /* Fade-in and slide-up */
 .fade-slide-in {
-  animation: fadeSlideIn 0.25s ease-in-out forwards;
+  animation: fadeSlideIn 0.25s ease-out forwards;
 }
 
 /* Fade-out and slide-down */
 .fade-slide-out {
-  animation: fadeSlideOut 0.25s ease-in-out forwards;
+  animation: fadeSlideOut 0.25s ease-out forwards;
 }
 
 /* Staggered animations for each element */
@@ -171,19 +171,19 @@ svg#logo path:nth-child(2) {
 
 /* Gallery Header */
 .fadeSlideInSequential-delay-0 {
-  animation: fadeSlideInSequential 0.5s ease-in-out forwards;
+  animation: fadeSlideInSequential 0.5s ease-out forwards;
   animation-delay: 0s; /* No delay for the first element */
 }
 
 /* Gallery Text */
 .fadeSlideInSequential-delay-01 {
-  animation: fadeSlideInSequential 0.5s ease-in-out forwards;
+  animation: fadeSlideInSequential 0.5s ease-out forwards;
   animation-delay: 0.1s; /* Delayed after gallery images */
 }
 
 /* Gallery Images */
 .fadeSlideInSequential-delay-02 {
-  animation: fadeSlideInSequential 0.5s ease-in-out forwards;
+  animation: fadeSlideInSequential 0.5s ease-out forwards;
   animation-delay: 0.2s; /* Delayed after gallery header */
 }
 
