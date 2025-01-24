@@ -1,6 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 /* :root {
   --background: #ffffff;
@@ -20,22 +41,21 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 } */
 
-@layer components {
-  .btn-primary {
-    @apply transition-colors ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center bg-zinc-900 text-zinc-50 hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-300;
-  }
-  .btn-secondary {
-    @apply transition-colors ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center border border-zinc-400 text-zinc-950 hover:bg-zinc-200 dark:border-zinc-600 dark:text-zinc-50 dark:hover:bg-zinc-800;
-  }
-  .btn-ghost {
-    @apply transition-colors ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center text-zinc-950 hover:bg-zinc-200 dark:text-zinc-50 dark:hover:bg-zinc-800;
-  }
- 
-  .btn-link {
-    @apply transition-colors ease-out font-medium flex gap-2 items-center text-zinc-950 hover:text-zinc-400 dark:text-zinc-50 dark:hover:text-zinc-600;
-  }
+@utility btn-primary {
+  @apply transition-colors ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center bg-zinc-900 text-zinc-50 hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-300;
 }
 
+@utility btn-secondary {
+  @apply transition-colors ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center border border-zinc-400 text-zinc-950 hover:bg-zinc-200 dark:border-zinc-600 dark:text-zinc-50 dark:hover:bg-zinc-800;
+}
+
+@utility btn-ghost {
+  @apply transition-colors ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center text-zinc-950 hover:bg-zinc-200 dark:text-zinc-50 dark:hover:bg-zinc-800;
+}
+
+@utility btn-link {
+  @apply transition-colors ease-out font-medium flex gap-2 items-center text-zinc-950 hover:text-zinc-400 dark:text-zinc-50 dark:hover:text-zinc-600;
+}
 
 .btn-link {
   display: flex;
@@ -129,12 +149,12 @@ svg#logo path:nth-child(2) {
 
 /* Fade-in and slide-up */
 .fade-slide-in {
-  animation: fadeSlideIn 0.25s ease-in-out forwards;
+  animation: fadeSlideIn 0.25s ease-out forwards;
 }
 
 /* Fade-out and slide-down */
 .fade-slide-out {
-  animation: fadeSlideOut 0.25s ease-in-out forwards;
+  animation: fadeSlideOut 0.25s ease-out forwards;
 }
 
 /* Staggered animations for each element */
@@ -151,19 +171,19 @@ svg#logo path:nth-child(2) {
 
 /* Gallery Header */
 .fadeSlideInSequential-delay-0 {
-  animation: fadeSlideInSequential 0.5s ease-in-out forwards;
+  animation: fadeSlideInSequential 0.5s ease-out forwards;
   animation-delay: 0s; /* No delay for the first element */
 }
 
 /* Gallery Text */
 .fadeSlideInSequential-delay-01 {
-  animation: fadeSlideInSequential 0.5s ease-in-out forwards;
+  animation: fadeSlideInSequential 0.5s ease-out forwards;
   animation-delay: 0.1s; /* Delayed after gallery images */
 }
 
 /* Gallery Images */
 .fadeSlideInSequential-delay-02 {
-  animation: fadeSlideInSequential 0.5s ease-in-out forwards;
+  animation: fadeSlideInSequential 0.5s ease-out forwards;
   animation-delay: 0.2s; /* Delayed after gallery header */
 }
 
