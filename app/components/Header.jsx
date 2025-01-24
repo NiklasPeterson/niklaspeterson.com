@@ -1,6 +1,5 @@
 import Motion from './Motion';
 import LottieAnimation from './LottieAnimation';
-import HoverThumbnail from './HoverThumbnail';
 
 export default function Header() {
 
@@ -39,7 +38,7 @@ export default function Header() {
           <span className="mx-1 text-zinc-950 dark:text-zinc-50">Not open for work</span>
         </div>
         <h1 className='text-4xl md:text-[64px] font-bold leading-tight text-zinc-950 dark:text-zinc-50 max-w-4xl'>Bringing digital products to life with pixels and code.</h1>
-        <p className='text-xl md:text-2xl'>Niklas Peterson — designer and creator from Sweden, currently shaping experiences as a <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Senior Product Designer</span> at <span className='inline-block font-semibold text-zinc-950 dark:text-zinc-50'><HoverThumbnail text='LottieFiles' imageSrc='/niklas-peterson.jpg' /></span>.</p>
+        <p className='text-xl md:text-2xl'>Niklas Peterson — designer and creator from Sweden, currently shaping experiences as a <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Senior Product Designer</span> at <span className='inline-block font-semibold text-zinc-950 dark:text-zinc-50'>LottieFiles</span>.</p>
       </Motion>
     </>
   );
