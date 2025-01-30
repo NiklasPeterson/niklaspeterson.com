@@ -7,7 +7,7 @@ export default function About() {
     <Motion className='flex w-full justify-between px-4 my-20 gap-10 flex-col-reverse md:flex-row lg:gap-40 lg:px-20 md:my-32'>
       <div className='flex flex-col gap-10 max-w-2xl'>
         <div className='flex flex-col gap-4'>
-          <h3 className='text-4xl md:text-6xl leading-tight font-bold text-zinc-950 dark:text-zinc-50'>About me</h3>
+          <h2 className='text-4xl md:text-6xl leading-tight font-bold text-zinc-950 dark:text-zinc-50'>About me</h2>
           <p className='text-lg md:text-xl'>
             I&apos;m <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Niklas Peterson</span>, a father of two, passionate about digital design, technology and innovation.
             <br /><br />
