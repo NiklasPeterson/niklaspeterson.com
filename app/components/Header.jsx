@@ -1,5 +1,6 @@
 import Motion from './Motion';
 import LottieAnimation from './LottieAnimation';
+import HoverThumbnail from './HoverThumbnail';
 
 export default function Header() {
 
@@ -39,6 +40,7 @@ export default function Header() {
         </div>
         <h1 className='text-4xl md:text-[64px] font-bold leading-tight text-zinc-950 dark:text-zinc-50 max-w-4xl'>Bringing digital products to life with pixels and code.</h1>
         <p className='text-xl md:text-2xl'>Niklas Peterson — designer and creator from Sweden, currently shaping experiences as a <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Senior Product Designer</span> at <span className='inline-block font-semibold text-zinc-950 dark:text-zinc-50'>LottieFiles</span>.</p>
+        <p className='text-lg md:text-xl'>Building <a href="https://apps.apple.com/app/hydrify/id6450311759" target="_blank"  className='inline-block font-semibold text-zinc-950 dark:text-zinc-50'><HoverThumbnail text='Hydrify' imageSrc='/hydrify-logo.png' /></a> and <a href="https://apps.apple.com/app/titls/id1579078964" target="_blank" className='inline-block font-semibold text-zinc-950 dark:text-zinc-50'><HoverThumbnail text='Titls' imageSrc='/titls-logo.png' /></a>.</p>
       </Motion>
     </>
   );
