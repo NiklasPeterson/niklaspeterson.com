@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import { Inter } from 'next/font/google'
 import "./globals.css";
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         className={`${inter.className} antialiased w-full flex justify-center bg-white text-zinc-600 dark:bg-black dark:text-zinc-400`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
