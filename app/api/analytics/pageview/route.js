@@ -7,14 +7,15 @@ const supabase = createClient(
 );
 
 export async function POST(request) {
-  const { page, visitorId, sessionId } = await request.json();
+  const { page, visitorId, sessionId, referrer } = await request.json();
 
   const { error } = await supabase
     .from('pageviews')
     .insert({
       page,
       visitor_id: visitorId,
-      session_id: sessionId
+      session_id: sessionId,
+      referrer // Add referrer to the insert data
     });
 
   if (error) {
@@ -22,4 +23,4 @@ export async function POST(request) {
   }
 
   return NextResponse.json({ success: true });
-} 
+}
