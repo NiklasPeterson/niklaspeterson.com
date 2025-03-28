@@ -2,7 +2,7 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const HoverThumbnail = ({ text, imageSrc }) => {
+const HoverThumbnail = ({ text, images }) => {
   const [hovered, setHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const textRef = useRef(null);
@@ -27,34 +27,37 @@ const HoverThumbnail = ({ text, imageSrc }) => {
     >
       {text}
       <AnimatePresence>
-        {hovered && (
-          <motion.span
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              x: mousePosition.x,
-              y: mousePosition.y,
-            }}
-            exit={{ opacity: 0, scale: 0.5 }}
-            transition={{
-              type: "spring",
-              stiffness: 200,
-              damping: 20,
-            }}
-            className="pointer-events-none w-16 h-16 rounded-xl shadow-xl flex border border-zinc-50 dark:border-zinc-900 items-center justify-center"
-            style={{
-              position: "absolute",
-              transformOrigin: "center center",
-            }}
-          >
-            <img
-              src={imageSrc}
-              alt={`${text} Logo`}
-              className="object-fill rounded-xl"
-            />
-          </motion.span>
-        )}
+        {hovered &&
+          images.map((imageSrc, index) => (
+            <motion.span
+              key={index}
+              initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                x: mousePosition.x + index * 88, // Offset each image slightly
+                y: mousePosition.y + index * 10, // Offset each image slightly
+                rotate: index % 2 === 0 ? index * 5 : -index * 5, // Alternate tilt directions
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+              }}
+              className="pointer-events-none w-40 rounded-xl shadow-xl flex items-center justify-center z-10"
+              style={{
+                position: "absolute",
+                transformOrigin: "center center",
+                border: "1px solid rgba(255, 255, 255, 0.1)"
+              }}
+            >
+              <img
+                src={imageSrc}
+                alt={`${text} Logo ${index + 1}`}
+                className="object-fill rounded-xl"
+              />
+            </motion.span>
+          ))}
       </AnimatePresence>
     </span>
   );
