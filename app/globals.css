@@ -192,3 +192,10 @@ svg#logo path:nth-child(2) {
         flex: 1 1 40%;
     }
 }
+
+@media (hover: none) {
+  .group-hover\:animate-none {
+    animation: none !important;
+    transform: none !important;
+  }
+}

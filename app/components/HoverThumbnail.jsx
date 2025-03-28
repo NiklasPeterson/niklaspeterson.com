@@ -20,7 +20,7 @@ const HoverThumbnail = ({ text, images }) => {
   return (
     <span
       ref={textRef}
-      className="inline cursor-alias relative"
+      className="inline cursor-alias relative group"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onMouseMove={handleMouseMove}
@@ -44,11 +44,11 @@ const HoverThumbnail = ({ text, images }) => {
                 stiffness: 300,
                 damping: 20,
               }}
-              className="pointer-events-none w-40 rounded-xl shadow-xl flex items-center justify-center z-10"
+              className="pointer-events-none w-40 rounded-xl shadow-xl flex items-center justify-center z-10 group-hover:animate-none"
               style={{
                 position: "absolute",
                 transformOrigin: "center center",
-                border: "1px solid rgba(255, 255, 255, 0.1)"
+                border: "1px solid rgba(255, 255, 255, 0.1)",
               }}
             >
               <img
