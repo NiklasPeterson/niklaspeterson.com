@@ -47,27 +47,26 @@ const HoverThumbnail = ({ text, images }) => {
                 opacity: 0,
                 scale: 0.8,
                 rotate: 0,
-                x: mousePosition.x + 16 + index * 96,
-                y: mousePosition.y - 80 + index * 10,
-                rotate: index % 2 === 0 ? index * 2 : -index * 2,
+                x: mousePosition.x + 16 + index * 140,
+                y: mousePosition.y - 40 + (index % 2 === 0 ? - 8 : + 4),
+                rotate: index % 2 === 0 ? index * 1 : -index * 1,
               }}
               animate={{
                 opacity: 1,
                 scale: 1,
-                x: mousePosition.x + 16 + index * 96,
-                y: mousePosition.y - 80 + index * 10,
-                rotate: index % 2 === 0 ? index * 2 : -index * 2,
+                x: mousePosition.x + 16 + index * 140,
+                y: mousePosition.y - 40 + (index % 2 === 0 ? - 8 : + 4),
+                rotate: index % 2 === 0 ? index * 1 : -index * 1,
               }}
               transition={{
                 type: "spring",
-                stiffness: 300,
+                stiffness: 320,
                 damping: 20,
                 // Apply delay only for the initial animation
                 delay: !hasEntered ? index * 0.1 : 0,
               }}
-              className="pointer-events-none w-40 rounded-xl shadow-xl overflow-hidden z-10 hidden sm:flex"
+              className="absolute pointer-events-none w-40 rounded-xl shadow-xl overflow-hidden z-10 hidden sm:flex"
               style={{
-                position: "absolute",
                 transformOrigin: "center center",
                 border: "1px solid rgba(255, 255, 255, 0.1)",
               }}
@@ -75,6 +74,7 @@ const HoverThumbnail = ({ text, images }) => {
               <img
                 src={imageSrc}
                 alt={`${text} UI ${index + 1}`}
+                className="object-fill h-full"
               />
             </motion.span>
           ))}
