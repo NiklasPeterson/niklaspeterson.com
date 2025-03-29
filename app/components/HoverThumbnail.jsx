@@ -60,10 +60,10 @@ const HoverThumbnail = ({ text, images }) => {
               }}
               transition={{
                 type: "spring",
-                stiffness: 320,
+                stiffness: 360,
                 damping: 20,
-                // Apply delay only for the initial animation
                 delay: !hasEntered ? index * 0.1 : 0,
+                // duration: 0.5,
               }}
               className="absolute pointer-events-none w-40 rounded-xl shadow-xl overflow-hidden z-10 hidden sm:flex"
               style={{

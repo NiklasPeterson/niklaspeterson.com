@@ -4,23 +4,23 @@ import React from "react";
 
 const images = [
   {
-    src: "https://a0.muscache.com/im/pictures/miso/Hosting-2810308/original/a653d85a-1a97-45d7-a213-78ef2286122a.jpeg?im_w=720",
+    src: "https://placehold.co/720",
     alt: "Tree",
   },
   {
-    src: "https://a0.muscache.com/im/pictures/2cc58022-2004-4034-a281-22fb622e7461.jpg?im_w=720",
+    src: "https://placehold.co/720",
     alt: "Tree",
   },
   {
-    src: "https://a0.muscache.com/im/pictures/miso/Hosting-37988614/original/03d8ff60-c345-45ad-8aab-5c8f3cb5b1cd.jpeg?im_w=720",
+    src: "https://placehold.co/720",
     alt: "Tree",
   },
   {
-    src: "https://a0.muscache.com/im/pictures/26726bc5-6c5d-48f1-8767-f98021ed4abb.jpg?im_w=720",
+    src: "https://placehold.co/720",
     alt: "Tree",
   },
   {
-    src: "https://a0.muscache.com/im/pictures/0893e628-5d4b-4bd6-880d-870961618445.jpg?im_w=720",
+    src: "https://placehold.co/720",
     alt: "Tree",
   },
 ];
@@ -44,7 +44,7 @@ const variants = {
   }),
 };
 
-export default function AirbnbImageAnimation() {
+export default function AlbumAnimation() {
   return (
     <motion.div
       className="flex flex-row items-center justify-center w-full h-full shadow-lg rounded-xl overflow-hidden p-4 relative"
@@ -54,7 +54,7 @@ export default function AirbnbImageAnimation() {
           src={image.src}
           alt={image.alt}
           key={index}
-          custom={index} // Pass the index as a custom prop
+          custom={index}
           variants={variants}
           initial="initial"
           animate="animate"
