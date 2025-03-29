@@ -20,7 +20,7 @@ const HoverThumbnail = ({ text, images }) => {
   return (
     <span
       ref={textRef}
-      className="inline cursor-alias relative group"
+      className="relative"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onMouseMove={handleMouseMove}
@@ -31,20 +31,28 @@ const HoverThumbnail = ({ text, images }) => {
           images.map((imageSrc, index) => (
             <motion.span
               key={index}
-              initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
+              initial={{
+                opacity: 0,
+                scale: 0.8,
+                rotate: 0,
+                x: mousePosition.x + 16 + index * 96,
+                y: mousePosition.y - 16 + index * 10,
+                rotate: index % 2 === 0 ? index * 2 : -index * 2,
+              }}
               animate={{
                 opacity: 1,
                 scale: 1,
-                x: mousePosition.x + index * 88, // Offset each image slightly
-                y: mousePosition.y + index * 10, // Offset each image slightly
-                rotate: index % 2 === 0 ? index * 5 : -index * 5, // Alternate tilt directions
+                x: mousePosition.x + 16 + index * 96,
+                y: mousePosition.y - 16 + index * 10,
+                rotate: index % 2 === 0 ? index * 2 : -index * 2,
               }}
               transition={{
                 type: "spring",
                 stiffness: 300,
                 damping: 20,
+                // delay: index * 0.1,
               }}
-              className="pointer-events-none w-40 rounded-xl shadow-xl flex items-center justify-center z-10 group-hover:animate-none"
+              className="pointer-events-none w-40 rounded-xl shadow-xl overflow-hidden z-10 hidden sm:flex"
               style={{
                 position: "absolute",
                 transformOrigin: "center center",
@@ -53,8 +61,7 @@ const HoverThumbnail = ({ text, images }) => {
             >
               <img
                 src={imageSrc}
-                alt={`${text} Logo ${index + 1}`}
-                className="object-fill rounded-xl"
+                alt={`${text} UI ${index + 1}`}
               />
             </motion.span>
           ))}
