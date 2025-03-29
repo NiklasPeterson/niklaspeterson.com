@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const HoverThumbnail = ({ text, images }) => {
   const [hovered, setHovered] = useState(false);
+  const [hasEntered, setHasEntered] = useState(false); // New state to track initial hover
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const textRef = useRef(null);
 
@@ -17,12 +18,23 @@ const HoverThumbnail = ({ text, images }) => {
     }
   };
 
+  const handleMouseEnter = () => {
+    setHovered(true);
+    // Delay setting hasEntered to true to allow the initial animation to play
+    setTimeout(() => setHasEntered(true), images.length * 100); // Adjust timing based on delay
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+    setHasEntered(false); // Reset for the next hover
+  };
+
   return (
     <span
       ref={textRef}
       className="relative"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       onMouseMove={handleMouseMove}
     >
       {text}
@@ -36,21 +48,22 @@ const HoverThumbnail = ({ text, images }) => {
                 scale: 0.8,
                 rotate: 0,
                 x: mousePosition.x + 16 + index * 96,
-                y: mousePosition.y - 16 + index * 10,
+                y: mousePosition.y - 80 + index * 10,
                 rotate: index % 2 === 0 ? index * 2 : -index * 2,
               }}
               animate={{
                 opacity: 1,
                 scale: 1,
                 x: mousePosition.x + 16 + index * 96,
-                y: mousePosition.y - 16 + index * 10,
+                y: mousePosition.y - 80 + index * 10,
                 rotate: index % 2 === 0 ? index * 2 : -index * 2,
               }}
               transition={{
                 type: "spring",
                 stiffness: 300,
                 damping: 20,
-                // delay: index * 0.1,
+                // Apply delay only for the initial animation
+                delay: !hasEntered ? index * 0.1 : 0,
               }}
               className="pointer-events-none w-40 rounded-xl shadow-xl overflow-hidden z-10 hidden sm:flex"
               style={{
