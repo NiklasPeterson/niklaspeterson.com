@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "motion/react"
 
-export default function Motion(props) {
+export default function FadeIn(props) {
 
   const initialY = props.position === "down" ? -20 : 20;
 

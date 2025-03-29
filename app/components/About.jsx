@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import Motion from './Motion';
+import FadeIn from './FadeIn';
 
 export default function About() {
 
   return (
-    <Motion className='flex w-full justify-between px-4 my-20 gap-10 flex-col-reverse md:flex-row lg:gap-40 lg:px-20 md:my-32'>
+    <FadeIn className='flex w-full justify-between px-4 my-20 gap-10 flex-col-reverse md:flex-row lg:gap-40 lg:px-20 md:my-32'>
       <div className='flex flex-col gap-8 max-w-2xl'>
         <div className='flex flex-col gap-4'>
           <h3 className='text-4xl md:text-6xl leading-tight font-bold text-zinc-950 dark:text-zinc-50'>About me</h3>
@@ -33,6 +33,6 @@ export default function About() {
           unoptimized
         />
       </div>
-    </Motion>
+    </FadeIn>
   );
 }

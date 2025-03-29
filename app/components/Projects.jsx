@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Motion from './Motion';
+import FadeIn from './FadeIn';
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null); // State to hold the selected project
@@ -35,9 +35,9 @@ export default function Projects() {
         if (project.attachments.length < 1) { return null; }
 
         return (
-          <Motion key={index} className="group cursor-pointer flex flex-col md:flex-1-1-40">
+          <FadeIn key={index} className="group cursor-pointer flex flex-col md:flex-1-1-40">
             <ProjectContent project={project} onOpen={openProject} />
-          </Motion>
+          </FadeIn>
         )
       })}
     </div>
