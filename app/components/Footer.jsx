@@ -4,7 +4,7 @@ import LottieAnimation from './LottieAnimation';
 export default function Footer() {
 
   return (
-    <Motion className='flex w-full flex-col gap-10 relative px-4 my-20 lg:px-20 md:my-32'>
+    <Motion className='flex w-full flex-col gap-10 relative px-4 my-20 lg:px-20 md:mt-32'>
       <div className='flex flex-col gap-20 md:justify-between md:flex-row'>
         <div className='flex flex-col gap-4'>
           <h2 className='text-4xl md:text-6xl leading-tight font-bold text-zinc-950 dark:text-zinc-50 max-w-xl'>Let&apos;s get to know each other!</h2>
