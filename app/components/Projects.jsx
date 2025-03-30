@@ -137,7 +137,7 @@ function ProjectContent({ project, onOpen }) {
           : <video className="transition-transform duration-300 group-hover:scale-105" src={media.url} autoPlay muted playsInline loop />;
 
         return (
-          <div key={media.id || index} className="rounded-2xl md:rounded-3xl overflow-hidden relative w-full after:content-[''] after:absolute after:inset-0 after:border after:border-white/10 after:pointer-events-none after:z-10 after:rounded-inherit">
+          <div key={media.id || index} className="rounded-2xl md:rounded-3xl overflow-hidden relative w-full after:content-[''] after:absolute after:inset-0 after:border after:border-white/20 after:pointer-events-none after:rounded-2xl after:md:rounded-3xl">
             {attachment}
             <div className="flex items-center justify-center w-12 h-12 rounded-xl text-zinc-950 bg-zinc-50 absolute top-4 right-4 rotate-45 opacity-0 transition duration-300 group-hover:opacity-100 group-hover:rotate-0 group-hover:scale-105">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 rotate-45"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path></svg>
