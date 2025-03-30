@@ -3,6 +3,20 @@
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --animate-fadeUp: fadeUp 0.25s ease-out forwards;
+  --animate-fadeUpSlow: fadeUp 0.5s ease-out forwards;
+  
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 /*
@@ -57,47 +71,7 @@ body {
   @apply transition-colors ease-out font-medium flex gap-2 items-center text-zinc-950 hover:text-zinc-400 dark:text-zinc-50 dark:hover:text-zinc-600;
 }
 
-.btn-link {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  font-weight: 500;
-  --tw-text-opacity: 1;
-  color: rgb(9 9 11/var(--tw-text-opacity));
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  transition-duration: .15s;
-  transition-timing-function:cubic-bezier(0, 0, .2, 1)
-}
-
-.btn-link:hover {
-  --tw-text-opacity: 1;
-  color:rgb(161 161 170/var(--tw-text-opacity))
-}
-
-@media (prefers-color-scheme: dark) {
-  .btn-link {
-    --tw-text-opacity: 1;
-    color:rgb(250 250 250/var(--tw-text-opacity))
-  }
-
-  .btn-link:hover {
-    --tw-text-opacity: 1;
-    color:rgb(82 82 91/var(--tw-text-opacity))
-  }
-}
-
 /* custom CSS */
-
-.styledBorder::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgb(255 255 255 / 5%);
-  pointer-events: none;
-  z-index: 1;
-  border-radius: inherit;
-}
 
 @keyframes draw {
   to {
@@ -122,73 +96,4 @@ svg#logo path:nth-child(2) {
   animation-delay: 1s;
   animation-timing-function: ease-out;
   animation-duration: 1.5s
-}
-
-/* Animations */
-@keyframes fadeSlideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeSlideOut {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-}
-
-/* Fade-in and slide-up */
-.fade-slide-in {
-  animation: fadeSlideIn 0.25s ease-out forwards;
-}
-
-/* Fade-out and slide-down */
-.fade-slide-out {
-  animation: fadeSlideOut 0.25s ease-out forwards;
-}
-
-/* Staggered animations for each element */
-@keyframes fadeSlideInSequential {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Gallery Header */
-.fadeSlideInSequential-delay-0 {
-  animation: fadeSlideInSequential 0.5s ease-out forwards;
-  animation-delay: 0s; /* No delay for the first element */
-}
-
-/* Gallery Text */
-.fadeSlideInSequential-delay-01 {
-  animation: fadeSlideInSequential 0.5s ease-out forwards;
-  animation-delay: 0.1s; /* Delayed after gallery images */
-}
-
-/* Gallery Images */
-.fadeSlideInSequential-delay-02 {
-  animation: fadeSlideInSequential 0.5s ease-out forwards;
-  animation-delay: 0.2s; /* Delayed after gallery header */
-}
-
-@media (min-width: 768px) {
-    .md\:flex-1-1-40 {
-        flex: 1 1 40%;
-    }
 }
