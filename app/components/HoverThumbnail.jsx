@@ -59,11 +59,13 @@ const HoverThumbnail = ({ text, images }) => {
                 rotate: index % 2 === 0 ? index * 1 : -index * 1,
               }}
               transition={{
-                type: "spring",
-                stiffness: 360,
-                damping: 20,
-                delay: !hasEntered ? index * 0.1 : 0,
-                // duration: 0.5,
+                opacity: { duration: 0.3 }, // Linear transition for opacity
+                default: {
+                  type: "spring",
+                  stiffness: 360,
+                  damping: 20,
+                  delay: !hasEntered ? index * 0.1 : 0,
+                },
               }}
               className="absolute pointer-events-none w-40 rounded-xl shadow-xl overflow-hidden z-10 hidden sm:flex"
               style={{
