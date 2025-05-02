@@ -36,7 +36,7 @@ export default function Projects() {
 
         return (
           <FadeIn key={index} className="group cursor-pointer flex flex-col md:flex-[1_1_40%]">
-            <ProjectContent project={project} onOpen={openProject} />
+            <ProjectContent project={project} onOpen={openProject} priority={index < 2} />
           </FadeIn>
         )
       })}
@@ -126,14 +126,14 @@ export default function Projects() {
   );
 }
 
-function ProjectContent({ project, onOpen }) {
+function ProjectContent({ project, onOpen, priority }) {
   return (
     <div className="group flex flex-col gap-4 w-full h-full" onClick={() => onOpen(project)}>
       {project.attachments.map((media, index) => {
         if (index !== 0) return null;
 
         const attachment = media.type === "image"
-          ? <Image className="transition-transform duration-300 group-hover:scale-105" width={media.width} height={media.height} src={media.url} alt={media.alt} />
+          ? <Image className="transition-transform duration-300 group-hover:scale-105" width={media.width} height={media.height} src={media.url} alt={media.alt} priority={priority} />
           : <video className="transition-transform duration-300 group-hover:scale-105" src={media.url} autoPlay muted playsInline loop />;
 
         return (
