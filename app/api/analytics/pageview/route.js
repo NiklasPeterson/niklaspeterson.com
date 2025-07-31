@@ -10,7 +10,7 @@ export async function POST(request) {
   const { page, visitorId, sessionId, referrer } = await request.json();
 
   const { error } = await supabase
-    .from('pageviews')
+    .from('pageviews_np')
     .insert({
       page,
       visitor_id: visitorId,
