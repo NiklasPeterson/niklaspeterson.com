@@ -28,7 +28,6 @@ export default function About() {
 
       <div className='relative rounded-2xl md:rounded-3xl overflow-hidden h-[320px] w-full sm:h-[400px] sm:w-[320px]'>
         <Image
-          className='transition-transform duration-300 hover:scale-105'
           src="/niklas-peterson.jpg"
           alt="Picture of Niklas Peterson"
           fill={true}
