@@ -56,19 +56,19 @@ body {
 } */
 
 @utility btn-primary {
-  @apply transition-colors ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center bg-zinc-900 text-zinc-50 hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-300;
+  @apply transition-transform ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center bg-zinc-900 text-zinc-50 hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-300 active:scale-[97%] cursor-pointer;
 }
 
 @utility btn-secondary {
-  @apply transition-colors ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center border border-zinc-300 text-zinc-950 hover:bg-zinc-200 dark:border-zinc-600 dark:text-zinc-50 dark:hover:bg-zinc-800;
+  @apply transition-transform ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center border border-zinc-300 text-zinc-950 hover:bg-zinc-200 dark:border-zinc-600 dark:text-zinc-50 dark:hover:bg-zinc-800 active:scale-[97%] cursor-pointer;
 }
 
 @utility btn-ghost {
-  @apply transition-colors ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center text-zinc-950 hover:bg-zinc-200 dark:text-zinc-50 dark:hover:bg-zinc-800;
+  @apply transition-transform ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center text-zinc-950 hover:bg-zinc-200 dark:text-zinc-50 dark:hover:bg-zinc-800 active:scale-[97%] cursor-pointer;
 }
 
 @utility btn-link {
-  @apply transition-colors ease-out font-medium flex gap-2 items-center text-zinc-950 hover:text-zinc-300 dark:text-zinc-50 dark:hover:text-zinc-600;
+  @apply transition-transform ease-out font-medium flex gap-2 items-center text-zinc-950 hover:text-zinc-300 dark:text-zinc-50 dark:hover:text-zinc-600 active:scale-[97%] cursor-pointer;
 }
 
 /* custom CSS */
@@ -84,7 +84,7 @@ svg#logo path {
   animation-iteration-count: 1;
   animation-name: draw;
   stroke-dasharray: 160;
-  stroke-dashoffset: 160
+  stroke-dashoffset: 160;
 }
 
 svg#logo path:first-child {
