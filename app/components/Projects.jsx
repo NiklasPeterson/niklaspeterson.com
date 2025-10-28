@@ -44,7 +44,7 @@ export default function Projects() {
 
     {selectedProject && (
         <div className="fixed bg-white/25 dark:bg-black/25 backdrop-blur-lg z-10 top-0 right-0 bottom-0 left-0 h-screen w-screen overflow-auto md:p-10">
-          <div className="min-h-full md:h-fit flex flex-col md:rounded-2xl pt-6 md:pt-10 pb-1 md:pb-2 gap-10 md:border border-zinc-200 bg-white dark:bg-black dark:md:border-zinc-800 animate-fadeUp mx-auto max-w-[1440px]">
+          <div className="md:h-fit flex flex-col md:rounded-2xl pt-6 md:pt-10 pb-1 md:pb-2 gap-10 md:border border-zinc-200 bg-white dark:bg-black dark:md:border-zinc-800 animate-fadeUp mx-auto max-w-[1440px]">
 
             <div className="flex flex-col gap-6 md:gap-8 px-4 md:px-10">
 
@@ -96,7 +96,7 @@ export default function Projects() {
                 <div key={i} className="relative md:snap-center">
                   {attachment.type === 'image' ? (
                       <Image
-                        className="rounded-lg w-auto max-h-[60vh] max-w-[calc(100vw-32px)] md:max-w-[80vw]"
+                        className="rounded-lg w-auto max-h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:max-w-[80vw]"
                         src={attachment.url}
                         alt={attachment.alt}
                         height={attachment.height}
@@ -104,7 +104,7 @@ export default function Projects() {
                       />
                   ) : (
                     <video
-                      className="rounded-lg w-auto max-h-[60vh] max-w-[calc(100vw-32px)] md:max-w-[80vw]"
+                      className="rounded-lg w-auto max-h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:max-w-[80vw]"
                       src={attachment.url}
                       height={attachment.height}
                       width={attachment.width}
