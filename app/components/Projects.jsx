@@ -128,7 +128,7 @@ export default function Projects() {
 
 function ProjectContent({ project, onOpen, priority }) {
   return (
-    <div className="group flex flex-col gap-4 w-full h-full" onClick={() => onOpen(project)}>
+    <div className="group flex flex-col gap-5 w-full h-full" onClick={() => onOpen(project)}>
       {project.attachments.map((media, index) => {
         if (index !== 0) return null;
 
@@ -137,7 +137,7 @@ function ProjectContent({ project, onOpen, priority }) {
           : <video className="" src={media.url} autoPlay muted playsInline loop />;
 
         return (
-          <div key={media.id || index} className="rounded-2xl md:rounded-3xl overflow-hidden relative w-full after:content-[''] after:absolute after:inset-0 after:border after:border-white/20 after:pointer-events-none after:rounded-2xl after:md:rounded-3xl transition-transform duration-250 shadow-none group-hover:scale-101 group-hover:shadow-lg active:scale-99">
+          <div key={media.id || index} className="rounded-2xl md:rounded-3xl overflow-hidden relative w-full after:content-[''] after:absolute after:inset-0 after:border after:border-white/20 after:pointer-events-none after:rounded-2xl after:md:rounded-3xl transition-transform duration-250 shadow-none group-hover:scale-102 group-hover:shadow-lg active:scale-99">
             {attachment}
           </div>
         );
