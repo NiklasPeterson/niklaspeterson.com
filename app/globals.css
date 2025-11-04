@@ -27,6 +27,7 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
+
 @layer base {
   *,
   ::after,
@@ -85,15 +86,16 @@ svg#logo path {
   animation-name: draw;
   stroke-dasharray: 160;
   stroke-dashoffset: 160;
+
+  &:first-child {
+    animation-timing-function: ease-in;
+    animation-duration: 1.25s
+  }
+  
+  &:nth-child(2) {
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+    animation-duration: 1.5s
+  }
 }
 
-svg#logo path:first-child {
-  animation-timing-function: ease-in;
-  animation-duration: 1.25s
-}
-
-svg#logo path:nth-child(2) {
-  animation-delay: 1s;
-  animation-timing-function: ease-out;
-  animation-duration: 1.5s
-}
