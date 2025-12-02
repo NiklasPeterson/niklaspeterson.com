@@ -34,10 +34,10 @@ export default function Header() {
 
       <FadeIn position="down" className='flex flex-col justify-center gap-4 px-4 max-w-5xl h-[560px] sm:h-[640px] lg:px-20 md:py-32 md:h-[720px]'>
         <div className="absolute top-0 left-0 right-0 -z-10 blur-[120px] max-w-full overflow-hidden flex justify-center"><LottieAnimation /></div>
-        <div className="hidden rounded-2xl gap-1 items-center bg-zinc-200 dark:bg-zinc-800 w-fit py-1 px-3">
+        {/* <div className="flex rounded-2xl gap-1 items-center bg-zinc-200 dark:bg-zinc-800 w-fit py-1 px-3">
           <div className="rounded-2xl w-3 h-3 bg-red-500"></div>
           <span className="mx-1 text-zinc-950 dark:text-zinc-50">Not open for work</span>
-        </div>
+        </div> */}
         <h1 className='text-4xl md:text-[64px] font-bold leading-tight text-zinc-950 dark:text-zinc-50 max-w-4xl'>Bringing digital products to life with pixels and code.</h1>
         <p className='text-xl md:text-2xl'>Niklas Peterson — designer and creator from Sweden, currently shaping experiences as a <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Senior Product Designer</span> at <span className='inline-block font-semibold text-zinc-950 dark:text-zinc-50'>LottieFiles</span>.</p>
         <p className='text-lg md:text-xl'>In my free time I&apos;m building <a href="https://apps.apple.com/app/hydrify/id6450311759" target="_blank" className='inline-block font-semibold text-zinc-950 dark:text-zinc-50'>
