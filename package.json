@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@lottiefiles/dotlottie-react": "^0.17.8",
+    "@lottiefiles/dotlottie-react": "^0.17.13",
     "@supabase/supabase-js": "^2.90.1",
     "motion": "12.23.25",
     "next": "^16.1.3",
