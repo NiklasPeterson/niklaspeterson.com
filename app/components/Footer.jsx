@@ -12,6 +12,12 @@ export default function Footer() {
             Feel free to drop me a message anytime— <br />
             I&apos;m all ears for cool and creative ideas!
           </p>
+          <a href='mailto:mail@niklaspeterson.com?subject=Contact' className='px-5 py-3 text-base btn-primary w-fit' aria-label='Contact'>
+            <span className='mx-1'>Contact</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z" />
+            </svg>
+          </a>
           <div className='flex gap-2 text-zinc-950 dark:text-zinc-50'>
             {[
               ['1', 'https://x.com/niklas_peterson', 'M17.7512 2.96094H20.818L14.1179 10.6187L22 21.0391H15.8284L10.9946 14.7192L5.46359 21.0391H2.39494L9.5613 12.8483L2 2.96094H8.32828L12.6976 8.7376L17.7512 2.96094ZM16.6748 19.2035H18.3742L7.4049 4.70015H5.58133L16.6748 19.2035Z', "X profile"],
@@ -48,9 +54,8 @@ export default function Footer() {
           <div className='flex items-start flex-col gap-6'>
             <div className='uppercase text-xs font-normal tracking-widest text-zinc-600 dark:text-zinc-300'>Contact</div>
             {[
-              ['1', 'Mail', 'mailto:mail@niklaspeterson.com'],
-              ['2', 'x.com', 'https://x.com/niklas_peterson'],
-              ['3', 'LinkedIn', 'https://www.linkedin.com/in/niklaspeterson'],
+              ['1', 'x.com', 'https://x.com/niklas_peterson'],
+              ['2', 'LinkedIn', 'https://www.linkedin.com/in/niklaspeterson'],
             ].map(([key, title, url]) => (
               <a href={url} target='_blank' rel='noopener' key={key}>
                 <div className='btn-link'>
