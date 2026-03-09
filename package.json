@@ -9,18 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@lottiefiles/dotlottie-react": "^0.17.7",
-    "@supabase/supabase-js": "^2.75.0",
-    "motion": "12.23.24",
+    "@lottiefiles/dotlottie-react": "^0.18.3",
+    "@supabase/supabase-js": "^2.97.0",
+    "motion": "12.34.3",
     "next": "^16.1.6",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.4",
     "uuid": "^13.0.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.17",
-    "eslint": "^9",
-    "eslint-config-next": "^16.0.3",
-    "tailwindcss": "^4.1.14"
+    "@tailwindcss/postcss": "^4.2.1",
+    "eslint": "^10",
+    "eslint-config-next": "^16.1.6",
+    "tailwindcss": "^4.2.0"
   }
 }
