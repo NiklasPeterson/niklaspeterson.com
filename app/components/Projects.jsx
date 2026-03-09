@@ -35,7 +35,7 @@ export default function Projects() {
         if (project.attachments.length < 1) { return null; }
 
         return (
-          <FadeIn key={index} className="group cursor-pointer flex flex-col md:flex-[1_1_40%]">
+          <FadeIn key={index} className="flex flex-col md:flex-[1_1_40%]">
             <ProjectContent project={project} onOpen={openProject} priority={index < 2} />
           </FadeIn>
         )
@@ -128,7 +128,12 @@ export default function Projects() {
 
 function ProjectContent({ project, onOpen, priority }) {
   return (
-    <div className="group flex flex-col gap-5 w-full h-full" onClick={() => onOpen(project)}>
+    <button
+      type="button"
+      className="group flex h-full w-full cursor-pointer flex-col gap-5 text-left"
+      onClick={() => onOpen(project)}
+      aria-label={`Open ${project.title} project`}
+    >
       {project.attachments.map((media, index) => {
         if (index !== 0) return null;
 
@@ -151,7 +156,8 @@ function ProjectContent({ project, onOpen, priority }) {
         <div className="text-md md:text-lg line-clamp-2">
           {project.description}
         </div>
+        
       </div>
-    </div>
+    </button>
   );
 }

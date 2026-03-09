@@ -13,14 +13,11 @@ export default function About() {
             <br /><br />
             Outside work, you&apos;ll find me cherishing quality time with my family. In my free moments, I enjoy exploring design and coding. I&apos;ve created two iOS apps, <a href="https://apps.apple.com/app/hydrify/id6450311759" target="_blank"  className='inline-block font-semibold underline text-zinc-950 dark:text-zinc-50'>Hydrify</a> and <a href="https://apps.apple.com/app/titls/id1579078964" target="_blank" className='inline-block font-semibold underline text-zinc-950 dark:text-zinc-50'>Titls</a>. These are personal projects that let me scratch that creative itch by seamlessly blending design, development, and tech.</p>
         </div>
-        <div className="flex gap-2">
-          <a href="https://www.buymeacoffee.com/niklaspeterson" target="_blank" className="px-5 py-3 text-base btn-primary">
-            <span className='mx-1'>Support my work</span>
-            {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-            </svg> */}
+        <div className="flex flex-wrap gap-2">
+          <a href="https://www.buymeacoffee.com/niklaspeterson" target="_blank" className="text-base btn-secondary">
+            <span className='mx-1'>Support my Work</span>
           </a>
-          <a href="https://cv.niklaspeterson.com" target="_blank" className="text-sm btn-secondary">
+          <a href="https://cv.niklaspeterson.com" target="_blank" className="text-base btn-secondary">
             <span className='mx-1'>Read my CV</span>
           </a>
         </div>
