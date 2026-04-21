@@ -35,7 +35,7 @@ export default function Projects() {
         if (project.attachments.length < 1) { return null; }
 
         return (
-          <FadeIn key={index} className="flex flex-col md:flex-[1_1_40%]">
+          <FadeIn key={index} className="flex flex-col md:flex-[1_1_40%]" index={index} >
             <ProjectContent project={project} onOpen={openProject} priority={index < 2} />
           </FadeIn>
         )
@@ -44,7 +44,7 @@ export default function Projects() {
 
     {selectedProject && (
         <div className="fixed bg-white/25 dark:bg-black/25 backdrop-blur-lg z-10 top-0 right-0 bottom-0 left-0 h-screen w-screen overflow-auto md:p-10" onClick={closeProject}>
-          <div onClick={(e) => e.stopPropagation()} className="md:h-fit flex flex-col md:rounded-2xl pt-6 md:pt-10 pb-1 md:pb-2 gap-10 md:border border-zinc-200 bg-white dark:bg-black dark:md:border-zinc-800 animate-fadeUp mx-auto max-w-[1440px]">
+          <div onClick={(e) => e.stopPropagation()} className="md:h-fit flex flex-col md:rounded-3xl pt-6 md:pt-10 pb-1 md:pb-2 gap-10 md:border border-zinc-200 bg-white dark:bg-black dark:md:border-zinc-800 animate-fadeUp mx-auto max-w-[1440px]">
 
             <div className="flex flex-col gap-6 md:gap-8 px-4 md:px-10">
 
@@ -55,7 +55,7 @@ export default function Projects() {
                 <button className="btn-secondary h-10" onClick={closeProject}>Close</button>
               </div>
 
-              <div className="flex gap-4 justify-between flex-wrap animate-fadeUpSlow">
+              <div className="flex gap-4 justify-between flex-wrap animate-fadeUp">
                 <div className="text-md md:text-lg" style={{ maxWidth: 720 }}>
                   <p>{selectedProject.description}</p>
                 </div>
@@ -91,7 +91,7 @@ export default function Projects() {
               </div>
             </div>
 
-            <div className={`flex flex-col md:flex-row px-4 md:px-10 pb-5 md:pb-8 gap-4 md:gap-6 items-center animate-fadeUpSlow delay-100 md:overflow-x-auto md:snap-x md:snap-mandatory`}>
+            <div className={`flex flex-col md:flex-row px-4 md:px-10 pb-5 md:pb-8 gap-4 md:gap-6 items-center animate-fadeUp md:overflow-x-auto md:snap-x md:snap-mandatory`}>
               {selectedProject.attachments.map((attachment, i) => (
                 <div key={i} className="relative md:snap-center">
                   {attachment.type === 'image' ? (
@@ -142,7 +142,7 @@ function ProjectContent({ project, onOpen, priority }) {
           : <video className="" src={media.url} autoPlay muted playsInline loop />;
 
         return (
-          <div key={media.id || index} className="rounded-2xl md:rounded-3xl overflow-hidden relative w-full after:content-[''] after:absolute after:inset-0 after:border after:border-white/20 after:pointer-events-none after:rounded-2xl after:md:rounded-3xl transition-transform duration-250 shadow-none group-hover:scale-102 group-hover:shadow-lg active:scale-99">
+          <div key={media.id || index} className="rounded-2xl md:rounded-3xl overflow-hidden relative w-full after:content-[''] after:absolute after:inset-0 after:border after:border-white/20 after:pointer-events-none after:rounded-2xl after:md:rounded-3xl transition-transform duration-200 shadow-none group-hover:scale-102 group-hover:shadow-lg active:scale-99">
             {attachment}
           </div>
         );

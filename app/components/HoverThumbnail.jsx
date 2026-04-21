@@ -59,7 +59,7 @@ const HoverThumbnail = ({ text, images }) => {
                 rotate: index % 2 === 0 ? index * 1 : -index * 1,
               }}
               transition={{
-                opacity: { duration: 0.3 }, // Linear transition for opacity
+                opacity: { duration: 0.2, ease: "easeOut" }, // Fast, responsive hover feedback
                 default: {
                   type: "spring",
                   stiffness: 360,

@@ -4,8 +4,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --animate-fadeUp: fadeUp 0.25s ease-out forwards;
-  --animate-fadeUpSlow: fadeUp 0.5s ease-out forwards;
+  --animate-fadeUp: fadeUp 0.4s ease-out;
   
   @keyframes fadeUp {
     0% {
@@ -57,19 +56,19 @@ body {
 } */
 
 @utility btn-primary {
-  @apply transition-transform ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center bg-zinc-900 text-zinc-50 hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-300 active:scale-[97%] cursor-pointer;
+  @apply transition-transform duration-160 ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center bg-zinc-900 text-zinc-50 hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-300 active:scale-[97%] cursor-pointer;
 }
 
 @utility btn-secondary {
-  @apply transition-transform ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center border border-zinc-300 text-zinc-950 hover:bg-zinc-200 dark:border-zinc-600 dark:text-zinc-50 dark:hover:bg-zinc-800 active:scale-[97%] cursor-pointer;
+  @apply transition-transform duration-160 ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center border border-zinc-300 text-zinc-950 hover:bg-zinc-200 dark:border-zinc-600 dark:text-zinc-50 dark:hover:bg-zinc-800 active:scale-[97%] cursor-pointer;
 }
 
 @utility btn-ghost {
-  @apply transition-transform ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center text-zinc-950 hover:bg-zinc-200 dark:text-zinc-50 dark:hover:bg-zinc-800 active:scale-[97%] cursor-pointer;
+  @apply transition-transform duration-160 ease-out font-medium px-5 py-3 rounded-full flex gap-1 items-center text-zinc-950 hover:bg-zinc-200 dark:text-zinc-50 dark:hover:bg-zinc-800 active:scale-[97%] cursor-pointer;
 }
 
 @utility btn-link {
-  @apply transition-transform ease-out font-medium flex gap-2 items-center text-zinc-950 hover:text-zinc-300 dark:text-zinc-50 dark:hover:text-zinc-600 active:scale-[97%] cursor-pointer;
+  @apply transition-transform duration-160 ease-out font-medium flex gap-2 items-center text-zinc-950 hover:text-zinc-300 dark:text-zinc-50 dark:hover:text-zinc-600 active:scale-[97%] cursor-pointer;
 }
 
 /* custom CSS */

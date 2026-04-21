@@ -10,7 +10,7 @@ export default function FadeIn(props) {
       initial={{ y: initialY, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ ease: "easeInOut", duration: 0.75 }}
+      transition={{ ease: "easeOut", duration: 0.5, delay: props.index ? props.index * 0.1 : 0 }}
       className={props.className}
     >
       {props.children}
