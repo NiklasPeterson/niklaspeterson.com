@@ -1,0 +1,38 @@
+# Niklas Peterson
+
+> Niklas Peterson is a Product Designer and creator from Sweden, currently working as Senior Product Designer at LottieFiles. He brings digital products to life with pixels and code.
+
+## About
+
+Niklas Peterson is a digital designer based in Sweden, focused on product design and front-end implementation. He is a father of two and is passionate about digital design, technology, and innovation.
+
+Outside of his role at LottieFiles, Niklas builds two iOS apps as personal projects: Hydrify and Titls. These projects let him combine design, development, and tech.
+
+## Selected Work
+
+- [Lummi Figma plugin](https://niklaspeterson.com/work/lummi-figma-plugin): Designed the Lummi Figma plugin with a focus on usability, simplicity, and ease of use, while ensuring it consistently reflected the Lummi web experience. Company: Blush Design Inc. Year: 2024.
+- [Lummi web](https://niklaspeterson.com/work/lummi-web): Designed and implemented the Lummi design system and contributed to major features such as filters, image detail view, and upload flow. Company: Blush Design Inc. Year: 2024.
+- [Musho](https://niklaspeterson.com/work/musho): Led the design of the Musho website and contributed to shaping the brand identity, including visual style, color palette, and typography. Company: Blush Design Inc. Year: 2023.
+- [Musho Figma Plugin](https://niklaspeterson.com/work/musho-figma-plugin): Created components and views for the Musho Figma plugin, and designed a concept for a chat-based AI interface. Company: Blush Design Inc. Year: 2023.
+- [Buenoverse](https://niklaspeterson.com/work/buenoverse): Designed the UI for avatar selection in Buenoverse, an interface for players and explorers to customize avatars. Company: Blush Design Inc. Year: 2023.
+- [Bueno Drops Figma Plugin](https://niklaspeterson.com/work/bueno-drops-figma-plugin): Lead designer for the Bueno Drops Figma Plugin, allowing artists to convert Figma designs into digital art without code. Company: Blush Design Inc. Year: 2023.
+
+## Side Projects
+
+- [Hydrify](https://apps.apple.com/app/hydrify/id6450311759): iOS app.
+- [Titls](https://apps.apple.com/app/titls/id1579078964): iOS app.
+- [Timestamps](https://timestamps.app): Web app.
+
+## Contact
+
+- Email: mail@niklaspeterson.com
+- X: https://x.com/niklas_peterson
+- Threads: https://www.threads.net/@niklas.peterson
+- LinkedIn: https://www.linkedin.com/in/niklaspeterson
+- Figma Community: https://www.figma.com/@niklaspeterson
+- CV: https://cv.niklaspeterson.com
+
+## Canonical URLs
+
+- Homepage: https://niklaspeterson.com
+- Sitemap: https://niklaspeterson.com/sitemap.xml

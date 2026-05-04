@@ -1,19 +1,20 @@
 "use client";
 import { motion } from "motion/react"
 
-export default function FadeIn(props) {
+export default function FadeIn({ position, className, index, children, ...rest }) {
 
-  const initialY = props.position === "down" ? -20 : 20;
+  const initialY = position === "down" ? -20 : 20;
 
   return (
     <motion.div
       initial={{ y: initialY, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ ease: "easeOut", duration: 0.5, delay: props.index ? props.index * 0.1 : 0 }}
-      className={props.className}
+      transition={{ ease: "easeOut", duration: 0.5, delay: index ? index * 0.1 : 0 }}
+      className={className}
+      {...rest}
     >
-      {props.children}
+      {children}
     </motion.div>
   );
 }

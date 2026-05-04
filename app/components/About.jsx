@@ -4,10 +4,10 @@ import FadeIn from './FadeIn';
 export default function About() {
 
   return (
-    <FadeIn className='flex w-full justify-between px-4 my-20 gap-10 flex-col-reverse md:flex-row lg:gap-40 lg:px-20 md:my-32'>
+    <FadeIn id="about" className='flex w-full justify-between px-4 my-20 gap-10 flex-col-reverse md:flex-row lg:gap-40 lg:px-20 md:my-32 scroll-mt-24'>
       <div className='flex flex-col gap-8 max-w-2xl'>
         <div className='flex flex-col gap-4'>
-          <h2 className='text-4xl md:text-6xl leading-tight font-bold text-zinc-950 dark:text-zinc-50'>About me</h2>
+          <h2 className='text-4xl md:text-6xl leading-tight font-bold text-zinc-950 dark:text-zinc-50'>About Niklas Peterson</h2>
           <p className='text-lg md:text-xl'>
             I&apos;m <span className='font-semibold text-zinc-950 dark:text-zinc-50'>Niklas Peterson</span>, a father of two, passionate about digital design, technology and innovation.
             <br /><br />
