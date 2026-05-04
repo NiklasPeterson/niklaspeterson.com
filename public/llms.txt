@@ -1,0 +1,28 @@
+# Niklas Peterson
+
+Niklas Peterson is a product designer and creator from Sweden. He brings digital products to life with pixels and code and is currently shaping experiences as a Senior Product Designer at LottieFiles.
+
+Canonical site: https://niklaspeterson.com
+Contact: mail@niklaspeterson.com
+
+## Selected Work
+
+- Lummi Figma plugin: Designed the Lummi Figma plugin with a focus on usability, simplicity, ease of use, and consistency with the Lummi web experience. https://niklaspeterson.com/work/lummi-figma-plugin
+- Lummi web: Designed and implemented the Lummi design system and contributed to filters, image detail view, upload flow, and broader product experience. https://niklaspeterson.com/work/lummi-web
+- Musho: Led the design of the Musho website, including interactive elements, animations, brand identity, visual style, color palette, and typography. https://niklaspeterson.com/work/musho
+- Musho Figma Plugin: Created components and views for the Figma plugin and designed a concept for a chat-based AI interface. https://niklaspeterson.com/work/musho-figma-plugin
+- Buenoverse: Designed the UI for avatar selection with a focus on ease of use, flexibility, avatar customization, navigation, and interactive feedback. https://niklaspeterson.com/work/buenoverse
+- Bueno Drops Figma Plugin: Led design for a Figma plugin that helps artists convert designs into digital art without coding. https://niklaspeterson.com/work/bueno-drops-figma-plugin
+
+## Side Projects
+
+- Hydrify: iOS app by Niklas Peterson. https://hydrify.app
+- Titls: iOS app by Niklas Peterson. https://titls.app
+- Timestamps: side project linked from the portfolio. https://timestamps.app
+
+## Profiles
+
+- X: https://x.com/niklas_peterson
+- Threads: https://www.threads.net/@niklas.peterson
+- Figma: https://www.figma.com/@niklaspeterson
+- LinkedIn: https://www.linkedin.com/in/niklaspeterson

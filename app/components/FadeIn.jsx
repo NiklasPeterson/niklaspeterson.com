@@ -7,6 +7,7 @@ export default function FadeIn(props) {
 
   return (
     <motion.div
+      id={props.id}
       initial={{ y: initialY, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
