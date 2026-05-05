@@ -40,6 +40,21 @@ export default function RootLayout({ children }) {
     ],
   };
 
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
+    name: 'Niklas Peterson',
+    url: SITE_URL,
+    logo: `${SITE_URL}/niklas-peterson.jpg`,
+    founder: { '@id': `${SITE_URL}/#person` },
+    sameAs: [
+      'https://x.com/niklas_peterson',
+      'https://www.linkedin.com/in/niklaspeterson',
+      'https://www.figma.com/@niklaspeterson',
+    ],
+  };
+
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -47,25 +62,33 @@ export default function RootLayout({ children }) {
     url: SITE_URL,
     name: SITE_TITLE,
     description: SITE_DESCRIPTION,
+    publisher: { '@id': `${SITE_URL}/#organization` },
     author: { '@id': `${SITE_URL}/#person` },
     dateModified,
+    inLanguage: 'en',
   };
 
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} antialiased w-full flex justify-center bg-white text-zinc-600 dark:bg-black dark:text-zinc-300`}
-      >
-        {children}
-        <AnalyticsTracker />
+      <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
         <script
           type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
+      </head>
+      <body
+        className={`${inter.className} antialiased w-full flex justify-center bg-white text-zinc-600 dark:bg-black dark:text-zinc-300`}
+      >
+        {children}
+        <AnalyticsTracker />
       </body>
     </html>
   );
