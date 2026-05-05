@@ -53,7 +53,6 @@ export default function Projects({ projects = [] }) {
                     {selectedProject.year && <div>Company:</div>}
                     {selectedProject.year && <div>Date:</div>}
                     {selectedProject.url && <div>Link:</div>}
-                    {selectedProject.slug && <div>Case study:</div>}
                   </div>
 
                   <div className="flex flex-col gap-4">
@@ -65,13 +64,6 @@ export default function Projects({ projects = [] }) {
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path></svg>
                       </span>
                     </a>
-                    }
-                    {selectedProject.slug && <Link className="btn-link" href={`/projects/${selectedProject.slug}`}>
-                      <span className="flex gap-1 items-center">
-                        Read more
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path></svg>
-                      </span>
-                    </Link>
                     }
                   </div>
 
