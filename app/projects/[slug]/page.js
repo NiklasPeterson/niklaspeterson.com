@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { getAllProjects, getProjectBySlug } from '../../lib/projects';
 import Footer from '../../components/Footer';
 import Nav from '../../components/Nav';
+import FadeIn from '../../components/FadeIn';
 
 const SITE_URL = 'https://www.niklaspeterson.com';
 
@@ -80,7 +81,7 @@ export default async function ProjectPage({ params }) {
       <Nav />
 
       <article className="flex flex-col gap-10 md:gap-16 px-4 lg:px-20 pt-10 md:pt-16 pb-20 md:pb-32">
-        <header className="flex flex-col gap-6 max-w-3xl">
+        <FadeIn position="down" className="flex flex-col gap-6 max-w-3xl">
           <h1 className="font-bold text-4xl md:text-6xl leading-tight text-zinc-950 dark:text-zinc-50">
             {project.title}
           </h1>
@@ -135,11 +136,15 @@ export default async function ProjectPage({ params }) {
               </div>
             )}
           </div>
-        </header>
+        </FadeIn>
 
         <div className="flex flex-col gap-4 md:gap-6">
           {project.attachments.map((attachment, i) => (
-            <div key={i} className="rounded-2xl md:rounded-3xl overflow-hidden relative">
+            <FadeIn
+              key={i}
+              index={i}
+              className="rounded-2xl md:rounded-3xl overflow-hidden relative"
+            >
               {attachment.type === 'image' ? (
                 <Image
                   className="w-full h-auto"
@@ -161,7 +166,7 @@ export default async function ProjectPage({ params }) {
                   playsInline
                 />
               )}
-            </div>
+            </FadeIn>
           ))}
         </div>
 
