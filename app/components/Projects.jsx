@@ -71,34 +71,45 @@ export default function Projects({ projects = [] }) {
               </div>
             </div>
 
-            <div className={`flex flex-col md:flex-row px-4 md:px-10 pb-5 md:pb-8 gap-4 md:gap-6 items-center animate-fadeUp md:overflow-x-auto md:snap-x md:snap-mandatory`}>
-              {selectedProject.attachments.map((attachment, i) => (
-                <div key={i} className="relative md:snap-center">
-                  {attachment.type === 'image' ? (
-                      <Image
-                        className="rounded-lg w-auto h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:max-w-[80vw]"
-                        src={attachment.url}
-                        alt={attachment.alt}
-                        height={attachment.height}
-                        width={attachment.width}
-                      />
-                  ) : (
-                    <video
-                      className="rounded-lg w-auto h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:max-w-[80vw]"
-                      src={attachment.url}
-                      height={attachment.height}
-                      width={attachment.width}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
+            {(() => {
+              const isSingle = selectedProject.attachments.length === 1;
+              const galleryClass = isSingle
+                ? "flex flex-col px-4 md:px-10 pb-5 md:pb-8 animate-fadeUp"
+                : "flex flex-col md:flex-row px-4 md:px-10 pb-5 md:pb-8 gap-4 md:gap-6 items-center animate-fadeUp md:overflow-x-auto md:snap-x md:snap-mandatory";
+              const itemClass = isSingle ? "relative w-full" : "relative md:snap-center";
+              const mediaClass = isSingle
+                ? "rounded-lg w-full h-auto"
+                : "rounded-lg w-auto h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:max-w-[80vw]";
 
-                    />
-                  )}
+              return (
+                <div className={galleryClass}>
+                  {selectedProject.attachments.map((attachment, i) => (
+                    <div key={i} className={itemClass}>
+                      {attachment.type === 'image' ? (
+                          <Image
+                            className={mediaClass}
+                            src={attachment.url}
+                            alt={attachment.alt}
+                            height={attachment.height}
+                            width={attachment.width}
+                          />
+                      ) : (
+                        <video
+                          className={mediaClass}
+                          src={attachment.url}
+                          height={attachment.height}
+                          width={attachment.width}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
+                      )}
+                    </div>
+                  ))}
                 </div>
-              ))}
-
-            </div>
+              );
+            })()}
           </div>
         </div>
       )}
