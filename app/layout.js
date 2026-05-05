@@ -4,12 +4,53 @@ import AnalyticsTracker from './components/AnalyticsTracker';
 
 const inter = Inter({ subsets: ['latin'] })
 
+const SITE_URL = 'https://www.niklaspeterson.com';
+const SITE_TITLE = 'Niklas Peterson — Product Designer and creator';
+const SITE_DESCRIPTION = 'Niklas Peterson, Product Designer and creator from Sweden. Who brings digital products to life through pixels and code.';
+
 export const metadata = {
-  title: "Niklas Peterson — Product Designer and creator",
-  description: "Niklas Peterson, Product Designer and creator from Sweden. Who brings digital products to life through pixels and code.",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function RootLayout({ children }) {
+  const dateModified = new Date().toISOString().split('T')[0];
+
+  const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${SITE_URL}/#person`,
+    name: 'Niklas Peterson',
+    url: SITE_URL,
+    image: `${SITE_URL}/niklas-peterson.jpg`,
+    jobTitle: 'Product Designer',
+    nationality: 'SE',
+    sameAs: [
+      'https://x.com/niklas_peterson',
+      'https://www.linkedin.com/in/niklaspeterson',
+      'https://www.figma.com/@niklaspeterson',
+      'https://www.threads.net/@niklas.peterson',
+      'https://cv.niklaspeterson.com',
+      'https://apps.apple.com/app/hydrify/id6450311759',
+      'https://apps.apple.com/app/titls/id1579078964',
+    ],
+  };
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    url: SITE_URL,
+    name: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    author: { '@id': `${SITE_URL}/#person` },
+    dateModified,
+  };
+
   return (
     <html lang="en">
       <body
@@ -17,6 +58,14 @@ export default function RootLayout({ children }) {
       >
         {children}
         <AnalyticsTracker />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
       </body>
     </html>
   );
