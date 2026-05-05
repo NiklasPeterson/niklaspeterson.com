@@ -73,14 +73,13 @@ export default function Projects({ projects = [] }) {
 
             {(() => {
               const isSingle = selectedProject.attachments.length === 1;
-              const galleryClass = "flex flex-col md:flex-row px-4 md:px-10 pb-5 md:pb-8 gap-4 md:gap-6 items-center animate-fadeUp md:overflow-x-auto md:snap-x md:snap-mandatory";
               const itemClass = isSingle ? "relative md:w-full" : "relative md:snap-center";
               const mediaClass = isSingle
-                ? "rounded-lg w-auto max-w-[calc(100vw-32px)] max-h-[600px] md:w-full md:h-auto md:max-w-full md:max-h-none"
-                : "rounded-lg w-auto max-w-[calc(100vw-32px)] max-h-[600px] md:max-w-[80vw] md:h-[60vh]";
+                ? "rounded-lg w-auto max-h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:w-full md:h-auto md:max-w-full md:max-h-none"
+                : "rounded-lg w-auto max-h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:max-w-[80vw]";
 
               return (
-                <div className={galleryClass}>
+                <div className="flex flex-col md:flex-row px-4 md:px-10 pb-5 md:pb-8 gap-4 md:gap-6 items-center animate-fadeUp md:overflow-x-auto md:snap-x md:snap-mandatory">
                   {selectedProject.attachments.map((attachment, i) => (
                     <div key={i} className={itemClass}>
                       {attachment.type === 'image' ? (
