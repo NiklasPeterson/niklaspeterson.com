@@ -3,8 +3,7 @@ import About from "./components/About";
 import Header from "./components/Header";
 import Projects from "./components/Projects";
 import { getAllProjects } from "./lib/projects";
-
-const SITE_URL = 'https://www.niklaspeterson.com';
+import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION } from "./lib/site";
 
 export default function Home() {
   const projects = getAllProjects().filter((p) => p.attachments.length > 0);
@@ -14,8 +13,8 @@ export default function Home() {
     '@type': 'ProfilePage',
     '@id': `${SITE_URL}/#profilepage`,
     url: SITE_URL,
-    name: 'Niklas Peterson — Product Designer and creator',
-    description: 'Niklas Peterson, Product Designer and creator from Sweden. Who brings digital products to life through pixels and code.',
+    name: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     mainEntity: { '@id': `${SITE_URL}/#person` },
     isPartOf: { '@id': `${SITE_URL}/#website` },
     hasPart: projects.map((project) => ({

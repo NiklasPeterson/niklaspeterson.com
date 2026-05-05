@@ -2,11 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getAllProjects, getProjectBySlug } from '../../lib/projects';
+import { SITE_URL } from '../../lib/site';
 import Footer from '../../components/Footer';
 import Nav from '../../components/Nav';
 import FadeIn from '../../components/FadeIn';
-
-const SITE_URL = 'https://www.niklaspeterson.com';
 
 export async function generateStaticParams() {
   return getAllProjects().map((project) => ({ slug: project.slug }));

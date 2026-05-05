@@ -19,15 +19,11 @@ export default function Projects({ projects = [] }) {
   return (
     <>
     <div className='flex flex-wrap gap-12 px-4 pb-20 lg:px-20 md:pb-32'>
-      {projects.map((project, index) => {
-        if (project.attachments.length < 1) { return null; }
-
-        return (
-          <FadeIn key={project.slug ?? index} className="flex flex-col md:flex-[1_1_40%]" index={index} >
-            <ProjectContent project={project} onOpen={openProject} priority={index < 2} />
-          </FadeIn>
-        )
-      })}
+      {projects.map((project, index) => (
+        <FadeIn key={project.slug ?? index} className="flex flex-col md:flex-[1_1_40%]" index={index} >
+          <ProjectContent project={project} onOpen={openProject} priority={index < 2} />
+        </FadeIn>
+      ))}
     </div>
 
     {selectedProject && (
@@ -71,46 +67,48 @@ export default function Projects({ projects = [] }) {
               </div>
             </div>
 
-            {(() => {
-              const isSingle = selectedProject.attachments.length === 1;
-              const itemClass = isSingle ? "relative md:w-full" : "relative md:snap-center";
-              const mediaClass = isSingle
-                ? "rounded-lg w-auto max-h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:w-full md:h-auto md:max-w-full md:max-h-none"
-                : "rounded-lg w-auto max-h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:max-w-[80vw]";
-
-              return (
-                <div className="flex flex-col md:flex-row px-4 md:px-10 pb-5 md:pb-8 gap-4 md:gap-6 items-center animate-fadeUp md:overflow-x-auto md:snap-x md:snap-mandatory">
-                  {selectedProject.attachments.map((attachment, i) => (
-                    <div key={i} className={itemClass}>
-                      {attachment.type === 'image' ? (
-                          <Image
-                            className={mediaClass}
-                            src={attachment.url}
-                            alt={attachment.alt}
-                            height={attachment.height}
-                            width={attachment.width}
-                          />
-                      ) : (
-                        <video
-                          className={mediaClass}
-                          src={attachment.url}
-                          height={attachment.height}
-                          width={attachment.width}
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                        />
-                      )}
-                    </div>
-                  ))}
-                </div>
-              );
-            })()}
+            <ModalGallery attachments={selectedProject.attachments} />
           </div>
         </div>
       )}
     </>
+  );
+}
+
+function ModalGallery({ attachments }) {
+  const isSingle = attachments.length === 1;
+  const itemClass = isSingle ? "relative md:w-full" : "relative md:snap-center";
+  const mediaClass = isSingle
+    ? "rounded-lg w-auto max-h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:w-full md:h-auto md:max-w-full md:max-h-none"
+    : "rounded-lg w-auto max-h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:max-w-[80vw]";
+
+  return (
+    <div className="flex flex-col md:flex-row px-4 md:px-10 pb-5 md:pb-8 gap-4 md:gap-6 items-center animate-fadeUp md:overflow-x-auto md:snap-x md:snap-mandatory">
+      {attachments.map((attachment, i) => (
+        <div key={i} className={itemClass}>
+          {attachment.type === 'image' ? (
+            <Image
+              className={mediaClass}
+              src={attachment.url}
+              alt={attachment.alt}
+              height={attachment.height}
+              width={attachment.width}
+            />
+          ) : (
+            <video
+              className={mediaClass}
+              src={attachment.url}
+              height={attachment.height}
+              width={attachment.width}
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          )}
+        </div>
+      ))}
+    </div>
   );
 }
 
@@ -132,8 +130,8 @@ function ProjectContent({ project, onOpen, priority }) {
         if (index !== 0) return null;
 
         const attachment = media.type === "image"
-          ? <Image className="" width={media.width} height={media.height} src={media.url} alt={media.alt} priority={priority} />
-          : <video className="" src={media.url} autoPlay muted playsInline loop />;
+          ? <Image width={media.width} height={media.height} src={media.url} alt={media.alt} priority={priority} />
+          : <video src={media.url} autoPlay muted playsInline loop />;
 
         return (
           <div key={media.id || index} className="rounded-2xl md:rounded-3xl overflow-hidden relative w-full after:content-[''] after:absolute after:inset-0 after:border after:border-white/20 after:pointer-events-none after:rounded-2xl after:md:rounded-3xl transition-transform duration-200 shadow-none group-hover:scale-102 group-hover:shadow-lg active:scale-99">

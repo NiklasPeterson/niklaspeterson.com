@@ -1,12 +1,9 @@
 import { Inter } from 'next/font/google'
 import "./globals.css";
 import AnalyticsTracker from './components/AnalyticsTracker';
+import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION } from './lib/site';
 
 const inter = Inter({ subsets: ['latin'] })
-
-const SITE_URL = 'https://www.niklaspeterson.com';
-const SITE_TITLE = 'Niklas Peterson — Product Designer and creator';
-const SITE_DESCRIPTION = 'Niklas Peterson, Product Designer and creator from Sweden. Who brings digital products to life through pixels and code.';
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -28,7 +25,7 @@ export default function RootLayout({ children }) {
     url: SITE_URL,
     image: `${SITE_URL}/niklas-peterson.jpg`,
     jobTitle: 'Product Designer',
-    nationality: 'SE',
+    nationality: 'Sweden',
     sameAs: [
       'https://x.com/niklas_peterson',
       'https://www.linkedin.com/in/niklaspeterson',
@@ -40,21 +37,6 @@ export default function RootLayout({ children }) {
     ],
   };
 
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': `${SITE_URL}/#organization`,
-    name: 'Niklas Peterson',
-    url: SITE_URL,
-    logo: `${SITE_URL}/niklas-peterson.jpg`,
-    founder: { '@id': `${SITE_URL}/#person` },
-    sameAs: [
-      'https://x.com/niklas_peterson',
-      'https://www.linkedin.com/in/niklaspeterson',
-      'https://www.figma.com/@niklaspeterson',
-    ],
-  };
-
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -62,7 +44,6 @@ export default function RootLayout({ children }) {
     url: SITE_URL,
     name: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    publisher: { '@id': `${SITE_URL}/#organization` },
     author: { '@id': `${SITE_URL}/#person` },
     dateModified,
     inLanguage: 'en',
@@ -74,10 +55,6 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <script
           type="application/ld+json"
