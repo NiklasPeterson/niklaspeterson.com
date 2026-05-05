@@ -2,7 +2,6 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Header from "./components/Header";
 import Projects from "./components/Projects";
-import Faq from "./components/Faq";
 import { projects } from "./data/projects";
 
 const SITE_URL = "https://niklaspeterson.com";
@@ -65,7 +64,6 @@ export default function Home() {
       <Header />
       <Projects />
       <About />
-      <Faq />
       <Footer />
     </main>
   );

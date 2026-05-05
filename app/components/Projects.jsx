@@ -7,14 +7,11 @@ export default function Projects() {
   const visibleProjects = projects.filter((p) => p.attachments.length > 0);
 
   return (
-    <section id="work" className="flex flex-col gap-8 px-4 pb-20 lg:px-20 md:pb-32" aria-labelledby="work-heading">
-      <h2
-        id="work-heading"
-        className="text-3xl md:text-5xl font-bold text-zinc-950 dark:text-zinc-50"
-      >
-        Selected work
-      </h2>
-
+    <section
+      id="work"
+      className="flex flex-col px-4 pb-20 lg:px-20 md:pb-32 scroll-mt-24"
+      aria-label="Selected work"
+    >
       <div className="flex flex-wrap gap-12">
         {visibleProjects.map((project, index) => (
           <FadeIn
