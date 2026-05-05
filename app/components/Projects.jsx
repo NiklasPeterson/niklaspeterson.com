@@ -76,7 +76,7 @@ export default function Projects({ projects = [] }) {
                 <div key={i} className="relative md:snap-center">
                   {attachment.type === 'image' ? (
                       <Image
-                        className="rounded-lg w-auto max-h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:max-w-[80vw]"
+                        className="rounded-lg w-auto h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:max-w-[80vw]"
                         src={attachment.url}
                         alt={attachment.alt}
                         height={attachment.height}
@@ -84,7 +84,7 @@ export default function Projects({ projects = [] }) {
                       />
                   ) : (
                     <video
-                      className="rounded-lg w-auto max-h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:max-w-[80vw]"
+                      className="rounded-lg w-auto h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:max-w-[80vw]"
                       src={attachment.url}
                       height={attachment.height}
                       width={attachment.width}
