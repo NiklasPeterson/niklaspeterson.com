@@ -37,6 +37,20 @@ export default function RootLayout({ children }) {
     ],
   };
 
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
+    name: 'Niklas Peterson',
+    url: SITE_URL,
+    founder: { '@id': `${SITE_URL}/#person` },
+    sameAs: [
+      'https://x.com/niklas_peterson',
+      'https://www.linkedin.com/in/niklaspeterson',
+      'https://www.figma.com/@niklaspeterson',
+    ],
+  };
+
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -45,6 +59,7 @@ export default function RootLayout({ children }) {
     name: SITE_TITLE,
     description: SITE_DESCRIPTION,
     author: { '@id': `${SITE_URL}/#person` },
+    publisher: { '@id': `${SITE_URL}/#organization` },
     dateModified,
     inLanguage: 'en',
   };
@@ -55,6 +70,10 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <script
           type="application/ld+json"
