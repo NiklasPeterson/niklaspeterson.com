@@ -1,0 +1,30 @@
+# Niklas Peterson
+
+> Product Designer and creator from Sweden, currently a Senior Product Designer at LottieFiles. Brings digital products to life with pixels and code.
+
+## Projects
+
+- [Lummi Figma plugin](https://www.niklaspeterson.com/projects/lummi-figma-plugin): Quick image insertion plugin for the Lummi photo library, designed at Blush Design Inc. (2024).
+- [Lummi web](https://www.niklaspeterson.com/projects/lummi-web): Design system and core product work for the Lummi photo library web app, at Blush Design Inc. (2024).
+- [Musho](https://www.niklaspeterson.com/projects/musho): Website design and brand identity for Musho, an AI design tool, at Blush Design Inc. (2023).
+- [Musho Figma Plugin](https://www.niklaspeterson.com/projects/musho-figma-plugin): Components and chat-based AI interface concept for the Musho Figma plugin, at Blush Design Inc. (2023).
+- [Buenoverse](https://www.niklaspeterson.com/projects/buenoverse): Avatar selection UI for the Buenoverse virtual world, at Blush Design Inc. (2023).
+- [Bueno Drops Figma Plugin](https://www.niklaspeterson.com/projects/bueno-drops-figma-plugin): No-code digital collectibles creation flow for the Bueno Drops Figma plugin, at Blush Design Inc. (2023).
+
+## About
+
+- [Read full CV](https://cv.niklaspeterson.com)
+
+## Side projects
+
+- [Hydrify](https://apps.apple.com/app/hydrify/id6450311759): iOS hydration tracker
+- [Titls](https://apps.apple.com/app/titls/id1579078964): iOS app for music
+- [Timestamps](https://timestamps.app): web app
+
+## Contact
+
+- Email: mail@niklaspeterson.com
+- X: https://x.com/niklas_peterson
+- LinkedIn: https://www.linkedin.com/in/niklaspeterson
+- Figma: https://www.figma.com/@niklaspeterson
+- Threads: https://www.threads.net/@niklas.peterson
