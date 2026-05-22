@@ -11,7 +11,7 @@ export default function AnalyticsTracker() {
     async function trackPageview() {
       const visitorId = getVisitorId();
       const sessionId = getSessionId();
-      const referrer = document.referrer; // Get the referrer from the document
+      const referrer = document.referrer;
 
       await fetch('/api/analytics/pageview', {
         method: 'POST',
@@ -22,7 +22,7 @@ export default function AnalyticsTracker() {
           page: pathname,
           visitorId,
           sessionId,
-          referrer // Include referrer in the request body
+          referrer
         }),
       });
     }

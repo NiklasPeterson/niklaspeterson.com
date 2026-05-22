@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 
 const HoverThumbnail = ({ text, images }) => {
   const [hovered, setHovered] = useState(false);
-  const [hasEntered, setHasEntered] = useState(false); // New state to track initial hover
+  const [hasEntered, setHasEntered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const textRef = useRef(null);
 
@@ -20,13 +20,12 @@ const HoverThumbnail = ({ text, images }) => {
 
   const handleMouseEnter = () => {
     setHovered(true);
-    // Delay setting hasEntered to true to allow the initial animation to play
-    setTimeout(() => setHasEntered(true), images.length * 100); // Adjust timing based on delay
+    setTimeout(() => setHasEntered(true), images.length * 100);
   };
 
   const handleMouseLeave = () => {
     setHovered(false);
-    setHasEntered(false); // Reset for the next hover
+    setHasEntered(false);
   };
 
   return (
@@ -46,7 +45,6 @@ const HoverThumbnail = ({ text, images }) => {
               initial={{
                 opacity: 0,
                 scale: 0.8,
-                rotate: 0,
                 x: mousePosition.x + 16 + index * 140,
                 y: mousePosition.y - 40 + (index % 2 === 0 ? - 8 : + 4),
                 rotate: index % 2 === 0 ? index * 1 : -index * 1,
@@ -59,7 +57,7 @@ const HoverThumbnail = ({ text, images }) => {
                 rotate: index % 2 === 0 ? index * 1 : -index * 1,
               }}
               transition={{
-                opacity: { duration: 0.2, ease: "easeOut" }, // Fast, responsive hover feedback
+                opacity: { duration: 0.2, ease: "easeOut" },
                 default: {
                   type: "spring",
                   stiffness: 360,

@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -15,7 +15,7 @@ export async function POST(request) {
       page,
       visitor_id: visitorId,
       session_id: sessionId,
-      referrer // Add referrer to the insert data
+      referrer
     });
 
   if (error) {
