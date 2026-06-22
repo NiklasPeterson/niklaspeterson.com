@@ -9,27 +9,27 @@ export default function Home() {
   const projects = getAllProjects().filter((p) => p.attachments.length > 0);
 
   const profilePageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'ProfilePage',
-    '@id': `${SITE_URL}/#profilepage`,
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${SITE_URL}/#profilepage`,
     url: SITE_URL,
     name: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    mainEntity: { '@id': `${SITE_URL}/#person` },
-    isPartOf: { '@id': `${SITE_URL}/#website` },
+    mainEntity: { "@id": `${SITE_URL}/#person` },
+    isPartOf: { "@id": `${SITE_URL}/#website` },
     hasPart: projects.map((project) => ({
-      '@type': 'CreativeWork',
+      "@type": "CreativeWork",
       name: project.title,
       url: `${SITE_URL}/projects/${project.slug}`,
     })),
   };
 
   return (
-    <main className="w-full max-w-[1440px] flex flex-col">
-      <Header/>
-      <Projects projects={projects}/>
-      <About/>
-      <Footer/>
+    <main className="flex w-full max-w-[1440px] flex-col">
+      <Header />
+      <Projects projects={projects} />
+      <About />
+      <Footer />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}

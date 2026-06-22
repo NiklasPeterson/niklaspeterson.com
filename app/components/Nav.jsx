@@ -1,12 +1,12 @@
-import Link from 'next/link';
-import FadeIn from './FadeIn';
-import Logo from './Logo';
+import Link from "next/link";
+import FadeIn from "./FadeIn";
+import Logo from "./Logo";
 
-export default function Nav({ className = '' }) {
+export default function Nav({ className = "" }) {
   return (
     <FadeIn
       position="down"
-      className={`w-full max-w-[1440px] flex items-center justify-between py-4 px-4 lg:px-20 ${className}`}
+      className={`flex w-full max-w-[1440px] items-center justify-between px-4 py-4 lg:px-20 ${className}`}
     >
       <Link href="/" aria-label="Niklas Peterson — home">
         <Logo />
@@ -14,7 +14,7 @@ export default function Nav({ className = '' }) {
 
       <a
         href="mailto:mail@niklaspeterson.com?subject=Contact"
-        className="px-5 py-3 text-base btn-primary"
+        className="btn-primary px-5 py-3 text-base"
         aria-label="Contact"
       >
         <span className="mx-1">Contact</span>
@@ -24,7 +24,7 @@ export default function Nav({ className = '' }) {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="w-5 h-5"
+          className="h-5 w-5"
         >
           <path
             strokeLinecap="round"

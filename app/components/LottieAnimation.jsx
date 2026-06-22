@@ -1,5 +1,5 @@
-'use client'
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+"use client";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function LottieAnimation() {
   return (
