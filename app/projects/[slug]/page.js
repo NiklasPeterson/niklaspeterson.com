@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { getAllProjects, getProjectBySlug } from '../../lib/projects';
-import { SITE_URL } from '../../lib/site';
-import Footer from '../../components/Footer';
-import Nav from '../../components/Nav';
-import FadeIn from '../../components/FadeIn';
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { getAllProjects, getProjectBySlug } from "../../lib/projects";
+import { SITE_URL } from "../../lib/site";
+import Footer from "../../components/Footer";
+import Nav from "../../components/Nav";
+import FadeIn from "../../components/FadeIn";
 
 export async function generateStaticParams() {
   return getAllProjects().map((project) => ({ slug: project.slug }));
@@ -16,8 +16,8 @@ export async function generateMetadata({ params }) {
   const project = getProjectBySlug(slug);
   if (!project) return {};
 
-  const firstImage = project.attachments.find((a) => a.type === 'image');
-  const ogImage = firstImage ? firstImage.url : '/opengraph-image.png';
+  const firstImage = project.attachments.find((a) => a.type === "image");
+  const ogImage = firstImage ? firstImage.url : "/opengraph-image.png";
 
   return {
     title: `${project.title} — Niklas Peterson`,
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
       description: project.description,
       url: `${SITE_URL}/projects/${project.slug}`,
       images: [{ url: ogImage }],
-      type: 'article',
+      type: "article",
     },
   };
 }
@@ -38,36 +38,36 @@ export default async function ProjectPage({ params }) {
   const project = getProjectBySlug(slug);
   if (!project) notFound();
 
-  const dateModified = new Date().toISOString().split('T')[0];
-  const firstImage = project.attachments.find((a) => a.type === 'image');
+  const dateModified = new Date().toISOString().split("T")[0];
+  const firstImage = project.attachments.find((a) => a.type === "image");
 
   const creativeWorkSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'CreativeWork',
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
     name: project.title,
     description: project.description,
     url: `${SITE_URL}/projects/${project.slug}`,
     ...(project.year && { dateCreated: String(project.year) }),
     dateModified,
-    creator: { '@id': `${SITE_URL}/#person` },
+    creator: { "@id": `${SITE_URL}/#person` },
     ...(firstImage && { image: `${SITE_URL}${firstImage.url}` }),
     ...(project.company && {
-      sourceOrganization: { '@type': 'Organization', name: project.company },
+      sourceOrganization: { "@type": "Organization", name: project.company },
     }),
   };
 
   const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
     itemListElement: [
       {
-        '@type': 'ListItem',
+        "@type": "ListItem",
         position: 1,
-        name: 'Home',
+        name: "Home",
         item: SITE_URL,
       },
       {
-        '@type': 'ListItem',
+        "@type": "ListItem",
         position: 2,
         name: project.title,
         item: `${SITE_URL}/projects/${project.slug}`,
@@ -76,12 +76,12 @@ export default async function ProjectPage({ params }) {
   };
 
   return (
-    <main className="w-full max-w-[1440px] flex flex-col">
+    <main className="flex w-full max-w-[1440px] flex-col">
       <Nav />
 
-      <article className="flex flex-col gap-10 md:gap-16 px-4 lg:px-20 pt-10 md:pt-16 pb-20 md:pb-32">
-        <FadeIn position="down" className="flex flex-col gap-6 max-w-3xl">
-          <h1 className="font-bold text-4xl md:text-6xl leading-tight text-zinc-950 dark:text-zinc-50">
+      <article className="flex flex-col gap-10 px-4 pt-10 pb-20 md:gap-16 md:pt-16 md:pb-32 lg:px-20">
+        <FadeIn position="down" className="flex max-w-3xl flex-col gap-6">
+          <h1 className="text-4xl leading-tight font-bold text-zinc-950 md:text-6xl dark:text-zinc-50">
             {project.title}
           </h1>
           <p className="text-lg md:text-xl">{project.description}</p>
@@ -89,23 +89,27 @@ export default async function ProjectPage({ params }) {
           <div className="flex flex-wrap gap-x-10 gap-y-4 text-base">
             {project.company && (
               <div className="flex flex-col gap-1">
-                <div className="uppercase text-xs font-normal tracking-widest text-zinc-600 dark:text-zinc-300">
+                <div className="text-xs font-normal tracking-widest text-zinc-600 uppercase dark:text-zinc-300">
                   Company
                 </div>
-                <div className="text-zinc-950 dark:text-zinc-50">{project.company}</div>
+                <div className="text-zinc-950 dark:text-zinc-50">
+                  {project.company}
+                </div>
               </div>
             )}
             {project.year && (
               <div className="flex flex-col gap-1">
-                <div className="uppercase text-xs font-normal tracking-widest text-zinc-600 dark:text-zinc-300">
+                <div className="text-xs font-normal tracking-widest text-zinc-600 uppercase dark:text-zinc-300">
                   Year
                 </div>
-                <div className="text-zinc-950 dark:text-zinc-50">{project.year}</div>
+                <div className="text-zinc-950 dark:text-zinc-50">
+                  {project.year}
+                </div>
               </div>
             )}
             {project.url && (
               <div className="flex flex-col gap-1">
-                <div className="uppercase text-xs font-normal tracking-widest text-zinc-600 dark:text-zinc-300">
+                <div className="text-xs font-normal tracking-widest text-zinc-600 uppercase dark:text-zinc-300">
                   Link
                 </div>
                 <a
@@ -114,7 +118,7 @@ export default async function ProjectPage({ params }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span className="flex gap-1 items-center">
+                  <span className="flex items-center gap-1">
                     Visit live
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +126,7 @@ export default async function ProjectPage({ params }) {
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
                       stroke="currentColor"
-                      className="w-4 h-4"
+                      className="h-4 w-4"
                     >
                       <path
                         strokeLinecap="round"
@@ -142,11 +146,11 @@ export default async function ProjectPage({ params }) {
             <FadeIn
               key={i}
               index={i}
-              className="rounded-2xl md:rounded-3xl overflow-hidden relative"
+              className="relative overflow-hidden rounded-2xl md:rounded-3xl"
             >
-              {attachment.type === 'image' ? (
+              {attachment.type === "image" ? (
                 <Image
-                  className="w-full h-auto"
+                  className="h-auto w-full"
                   src={attachment.url}
                   alt={attachment.alt || project.title}
                   width={attachment.width}
@@ -155,7 +159,7 @@ export default async function ProjectPage({ params }) {
                 />
               ) : (
                 <video
-                  className="w-full h-auto"
+                  className="h-auto w-full"
                   src={attachment.url}
                   height={attachment.height}
                   width={attachment.width}
@@ -170,16 +174,20 @@ export default async function ProjectPage({ params }) {
         </div>
 
         <Link href="/" className="btn-link self-start">
-          <span className="flex gap-1 items-center">
+          <span className="flex items-center gap-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-4 h-4"
+              className="h-4 w-4"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
             </svg>
             Back to all projects
           </span>

@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "motion/react"
+import { motion } from "motion/react";
 import React from "react";
 
 const images = [
@@ -46,9 +46,7 @@ const variants = {
 
 export default function AlbumAnimation() {
   return (
-    <motion.div
-      className="flex flex-row items-center justify-center w-full h-full shadow-lg rounded-xl overflow-hidden p-4 relative"
-    >
+    <motion.div className="relative flex h-full w-full flex-row items-center justify-center overflow-hidden rounded-xl p-4 shadow-lg">
       {images.map((image, index) => (
         <motion.img
           src={image.src}
@@ -58,7 +56,7 @@ export default function AlbumAnimation() {
           variants={variants}
           initial="initial"
           animate="animate"
-          className="w-12 h-12 border-2 border-gray-100 rounded-lg -m-3 shadow-lg"
+          className="-m-3 h-12 w-12 rounded-lg border-2 border-gray-100 shadow-lg"
         />
       ))}
     </motion.div>

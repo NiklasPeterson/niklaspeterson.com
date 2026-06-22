@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.19.4",
@@ -21,6 +23,8 @@
     "@tailwindcss/postcss": "^4.3.0",
     "eslint": "^10",
     "eslint-config-next": "^16.2.7",
+    "prettier": "^3.8.4",
+    "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4.2.0"
   }
 }

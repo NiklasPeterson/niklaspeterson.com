@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -46,14 +46,14 @@ const HoverThumbnail = ({ text, images }) => {
                 opacity: 0,
                 scale: 0.8,
                 x: mousePosition.x + 16 + index * 140,
-                y: mousePosition.y - 40 + (index % 2 === 0 ? - 8 : + 4),
+                y: mousePosition.y - 40 + (index % 2 === 0 ? -8 : +4),
                 rotate: index % 2 === 0 ? index * 1 : -index * 1,
               }}
               animate={{
                 opacity: 1,
                 scale: 1,
                 x: mousePosition.x + 16 + index * 140,
-                y: mousePosition.y - 40 + (index % 2 === 0 ? - 8 : + 4),
+                y: mousePosition.y - 40 + (index % 2 === 0 ? -8 : +4),
                 rotate: index % 2 === 0 ? index * 1 : -index * 1,
               }}
               transition={{
@@ -65,7 +65,7 @@ const HoverThumbnail = ({ text, images }) => {
                   delay: !hasEntered ? index * 0.1 : 0,
                 },
               }}
-              className="absolute pointer-events-none w-40 rounded-xl shadow-xl overflow-hidden z-10 hidden sm:flex"
+              className="pointer-events-none absolute z-10 hidden w-40 overflow-hidden rounded-xl shadow-xl sm:flex"
               style={{
                 transformOrigin: "center center",
                 border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -74,7 +74,7 @@ const HoverThumbnail = ({ text, images }) => {
               <img
                 src={imageSrc}
                 alt={`${text} UI ${index + 1}`}
-                className="object-fill h-full"
+                className="h-full object-fill"
               />
             </motion.span>
           ))}
