@@ -41,7 +41,7 @@ export default function Projects({ projects = [] }) {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="mx-auto flex max-w-[1440px] animate-fadeUp flex-col gap-10 border-zinc-200 bg-white pt-6 pb-1 md:h-fit md:rounded-3xl md:border md:pt-10 md:pb-2 dark:bg-black dark:md:border-zinc-800"
+            className="mx-auto flex max-w-360 animate-fadeUp flex-col gap-10 border-zinc-200 bg-white pt-6 pb-1 md:h-fit md:rounded-3xl md:border md:pt-10 md:pb-2 dark:bg-black dark:md:border-zinc-800"
           >
             <div className="flex flex-col gap-6 px-4 md:gap-8 md:px-10">
               <div className="flex items-center justify-between">

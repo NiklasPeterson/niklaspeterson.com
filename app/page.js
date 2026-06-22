@@ -25,7 +25,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex w-full max-w-[1440px] flex-col">
+    <main className="flex w-full max-w-360 flex-col">
       <Header />
       <Projects projects={projects} />
       <About />

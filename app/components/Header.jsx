@@ -10,7 +10,7 @@ export default function Header() {
 
       <FadeIn
         position="down"
-        className="flex h-[560px] max-w-5xl flex-col justify-center gap-4 px-4 sm:h-[640px] md:h-[720px] md:py-32 lg:px-20"
+        className="flex h-140 max-w-5xl flex-col justify-center gap-4 px-4 sm:h-160 md:h-180 lg:px-20"
       >
         <div className="absolute top-0 right-0 left-0 -z-10 flex max-w-full justify-center overflow-hidden blur-[120px]">
           <LottieAnimation />

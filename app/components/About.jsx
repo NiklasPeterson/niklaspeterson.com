@@ -58,7 +58,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="relative h-[320px] w-full overflow-hidden rounded-2xl sm:h-[400px] sm:w-[320px] md:rounded-3xl">
+      <div className="relative h-80 w-full overflow-hidden rounded-2xl sm:h-100 sm:w-[320px] md:rounded-3xl">
         <Image
           src="/niklas-peterson.jpg"
           alt="Picture of Niklas Peterson"
