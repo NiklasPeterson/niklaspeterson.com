@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useRef } from "react";
 import Image from "next/image";
 import FadeIn from "./FadeIn";
@@ -25,7 +26,8 @@ export default function Projects({ projects = [] }) {
   const currentIndex = selectedProject
     ? projects.findIndex(
         (p) =>
-          (p.slug ?? p.title) === (selectedProject.slug ?? selectedProject.title),
+          (p.slug ?? p.title) ===
+          (selectedProject.slug ?? selectedProject.title),
       )
     : -1;
   // Wrap around at the ends so both controls always have a target.
@@ -34,9 +36,7 @@ export default function Projects({ projects = [] }) {
       ? projects[(currentIndex - 1 + projects.length) % projects.length]
       : null;
   const nextProject =
-    currentIndex >= 0
-      ? projects[(currentIndex + 1) % projects.length]
-      : null;
+    currentIndex >= 0 ? projects[(currentIndex + 1) % projects.length] : null;
 
   return (
     <>
@@ -64,7 +64,7 @@ export default function Projects({ projects = [] }) {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="mx-auto flex max-w-360 md:animate-fadeUp flex-col gap-10 border-zinc-200 bg-white pt-6 pb-1 md:h-fit md:rounded-3xl md:border md:pt-10 md:pb-2 dark:bg-black dark:md:border-zinc-800"
+            className="mx-auto flex max-w-360 flex-col gap-10 border-zinc-200 bg-white pt-6 pb-1 md:h-fit md:animate-fadeUp md:rounded-3xl md:border md:pt-10 md:pb-2 dark:bg-black dark:md:border-zinc-800"
           >
             <div className="flex flex-col gap-6 px-4 md:gap-8 md:px-10">
               <div className="flex items-center justify-between">
@@ -148,12 +148,12 @@ function ModalGallery({ attachments }) {
   //     : "rounded-lg w-auto max-h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:max-w-[80vw]";
 
   return (
-    <div className="flex animate-fadeUp flex-col items-center gap-4 px-4 pb-5 md:gap-6 md:overflow-x-auto md:px-10 md:pb-8">
+    <div className="flex animate-fadeUp flex-col items-center gap-4 px-4 md:gap-6 md:overflow-x-auto md:px-10">
       {attachments.map((attachment, i) => (
         <div key={i} className="relative md:w-full">
           {attachment.type === "image" ? (
             <Image
-              className="rounded-lg w-auto max-w-[calc(100vw-32px)] md:w-full md:h-auto md:max-w-full md:max-h-none"
+              className="w-auto max-w-[calc(100vw-32px)] rounded-lg md:h-auto md:max-h-none md:w-full md:max-w-full"
               src={attachment.url}
               alt={attachment.alt}
               height={attachment.height}
@@ -161,7 +161,7 @@ function ModalGallery({ attachments }) {
             />
           ) : (
             <video
-              className="rounded-lg w-auto max-w-[calc(100vw-32px)] md:w-full md:h-auto md:max-w-full md:max-h-none"
+              className="w-auto max-w-[calc(100vw-32px)] rounded-lg md:h-auto md:max-h-none md:w-full md:max-w-full"
               src={attachment.url}
               height={attachment.height}
               width={attachment.width}
@@ -179,7 +179,7 @@ function ModalGallery({ attachments }) {
 
 function ModalNav({ prev, next, onNavigate }) {
   return (
-    <div className="flex items-center justify-between gap-4 px-2 pb-2 md:px-8">
+    <div className="flex items-center justify-between gap-4 px-2 pb-6 md:px-8">
       <NavButton project={prev} dir="prev" onNavigate={onNavigate} />
       <NavButton project={next} dir="next" onNavigate={onNavigate} />
     </div>
@@ -218,7 +218,13 @@ function NavThumb({ media, title }) {
   return (
     <span className="relative aspect-[16/10] w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 md:w-16 dark:bg-zinc-900">
       {media.type === "image" ? (
-        <Image src={media.url} alt={title} fill sizes="64px" className="object-cover" />
+        <Image
+          src={media.url}
+          alt={title}
+          fill
+          sizes="64px"
+          className="object-cover"
+        />
       ) : (
         // #t=0.1 nudges the browser to render the first frame as a still poster
         <video
@@ -246,22 +252,42 @@ function Chevron({ dir }) {
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d={dir === "left" ? "M15.75 19.5 8.25 12l7.5-7.5" : "m8.25 4.5 7.5 7.5-7.5 7.5"}
+        d={
+          dir === "left"
+            ? "M15.75 19.5 8.25 12l7.5-7.5"
+            : "m8.25 4.5 7.5 7.5-7.5 7.5"
+        }
       />
     </svg>
   );
 }
 
 function ProjectContent({ project, onOpen, priority }) {
-  // Plain <button>, NOT a link: a navigable <a href="/projects/[slug]"> (or
-  // next/link) makes Safari speculatively load that heavy detail route on
-  // hover/mousedown, freezing the main thread ~1-2s before the modal renders.
-  // The project routes stay discoverable via sitemap.xml + JSON-LD instead.
+  // Real <Link> so the /projects/[slug] route stays crawlable (SEO) and
+  // modifier-clicks open the full page — but prefetch is DISABLED. Next.js's
+  // eager route prefetch was loading the media-heavy detail route in the
+  // background and freezing Safari's main thread ~1-2s on open; prefetch={false}
+  // fixes that. A plain left-click opens the modal instead of navigating.
   return (
-    <button
-      type="button"
+    <Link
+      href={`/projects/${project.slug}`}
+      prefetch={false}
       className="group flex h-full w-full cursor-pointer flex-col gap-5 text-left"
-      onClick={() => onOpen(project)}
+      onClick={(event) => {
+        if (
+          event.defaultPrevented ||
+          event.button !== 0 ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey
+        ) {
+          return;
+        }
+
+        event.preventDefault();
+        onOpen(project);
+      }}
       aria-label={`Open ${project.title} project`}
     >
       {project.attachments.map((media, index) => {
@@ -299,6 +325,6 @@ function ProjectContent({ project, onOpen, priority }) {
           {project.description}
         </div>
       </div>
-    </button>
+    </Link>
   );
 }

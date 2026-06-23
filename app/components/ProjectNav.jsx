@@ -46,7 +46,13 @@ function Thumb({ media, title }) {
   return (
     <span className="relative aspect-[16/10] w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 md:w-16 dark:bg-zinc-900">
       {media.type === "image" ? (
-        <Image src={media.url} alt={title} fill sizes="64px" className="object-cover" />
+        <Image
+          src={media.url}
+          alt={title}
+          fill
+          sizes="64px"
+          className="object-cover"
+        />
       ) : (
         // #t=0.1 nudges the browser to render the first frame as a still poster
         <video
@@ -74,7 +80,11 @@ function Chevron({ dir }) {
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d={dir === "left" ? "M15.75 19.5 8.25 12l7.5-7.5" : "m8.25 4.5 7.5 7.5-7.5 7.5"}
+        d={
+          dir === "left"
+            ? "M15.75 19.5 8.25 12l7.5-7.5"
+            : "m8.25 4.5 7.5 7.5-7.5 7.5"
+        }
       />
     </svg>
   );
