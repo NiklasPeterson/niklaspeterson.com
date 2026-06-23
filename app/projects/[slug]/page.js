@@ -1,11 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAllProjects, getProjectBySlug } from "../../lib/projects";
+import {
+  getAllProjects,
+  getProjectBySlug,
+  getAdjacentProjects,
+} from "../../lib/projects";
 import { SITE_URL } from "../../lib/site";
 import Footer from "../../components/Footer";
 import Nav from "../../components/Nav";
 import FadeIn from "../../components/FadeIn";
+import ProjectNav from "../../components/ProjectNav";
 
 export async function generateStaticParams() {
   return getAllProjects().map((project) => ({ slug: project.slug }));
@@ -40,6 +45,7 @@ export default async function ProjectPage({ params }) {
 
   const dateModified = new Date().toISOString().split("T")[0];
   const firstImage = project.attachments.find((a) => a.type === "image");
+  const { prev, next } = getAdjacentProjects(slug);
 
   const creativeWorkSchema = {
     "@context": "https://schema.org",
@@ -173,25 +179,7 @@ export default async function ProjectPage({ params }) {
           ))}
         </div>
 
-        <Link href="/" className="btn-link self-start">
-          <span className="flex items-center gap-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="h-4 w-4"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 19.5 8.25 12l7.5-7.5"
-              />
-            </svg>
-            Back to all projects
-          </span>
-        </Link>
+        <ProjectNav prev={prev} next={next} />
       </article>
 
       <Footer />
