@@ -19,3 +19,14 @@ export function getAllProjects() {
 export function getProjectBySlug(slug) {
   return getAllProjects().find((project) => project.slug === slug) ?? null;
 }
+
+// Neighbors for prev/next navigation. Wraps around at the ends.
+export function getAdjacentProjects(slug) {
+  const all = getAllProjects();
+  const i = all.findIndex((project) => project.slug === slug);
+  if (i === -1) return { prev: null, next: null };
+  return {
+    prev: all[(i - 1 + all.length) % all.length],
+    next: all[(i + 1) % all.length],
+  };
+}
