@@ -21,7 +21,7 @@ function NavLink({ project, dir }) {
       href={`/projects/${project.slug}`}
       prefetch={false}
       aria-label={`${isPrev ? "Previous" : "Next"} project: ${project.title}`}
-      className={`group flex items-center gap-3 rounded-xl p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900 ${
+      className={`group flex max-w-[calc(50%-0.5rem)] min-w-0 items-center gap-3 rounded-xl p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900 ${
         isPrev ? "" : "flex-row-reverse"
       }`}
     >
@@ -34,7 +34,7 @@ function NavLink({ project, dir }) {
           {isPrev ? "Previous" : "Next"}
           {!isPrev && <Chevron dir="right" />}
         </span>
-        <span className="max-w-[34vw] truncate text-sm font-medium text-zinc-950 md:max-w-[15rem] dark:text-zinc-50">
+        <span className="max-w-full truncate text-sm font-medium text-zinc-950 md:max-w-[15rem] dark:text-zinc-50">
           {project.title}
         </span>
       </span>
