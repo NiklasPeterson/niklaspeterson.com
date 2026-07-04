@@ -3,7 +3,7 @@ import LottieAnimation from "./LottieAnimation";
 
 export default function Footer() {
   return (
-    <FadeIn className="relative my-20 flex w-full flex-col gap-10 px-4 md:mt-32 lg:px-20">
+    <FadeIn className="relative isolate flex w-full flex-col gap-10 overflow-hidden px-4 py-20 md:pt-32 lg:px-20">
       <div className="flex flex-col gap-20 md:flex-row md:justify-between">
         <div className="flex flex-col gap-4">
           <h2 className="max-w-xl text-4xl leading-tight font-bold text-zinc-950 md:text-6xl dark:text-zinc-50">
@@ -123,8 +123,13 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="absolute right-0 bottom-0 left-0 -z-10 flex h-full max-w-full rotate-180 justify-center overflow-hidden blur-[120px]">
-        <LottieAnimation />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+      >
+        <div className="flex h-full max-w-full rotate-180 justify-center blur-[120px]">
+          <LottieAnimation />
+        </div>
       </div>
     </FadeIn>
   );
