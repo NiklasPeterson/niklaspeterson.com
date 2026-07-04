@@ -31,6 +31,7 @@ export default function RootLayout({ children }) {
       "https://www.linkedin.com/in/niklaspeterson",
       "https://www.figma.com/@niklaspeterson",
       "https://www.threads.net/@niklas.peterson",
+      "https://github.com/NiklasPeterson",
       "https://cv.niklaspeterson.com",
       "https://apps.apple.com/app/hydrify/id6450311759",
       "https://apps.apple.com/app/titls/id1579078964",
@@ -48,6 +49,7 @@ export default function RootLayout({ children }) {
       "https://x.com/niklas_peterson",
       "https://www.linkedin.com/in/niklaspeterson",
       "https://www.figma.com/@niklaspeterson",
+      "https://github.com/NiklasPeterson",
     ],
   };
 
