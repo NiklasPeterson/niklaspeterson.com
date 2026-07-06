@@ -85,7 +85,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${inter.className} flex w-full justify-center bg-white text-zinc-600 antialiased dark:bg-black dark:text-zinc-300`}
+        className={`${inter.className} relative flex w-full justify-center bg-white text-zinc-600 antialiased dark:bg-black dark:text-zinc-300`}
       >
         {children}
         <AnalyticsTracker />
