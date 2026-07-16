@@ -6,13 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.19.5",
-    "@supabase/supabase-js": "^2.110.2",
+    "@supabase/supabase-js": "^2.110.7",
     "motion": "12.42.2",
     "next": "^16.2.10",
     "react": "^19.2.7",
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.2",
-    "eslint": "^10",
+    "eslint": "^9.39.5",
     "eslint-config-next": "^16.2.10",
     "prettier": "^3.9.5",
     "prettier-plugin-tailwindcss": "^0.8.0",
