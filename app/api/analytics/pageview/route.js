@@ -65,7 +65,8 @@ function normalizeReferrer(value) {
 
   try {
     const referrer = new URL(value.trim());
-    if (referrer.protocol !== "http:" && referrer.protocol !== "https:") return null;
+    if (referrer.protocol !== "http:" && referrer.protocol !== "https:")
+      return null;
 
     referrer.search = "";
     referrer.hash = "";
@@ -77,16 +78,30 @@ function normalizeReferrer(value) {
 
 export async function POST(request) {
   if (!isSameOriginRequest(request)) {
-    return NextResponse.json({ error: "Invalid request origin" }, { status: 403 });
+    return NextResponse.json(
+      { error: "Invalid request origin" },
+      { status: 403 },
+    );
   }
 
-  if (!request.headers.get("content-type")?.toLowerCase().startsWith("application/json")) {
-    return NextResponse.json({ error: "Content-Type must be application/json" }, { status: 415 });
+  if (
+    !request.headers
+      .get("content-type")
+      ?.toLowerCase()
+      .startsWith("application/json")
+  ) {
+    return NextResponse.json(
+      { error: "Content-Type must be application/json" },
+      { status: 415 },
+    );
   }
 
   const contentLength = Number(request.headers.get("content-length"));
   if (Number.isFinite(contentLength) && contentLength > MAX_BODY_LENGTH) {
-    return NextResponse.json({ error: "Request body is too large" }, { status: 413 });
+    return NextResponse.json(
+      { error: "Request body is too large" },
+      { status: 413 },
+    );
   }
 
   const rateLimit = checkRateLimit(request, PAGEVIEW_RATE_LIMIT);
@@ -109,7 +124,10 @@ export async function POST(request) {
   try {
     const body = await request.text();
     if (body.length > MAX_BODY_LENGTH) {
-      return NextResponse.json({ error: "Request body is too large" }, { status: 413 });
+      return NextResponse.json(
+        { error: "Request body is too large" },
+        { status: 413 },
+      );
     }
     payload = JSON.parse(body);
   } catch {
@@ -117,22 +135,34 @@ export async function POST(request) {
   }
 
   if (!isRecord(payload)) {
-    return NextResponse.json({ error: "Invalid pageview payload" }, { status: 400 });
+    return NextResponse.json(
+      { error: "Invalid pageview payload" },
+      { status: 400 },
+    );
   }
 
   const { page, visitorId, sessionId, referrer } = payload;
-  if (!isValidPage(page) || !isValidUuid(visitorId) || !isValidUuid(sessionId)) {
-    return NextResponse.json({ error: "Invalid pageview payload" }, { status: 400 });
+  if (
+    !isValidPage(page) ||
+    !isValidUuid(visitorId) ||
+    !isValidUuid(sessionId)
+  ) {
+    return NextResponse.json(
+      { error: "Invalid pageview payload" },
+      { status: 400 },
+    );
   }
 
   let error;
   try {
-    ({ error } = await getSupabase().from("pageviews_np").insert({
-      page,
-      visitor_id: visitorId,
-      session_id: sessionId,
-      referrer: normalizeReferrer(referrer),
-    }));
+    ({ error } = await getSupabase()
+      .from("pageviews_np")
+      .insert({
+        page,
+        visitor_id: visitorId,
+        session_id: sessionId,
+        referrer: normalizeReferrer(referrer),
+      }));
   } catch {
     return NextResponse.json(
       { error: "Failed to track pageview" },
