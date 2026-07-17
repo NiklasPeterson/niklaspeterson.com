@@ -129,8 +129,11 @@ export default function Footer() {
         </div>
       </div>
 
-        <div aria-hidden="true" className="absolute right-0 bottom-0 left-0 -z-10 flex h-full max-w-full rotate-180 justify-center overflow-hidden blur-[120px]">
-          <LottieAnimation />
+      <div
+        aria-hidden="true"
+        className="absolute right-0 bottom-0 left-0 -z-10 flex h-full max-w-full rotate-180 justify-center overflow-hidden blur-[120px]"
+      >
+        <LottieAnimation />
       </div>
     </FadeIn>
   );
