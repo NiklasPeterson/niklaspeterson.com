@@ -3,7 +3,10 @@ const MAX_BUCKETS = 10_000;
 const buckets = new Map();
 
 function getClientIp(request) {
-  const forwardedFor = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+  const forwardedFor = request.headers
+    .get("x-forwarded-for")
+    ?.split(",")[0]
+    ?.trim();
 
   return (
     request.headers.get("cf-connecting-ip") ||
