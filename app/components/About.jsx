@@ -48,13 +48,6 @@ export default function About() {
           >
             <span className="mx-1">Support my Work</span>
           </a>
-          <a
-            href="https://cv.niklaspeterson.com"
-            target="_blank"
-            className="btn-secondary text-base"
-          >
-            <span className="mx-1">Read my CV</span>
-          </a>
         </div>
       </div>
 
