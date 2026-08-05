@@ -26,7 +26,7 @@ export default function Header() {
           Niklas Peterson — designer and creator from Sweden, currently shaping
           experiences as a{" "}
           <span className="font-semibold text-zinc-950 dark:text-zinc-50">
-            Senior Product Designer
+            Staff Product Designer
           </span>{" "}
           at{" "}
           <span className="inline-block font-semibold text-zinc-950 dark:text-zinc-50">
