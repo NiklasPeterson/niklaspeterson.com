@@ -5,7 +5,7 @@
     "summary": "Reshaped LottieFiles’ web presence into a clearer, more cohesive expression of the brand and its motion ecosystem.",
     "description": "Led the design and visual direction of LottieFiles’ web presence while contributing to the broader evolution of the brand. The work began with the homepage and animation pages, where I established a more modern and mature visual direction while improving both UX and UI across discovery and animation details. The Lottie Creator landing page followed later. Across these experiences, the work covered information architecture, user experience, visual design, interaction, motion, and design systems. Together, they established the visual and interaction standard for the marketing pages that followed. I carried that direction forward by leading design reviews, guiding visual decisions, and collaborating closely with brand, product, marketing, and engineering to create a more cohesive experience for designers, developers, and teams.",
     "problem": "LottieFiles had grown into a broad ecosystem of tools, products, and use cases, making it increasingly difficult to communicate a clear and consistent story across the public web experience.",
-    "solution": "I established a more cohesive visual and interaction direction, clarified page structure and product storytelling, and connected key marketing surfaces through shared design-system patterns.",
+    "solution": "I established a cohesive visual and interaction direction across the homepage, animation pages, and Lottie Creator, creating shared patterns that set the standard for the marketing pages that followed.",
     "url": "https://lottiefiles.com/",
     "attachments": [
       {
@@ -89,8 +89,8 @@
     "title": "LottieFiles Digital Asset Management",
     "summary": "Expanded LottieFiles Platform to support images, SVGs, videos, and source files alongside motion assets.",
     "description": "Expanded Digital Asset Management inside LottieFiles Platform beyond Lottie and dotLottie to support images, SVGs, videos, and source files. The work adapted the Platform’s existing organization, search, versioning, feedback, and approval workflows to more formats, introduced format-aware previews and metadata, and enabled teams to host and deliver supported assets through the LottieFiles CDN.",
-    "problem": "LottieFiles Platform supported motion assets, but related images, SVGs, videos, and source files still lived across separate tools and folders. Teams could not use the same established review and approval workflows across the full set of assets needed to ship a project.",
-    "solution": "I designed how the existing Platform experience expanded to additional asset types, covering upload, preview, metadata, organization, and delivery. Existing versioning, feedback, status, and approval workflows extended across those formats, while LottieFiles CDN hosting created a direct path from approved asset to implementation.",
+    "problem": "LottieFiles Platform supported motion assets, but related images, SVGs, videos, and source files remained scattered across separate tools and folders. This made it difficult for teams to keep assets organized, track their status, and maintain a clear view of what was ready to ship.",
+    "solution": "I expanded the existing Platform experience to support additional asset types across upload, preview, metadata, organization, and delivery. Existing versioning, feedback, status, and approval workflows carried across those formats, while LottieFiles CDN hosting created a direct path from approved asset to implementation.",
     "url": "https://lottiefiles.com/dam",
     "attachments": [
       {
@@ -129,7 +129,7 @@
     "summary": "Turned scattered motion standards into a governed system teams could manage, share, and use across their workspace.",
     "description": "Designed Motion Systems within LottieFiles Platform, giving teams a shared source of truth for how their brand moved. The experience brought motion principles, tokens, easing curves, reusable presets, colors, fonts, and approved assets into one governed system where teams could manage, publish, version, and share their motion standards.",
     "problem": "Motion guidelines often lived in static documents and scattered files, disconnected from the tools where teams created and shipped animation. Values were repeatedly interpreted, rebuilt, and applied inconsistently.",
-    "solution": "I designed the Platform experience for managing and governing a Motion System, connecting one canonical source with Lottie Creator, Figma, and After Effects so approved standards stayed accessible where teams worked.",
+    "solution": "I designed a governed Platform experience where teams could manage, publish, and version motion standards, then access approved values and assets across Lottie Creator, Figma, and After Effects.",
     "url": "https://lottiefiles.com/motion-system",
     "attachments": [
       {
@@ -202,7 +202,7 @@
     "summary": "Brought Lummi’s image library directly into Figma.",
     "description": "Designed the Lummi Figma plugin around speed, simplicity, and consistency with the web experience. The plugin brought image discovery, categories, filters, creator profiles, quick insertion, and randomized multi-image insertion directly into designers’ existing workflow.",
     "problem": "Finding the right image repeatedly pulled designers out of Figma. Searching, downloading, and importing files interrupted exploration and added friction to every iteration.",
-    "solution": "I brought discovery and insertion into one focused plugin, letting designers search, browse, and place single or multiple images without leaving their canvas. Shared patterns kept the experience familiar to existing Lummi users.",
+    "solution": "I brought discovery and insertion into one focused plugin, letting designers search, browse, and place single or multiple images without leaving Figma. Shared patterns kept the experience familiar to existing Lummi users.",
     "url": "https://www.figma.com/community/plugin/1326615072959029075/lummi",
     "attachments": [
       {
@@ -305,8 +305,8 @@
     "title": "Musho web",
     "summary": "Gave an AI design tool a playful, unmistakable identity.",
     "description": "Led the design of the Musho website, translating the product’s playful AI identity into a cohesive digital experience. The work covered visual direction, color, typography, interaction, and animation, creating a recognizable system that supported the product story across the site.",
-    "problem": "Musho needed to introduce an unfamiliar AI-powered design workflow while standing apart in a fast-growing category. A conventional product page would not have communicated its speed, creativity, or playful character.",
-    "solution": "I built an expressive visual system around bold color, typography, interaction, and motion. Product-led storytelling made the experience easier to understand while giving Musho a distinct and memorable presence.",
+    "problem": "Musho needed to explain an unfamiliar AI-powered design workflow while standing apart in a fast-growing category. The website had to communicate the product’s speed and creativity without losing its playful character.",
+    "solution": "I created an expressive visual system around bold color, typography, interaction, and motion. Product-led storytelling made the experience easier to understand while giving Musho a distinct and memorable presence.",
     "url": "",
     "attachments": [
       {
@@ -370,7 +370,7 @@
     "title": "Musho Figma Plugin",
     "summary": "Reimagined AI page creation as a conversation.",
     "description": "Designed components and product views for the Musho Figma plugin, including an exploration of a chat-based AI workflow. The concept replaced a sequence of isolated actions with a more conversational experience for generating and refining landing-page content.",
-    "problem": "Action-based AI controls forced designers to translate creative intent into a sequence of rigid commands. Generating and refining a page felt fragmented because each step lost the context of the larger idea.",
+    "problem": "The existing action-based workflow asked designers to break creative intent into a sequence of isolated commands. Generating and refining a page felt fragmented because each step provided limited context for the larger idea.",
     "solution": "I explored a conversational workflow that carried context between prompts. Designers could describe an idea, review the result, and refine the page through one continuous exchange inside Figma.",
     "url": "",
     "attachments": [
@@ -418,8 +418,8 @@
     "title": "Bueno Drops Figma Plugin",
     "summary": "Turned Figma artwork into launch-ready digital collectibles.",
     "description": "Led the design of the Bueno Drops Figma Plugin, creating a focused workflow that helped artists turn designs into digital collectibles without coding. I streamlined the flow, designed an accessible interface, and supported both Open and Limited Edition drops from setup through launch.",
-    "problem": "Artists could create their work in Figma, but publishing it as a digital collectible required technical knowledge and a chain of unfamiliar tools. The gap between creation and launch excluded less technical creators.",
-    "solution": "I designed an end-to-end plugin flow that guided artists from selected artwork through edition type, configuration, and launch. A few clear steps removed the technical burden while preserving control over the final drop.",
+    "problem": "Artists could create their work in Figma, but publishing it as a digital collectible required technical knowledge and a chain of unfamiliar tools. That gap added friction between creation and launch, especially for less technical creators.",
+    "solution": "I designed an end-to-end plugin flow that guided artists from selected artwork through edition type, configuration, and launch. A few clear steps reduced the technical burden while preserving control over the final drop.",
     "url": "https://www.figma.com/community/plugin/1271396551618777105/bueno-drops",
     "attachments": [
       {
