@@ -5,14 +5,16 @@ export default function Footer() {
   return (
     <FadeIn className="flex w-full flex-col gap-10 overflow-hidden px-4 py-20 md:pt-32 lg:px-20">
       <div className="flex flex-col gap-20 md:flex-row md:justify-between">
-        <div className="flex flex-col gap-4">
-          <h2 className="max-w-xl text-4xl leading-tight font-bold text-zinc-950 md:text-6xl dark:text-zinc-50">
-            Let&apos;s get to know each other!
-          </h2>
-          <p className="text-lg md:text-xl">
-            Feel free to drop me a message anytime— <br />
-            I&apos;m all ears for cool and creative ideas!
-          </p>
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-4">
+            <h2 className="max-w-xl text-4xl leading-tight font-semibold text-zinc-950 md:text-6xl dark:text-zinc-50">
+              Let&apos;s get to know each other!
+            </h2>
+            <p className="text-lg md:text-xl">
+              Feel free to drop me a message anytime. <br />
+              I&apos;m all ears for cool and creative ideas!
+            </p>
+          </div>
           <a
             href="mailto:mail@niklaspeterson.com?subject=Contact"
             className="btn-primary w-fit px-5 py-3 text-base"

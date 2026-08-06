@@ -10,7 +10,7 @@ export default function Header() {
 
       <FadeIn
         position="down"
-        className="flex h-140 max-w-5xl flex-col justify-center gap-4 px-4 sm:h-160 md:h-180 lg:px-20"
+        className="flex h-140 max-w-5xl flex-col justify-center gap-4 px-4 sm:h-160 lg:px-20 lg:pt-20"
       >
         <div className="absolute top-0 right-0 left-0 -z-10 flex max-w-full justify-center overflow-hidden blur-[120px]">
           <LottieAnimation />
@@ -19,14 +19,14 @@ export default function Header() {
           <div className="rounded-2xl w-3 h-3 bg-red-500"></div>
           <span className="mx-1 text-zinc-950 dark:text-zinc-50">Not open for work</span>
         </div> */}
-        <h1 className="max-w-4xl text-4xl leading-tight font-bold text-zinc-950 md:text-[64px] dark:text-zinc-50">
+        <h1 className="max-w-4xl text-4xl leading-tight font-semibold text-zinc-950 md:text-[64px] dark:text-zinc-50">
           Bringing digital products to life with pixels and code.
         </h1>
         <p className="text-xl md:text-2xl">
-          Niklas Peterson — designer and creator from Sweden, currently shaping
+          Niklas Peterson, designer and creator from Sweden, currently shaping
           experiences as a{" "}
           <span className="font-semibold text-zinc-950 dark:text-zinc-50">
-            Senior Product Designer
+            Staff Product Designer
           </span>{" "}
           at{" "}
           <span className="inline-block font-semibold text-zinc-950 dark:text-zinc-50">
