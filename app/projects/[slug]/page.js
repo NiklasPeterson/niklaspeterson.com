@@ -151,7 +151,7 @@ export default async function ProjectPage({ params }) {
               <FadeIn
                 key={i}
                 index={i}
-                className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-300/20 after:content-[''] md:rounded-3xl md:after:rounded-3xl"
+                className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl"
               >
                 <ProjectMedia
                   media={attachment}
@@ -187,8 +187,8 @@ function CaseStudyContent({ project }) {
   const visibleSections = getVisibleProjectSections(project.sections);
 
   return (
-    <div className="flex flex-col gap-14 md:gap-20">
-      <FadeIn className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-300/20 after:content-[''] md:rounded-3xl md:after:rounded-3xl">
+    <div className="flex flex-col gap-16 md:gap-[120px]">
+      <FadeIn className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl">
         {hero ? (
           <ProjectMedia
             media={hero}
@@ -230,7 +230,7 @@ function CaseStudyContent({ project }) {
       </FadeIn>
 
       {visibleSections.length > 0 && (
-        <div className="grid gap-x-6 gap-y-14 md:grid-cols-2">
+        <div className="grid gap-12 md:grid-cols-2">
           {visibleSections.map((section, index) => {
             const isFullWidth = isFullWidthProjectSection(
               index,
@@ -245,7 +245,7 @@ function CaseStudyContent({ project }) {
               >
                 <figure className="flex flex-col gap-3">
                   <div
-                    className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-300/20 after:content-[''] md:rounded-3xl md:after:rounded-3xl"
+                    className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl"
                     style={
                       isFullWidth
                         ? undefined

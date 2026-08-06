@@ -9,7 +9,7 @@ export default function ProjectTestimonials({
   return (
     <div className="flex w-full justify-center px-4 md:px-10">
       <section
-        className={`flex w-full max-w-5xl flex-col items-center rounded-[2rem] border border-zinc-300/20 bg-zinc-50 dark:bg-zinc-900/40 ${compact ? "my-8 gap-8 px-8 py-10 md:my-10 md:px-10 md:py-12" : "my-10 gap-10 px-8 py-12 md:my-14 md:px-12 md:py-16"}`}
+        className={`flex w-full max-w-5xl flex-col items-center rounded-[2rem] border border-zinc-200/50 bg-zinc-50 dark:bg-zinc-900/40 ${compact ? "my-8 gap-8 px-8 py-10 md:my-10 md:px-10 md:py-12" : "my-10 gap-10 px-8 py-12 md:my-14 md:px-12 md:py-16"}`}
         aria-labelledby={`testimonials-${compact ? "modal" : "page"}`}
       >
         <div
@@ -35,7 +35,7 @@ export default function ProjectTestimonials({
               </div>
 
               <footer className="flex items-center gap-3">
-                <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full after:pointer-events-none after:absolute after:inset-0 after:rounded-full after:border after:border-zinc-300/20 after:content-['']">
+                <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full after:pointer-events-none after:absolute after:inset-0 after:rounded-full after:border after:border-zinc-200/50 after:content-['']">
                   <Image
                     src={testimonial.avatar}
                     alt={testimonial.name}

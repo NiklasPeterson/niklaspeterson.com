@@ -44,7 +44,7 @@ function NavLink({ project, dir }) {
 
 function Thumb({ media, title }) {
   return (
-    <span className="relative aspect-16/10 w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 after:pointer-events-none after:absolute after:inset-0 after:rounded-md after:border after:border-zinc-300/20 after:content-[''] md:w-16 dark:bg-zinc-900">
+    <span className="relative aspect-16/10 w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 after:pointer-events-none after:absolute after:inset-0 after:rounded-md after:border after:border-zinc-200/50 after:content-[''] md:w-16 dark:bg-zinc-900">
       {!media ? null : media.type === "image" ? (
         <Image
           src={media.url}

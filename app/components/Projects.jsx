@@ -163,7 +163,7 @@ function CaseStudyContent({ project }) {
   const visibleSections = getVisibleProjectSections(project.sections);
 
   return (
-    <div className="flex animate-fadeUp flex-col gap-12 px-4 md:gap-16 md:px-10">
+    <div className="flex animate-fadeUp flex-col gap-12 px-4 md:gap-[120px] md:px-10">
       <SectionVisual
         visual={hero}
         title={`${project.title} overview`}
@@ -204,7 +204,7 @@ function CaseStudyContent({ project }) {
       </div>
 
       {visibleSections.length > 0 && (
-        <div className="grid gap-x-6 gap-y-12 md:grid-cols-2">
+        <div className="grid gap-12 md:grid-cols-2">
           {visibleSections.map((section, index) => {
             const isFullWidth = isFullWidthProjectSection(
               index,
@@ -248,7 +248,7 @@ function SectionVisual({ visual, title, featured = false, contained = false }) {
 
   return (
     <div
-      className={`relative overflow-hidden after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-300/20 after:content-[''] ${featured ? "rounded-2xl md:rounded-3xl md:after:rounded-3xl" : "rounded-2xl"}`}
+      className={`relative overflow-hidden after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] ${featured ? "rounded-2xl md:rounded-3xl md:after:rounded-3xl" : "rounded-2xl"}`}
       style={
         contained
           ? { aspectRatio: getProjectVisualAspectRatio(visual) }
@@ -290,7 +290,7 @@ function ModalGallery({ attachments }) {
       {attachments.map((attachment, i) => (
         <div
           key={i}
-          className="relative overflow-hidden rounded-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:border after:border-zinc-300/20 after:content-[''] md:w-full"
+          className="relative overflow-hidden rounded-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:border after:border-zinc-200/50 after:content-[''] md:w-full"
         >
           {attachment.type === "image" ? (
             <Image
@@ -351,7 +351,7 @@ function NavButton({ project, dir, onNavigate }) {
 
 function NavThumb({ media, title }) {
   return (
-    <span className="relative aspect-[16/10] w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 after:pointer-events-none after:absolute after:inset-0 after:rounded-md after:border after:border-zinc-300/20 after:content-[''] md:w-16 dark:bg-zinc-900">
+    <span className="relative aspect-[16/10] w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 after:pointer-events-none after:absolute after:inset-0 after:rounded-md after:border after:border-zinc-200/50 after:content-[''] md:w-16 dark:bg-zinc-900">
       {!media ? null : media.type === "image" ? (
         <Image
           src={media.url}
@@ -459,7 +459,7 @@ function ProjectContent({ project, onOpen, priority }) {
         return (
           <div
             key={media.id || index}
-            className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-200 group-hover:scale-102 group-hover:shadow-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-300/20 after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl"
+            className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-200 group-hover:scale-102 group-hover:shadow-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl"
           >
             {attachment}
           </div>
