@@ -13,6 +13,7 @@
         "url": "/lottiefiles-homepage.mov",
         "alt": "Screen recording showing the LottieFiles homepage",
         "cropEdges": true,
+        "controls": false,
         "width": 1600,
         "height": 999
       }
@@ -26,6 +27,7 @@
           "url": "/lottiefiles-web-scroll.mov",
           "alt": "Screen recording showing the redesigned LottieFiles web experience",
           "cropEdges": true,
+          "controls": false,
           "width": 1600,
           "height": 999
         }
@@ -61,6 +63,7 @@
           "type": "video",
           "url": "/lottiefiles-animation-listing.mov",
           "alt": "LottieFiles animation listing experience",
+          "controls": false,
           "width": 2880,
           "height": 1620
         }

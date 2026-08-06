@@ -52,12 +52,13 @@ export default function ProjectVideo({ media, className = "" }) {
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
   const cropEdges = media.cropEdges === true;
+  const showControls = media.controls !== false;
 
   return (
     <div className="project-video group/video relative h-full w-full">
       <video
         ref={videoRef}
-        className={`${className} cursor-pointer ${cropEdges ? "scale-[1.004]" : ""}`}
+        className={`${className} ${showControls ? "cursor-pointer" : ""} ${cropEdges ? "scale-[1.004]" : ""}`}
         src={media.url}
         poster={media.poster}
         width={media.width}
@@ -67,7 +68,7 @@ export default function ProjectVideo({ media, className = "" }) {
         loop
         playsInline
         preload="metadata"
-        onClick={togglePlayback}
+        onClick={showControls ? togglePlayback : undefined}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         onVolumeChange={(event) => setIsMuted(event.currentTarget.muted)}
@@ -83,45 +84,47 @@ export default function ProjectVideo({ media, className = "" }) {
         }
       />
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/55 via-black/10 to-transparent px-2.5 pt-12 pb-2.5 opacity-100 transition-opacity duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] md:opacity-0 md:group-focus-within/video:opacity-100 md:group-hover/video:opacity-100">
-        <div className="pointer-events-auto flex items-center gap-2 rounded-xl border border-white/15 bg-black/55 p-1.5 text-white shadow-lg shadow-black/20 backdrop-blur-xl">
-          <ControlButton
-            label={isPlaying ? "Pause video" : "Play video"}
-            onClick={togglePlayback}
-          >
-            {isPlaying ? <PauseIcon /> : <PlayIcon />}
-          </ControlButton>
-
-          {media.hasAudio && (
+      {showControls && (
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/55 via-black/10 to-transparent px-2.5 pt-12 pb-2.5 opacity-100 transition-opacity duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] md:opacity-0 md:group-focus-within/video:opacity-100 md:group-hover/video:opacity-100">
+          <div className="pointer-events-auto flex items-center gap-2 rounded-xl border border-white/15 bg-black/55 p-1.5 text-white shadow-lg shadow-black/20 backdrop-blur-xl">
             <ControlButton
-              label={isMuted ? "Unmute video" : "Mute video"}
-              onClick={toggleMuted}
+              label={isPlaying ? "Pause video" : "Play video"}
+              onClick={togglePlayback}
             >
-              {isMuted ? <MutedIcon /> : <VolumeIcon />}
+              {isPlaying ? <PauseIcon /> : <PlayIcon />}
             </ControlButton>
-          )}
 
-          <input
-            className="project-video-scrubber min-w-0 flex-1"
-            type="range"
-            min="0"
-            max={duration || 1}
-            step="0.01"
-            value={Math.min(currentTime, duration || 0)}
-            aria-label="Video progress"
-            aria-valuetext={`${formatTime(currentTime)} of ${formatTime(duration)}`}
-            style={{ "--video-progress": `${progress}%` }}
-            onInput={seek}
-            onPointerDown={startScrubbing}
-            onPointerUp={finishScrubbing}
-            onPointerCancel={finishScrubbing}
-          />
+            {media.hasAudio && (
+              <ControlButton
+                label={isMuted ? "Unmute video" : "Mute video"}
+                onClick={toggleMuted}
+              >
+                {isMuted ? <MutedIcon /> : <VolumeIcon />}
+              </ControlButton>
+            )}
 
-          <span className="min-w-[4.75rem] pr-1 text-right text-[11px] leading-none font-medium tracking-tight text-white/75 tabular-nums">
-            {formatTime(currentTime)} / {formatTime(duration)}
-          </span>
+            <input
+              className="project-video-scrubber min-w-0 flex-1"
+              type="range"
+              min="0"
+              max={duration || 1}
+              step="0.01"
+              value={Math.min(currentTime, duration || 0)}
+              aria-label="Video progress"
+              aria-valuetext={`${formatTime(currentTime)} of ${formatTime(duration)}`}
+              style={{ "--video-progress": `${progress}%` }}
+              onInput={seek}
+              onPointerDown={startScrubbing}
+              onPointerUp={finishScrubbing}
+              onPointerCancel={finishScrubbing}
+            />
+
+            <span className="min-w-[4.75rem] pr-1 text-right text-[11px] leading-none font-medium tracking-tight text-white/75 tabular-nums">
+              {formatTime(currentTime)} / {formatTime(duration)}
+            </span>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
