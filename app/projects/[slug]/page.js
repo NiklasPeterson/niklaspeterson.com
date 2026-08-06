@@ -187,7 +187,7 @@ function CaseStudyContent({ project }) {
   const visibleSections = getVisibleProjectSections(project.sections);
 
   return (
-    <div className="flex flex-col gap-16 md:gap-[120px]">
+    <div className="flex flex-col gap-16 md:gap-20">
       <FadeIn className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl">
         {hero ? (
           <ProjectMedia

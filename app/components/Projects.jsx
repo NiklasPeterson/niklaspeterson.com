@@ -163,7 +163,7 @@ function CaseStudyContent({ project }) {
   const visibleSections = getVisibleProjectSections(project.sections);
 
   return (
-    <div className="flex animate-fadeUp flex-col gap-12 px-4 md:gap-[120px] md:px-10">
+    <div className="flex animate-fadeUp flex-col gap-12 px-4 md:gap-20 md:px-10">
       <SectionVisual
         visual={hero}
         title={`${project.title} overview`}
