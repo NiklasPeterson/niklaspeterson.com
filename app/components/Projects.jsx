@@ -4,6 +4,13 @@ import Link from "next/link";
 import { useState, useRef } from "react";
 import Image from "next/image";
 import FadeIn from "./FadeIn";
+import ProjectTestimonials from "./ProjectTestimonials";
+import ProjectVideo from "./ProjectVideo";
+import {
+  getProjectVisualAspectRatio,
+  getVisibleProjectSections,
+  isFullWidthProjectSection,
+} from "../lib/project-layout";
 
 export default function Projects({ projects = [] }) {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -68,7 +75,7 @@ export default function Projects({ projects = [] }) {
           >
             <div className="flex flex-col gap-6 px-4 md:gap-8 md:px-10">
               <div className="flex items-center justify-between">
-                <h3 className="text-2xl font-bold text-zinc-950 md:text-4xl dark:text-zinc-50">
+                <h3 className="text-2xl font-semibold text-zinc-950 md:text-4xl dark:text-zinc-50">
                   {selectedProject.title}
                 </h3>
                 <button className="btn-secondary h-10" onClick={closeProject}>
@@ -76,55 +83,66 @@ export default function Projects({ projects = [] }) {
                 </button>
               </div>
 
-              <div className="flex animate-fadeUp flex-wrap justify-between gap-4">
+              <div className="flex animate-fadeUp flex-col gap-6">
                 <div className="text-md md:text-lg" style={{ maxWidth: 720 }}>
-                  <p>{selectedProject.description}</p>
+                  <p>
+                    {selectedProject.summary || selectedProject.description}
+                  </p>
                 </div>
 
-                <div className="flex gap-4">
-                  <div className="flex flex-col gap-4">
-                    {selectedProject.year && <div>Company:</div>}
-                    {selectedProject.year && <div>Date:</div>}
-                    {selectedProject.url && <div>Link:</div>}
-                  </div>
-
-                  <div className="flex flex-col gap-4">
-                    {selectedProject.year && (
-                      <div>{selectedProject.company}</div>
-                    )}
-                    {selectedProject.year && <div>{selectedProject.year}</div>}
-                    {selectedProject.url && (
-                      <a
-                        className="btn-link"
-                        href={selectedProject.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-3 text-sm text-zinc-500 dark:text-zinc-400">
+                  {selectedProject.company && (
+                    <span className="font-medium text-zinc-950 dark:text-zinc-50">
+                      {selectedProject.company}
+                    </span>
+                  )}
+                  {selectedProject.company && selectedProject.year && (
+                    <span
+                      aria-hidden="true"
+                      className="text-zinc-300 dark:text-zinc-700"
+                    >
+                      /
+                    </span>
+                  )}
+                  {selectedProject.year && <span>{selectedProject.year}</span>}
+                  {selectedProject.url && (
+                    <a
+                      className="group ml-2 inline-flex items-center gap-1.5 font-medium text-zinc-950 transition-opacity hover:opacity-60 md:ml-auto dark:text-zinc-50"
+                      href={selectedProject.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Visit project
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="h-4 w-4"
                       >
-                        <span className="flex items-center gap-1">
-                          Visit
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth="1.5"
-                            stroke="currentColor"
-                            className="h-4 w-4"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                            ></path>
-                          </svg>
-                        </span>
-                      </a>
-                    )}
-                  </div>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                        />
+                      </svg>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
 
-            <ModalGallery attachments={selectedProject.attachments} />
+            {selectedProject.summary ? (
+              <CaseStudyContent project={selectedProject} />
+            ) : (
+              <ModalGallery attachments={selectedProject.attachments} />
+            )}
+
+            <ProjectTestimonials
+              testimonials={selectedProject.testimonials}
+              compact
+            />
 
             {prevProject && nextProject && prevProject !== nextProject && (
               <ModalNav
@@ -140,6 +158,121 @@ export default function Projects({ projects = [] }) {
   );
 }
 
+function CaseStudyContent({ project }) {
+  const hero = project.attachments[0];
+  const visibleSections = getVisibleProjectSections(project.sections);
+
+  return (
+    <div className="flex animate-fadeUp flex-col gap-12 px-4 md:gap-[120px] md:px-10">
+      <SectionVisual
+        visual={hero}
+        title={`${project.title} overview`}
+        featured
+      />
+
+      <div className="grid gap-10 md:grid-cols-[minmax(0,1.55fr)_minmax(16rem,0.8fr)] md:gap-14">
+        <div className="max-w-3xl">
+          <p className="text-lg leading-relaxed md:text-xl">
+            {project.description}
+          </p>
+        </div>
+
+        {(project.problem || project.solution) && (
+          <div className="flex flex-col gap-7 md:pl-8">
+            {project.problem && (
+              <section className="flex flex-col gap-2">
+                <h4 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
+                  Problem
+                </h4>
+                <p className="text-sm leading-relaxed md:text-base">
+                  {project.problem}
+                </p>
+              </section>
+            )}
+            {project.solution && (
+              <section className="flex flex-col gap-2">
+                <h4 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
+                  Solution
+                </h4>
+                <p className="text-sm leading-relaxed md:text-base">
+                  {project.solution}
+                </p>
+              </section>
+            )}
+          </div>
+        )}
+      </div>
+
+      {visibleSections.length > 0 && (
+        <div className="grid gap-12 md:grid-cols-2">
+          {visibleSections.map((section, index) => {
+            const isFullWidth = isFullWidthProjectSection(
+              index,
+              visibleSections.length,
+            );
+
+            return (
+              <figure
+                key={section.title}
+                className={`flex flex-col gap-3 ${isFullWidth ? "md:col-span-2" : ""}`}
+              >
+                <SectionVisual
+                  visual={section.visual}
+                  title={section.title}
+                  contained={!isFullWidth}
+                />
+                <figcaption className="max-w-xl">
+                  <p className="text-xs leading-relaxed text-zinc-500 md:text-sm dark:text-zinc-400">
+                    {section.body}
+                  </p>
+                </figcaption>
+              </figure>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function SectionVisual({ visual, title, featured = false, contained = false }) {
+  if (!visual) {
+    return (
+      <div
+        className={`flex w-full items-center justify-center bg-zinc-100 px-6 text-center text-sm text-zinc-500 dark:bg-zinc-900 dark:text-zinc-400 ${contained ? "aspect-video" : "aspect-video"} ${featured ? "rounded-2xl md:rounded-3xl" : "rounded-2xl"}`}
+      >
+        Visual for {title} was being prepared
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className={`relative overflow-hidden after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] ${featured ? "rounded-2xl md:rounded-3xl md:after:rounded-3xl" : "rounded-2xl"}`}
+      style={
+        contained
+          ? { aspectRatio: getProjectVisualAspectRatio(visual) }
+          : undefined
+      }
+    >
+      {visual.type === "image" ? (
+        <Image
+          className={`${contained ? "h-full object-contain" : "h-auto"} w-full`}
+          src={visual.url}
+          alt={visual.alt || title}
+          width={visual.width}
+          height={visual.height}
+        />
+      ) : (
+        <ProjectVideo
+          media={visual}
+          className={`${contained ? "h-full object-contain" : "h-auto"} w-full`}
+        />
+      )}
+    </div>
+  );
+}
+
 function ModalGallery({ attachments }) {
   // const isSingle = attachments.length === 1;
   // const itemClass = isSingle ? "relative md:w-full" : "relative md:snap-center";
@@ -149,8 +282,16 @@ function ModalGallery({ attachments }) {
 
   return (
     <div className="flex animate-fadeUp flex-col items-center gap-4 px-4 md:gap-6 md:overflow-x-auto md:px-10">
+      {attachments.length === 0 && (
+        <p className="w-full max-w-3xl rounded-2xl bg-zinc-100 p-8 text-zinc-500 dark:bg-zinc-900 dark:text-zinc-400">
+          Project visuals were being prepared.
+        </p>
+      )}
       {attachments.map((attachment, i) => (
-        <div key={i} className="relative md:w-full">
+        <div
+          key={i}
+          className="relative overflow-hidden rounded-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:border after:border-zinc-200/50 after:content-[''] md:w-full"
+        >
           {attachment.type === "image" ? (
             <Image
               className="w-auto max-w-[calc(100vw-32px)] rounded-lg md:h-auto md:max-h-none md:w-full md:max-w-full"
@@ -160,15 +301,9 @@ function ModalGallery({ attachments }) {
               width={attachment.width}
             />
           ) : (
-            <video
+            <ProjectVideo
+              media={attachment}
               className="w-auto max-w-[calc(100vw-32px)] rounded-lg md:h-auto md:max-h-none md:w-full md:max-w-full"
-              src={attachment.url}
-              height={attachment.height}
-              width={attachment.width}
-              autoPlay
-              muted
-              loop
-              playsInline
             />
           )}
         </div>
@@ -179,7 +314,7 @@ function ModalGallery({ attachments }) {
 
 function ModalNav({ prev, next, onNavigate }) {
   return (
-    <div className="flex items-center justify-between gap-4 px-2 pb-6 md:px-8">
+    <div className="flex items-center justify-between gap-4 px-2 py-6 md:px-8">
       <NavButton project={prev} dir="prev" onNavigate={onNavigate} />
       <NavButton project={next} dir="next" onNavigate={onNavigate} />
     </div>
@@ -201,7 +336,7 @@ function NavButton({ project, dir, onNavigate }) {
       <span
         className={`flex min-w-0 flex-col gap-0.5 ${isPrev ? "items-start" : "items-end"}`}
       >
-        <span className="flex items-center gap-1 text-[11px] font-normal tracking-widest text-zinc-400 uppercase dark:text-zinc-500">
+        <span className="flex items-center gap-1 text-[11px] font-normal tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
           {isPrev && <Chevron dir="left" />}
           {isPrev ? "Previous" : "Next"}
           {!isPrev && <Chevron dir="right" />}
@@ -216,8 +351,8 @@ function NavButton({ project, dir, onNavigate }) {
 
 function NavThumb({ media, title }) {
   return (
-    <span className="relative aspect-[16/10] w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 md:w-16 dark:bg-zinc-900">
-      {media.type === "image" ? (
+    <span className="relative aspect-[16/10] w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 after:pointer-events-none after:absolute after:inset-0 after:rounded-md after:border after:border-zinc-200/50 after:content-[''] md:w-16 dark:bg-zinc-900">
+      {!media ? null : media.type === "image" ? (
         <Image
           src={media.url}
           alt={title}
@@ -229,6 +364,7 @@ function NavThumb({ media, title }) {
         // #t=0.1 nudges the browser to render the first frame as a still poster
         <video
           src={`${media.url}#t=0.1`}
+          poster={media.poster}
           className="h-full w-full object-cover"
           muted
           playsInline
@@ -264,10 +400,12 @@ function Chevron({ dir }) {
 
 function ProjectContent({ project, onOpen, priority }) {
   // Real <Link> so the /projects/[slug] route stays crawlable (SEO) and
-  // modifier-clicks open the full page — but prefetch is DISABLED. Next.js's
+  // modifier-clicks open the full page, but prefetch is DISABLED. Next.js's
   // eager route prefetch was loading the media-heavy detail route in the
   // background and freezing Safari's main thread ~1-2s on open; prefetch={false}
-  // fixes that. A plain left-click opens the modal instead of navigating.
+  // fixes that. On desktop, a plain left-click opens the modal instead of
+  // navigating; below Tailwind's `md` breakpoint it follows the detail-page
+  // link so the full project view has room to breathe on smaller screens.
   return (
     <Link
       href={`/projects/${project.slug}`}
@@ -282,6 +420,10 @@ function ProjectContent({ project, onOpen, priority }) {
           event.shiftKey ||
           event.altKey
         ) {
+          return;
+        }
+
+        if (!window.matchMedia("(min-width: 768px)").matches) {
           return;
         }
 
@@ -303,26 +445,40 @@ function ProjectContent({ project, onOpen, priority }) {
               priority={priority}
             />
           ) : (
-            <video src={media.url} autoPlay muted playsInline loop />
+            <video
+              src={media.url}
+              poster={media.poster}
+              className={media.cropEdges === true ? "scale-[1.004]" : undefined}
+              autoPlay
+              muted
+              playsInline
+              loop
+            />
           );
 
         return (
           <div
             key={media.id || index}
-            className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-200 group-hover:scale-102 group-hover:shadow-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-white/20 after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl"
+            className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-200 group-hover:scale-102 group-hover:shadow-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl"
           >
             {attachment}
           </div>
         );
       })}
 
+      {project.attachments.length === 0 && (
+        <div className="flex aspect-video w-full items-center justify-center rounded-2xl bg-zinc-100 px-6 text-center text-sm text-zinc-500 md:rounded-3xl dark:bg-zinc-900 dark:text-zinc-400">
+          Visuals were being prepared
+        </div>
+      )}
+
       <div className="flex max-w-2xl flex-col gap-1">
-        <div className="text-xl font-bold text-zinc-950 dark:text-zinc-50">
+        <div className="text-xl font-semibold text-zinc-950 dark:text-zinc-50">
           {project.title}
         </div>
 
         <div className="text-md line-clamp-2 md:text-lg">
-          {project.description}
+          {project.summary || project.description}
         </div>
       </div>
     </Link>

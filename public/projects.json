@@ -1,8 +1,208 @@
 [
   {
+    "slug": "lottiefiles-web-marketing",
+    "title": "LottieFiles Web & Marketing",
+    "summary": "Reshaped LottieFiles’ web presence into a clearer, more cohesive expression of the brand and its motion ecosystem.",
+    "description": "Led the design and visual direction of LottieFiles’ web presence while contributing to the broader evolution of the brand. The work began with the homepage and animation pages, where I established a more modern and mature visual direction while improving both UX and UI across discovery and animation details. The Lottie Creator landing page followed later. Across these experiences, the work covered information architecture, user experience, visual design, interaction, motion, and design systems. Together, they established the visual and interaction standard for the marketing pages that followed. I carried that direction forward by leading design reviews, guiding visual decisions, and collaborating closely with brand, product, marketing, and engineering to create a more cohesive experience for designers, developers, and teams.",
+    "problem": "LottieFiles had grown into a broad ecosystem of tools, products, and use cases, making it increasingly difficult to communicate a clear and consistent story across the public web experience.",
+    "solution": "I established a more cohesive visual and interaction direction, clarified page structure and product storytelling, and connected key marketing surfaces through shared design-system patterns.",
+    "url": "https://lottiefiles.com/",
+    "attachments": [
+      {
+        "type": "video",
+        "url": "/lottiefiles-homepage.mp4",
+        "alt": "Screen recording showing the LottieFiles homepage",
+        "poster": "/lottiefiles-homepage-poster.jpg",
+        "cropEdges": true,
+        "controls": false,
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "sections": [
+      {
+        "title": "The redesigned web experience",
+        "body": "Reworked the LottieFiles web experience into a clearer, more cohesive brand expression.",
+        "visual": {
+          "type": "video",
+          "url": "/lottiefiles-web-scroll.mov",
+          "alt": "Screen recording showing the redesigned LottieFiles web experience",
+          "cropEdges": true,
+          "controls": false,
+          "width": 1600,
+          "height": 999
+        }
+      },
+      {
+        "title": "A connected homepage story",
+        "body": "Connected discovery, creation, and team workflows in one narrative.",
+        "visual": {
+          "type": "image",
+          "url": "/lottiefiles-homepage-overview-2026-1.png",
+          "alt": "LottieFiles homepage compositions showing animation discovery, creation tools, and team workflows",
+          "aspectRatio": "16 / 12",
+          "width": 3840,
+          "height": 2880
+        }
+      },
+      {
+        "title": "A complete product story",
+        "body": "Brought integrations, AI, performance, and customer proof into the product story.",
+        "visual": {
+          "type": "image",
+          "url": "/lottiefiles-homepage-overview-2026-2.png",
+          "alt": "LottieFiles homepage compositions showing AI tools, customer work, testimonials, and product value",
+          "aspectRatio": "16 / 12",
+          "width": 3840,
+          "height": 2880
+        }
+      },
+      {
+        "title": "Animations page",
+        "body": "Gave the Animations page a more modern, mature visual direction while making discovery clearer and easier to navigate.",
+        "visual": {
+          "type": "video",
+          "url": "/lottiefiles-animation-listing.mov",
+          "alt": "LottieFiles animation listing experience",
+          "controls": false,
+          "width": 2880,
+          "height": 1620
+        }
+      },
+      {
+        "title": "Animation Detail page",
+        "body": "Reduced distraction on the Animation Detail page by focusing the experience on the animation and the actions users needed most.",
+        "visual": {
+          "type": "image",
+          "url": "/lottiefiles-animation-detail2.png",
+          "alt": "LottieFiles animation detail experience with playback and download options",
+          "width": 2880,
+          "height": 1620
+        }
+      }
+    ],
+    "company": "LottieFiles",
+    "year": "2024–Present"
+  },
+  {
+    "slug": "lottiefiles-digital-asset-management",
+    "title": "LottieFiles Digital Asset Management",
+    "summary": "Expanded LottieFiles Platform to support images, SVGs, videos, and source files alongside motion assets.",
+    "description": "Expanded Digital Asset Management inside LottieFiles Platform beyond Lottie and dotLottie to support images, SVGs, videos, and source files. The work adapted the Platform’s existing organization, search, versioning, feedback, and approval workflows to more formats, introduced format-aware previews and metadata, and enabled teams to host and deliver supported assets through the LottieFiles CDN.",
+    "problem": "LottieFiles Platform supported motion assets, but related images, SVGs, videos, and source files still lived across separate tools and folders. Teams could not use the same established review and approval workflows across the full set of assets needed to ship a project.",
+    "solution": "I designed how the existing Platform experience expanded to additional asset types, covering upload, preview, metadata, organization, and delivery. Existing versioning, feedback, status, and approval workflows extended across those formats, while LottieFiles CDN hosting created a direct path from approved asset to implementation.",
+    "url": "https://lottiefiles.com/dam",
+    "attachments": [
+      {
+        "type": "video",
+        "url": "/lottiefiles-dam.mp4",
+        "poster": "/lottiefiles-dam-poster.png",
+        "alt": "LottieFiles Digital Asset Management product overview",
+        "width": 1920,
+        "height": 1080,
+        "hasAudio": true
+      }
+    ],
+    "sections": [
+      {
+        "title": "Support for more formats",
+        "hidden": true,
+        "body": "Extended existing workflows to images, SVGs, videos, and source files."
+      },
+      {
+        "title": "Format-aware asset details",
+        "hidden": true,
+        "body": "Added previews and metadata tailored to each supported format."
+      },
+      {
+        "title": "CDN hosting and delivery",
+        "hidden": true,
+        "body": "Enabled teams to host and deliver supported assets through the LottieFiles CDN."
+      }
+    ],
+    "company": "LottieFiles",
+    "year": "2025–2026"
+  },
+  {
+    "slug": "lottiefiles-motion-systems",
+    "title": "LottieFiles Motion Systems",
+    "summary": "Turned scattered motion standards into a governed system teams could manage, share, and use across their workspace.",
+    "description": "Designed Motion Systems within LottieFiles Platform, giving teams a shared source of truth for how their brand moved. The experience brought motion principles, tokens, easing curves, reusable presets, colors, fonts, and approved assets into one governed system where teams could manage, publish, version, and share their motion standards.",
+    "problem": "Motion guidelines often lived in static documents and scattered files, disconnected from the tools where teams created and shipped animation. Values were repeatedly interpreted, rebuilt, and applied inconsistently.",
+    "solution": "I designed the Platform experience for managing and governing a Motion System, connecting one canonical source with Lottie Creator, Figma, and After Effects so approved standards stayed accessible where teams worked.",
+    "url": "https://lottiefiles.com/motion-system",
+    "attachments": [
+      {
+        "type": "video",
+        "url": "/lottiefiles-motion-system.m4v",
+        "poster": "/lottiefiles-motion-system-poster.png",
+        "alt": "LottieFiles Platform showing a Motion System with easing curves and reusable motion presets",
+        "width": 1280,
+        "height": 720,
+        "hasAudio": true
+      }
+    ],
+    "sections": [
+      {
+        "title": "A governed source of truth",
+        "hidden": true,
+        "body": "Brought motion principles, tokens, presets, and assets into one system."
+      },
+      {
+        "title": "Publishing and versioning",
+        "hidden": true,
+        "body": "Made approved motion standards safer to publish, version, and share."
+      },
+      {
+        "title": "Available where teams worked",
+        "hidden": true,
+        "body": "Connected LottieFiles Platform with Lottie Creator, Figma, and After Effects."
+      }
+    ],
+    "company": "LottieFiles",
+    "year": "2026"
+  },
+  {
+    "slug": "lottiefiles-developer-handoff",
+    "title": "LottieFiles Developer Handoff",
+    "summary": "Turned complex animation implementation into a clearer handoff from design to production.",
+    "description": "Designed a focused developer handoff experience for LottieFiles Platform that helped engineers understand the technical requirements of production-ready motion assets. The work reduced handoff friction by bringing asset details and implementation guidance into one view, including a dynamic integration guide that tailored setup steps and ready-to-use code to the selected platform, framework, and player.",
+    "problem": "Developers had to interpret scattered asset details, technical requirements, and implementation guidance before they could confidently ship an animation.",
+    "solution": "I created a focused handoff view with a dynamic integration guide. Instructions and ready-to-use code changed based on the selected platform, framework, player, and animation features, giving developers a clearer path from asset to production.",
+    "url": "https://app.lottiefiles.com/",
+    "attachments": [
+      {
+        "type": "image",
+        "url": "/lottiefiles-developer-handoff3.png",
+        "alt": "LottieFiles Developer Handoff view with implementation guidance",
+        "width": 3200,
+        "height": 1802
+      }
+    ],
+    "sections": [
+      {
+        "title": "A dynamic integration guide",
+        "body": "Unified implementation guidance in one view, with setup steps and code tailored to each platform, framework, and player.",
+        "visual": {
+          "type": "video",
+          "url": "/lottiefiles-developer-handoff.mov",
+          "alt": "Walkthrough of the LottieFiles Developer Handoff experience",
+          "cropEdges": true,
+          "width": 3200,
+          "height": 1802
+        }
+      }
+    ],
+    "company": "LottieFiles",
+    "year": "2026"
+  },
+  {
     "slug": "lummi-figma-plugin",
     "title": "Lummi Figma plugin",
-    "description": "Designed the Lummi Figma plugin with a focus on usability, simplicity, and ease of use, while ensuring it consistently reflected the Lummi web experience. Key features of the plugin include quick image insertion, the ability to randomly insert multiple images, and components such as the home feed, categories, filters, and creator profiles.",
+    "summary": "Brought Lummi’s image library directly into Figma.",
+    "description": "Designed the Lummi Figma plugin around speed, simplicity, and consistency with the web experience. The plugin brought image discovery, categories, filters, creator profiles, quick insertion, and randomized multi-image insertion directly into designers’ existing workflow.",
+    "problem": "Finding the right image repeatedly pulled designers out of Figma. Searching, downloading, and importing files interrupted exploration and added friction to every iteration.",
+    "solution": "I brought discovery and insertion into one focused plugin, letting designers search, browse, and place single or multiple images without leaving their canvas. Shared patterns kept the experience familiar to existing Lummi users.",
     "url": "https://www.figma.com/community/plugin/1326615072959029075/lummi",
     "attachments": [
       {
@@ -11,13 +211,27 @@
         "alt": "Image showing Lummi's Figma plugin",
         "width": 1600,
         "height": 900
-      },
+      }
+    ],
+    "sections": [
       {
-        "type": "video",
-        "url": "/lummi-plugin.mp4",
-        "alt": "",
-        "width": 1600,
-        "height": 900
+        "title": "Image discovery inside Figma",
+        "body": "Made image discovery and insertion feel native to Figma.",
+        "visual": {
+          "type": "video",
+          "url": "/lummi-plugin.mp4",
+          "alt": "A walkthrough of the Lummi Figma plugin",
+          "width": 1600,
+          "height": 900
+        }
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Sjoerd Huisman",
+        "role": "Staff Product Designer at Coursera",
+        "avatar": "/testimonial-sjoerd-huisman-2026.png",
+        "quote": "Niklas stands out as a highly skilled designer and a driven professional, always bringing valuable insights and expertise that help push projects forward. His technical knowledge is outstanding; he has a remarkable ability to build complex design systems and prototypes using cutting-edge techniques.\n\nNiklas is someone you can always rely on to elevate the work."
       }
     ],
     "company": "Blush Design Inc.",
@@ -26,7 +240,10 @@
   {
     "slug": "lummi-web",
     "title": "Lummi web",
-    "description": "Designed and implemented the Lummi design system, ensuring consistency and usability across the product. Contributed to major features of the platform, such as filters, image detail view, and upload flow, among others, with a focus on creating a cohesive and efficient user experience throughout the entire product.",
+    "summary": "Made finding the right image feel effortless.",
+    "description": "Designed and implemented the Lummi design system and worked across major product experiences, including discovery, filters, image details, uploads, and creator profiles. The work established consistent patterns across the platform and made browsing, understanding, and contributing imagery feel more cohesive.",
+    "problem": "As Lummi’s library and feature set grew, discovery and contribution became harder to scale consistently. Browsing, filtering, image details, uploads, and profiles needed to feel connected rather than like separate product surfaces.",
+    "solution": "I designed and implemented shared foundations, then applied them across the core journeys. Clearer hierarchy, reusable patterns, and consistent interactions turned the growing product into one recognizable experience.",
     "url": "https://lummi.ai/",
     "attachments": [
       {
@@ -35,27 +252,49 @@
         "alt": "Image showing the startpage of Lummi",
         "width": 1600,
         "height": 900
+      }
+    ],
+    "sections": [
+      {
+        "title": "Image details",
+        "body": "Made image details and actions easier to understand.",
+        "visual": {
+          "type": "image",
+          "url": "/lummi-detail-page.png",
+          "alt": "The Lummi image detail experience",
+          "width": 1600,
+          "height": 900
+        }
       },
       {
-        "type": "image",
-        "url": "/lummi-detail-page.png",
-        "alt": "Image showing the detail page of a photograph",
-        "width": 1600,
-        "height": 900
+        "title": "Creator profiles",
+        "body": "Connected visual discovery with the people behind the work.",
+        "visual": {
+          "type": "image",
+          "url": "/lummi-creator-profile.png",
+          "alt": "A creator profile in Lummi",
+          "width": 1600,
+          "height": 900
+        }
       },
       {
-        "type": "image",
-        "url": "/lummi-creator-profile.png",
-        "alt": "Image showing the creator profile page",
-        "width": 1600,
-        "height": 900
-      },
+        "title": "Browsing and interaction",
+        "body": "Brought the complete browsing experience together through interaction.",
+        "visual": {
+          "type": "video",
+          "url": "/lummi.mp4",
+          "alt": "A walkthrough of the Lummi web experience",
+          "width": 1600,
+          "height": 900
+        }
+      }
+    ],
+    "testimonials": [
       {
-        "type": "video",
-        "url": "/lummi.mp4",
-        "alt": "",
-        "width": 1600,
-        "height": 900
+        "name": "Pablo Stanley",
+        "role": "Design and Code at v0 / Vercel",
+        "avatar": "/testimonial-pablo-stanley-2026.png",
+        "quote": "Niklas consistently brought creativity, precision, and a keen eye for detail to every project. He would champion the user while also caring about the company goals and had a bias to shipping.\n\nNiklas is a true pro who would be an asset to any design team."
       }
     ],
     "company": "Blush Design Inc.",
@@ -64,7 +303,10 @@
   {
     "slug": "musho",
     "title": "Musho web",
-    "description": "Led the design of the Musho website, incorporating interactive elements and animations to enhance user engagement and overall user experience. Contributed to shaping the brand identity by refining the visual style, color palette, and typography, ensuring a cohesive and recognizable look across all touchpoints. Focused on creating a seamless, visually appealing interface that aligns with the brand values and goals.",
+    "summary": "Gave an AI design tool a playful, unmistakable identity.",
+    "description": "Led the design of the Musho website, translating the product’s playful AI identity into a cohesive digital experience. The work covered visual direction, color, typography, interaction, and animation, creating a recognizable system that supported the product story across the site.",
+    "problem": "Musho needed to introduce an unfamiliar AI-powered design workflow while standing apart in a fast-growing category. A conventional product page would not have communicated its speed, creativity, or playful character.",
+    "solution": "I built an expressive visual system around bold color, typography, interaction, and motion. Product-led storytelling made the experience easier to understand while giving Musho a distinct and memorable presence.",
     "url": "",
     "attachments": [
       {
@@ -73,27 +315,51 @@
         "alt": "Image showing the UI for Musho's website ",
         "width": 1600,
         "height": 900
+      }
+    ],
+    "sections": [
+      {
+        "title": "Interaction and motion",
+        "body": "Used motion and interaction to make the product feel immediate and playful.",
+        "visual": {
+          "type": "video",
+          "url": "/musho.mov",
+          "alt": "A walkthrough of the Musho website",
+          "width": 1600,
+          "height": 900
+        }
       },
       {
-        "type": "video",
-        "url": "/musho.mov",
-        "alt": "",
-        "width": 1600,
-        "height": 900
+        "title": "A cohesive visual system",
+        "body": "Built a visual system that carried across the product story.",
+        "visual": {
+          "type": "image",
+          "url": "/musho-grid-1.png",
+          "alt": "The first part of the Musho website",
+          "aspectRatio": "16 / 12",
+          "width": 2048,
+          "height": 1536
+        }
       },
       {
-        "type": "image",
-        "url": "/musho-grid-1.png",
-        "alt": "Image showing the full website in a grid part 1",
-        "width": 1600,
-        "height": 900
-      },
+        "title": "An expressive experience",
+        "body": "Extended the same rhythm and personality throughout the experience.",
+        "visual": {
+          "type": "image",
+          "url": "/musho-grid-2.png",
+          "alt": "The second part of the Musho website",
+          "aspectRatio": "16 / 12",
+          "width": 2048,
+          "height": 1536
+        }
+      }
+    ],
+    "testimonials": [
       {
-        "type": "image",
-        "url": "/musho-grid-2.png",
-        "alt": "Image showing the full website in a grid part 2",
-        "width": 1600,
-        "height": 900
+        "name": "Sjoerd Huisman",
+        "role": "Staff Product Designer at Coursera",
+        "avatar": "/testimonial-sjoerd-huisman-2026.png",
+        "quote": "Niklas stands out as a highly skilled designer and a driven professional, always bringing valuable insights and expertise that help push projects forward. His technical knowledge is outstanding; he has a remarkable ability to build complex design systems and prototypes using cutting-edge techniques.\n\nNiklas is someone you can always rely on to elevate the work."
       }
     ],
     "company": "Blush Design Inc.",
@@ -102,7 +368,10 @@
   {
     "slug": "musho-figma-plugin",
     "title": "Musho Figma Plugin",
-    "description": "Created various components and views of the Figma plugin. Additionally, designed a concept for the plugin to use a chat-based AI interface instead of an action-based approach.",
+    "summary": "Reimagined AI page creation as a conversation.",
+    "description": "Designed components and product views for the Musho Figma plugin, including an exploration of a chat-based AI workflow. The concept replaced a sequence of isolated actions with a more conversational experience for generating and refining landing-page content.",
+    "problem": "Action-based AI controls forced designers to translate creative intent into a sequence of rigid commands. Generating and refining a page felt fragmented because each step lost the context of the larger idea.",
+    "solution": "I explored a conversational workflow that carried context between prompts. Designers could describe an idea, review the result, and refine the page through one continuous exchange inside Figma.",
     "url": "",
     "attachments": [
       {
@@ -113,13 +382,24 @@
         "height": 900
       }
     ],
+    "testimonials": [
+      {
+        "name": "Maria Teresa Vallenilla",
+        "role": "Product Manager at Udemy",
+        "avatar": "/testimonial-maria-teresa-vallenilla-2026.png",
+        "quote": "His attention to detail is outstanding, and he’s always ready to collaborate. He gives constructive feedback that really helps the team, and he’s just as open to feedback himself.\n\nI feel fortunate to have worked with Niklas, and any company that brings him on board will be lucky."
+      }
+    ],
     "company": "Blush Design Inc.",
     "year": 2023
   },
   {
     "slug": "buenoverse",
     "title": "Buenoverse",
-    "description": "Designed the UI for avatar selection in Buenoverse, creating an intuitive, visually appealing interface for players and explorers. The design prioritizes ease of use and flexibility, enabling seamless avatar customization with advanced tools and dynamic visuals. I ensured smooth navigation, interactive feedback, and a cohesive aesthetic to enhance the user experience and foster creativity.",
+    "summary": "Made choosing an avatar feel like part of the adventure.",
+    "description": "Designed the avatar-selection interface for Buenoverse, balancing creative flexibility with a clear and approachable experience. The work focused on navigation, customization, visual feedback, and a cohesive presentation that helped players choose how they entered the world.",
+    "problem": "The first step into Buenoverse involved a wide range of avatar choices and customization options. Too much complexity risked turning an exciting opening moment into a setup task.",
+    "solution": "I shaped a visually led selection flow with clear navigation and immediate feedback. Players could explore their options confidently while the interface preserved the playful character of the world they were about to enter.",
     "url": "https://worlds.bueno.art/",
     "attachments": [
       {
@@ -136,7 +416,10 @@
   {
     "slug": "bueno-drops-figma-plugin",
     "title": "Bueno Drops Figma Plugin",
-    "description": "As the lead designer for the Bueno Drops Figma Plugin, I was responsible for creating an intuitive user experience that allows artists to easily convert their designs in Figma into digital art without the need for coding. I streamlined the user flow, crafted a clean and accessible UI, and optimized the integration with Figma to ensure creators could launch digital collectibles in just a few clicks. My work focused on simplifying the process for both Open and Limited Edition drops, making digital collectibles creation fast and accessible for users of all skill levels.",
+    "summary": "Turned Figma artwork into launch-ready digital collectibles.",
+    "description": "Led the design of the Bueno Drops Figma Plugin, creating a focused workflow that helped artists turn designs into digital collectibles without coding. I streamlined the flow, designed an accessible interface, and supported both Open and Limited Edition drops from setup through launch.",
+    "problem": "Artists could create their work in Figma, but publishing it as a digital collectible required technical knowledge and a chain of unfamiliar tools. The gap between creation and launch excluded less technical creators.",
+    "solution": "I designed an end-to-end plugin flow that guided artists from selected artwork through edition type, configuration, and launch. A few clear steps removed the technical burden while preserving control over the final drop.",
     "url": "https://www.figma.com/community/plugin/1271396551618777105/bueno-drops",
     "attachments": [
       {

@@ -6,7 +6,7 @@ import { getAllProjects } from "./lib/projects";
 import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION } from "./lib/site";
 
 export default function Home() {
-  const projects = getAllProjects().filter((p) => p.attachments.length > 0);
+  const projects = getAllProjects();
 
   const profilePageSchema = {
     "@context": "https://schema.org",
