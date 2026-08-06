@@ -11,6 +11,13 @@ import Footer from "../../components/Footer";
 import Nav from "../../components/Nav";
 import FadeIn from "../../components/FadeIn";
 import ProjectNav from "../../components/ProjectNav";
+import ProjectTestimonials from "../../components/ProjectTestimonials";
+import ProjectVideo from "../../components/ProjectVideo";
+import {
+  getProjectVisualAspectRatio,
+  getVisibleProjectSections,
+  isFullWidthProjectSection,
+} from "../../lib/project-layout";
 
 export async function generateStaticParams() {
   return getAllProjects().map((project) => ({ slug: project.slug }));
@@ -25,12 +32,12 @@ export async function generateMetadata({ params }) {
   const ogImage = firstImage ? firstImage.url : "/opengraph-image.png";
 
   return {
-    title: `${project.title} — Niklas Peterson`,
-    description: project.description,
+    title: `${project.title} | Niklas Peterson`,
+    description: project.summary || project.description,
     alternates: { canonical: `/projects/${project.slug}` },
     openGraph: {
-      title: `${project.title} — Niklas Peterson`,
-      description: project.description,
+      title: `${project.title} | Niklas Peterson`,
+      description: project.summary || project.description,
       url: `${SITE_URL}/projects/${project.slug}`,
       images: [{ url: ogImage }],
       type: "article",
@@ -87,97 +94,76 @@ export default async function ProjectPage({ params }) {
 
       <article className="flex flex-col gap-10 px-4 pt-10 pb-20 md:gap-16 md:pt-16 md:pb-32 lg:px-20">
         <FadeIn position="down" className="flex max-w-3xl flex-col gap-6">
-          <h1 className="text-4xl leading-tight font-bold text-zinc-950 md:text-6xl dark:text-zinc-50">
+          <h1 className="text-4xl leading-tight font-semibold text-zinc-950 md:text-6xl dark:text-zinc-50">
             {project.title}
           </h1>
-          <p className="text-lg md:text-xl">{project.description}</p>
+          <p className="text-lg md:text-xl">
+            {project.summary || project.description}
+          </p>
 
-          <div className="flex flex-wrap gap-x-10 gap-y-4 text-base">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-3 text-sm text-zinc-500 dark:text-zinc-400">
             {project.company && (
-              <div className="flex flex-col gap-1">
-                <div className="text-xs font-normal tracking-widest text-zinc-600 uppercase dark:text-zinc-300">
-                  Company
-                </div>
-                <div className="text-zinc-950 dark:text-zinc-50">
-                  {project.company}
-                </div>
-              </div>
+              <span className="font-medium text-zinc-950 dark:text-zinc-50">
+                {project.company}
+              </span>
             )}
-            {project.year && (
-              <div className="flex flex-col gap-1">
-                <div className="text-xs font-normal tracking-widest text-zinc-600 uppercase dark:text-zinc-300">
-                  Year
-                </div>
-                <div className="text-zinc-950 dark:text-zinc-50">
-                  {project.year}
-                </div>
-              </div>
+            {project.company && project.year && (
+              <span
+                aria-hidden="true"
+                className="text-zinc-300 dark:text-zinc-700"
+              >
+                /
+              </span>
             )}
+            {project.year && <span>{project.year}</span>}
             {project.url && (
-              <div className="flex flex-col gap-1">
-                <div className="text-xs font-normal tracking-widest text-zinc-600 uppercase dark:text-zinc-300">
-                  Link
-                </div>
-                <a
-                  className="btn-link"
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+              <a
+                className="group ml-2 inline-flex items-center gap-1.5 font-medium text-zinc-950 transition-opacity hover:opacity-60 dark:text-zinc-50"
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit project
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="h-4 w-4"
                 >
-                  <span className="flex items-center gap-1">
-                    Visit live
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      className="h-4 w-4"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                      />
-                    </svg>
-                  </span>
-                </a>
-              </div>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                  />
+                </svg>
+              </a>
             )}
           </div>
         </FadeIn>
 
-        <div className="flex flex-col gap-4 md:gap-6">
-          {project.attachments.map((attachment, i) => (
-            <FadeIn
-              key={i}
-              index={i}
-              className="relative overflow-hidden rounded-2xl md:rounded-3xl"
-            >
-              {attachment.type === "image" ? (
-                <Image
-                  className="h-auto w-full"
-                  src={attachment.url}
-                  alt={attachment.alt || project.title}
-                  width={attachment.width}
-                  height={attachment.height}
+        {project.summary ? (
+          <CaseStudyContent project={project} />
+        ) : (
+          <div className="flex flex-col gap-4 md:gap-6">
+            {project.attachments.map((attachment, i) => (
+              <FadeIn
+                key={i}
+                index={i}
+                className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-300/20 after:content-[''] md:rounded-3xl md:after:rounded-3xl"
+              >
+                <ProjectMedia
+                  media={attachment}
+                  title={project.title}
                   priority={i === 0}
                 />
-              ) : (
-                <video
-                  className="h-auto w-full"
-                  src={attachment.url}
-                  height={attachment.height}
-                  width={attachment.width}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                />
-              )}
-            </FadeIn>
-          ))}
-        </div>
+              </FadeIn>
+            ))}
+          </div>
+        )}
+
+        <ProjectTestimonials testimonials={project.testimonials} />
 
         <ProjectNav prev={prev} next={next} />
       </article>
@@ -193,5 +179,130 @@ export default async function ProjectPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
     </main>
+  );
+}
+
+function CaseStudyContent({ project }) {
+  const hero = project.attachments[0];
+  const visibleSections = getVisibleProjectSections(project.sections);
+
+  return (
+    <div className="flex flex-col gap-14 md:gap-20">
+      <FadeIn className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-300/20 after:content-[''] md:rounded-3xl md:after:rounded-3xl">
+        {hero ? (
+          <ProjectMedia
+            media={hero}
+            title={`${project.title} overview`}
+            priority
+          />
+        ) : (
+          <VisualPlaceholder title={`${project.title} overview`} />
+        )}
+      </FadeIn>
+
+      <FadeIn className="grid gap-12 md:grid-cols-[minmax(0,1.65fr)_minmax(18rem,0.75fr)] md:gap-16 lg:gap-24">
+        <div className="max-w-3xl">
+          <p className="text-lg leading-relaxed md:text-2xl">
+            {project.description}
+          </p>
+        </div>
+
+        {(project.problem || project.solution) && (
+          <div className="flex flex-col gap-8 md:pl-10">
+            {project.problem && (
+              <section className="flex flex-col gap-3">
+                <h2 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
+                  Problem
+                </h2>
+                <p className="leading-relaxed">{project.problem}</p>
+              </section>
+            )}
+            {project.solution && (
+              <section className="flex flex-col gap-3">
+                <h2 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
+                  Solution
+                </h2>
+                <p className="leading-relaxed">{project.solution}</p>
+              </section>
+            )}
+          </div>
+        )}
+      </FadeIn>
+
+      {visibleSections.length > 0 && (
+        <div className="grid gap-x-6 gap-y-14 md:grid-cols-2">
+          {visibleSections.map((section, index) => {
+            const isFullWidth = isFullWidthProjectSection(
+              index,
+              visibleSections.length,
+            );
+
+            return (
+              <FadeIn
+                key={section.title}
+                index={index}
+                className={isFullWidth ? "md:col-span-2" : ""}
+              >
+                <figure className="flex flex-col gap-3">
+                  <div
+                    className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-300/20 after:content-[''] md:rounded-3xl md:after:rounded-3xl"
+                    style={
+                      isFullWidth
+                        ? undefined
+                        : {
+                            aspectRatio: getProjectVisualAspectRatio(
+                              section.visual,
+                            ),
+                          }
+                    }
+                  >
+                    {section.visual ? (
+                      <ProjectMedia
+                        media={section.visual}
+                        title={section.title}
+                        contained={!isFullWidth}
+                      />
+                    ) : (
+                      <VisualPlaceholder title={section.title} />
+                    )}
+                  </div>
+                  <figcaption className="max-w-lg">
+                    <p className="text-xs leading-relaxed text-zinc-500 md:text-sm dark:text-zinc-400">
+                      {section.body}
+                    </p>
+                  </figcaption>
+                </figure>
+              </FadeIn>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ProjectMedia({ media, title, priority = false, contained = false }) {
+  return media.type === "image" ? (
+    <Image
+      className={`${contained ? "h-full object-contain" : "h-auto"} w-full`}
+      src={media.url}
+      alt={media.alt || title}
+      width={media.width}
+      height={media.height}
+      priority={priority}
+    />
+  ) : (
+    <ProjectVideo
+      media={media}
+      className={`${contained ? "h-full object-contain" : "h-auto"} w-full`}
+    />
+  );
+}
+
+function VisualPlaceholder({ title }) {
+  return (
+    <div className="flex aspect-video w-full items-center justify-center bg-zinc-100 px-6 text-center text-sm text-zinc-500 dark:bg-zinc-900 dark:text-zinc-400">
+      Visual for {title} was being prepared
+    </div>
   );
 }

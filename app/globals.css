@@ -97,3 +97,76 @@ svg#logo path {
     animation-duration: 1.5s;
   }
 }
+
+.project-video-scrubber {
+  height: 1.25rem;
+  cursor: pointer;
+  appearance: none;
+  background: transparent;
+}
+
+.project-video-scrubber::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    rgb(255 255 255 / 0.95) 0,
+    rgb(255 255 255 / 0.95) var(--video-progress),
+    rgb(255 255 255 / 0.28) var(--video-progress),
+    rgb(255 255 255 / 0.28) 100%
+  );
+}
+
+.project-video-scrubber::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+  margin-top: -3.5px;
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  background: white;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.3);
+  transition:
+    opacity 150ms ease,
+    transform 150ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.project-video-scrubber::-moz-range-track {
+  height: 3px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.28);
+}
+
+.project-video-scrubber::-moz-range-progress {
+  height: 3px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.95);
+}
+
+.project-video-scrubber::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 999px;
+  background: white;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.3);
+}
+
+.project-video-scrubber:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-video-scrubber::-webkit-slider-thumb {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+
+  .project-video:hover .project-video-scrubber::-webkit-slider-thumb,
+  .project-video-scrubber:focus-visible::-webkit-slider-thumb {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

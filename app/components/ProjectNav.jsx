@@ -29,12 +29,12 @@ function NavLink({ project, dir }) {
       <span
         className={`flex min-w-0 flex-col gap-0.5 ${isPrev ? "items-start" : "items-end"}`}
       >
-        <span className="flex items-center gap-1 text-[11px] font-normal tracking-widest text-zinc-400 uppercase dark:text-zinc-500">
+        <span className="flex items-center gap-1 text-[11px] font-normal tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
           {isPrev && <Chevron dir="left" />}
           {isPrev ? "Previous" : "Next"}
           {!isPrev && <Chevron dir="right" />}
         </span>
-        <span className="max-w-full truncate text-sm font-medium text-zinc-950 md:max-w-[15rem] dark:text-zinc-50">
+        <span className="max-w-full truncate text-sm font-medium text-zinc-950 md:max-w-60 dark:text-zinc-50">
           {project.title}
         </span>
       </span>
@@ -44,8 +44,8 @@ function NavLink({ project, dir }) {
 
 function Thumb({ media, title }) {
   return (
-    <span className="relative aspect-[16/10] w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 md:w-16 dark:bg-zinc-900">
-      {media.type === "image" ? (
+    <span className="relative aspect-16/10 w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 after:pointer-events-none after:absolute after:inset-0 after:rounded-md after:border after:border-zinc-300/20 after:content-[''] md:w-16 dark:bg-zinc-900">
+      {!media ? null : media.type === "image" ? (
         <Image
           src={media.url}
           alt={title}
@@ -57,6 +57,7 @@ function Thumb({ media, title }) {
         // #t=0.1 nudges the browser to render the first frame as a still poster
         <video
           src={`${media.url}#t=0.1`}
+          poster={media.poster}
           className="h-full w-full object-cover"
           muted
           playsInline
