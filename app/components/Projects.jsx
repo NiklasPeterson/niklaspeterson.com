@@ -448,6 +448,7 @@ function ProjectContent({ project, onOpen, priority }) {
             <video
               src={media.url}
               poster={media.poster}
+              className={media.cropEdges === true ? "scale-[1.004]" : undefined}
               autoPlay
               muted
               playsInline

@@ -51,12 +51,13 @@ export default function ProjectVideo({ media, className = "" }) {
   };
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
+  const cropEdges = media.cropEdges === true;
 
   return (
     <div className="project-video group/video relative h-full w-full">
       <video
         ref={videoRef}
-        className={`${className} cursor-pointer`}
+        className={`${className} cursor-pointer ${cropEdges ? "scale-[1.004]" : ""}`}
         src={media.url}
         poster={media.poster}
         width={media.width}
