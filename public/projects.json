@@ -10,12 +10,13 @@
     "attachments": [
       {
         "type": "video",
-        "url": "/lottiefiles-homepage.mov",
+        "url": "/lottiefiles-homepage.mp4",
         "alt": "Screen recording showing the LottieFiles homepage",
+        "poster": "/lottiefiles-homepage-poster.jpg",
         "cropEdges": true,
         "controls": false,
         "width": 1600,
-        "height": 999
+        "height": 900
       }
     ],
     "sections": [
