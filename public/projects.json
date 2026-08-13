@@ -81,6 +81,14 @@
         }
       }
     ],
+    "testimonials": [
+      {
+        "name": "Celcea Tifani",
+        "role": "Brand Manager & Designer",
+        "avatar": "/testimonial-celcea-tifani-2026.png",
+        "quote": "Niklas impact spans from redesigning our highest-traffic landing pages, including the core Homepage to driving a major brand evolution that overhauled our design system across typography, color palettes, and asset architecture.\n\nNiklas operates as a true Staff-level leader, seamlessly bridging the gap between design and engineering to optimize cross-functional workflows. He is easily one of the best Product Designers I have ever collaborated with."
+      }
+    ],
     "company": "LottieFiles",
     "year": "2024–Present"
   },
@@ -120,6 +128,14 @@
         "body": "Enabled teams to host and deliver supported assets through the LottieFiles CDN."
       }
     ],
+    "testimonials": [
+      {
+        "name": "SangHyo Yee",
+        "role": "Product Designer at LottieFiles",
+        "avatar": "/testimonial-sanghyo-yee-2026.png",
+        "quote": "Niklas was someone I could always trust with an honest design conversation. Whenever I was working through a difficult problem, I knew I could bring it to him and receive a thoughtful, candid perspective.\n\nHe consistently considered how individual decisions would affect the broader customer journey."
+      }
+    ],
     "company": "LottieFiles",
     "year": "2025–2026"
   },
@@ -157,6 +173,14 @@
         "title": "Available where teams worked",
         "hidden": true,
         "body": "Connected LottieFiles Platform with Lottie Creator, Figma, and After Effects."
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "SangHyo Yee",
+        "role": "Product Designer at LottieFiles",
+        "avatar": "/testimonial-sanghyo-yee-2026.png",
+        "quote": "Niklas was someone I could always trust with an honest design conversation. Whenever I was working through a difficult problem, I knew I could bring it to him and receive a thoughtful, candid perspective.\n\nHe consistently considered how individual decisions would affect the broader customer journey."
       }
     ],
     "company": "LottieFiles",

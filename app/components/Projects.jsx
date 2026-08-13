@@ -139,10 +139,7 @@ export default function Projects({ projects = [] }) {
               <ModalGallery attachments={selectedProject.attachments} />
             )}
 
-            <ProjectTestimonials
-              testimonials={selectedProject.testimonials}
-              compact
-            />
+            <ProjectTestimonials testimonials={selectedProject.testimonials} />
 
             {prevProject && nextProject && prevProject !== nextProject && (
               <ModalNav
