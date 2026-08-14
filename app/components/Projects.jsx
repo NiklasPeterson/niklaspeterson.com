@@ -6,7 +6,12 @@ import Image from "next/image";
 import FadeIn from "./FadeIn";
 import ProjectTestimonials from "./ProjectTestimonials";
 import ProjectVideo from "./ProjectVideo";
+import ProjectScope, {
+  ProjectClosingStatement,
+  ProjectDescription,
+} from "./ProjectScope";
 import {
+  getProjectInsights,
   getProjectVisualAspectRatio,
   getVisibleProjectSections,
   isFullWidthProjectSection,
@@ -130,6 +135,8 @@ export default function Projects({ projects = [] }) {
                     </a>
                   )}
                 </div>
+
+                <ProjectScope items={selectedProject.scope} />
               </div>
             </div>
 
@@ -158,44 +165,44 @@ export default function Projects({ projects = [] }) {
 function CaseStudyContent({ project }) {
   const hero = project.attachments[0];
   const visibleSections = getVisibleProjectSections(project.sections);
+  const insights = getProjectInsights(project);
 
   return (
     <div className="flex animate-fadeUp flex-col gap-12 px-4 md:gap-20 md:px-10">
-      <SectionVisual
-        visual={hero}
-        title={`${project.title} overview`}
-        featured
-      />
+      <figure className="flex flex-col gap-3">
+        <SectionVisual
+          visual={hero}
+          title={`${project.title} overview`}
+          featured
+        />
+        {hero?.caption && (
+          <figcaption className="max-w-2xl">
+            <p className="text-xs leading-relaxed text-zinc-500 md:text-sm dark:text-zinc-400">
+              {hero.caption}
+            </p>
+          </figcaption>
+        )}
+      </figure>
 
       <div className="grid gap-10 md:grid-cols-[minmax(0,1.55fr)_minmax(16rem,0.8fr)] md:gap-14">
         <div className="max-w-3xl">
-          <p className="text-lg leading-relaxed md:text-xl">
+          <ProjectDescription className="text-lg leading-relaxed md:text-xl">
             {project.description}
-          </p>
+          </ProjectDescription>
         </div>
 
-        {(project.problem || project.solution) && (
+        {insights.length > 0 && (
           <div className="flex flex-col gap-7 md:pl-8">
-            {project.problem && (
-              <section className="flex flex-col gap-2">
+            {insights.map((insight) => (
+              <section key={insight.label} className="flex flex-col gap-2">
                 <h4 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
-                  Problem
+                  {insight.label}
                 </h4>
                 <p className="text-sm leading-relaxed md:text-base">
-                  {project.problem}
+                  {insight.body}
                 </p>
               </section>
-            )}
-            {project.solution && (
-              <section className="flex flex-col gap-2">
-                <h4 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
-                  Solution
-                </h4>
-                <p className="text-sm leading-relaxed md:text-base">
-                  {project.solution}
-                </p>
-              </section>
-            )}
+            ))}
           </div>
         )}
       </div>
@@ -206,6 +213,7 @@ function CaseStudyContent({ project }) {
             const isFullWidth = isFullWidthProjectSection(
               index,
               visibleSections.length,
+              section,
             );
 
             return (
@@ -218,7 +226,7 @@ function CaseStudyContent({ project }) {
                   title={section.title}
                   contained={!isFullWidth}
                 />
-                <figcaption className="max-w-xl">
+                <figcaption className="max-w-2xl">
                   <p className="text-xs leading-relaxed text-zinc-500 md:text-sm dark:text-zinc-400">
                     {section.body}
                   </p>
@@ -228,6 +236,8 @@ function CaseStudyContent({ project }) {
           })}
         </div>
       )}
+
+      <ProjectClosingStatement>{project.whatScaled}</ProjectClosingStatement>
     </div>
   );
 }
