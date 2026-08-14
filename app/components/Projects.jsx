@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import FadeIn from "./FadeIn";
 import ProjectTestimonials from "./ProjectTestimonials";
@@ -49,6 +49,41 @@ export default function Projects({ projects = [] }) {
       : null;
   const nextProject =
     currentIndex >= 0 ? projects[(currentIndex + 1) % projects.length] : null;
+
+  useEffect(() => {
+    if (!selectedProject || !prevProject || !nextProject) return;
+
+    const handleKeyDown = (event) => {
+      const target = event.target;
+
+      if (
+        event.defaultPrevented ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.altKey ||
+        event.shiftKey ||
+        (target instanceof Element &&
+          target.closest(
+            "input, textarea, select, video, audio, [contenteditable='true'], [role='slider']",
+          ))
+      ) {
+        return;
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        navigateTo(prevProject);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        navigateTo(nextProject);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedProject, prevProject, nextProject]);
 
   return (
     <>

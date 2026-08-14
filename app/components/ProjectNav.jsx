@@ -1,10 +1,51 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 // Prev/next pager for the project detail page. Mirrors the modal's ModalNav
 // design, but navigates between pages. prefetch={false} keeps Safari/Next from
 // eagerly loading the (media-heavy) neighbor route on hover.
 export default function ProjectNav({ prev, next }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!prev || !next || prev.slug === next.slug) return;
+
+    const handleKeyDown = (event) => {
+      const target = event.target;
+
+      if (
+        event.defaultPrevented ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.altKey ||
+        event.shiftKey ||
+        (target instanceof Element &&
+          target.closest(
+            "input, textarea, select, video, audio, [contenteditable='true'], [role='slider']",
+          ))
+      ) {
+        return;
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        router.push(`/projects/${prev.slug}`);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        router.push(`/projects/${next.slug}`);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [next, prev, router]);
+
   if (!prev || !next || prev.slug === next.slug) return null;
   return (
     <nav className="flex items-center justify-between gap-4">
