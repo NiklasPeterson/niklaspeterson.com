@@ -2,7 +2,7 @@
   {
     "slug": "lottiefiles-web-marketing",
     "title": "LottieFiles Web & Marketing",
-    "summary": "Reshaped LottieFiles’ web presence into a clearer, more cohesive expression of the brand and its motion ecosystem.",
+    "summary": "Reshaped LottieFiles’ web presence into a clearer, more consistent expression of the brand and its motion ecosystem.",
     "scope": [
       {
         "label": "Responsibility",
@@ -17,11 +17,11 @@
         "value": "Brand, Product, Marketing, Engineering"
       }
     ],
-    "description": "I led the design and visual direction of LottieFiles’ web presence while contributing to the broader evolution of the brand. The work began with the homepage and Animation pages, followed later by the Lottie Creator landing page. Across these foundational experiences, I shaped the information architecture, UX, UI, interaction, motion, and shared design patterns that established the standard for future marketing pages. As the direction expanded, I guided other designers on how to apply and extend the system, led stakeholder reviews, and improved the design-to-launch process. Pages were aligned in Figma before being implemented in Framer, and I held final design approval for structure, consistency, and visual quality before updates were released.",
+    "description": "I led the design and visual direction of LottieFiles’ web presence while contributing to the broader evolution of the brand. The work began with the homepage, Animation pages, and Tools pages, followed later by the Lottie Creator landing page. Across these projects, I shaped the information architecture, UX, UI, interaction, motion, and reusable design patterns that established the updated brand and visual style for the web.\n\nOnce that direction was established, I guided other designers and oversaw its adoption across the rest of the marketing site. This included migrating existing pages and reviewing new pages to ensure they followed the updated brand and styling. I led stakeholder reviews and held final design approval, ensuring that page structure, consistency, and visual quality met the established standard before release.",
     "insights": [
       {
         "label": "Why it mattered",
-        "body": "LottieFiles had grown into a broad ecosystem, but its web presence lacked a consistent story and shared visual language across products and audiences."
+        "body": "LottieFiles had grown into a broad ecosystem, but its web presence lacked a consistent story and visual language across products and audiences."
       },
       {
         "label": "Key decision",
@@ -29,10 +29,10 @@
       },
       {
         "label": "Organizational impact",
-        "body": "The direction became the standard used by other designers. Design reviews and final QA helped Brand, Product, Marketing, and Engineering maintain consistency as the web presence expanded."
+        "body": "The updated direction gave designers and cross-functional teams a shared foundation for creating and reviewing marketing pages. Clearer guidance, regular reviews, and final design QA improved consistency from design through launch."
       }
     ],
-    "whatScaled": "The new brand and web direction set a higher standard for visual design and motion across LottieFiles. Its shared patterns, review process, and quality bar guided the marketing pages that followed.",
+    "whatScaled": "The visual language and reusable patterns expanded from the initial core pages across both migrated and newly created marketing pages.",
     "url": "https://lottiefiles.com/",
     "attachments": [
       {
@@ -122,7 +122,7 @@
   {
     "slug": "lottiefiles-digital-asset-management",
     "title": "LottieFiles Digital Asset Management",
-    "summary": "Expanded LottieFiles Platform into a multi-format asset workspace and delivery system.",
+    "summary": "Expanded LottieFiles Platform into a workspace for managing and delivering multiple asset formats.",
     "scope": [
       {
         "label": "Responsibility",
@@ -137,22 +137,22 @@
         "value": "Creator and Plugins"
       }
     ],
-    "description": "I led the UX, UI, and product workflows that expanded LottieFiles Platform to support images, SVGs, videos, and source files alongside animations. I used AI to rapidly build an early proof of concept, aligning stakeholders, Product, and Engineering on the shared model and workflows before moving into high-fidelity design.\n\nRather than creating a separate destination, I integrated these formats into the organization, status, review, approval, versioning, and delivery workflows teams already understood. I also improved everyday asset management through multi-format and folder uploads, multi-file copy and paste, and drag-and-drop organization. I defined the core Platform experience, guided its adaptation for the plugins, and designed the corresponding experience in Lottie Creator, where I also contributed to front-end implementation.",
+    "description": "I led the UX, UI, and product workflows that expanded LottieFiles Platform to support images, SVGs, videos, and source files alongside animations. I used AI to quickly build an early proof of concept, helping stakeholders, Product, and Engineering align on the core model and workflows before moving into high-fidelity design.\n\nInstead of creating a separate destination, I brought these formats into the organization, status, review, approval, versioning, and delivery workflows teams already used. I also improved everyday asset management through multi-format and folder uploads, multi-file copy and paste, and drag-and-drop organization.\n\nI defined the core Platform experience, guided how it extended into the plugins, and designed the corresponding experience in Lottie Creator, where I also contributed to front-end implementation.",
     "insights": [
       {
         "label": "Why it mattered",
-        "body": "Team and Enterprise customers, internal product teams, and motion designers were managing related assets across multiple services. This made complete projects harder to organize, track, and deliver."
+        "body": "Team and Enterprise customers, internal product teams, and motion designers were managing related assets across several services. This made complete projects harder to organize, track, and deliver."
       },
       {
         "label": "Key decision",
-        "body": "The new formats became part of the existing asset model rather than a separate product area. Shared behaviors stayed consistent, while previews, metadata, and actions adapted to each format."
+        "body": "New formats became part of the existing asset model rather than a separate product area. Core behaviors remained familiar, while previews, metadata, and actions adapted to each format."
       },
       {
         "label": "Outcome",
-        "body": "Internal and external teams adopted the experience, bringing related design assets into one workspace. Stable CDN links and version control also accelerated implementation by letting teams update deployed assets without redeploying their products."
+        "body": "Internal and external teams adopted the experience, bringing related design assets into one workspace. Stable CDN links and version control also helped teams update deployed assets without redeploying their products."
       }
     ],
-    "whatScaled": "The shared asset model extended into Lottie Creator and the plugins. Its multi-format foundation also expanded CDN delivery and enabled teams to include a broader range of assets inside Motion Systems.",
+    "whatScaled": "The common asset model became a reusable foundation for supporting multiple formats across Lottie Creator, the plugins, CDN delivery, and Motion Systems.",
     "url": "https://lottiefiles.com/dam",
     "attachments": [
       {
@@ -160,7 +160,6 @@
         "url": "/lottiefiles-dam.mp4",
         "poster": "/lottiefiles-dam-poster.png",
         "alt": "LottieFiles Digital Asset Management product overview",
-        "caption": "Brought the assets needed to ship a project into one connected workspace.",
         "width": 1920,
         "height": 1080,
         "hasAudio": true
@@ -230,7 +229,7 @@
   {
     "slug": "lottiefiles-motion-systems",
     "title": "LottieFiles Motion Systems",
-    "summary": "Brought motion standards into one governed system teams could manage, publish, and use across their creative tools.",
+    "summary": "Brought motion standards into one system that teams could manage, publish, and use across their creative tools.",
     "scope": [
       {
         "label": "Responsibility",
@@ -245,22 +244,22 @@
         "value": "Creator and Plugins"
       }
     ],
-    "description": "Building on an initial proof of concept, I led the UX and UI for Motion Systems within LottieFiles Platform. I reshaped it into a cohesive experience that supported the full lifecycle of a Motion System, from initial setup and brand-guide import to managing principles, tokens, easing curves, assets, and other system values, through drafting, publishing, and version history. I also contributed directly to front-end implementation within Platform.\n\nThe experience needed to remain consistent across Platform, Lottie Creator, Figma, and After Effects without forcing the same interface into tools with different purposes. I worked directly with the Creator designer, PM, engineers, and Head of Product through hands-on alignment sessions, guiding how the Platform patterns were adapted to creation and plugin workflows. I also reviewed and performed design QA across Platform, Creator, and the plugins to keep the coordinated release cohesive through implementation.",
+    "description": "Building on an initial proof of concept, I led the UX and UI for Motion Systems within LottieFiles Platform. I turned it into a complete experience covering the full lifecycle of a Motion System, from initial setup and brand-guide import to managing principles, tokens, easing curves, presets, and approved assets. Teams could then draft, publish, and track versions of their system. I also contributed directly to front-end implementation within Platform.\n\nPlatform served as the source of truth for creating, managing, publishing, and versioning a Motion System. Lottie Creator, Figma, and After Effects primarily consumed those published standards, making approved tokens, easing curves, presets, and assets available where teams created motion.\n\nI set the direction for how Motion Systems were implemented in Lottie Creator, working closely with its designer and engineers to translate the Platform model into the creation workflow. I also reviewed the Figma and After Effects plugin experiences and provided critical feedback to keep their implementation aligned. Across the coordinated release, I conducted design QA to maintain consistency and quality through implementation.",
     "insights": [
       {
         "label": "Why it mattered",
-        "body": "Team and Enterprise customers, internal users, and LottieFiles’ motion designers were managing motion standards through incomplete or disconnected systems. We also saw an opportunity to address a broader market gap, since many established design systems still lacked a governed motion layer."
+        "body": "Teams were managing motion standards through incomplete or disconnected systems. Motion was also often missing from otherwise mature design systems, leaving teams without a reliable way to define and reuse it."
       },
       {
         "label": "Key decision",
-        "body": "We established one shared model for creating, managing, drafting, publishing, and versioning Motion Systems, then adapted the interface to each tool. The first set of system values was scoped with LottieFiles’ internal Motion Design team so the experience remained useful without becoming overly complex."
+        "body": "We created one consistent structure for building, managing, publishing, and versioning Motion Systems in Platform, then defined how published standards would be consumed in Creator and the plugins. The initial set of values was defined with LottieFiles’ internal Motion Design team so the system remained useful without becoming overly complex."
       },
       {
         "label": "Outcome",
-        "body": "Motion Systems launched as a coordinated experience across Platform, Creator, Figma, and After Effects. Cross-product design QA helped preserve the shared model and interaction quality through implementation, and the release received positive feedback from external users. The creation flow also evolved during development, replacing less predictable AI-based brand-guide extraction with Brandfetch data for a more reliable foundation."
+        "body": "Motion Systems launched with Platform as the governed source of truth and Creator, Figma, and After Effects as the places where teams could access and apply the published standards. Design reviews and QA helped preserve the shared structure and interaction quality through implementation, and the release received positive feedback from external users.\n\nDuring development, we also replaced unpredictable AI-based brand-guide extraction with Brandfetch data, giving the setup flow a more reliable foundation."
       }
     ],
-    "whatScaled": "The Platform experience for creating, managing, publishing, and versioning Motion Systems became the shared foundation used across Creator and the plugins, connecting governance with the tools where teams created and applied motion.",
+    "whatScaled": "The Platform model became the foundation for governing Motion Systems, while Creator and the plugins provided a consistent way to consume and apply them across creative workflows.",
     "url": "https://lottiefiles.com/motion-system",
     "attachments": [
       {
@@ -268,29 +267,61 @@
         "url": "/lottiefiles-motion-system.m4v",
         "poster": "/lottiefiles-motion-system-poster.png",
         "alt": "LottieFiles Platform showing a Motion System with easing curves and reusable motion presets",
-        "caption": "Managed shared motion values and assets through one governed system.",
         "width": 1280,
         "height": 720,
         "hasAudio": true
       }
     ],
-    "sections": [
-      {
-        "title": "A governed source of truth",
-        "hidden": true,
-        "body": "Brought motion principles, tokens, presets, and assets into one system."
-      },
-      {
-        "title": "Publishing and versioning",
-        "hidden": true,
-        "body": "Made approved motion standards safer to publish, version, and share."
-      },
-      {
-        "title": "Available where teams worked",
-        "hidden": true,
-        "body": "Connected LottieFiles Platform with Lottie Creator, Figma, and After Effects."
-      }
-    ],
+      "sections": [
+        {
+          "title": "A shared motion system",
+          "body": "Created a shared home for teams to document, organize, and apply motion foundations.",
+          "fullWidth": true,
+          "visual": {
+            "type": "image",
+            "url": "/lottiefiles-motion-system-overview-2026.png",
+            "alt": "LottieFiles Platform showing an editable Motion System with documentation, publishing controls, version history, and reusable motion assets",
+            "aspectRatio": "16 / 9"
+          }
+        },
+        {
+          "title": "Motion system foundations",
+          "body": "Connected reusable motion foundations, presets, and animated assets in one system.",
+          "fullWidth": false,
+          "visual": {
+            "type": "image",
+            "url": "/lottiefiles-motion-system-foundations-2026.png",
+            "alt": "LottieFiles Platform showing easing curves, motion presets, and animated assets inside a Motion System",
+            "aspectRatio": "16 / 12"
+          }
+        },
+        {
+          "title": "Published link",
+          "body": "Shared published Motion Systems through a dedicated public link.",
+          "fullWidth": false,
+          "visual": {
+            "type": "image",
+            "url": "/lottiefiles-motion-system-published-link-2026.png",
+            "alt": "Published Design Haus Motion System with shared documentation and reusable brand assets",
+            "aspectRatio": "16 / 12"
+          }
+        },
+        {
+          "title": "Creation flow",
+          "body": "Brought published Motion Systems into the Figma creation flow.",
+          "fullWidth": true,
+          "visual": {
+            "type": "video",
+            "url": "/lottiefiles-motion-system-creation-flow-2026.mp4",
+            "alt": "Using a published LottieFiles Motion System inside Figma"
+          }
+        },
+        {
+          "title": "Available where teams worked",
+          "hidden": true,
+          "body": "Connected LottieFiles Platform with Lottie Creator, Figma, and After Effects."
+        }
+      ],
     "testimonials": [
       {
         "name": "Ahmed Ali",
@@ -305,7 +336,7 @@
   {
     "slug": "lottiefiles-developer-handoff",
     "title": "LottieFiles Developer Handoff",
-    "summary": "Turned fragmented animation implementation into a focused, stack-aware developer handoff.",
+    "summary": "Turned fragmented implementation guidance into a focused handoff tailored to each developer’s stack.",
     "scope": [
       {
         "label": "Responsibility",
@@ -320,19 +351,19 @@
         "value": "Phased A/B rollout"
       }
     ],
-    "description": "Customer feedback and product data showed that developers struggled to translate animation assets into the correct production setup. Technical details, implementation requirements, and guidance were spread across different places, creating friction between receiving an asset and shipping it.\n\nWith no formal PRD, I aligned directly with the Head of Product on the problem and potential direction. I built an AI-assisted proof of concept to explore a focused, full-page handoff experience, used it to align on the approach, and then developed the concept into a high-fidelity design.\n\nI owned the UX and UI, worked closely with Engineering throughout implementation, and conducted design QA before rollout. The resulting experience brought asset details, technical specifications, setup instructions, and ready-to-use code into one workspace.",
+    "description": "Customer feedback and product data showed that developers struggled to turn animation assets into working production implementations. Technical details, requirements, and setup guidance were spread across several places, creating friction between receiving an asset and shipping it.\n\nBecause there was no formal PRD, I worked directly with the Head of Product to define the problem and explore a direction. I built an AI-assisted proof of concept for a focused, full-page handoff experience, used it to align the team, and developed the concept into a high-fidelity design.\n\nI owned the UX and UI, worked closely with Engineering throughout implementation, and conducted design QA before rollout. The final experience brought asset details, technical specifications, setup instructions, and ready-to-use code into one workspace.",
     "insights": [
       {
         "label": "Why it mattered",
-        "body": "Developers needed a clearer path from receiving an animation to implementing it correctly. Generic documentation still required them to interpret asset requirements and determine which instructions applied to their development stack."
+        "body": "Developers needed a clearer path from receiving an animation to implementing it correctly. Generic documentation still required them to interpret the asset requirements and determine which instructions applied to their stack."
       },
       {
         "label": "Key decision",
-        "body": "Instead of presenting the same documentation to everyone, I designed a dynamic integration guide that adapted its setup steps and code to the selected platform, framework, player, and animation features."
+        "body": "Instead of showing everyone the same documentation, I designed a dynamic integration guide that adapted its setup steps and code to the selected platform, framework, player, and animation features."
       },
       {
         "label": "Outcome",
-        "body": "The experience entered a phased A/B rollout with a small percentage of users, allowing the team to validate its effectiveness before expanding availability."
+        "body": "The experience entered a phased A/B rollout with a small group of users, allowing the team to validate its effectiveness before expanding availability."
       }
     ],
     "url": "https://app.lottiefiles.com/",
@@ -341,7 +372,6 @@
         "type": "image",
         "url": "/lottiefiles-developer-handoff3.png",
         "alt": "LottieFiles Developer Handoff view with implementation guidance",
-        "caption": "Brought asset details and implementation guidance into one view.",
         "width": 3200,
         "height": 1802
       }
