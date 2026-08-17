@@ -87,11 +87,13 @@
       {
         "title": "Animations page",
         "body": "Modernized animation discovery and navigation.",
+        "fullWidth": true,
         "visual": {
           "type": "video",
           "url": "/lottiefiles-animation-listing.mov",
           "alt": "LottieFiles animation listing experience",
           "controls": false,
+          "aspectRatio": "16 / 9",
           "width": 2880,
           "height": 1620
         }
@@ -99,10 +101,12 @@
       {
         "title": "Animation Detail page",
         "body": "Focused the experience on the animation and key actions.",
+        "fullWidth": true,
         "visual": {
           "type": "image",
           "url": "/lottiefiles-animation-detail2.png",
           "alt": "LottieFiles animation detail experience with playback and download options",
+          "aspectRatio": "16 / 9",
           "width": 2880,
           "height": 1620
         }
@@ -172,7 +176,7 @@
         "body": "Kept animations, images, SVGs, videos, and source files together inside familiar projects and folders.",
         "visual": {
           "type": "image",
-          "url": "/lottiefiles-dam-mixed-format-library-2026.png",
+          "url": "/lottiefiles-dam-mixed-format-library-2026-8.png",
           "alt": "LottieFiles Platform workspace showing folders and mixed-format brand assets",
           "width": 3200,
           "height": 1800
@@ -184,7 +188,7 @@
         "body": "Created one upload flow for individual files, full folders, and mixed asset types.",
         "visual": {
           "type": "image",
-          "url": "/lottiefiles-dam-upload-modal-2026.png",
+          "url": "/lottiefiles-dam-upload-modal-2026-8.png",
           "alt": "LottieFiles upload modal showing support for motion, image, and source files",
           "aspectRatio": "16 / 9",
           "width": 3200,
@@ -197,7 +201,7 @@
         "body": "Made it faster to add several copied assets directly to the current folder.",
         "visual": {
           "type": "image",
-          "url": "/lottiefiles-dam-copy-paste-upload-2026.png",
+          "url": "/lottiefiles-dam-copy-paste-upload-2026-8.png",
           "alt": "LottieFiles dialog showing multiple copied assets ready to upload into the current folder",
           "aspectRatio": "16 / 9",
           "width": 3200,
@@ -279,9 +283,10 @@
           "fullWidth": true,
           "visual": {
             "type": "image",
-            "url": "/lottiefiles-motion-system-overview-2026.png",
+            "url": "/lottiefiles-motion-system-overview-2026-8.png",
             "alt": "LottieFiles Platform showing an editable Motion System with documentation, publishing controls, version history, and reusable motion assets",
-            "aspectRatio": "16 / 9"
+            "width": 3200,
+            "height": 1800
           }
         },
         {
@@ -290,9 +295,11 @@
           "fullWidth": false,
           "visual": {
             "type": "image",
-            "url": "/lottiefiles-motion-system-foundations-2026.png",
+            "url": "/lottiefiles-motion-system-foundations-2026-8.png",
             "alt": "LottieFiles Platform showing easing curves, motion presets, and animated assets inside a Motion System",
-            "aspectRatio": "16 / 12"
+            "aspectRatio": "16 / 12",
+            "width": 3200,
+            "height": 2400
           }
         },
         {
@@ -301,19 +308,22 @@
           "fullWidth": false,
           "visual": {
             "type": "image",
-            "url": "/lottiefiles-motion-system-published-link-2026.png",
+            "url": "/lottiefiles-motion-system-published-link-2026-8.png",
             "alt": "Published Design Haus Motion System with shared documentation and reusable brand assets",
-            "aspectRatio": "16 / 12"
+            "aspectRatio": "16 / 12",
+            "width": 3200,
+            "height": 2400
           }
         },
         {
           "title": "Creation flow",
-          "body": "Brought published Motion Systems into the Figma creation flow.",
+          "body": "Assisted with aligning UX of Motion Systems isnide the Figma plugin.",
           "fullWidth": true,
           "visual": {
             "type": "video",
             "url": "/lottiefiles-motion-system-creation-flow-2026.mp4",
-            "alt": "Using a published LottieFiles Motion System inside Figma"
+            "alt": "Using a published LottieFiles Motion System inside Figma",
+            "hasAudio": true
           }
         },
         {
@@ -351,7 +361,7 @@
         "value": "Phased A/B rollout"
       }
     ],
-    "description": "Customer feedback and product data showed that developers struggled to turn animation assets into working production implementations. Technical details, requirements, and setup guidance were spread across several places, creating friction between receiving an asset and shipping it.\n\nBecause there was no formal PRD, I worked directly with the Head of Product to define the problem and explore a direction. I built an AI-assisted proof of concept for a focused, full-page handoff experience, used it to align the team, and developed the concept into a high-fidelity design.\n\nI owned the UX and UI, worked closely with Engineering throughout implementation, and conducted design QA before rollout. The final experience brought asset details, technical specifications, setup instructions, and ready-to-use code into one workspace.",
+    "description": "Customer feedback and product data showed that developers, particularly those implementing Lottie for the first time, struggled to turn animation assets into working production implementations. Technical details, requirements, and setup guidance were spread across several places, creating friction between receiving an asset and shipping it.\n\nThe project began as an early idea rather than a defined solution. I worked directly with the Head of Product to clarify the problem, explore possible directions, and shape the concept. I built an AI-assisted proof of concept for a focused, full-page handoff experience, used it to align the team, and developed it into a high-fidelity design.\n\nI owned the UX and UI, worked closely with Engineering throughout implementation, and conducted design QA before rollout. The final experience brought asset details, technical specifications, setup instructions, and ready-to-use code into one workspace.",
     "insights": [
       {
         "label": "Why it mattered",
@@ -366,6 +376,7 @@
         "body": "The experience entered a phased A/B rollout with a small group of users, allowing the team to validate its effectiveness before expanding availability."
       }
     ],
+    "whatScaled": "The dynamic guide established a reusable structure for tailoring implementation support across platforms, frameworks, players, and animation features. New development stacks could be added without creating a separate handoff experience for each setup.",
     "url": "https://app.lottiefiles.com/",
     "attachments": [
       {
