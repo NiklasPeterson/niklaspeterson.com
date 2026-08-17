@@ -6,7 +6,7 @@ export default function ProjectTestimonials({ testimonials = [] }) {
   return (
     <div className="flex w-full justify-center px-4 md:px-10">
       <section
-        className="flex w-full max-w-5xl flex-col items-center gap-7 rounded-3xl border border-zinc-200/50 bg-zinc-50 px-5 py-8 md:my-10 md:gap-8 md:rounded-[2rem] md:px-10 md:py-12 dark:bg-zinc-900/40"
+        className="flex w-full max-w-5xl flex-col items-center gap-7 rounded-3xl border border-zinc-200/50 bg-zinc-50 px-5 py-8 md:my-10 md:gap-8 md:rounded-[2rem] md:px-10 md:py-12 dark:bg-zinc-900/40 dark:border-zinc-600/50"
         aria-label="Project testimonials"
       >
         <div

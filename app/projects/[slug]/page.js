@@ -94,7 +94,7 @@ export default async function ProjectPage({ params }) {
   };
 
   return (
-    <main className="flex w-full max-w-[1440px] flex-col">
+    <main className="flex w-full max-w-360 flex-col">
       <Nav />
 
       <article className="flex flex-col gap-10 px-4 pt-10 pb-20 md:gap-16 md:pt-16 md:pb-32 lg:px-20">
@@ -158,7 +158,7 @@ export default async function ProjectPage({ params }) {
               <FadeIn
                 key={i}
                 index={i}
-                className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl"
+                className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 dark:after:border-zinc-600/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl"
               >
                 <ProjectMedia
                   media={attachment}
@@ -198,7 +198,7 @@ function CaseStudyContent({ project }) {
     <div className="flex flex-col gap-16 md:gap-20">
       <FadeIn>
         <figure className="flex flex-col gap-3">
-          <div className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl">
+          <div className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 dark:after:border-zinc-600/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl">
             {hero ? (
               <ProjectMedia
                 media={hero}
@@ -257,16 +257,16 @@ function CaseStudyContent({ project }) {
               >
                 <figure className="flex flex-col gap-3">
                   <div
-                    className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl"
-                    style={
-                      isFullWidth
-                        ? undefined
-                        : {
+                    className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 dark:after:border-zinc-600/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl"
+                  style={
+                    isFullWidth
+                      ? undefined
+                      : {
                             aspectRatio: getProjectVisualAspectRatio(
                               section.visual,
                             ),
-                          }
-                    }
+                        }
+                  }
                   >
                     {section.visual ? (
                       <ProjectMedia
@@ -274,9 +274,9 @@ function CaseStudyContent({ project }) {
                         title={section.title}
                         contained={!isFullWidth}
                       />
-                    ) : (
-                      <VisualPlaceholder title={section.title} />
-                    )}
+                  ) : (
+                    <VisualPlaceholder title={section.title} />
+                  )}
                   </div>
                   <figcaption className="max-w-lg">
                     <p className="text-xs leading-relaxed text-zinc-500 md:text-sm dark:text-zinc-400">
