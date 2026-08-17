@@ -23,7 +23,7 @@ export function ProjectDescription({ children, className = "" }) {
   const paragraphs = children.split(/\n\s*\n/).filter(Boolean);
 
   return (
-    <div className={`flex flex-col gap-5 ${className}`}>
+    <div className={`flex flex-col gap-5 text-pretty ${className}`}>
       {paragraphs.map((paragraph) => (
         <p key={paragraph}>{paragraph}</p>
       ))}
