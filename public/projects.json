@@ -267,13 +267,12 @@
     "url": "https://lottiefiles.com/motion-system",
     "attachments": [
       {
-        "type": "video",
-        "url": "/lottiefiles-motion-system.m4v",
-        "poster": "/lottiefiles-motion-system-poster.png",
-        "alt": "LottieFiles Platform showing a Motion System with easing curves and reusable motion presets",
-        "width": 1280,
-        "height": 720,
-        "hasAudio": true
+        
+            "type": "image",
+            "url": "/lottiefiles-motion-system-overview-2026-8-18.png",
+            "alt": "LottieFiles Platform showing an editable Motion System with documentation, publishing controls, version history, and reusable motion assets",
+            "width": 3200,
+            "height": 1800
       }
     ],
       "sections": [
@@ -282,11 +281,13 @@
           "body": "Created a shared home for teams to document, organize, and apply motion foundations.",
           "fullWidth": true,
           "visual": {
-            "type": "image",
-            "url": "/lottiefiles-motion-system-overview-2026-8.png",
-            "alt": "LottieFiles Platform showing an editable Motion System with documentation, publishing controls, version history, and reusable motion assets",
-            "width": 3200,
-            "height": 1800
+            "type": "video",
+        "url": "/lottiefiles-motion-system.m4v",
+        "poster": "/lottiefiles-motion-system-poster.png",
+        "alt": "LottieFiles Platform showing a Motion System with easing curves and reusable motion presets",
+        "width": 1280,
+        "height": 720,
+        "hasAudio": true
           }
         },
         {
@@ -295,7 +296,7 @@
           "fullWidth": false,
           "visual": {
             "type": "image",
-            "url": "/lottiefiles-motion-system-foundations-2026-8.png",
+            "url": "/lottiefiles-motion-system-foundations-2026-8-18.png",
             "alt": "LottieFiles Platform showing easing curves, motion presets, and animated assets inside a Motion System",
             "aspectRatio": "16 / 12",
             "width": 3200,
@@ -308,7 +309,7 @@
           "fullWidth": false,
           "visual": {
             "type": "image",
-            "url": "/lottiefiles-motion-system-published-link-2026-8.png",
+            "url": "/lottiefiles-motion-system-published-link-2026-8-18.png",
             "alt": "Published Design Haus Motion System with shared documentation and reusable brand assets",
             "aspectRatio": "16 / 12",
             "width": 3200,
