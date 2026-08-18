@@ -1,12 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import FadeIn from "./FadeIn";
 import ProjectTestimonials from "./ProjectTestimonials";
 import ProjectVideo from "./ProjectVideo";
+import ProjectScope, {
+  ProjectClosingStatement,
+  ProjectDescription,
+} from "./ProjectScope";
 import {
+  getProjectInsights,
   getProjectVisualAspectRatio,
   getVisibleProjectSections,
   isFullWidthProjectSection,
@@ -45,6 +50,41 @@ export default function Projects({ projects = [] }) {
   const nextProject =
     currentIndex >= 0 ? projects[(currentIndex + 1) % projects.length] : null;
 
+  useEffect(() => {
+    if (!selectedProject || !prevProject || !nextProject) return;
+
+    const handleKeyDown = (event) => {
+      const target = event.target;
+
+      if (
+        event.defaultPrevented ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.altKey ||
+        event.shiftKey ||
+        (target instanceof Element &&
+          target.closest(
+            "input, textarea, select, video, audio, [contenteditable='true'], [role='slider']",
+          ))
+      ) {
+        return;
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        navigateTo(prevProject);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        navigateTo(nextProject);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedProject, prevProject, nextProject]);
+
   return (
     <>
       <div className="flex flex-wrap gap-12 px-4 pb-20 md:pb-32 lg:px-20">
@@ -71,7 +111,7 @@ export default function Projects({ projects = [] }) {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="mx-auto flex max-w-360 flex-col gap-10 border-zinc-200 bg-white pt-6 pb-1 md:h-fit md:animate-fadeUp md:rounded-3xl md:border md:pt-10 md:pb-2 dark:bg-black dark:md:border-zinc-800"
+            className="mx-auto flex max-w-360 flex-col gap-10 border-zinc-200 bg-white pt-6 pb-1 md:h-fit md:animate-fadeUp md:rounded-3xl md:border md:pt-10 md:pb-2 dark:border-zinc-600/50 dark:bg-black"
           >
             <div className="flex flex-col gap-6 px-4 md:gap-8 md:px-10">
               <div className="flex items-center justify-between">
@@ -130,6 +170,8 @@ export default function Projects({ projects = [] }) {
                     </a>
                   )}
                 </div>
+
+                <ProjectScope items={selectedProject.scope} />
               </div>
             </div>
 
@@ -139,10 +181,7 @@ export default function Projects({ projects = [] }) {
               <ModalGallery attachments={selectedProject.attachments} />
             )}
 
-            <ProjectTestimonials
-              testimonials={selectedProject.testimonials}
-              compact
-            />
+            <ProjectTestimonials testimonials={selectedProject.testimonials} />
 
             {prevProject && nextProject && prevProject !== nextProject && (
               <ModalNav
@@ -161,44 +200,44 @@ export default function Projects({ projects = [] }) {
 function CaseStudyContent({ project }) {
   const hero = project.attachments[0];
   const visibleSections = getVisibleProjectSections(project.sections);
+  const insights = getProjectInsights(project);
 
   return (
     <div className="flex animate-fadeUp flex-col gap-12 px-4 md:gap-20 md:px-10">
-      <SectionVisual
-        visual={hero}
-        title={`${project.title} overview`}
-        featured
-      />
+      <figure className="flex flex-col gap-3">
+        <SectionVisual
+          visual={hero}
+          title={`${project.title} overview`}
+          featured
+        />
+        {hero?.caption && (
+          <figcaption className="max-w-2xl">
+            <p className="text-xs leading-relaxed text-zinc-500 md:text-sm dark:text-zinc-400">
+              {hero.caption}
+            </p>
+          </figcaption>
+        )}
+      </figure>
 
       <div className="grid gap-10 md:grid-cols-[minmax(0,1.55fr)_minmax(16rem,0.8fr)] md:gap-14">
         <div className="max-w-3xl">
-          <p className="text-lg leading-relaxed md:text-xl">
+          <ProjectDescription className="text-lg leading-relaxed md:text-xl">
             {project.description}
-          </p>
+          </ProjectDescription>
         </div>
 
-        {(project.problem || project.solution) && (
+        {insights.length > 0 && (
           <div className="flex flex-col gap-7 md:pl-8">
-            {project.problem && (
-              <section className="flex flex-col gap-2">
+            {insights.map((insight) => (
+              <section key={insight.label} className="flex flex-col gap-2">
                 <h4 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
-                  Problem
+                  {insight.label}
                 </h4>
                 <p className="text-sm leading-relaxed md:text-base">
-                  {project.problem}
+                  {insight.body}
                 </p>
               </section>
-            )}
-            {project.solution && (
-              <section className="flex flex-col gap-2">
-                <h4 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
-                  Solution
-                </h4>
-                <p className="text-sm leading-relaxed md:text-base">
-                  {project.solution}
-                </p>
-              </section>
-            )}
+            ))}
           </div>
         )}
       </div>
@@ -209,6 +248,7 @@ function CaseStudyContent({ project }) {
             const isFullWidth = isFullWidthProjectSection(
               index,
               visibleSections.length,
+              section,
             );
 
             return (
@@ -221,7 +261,7 @@ function CaseStudyContent({ project }) {
                   title={section.title}
                   contained={!isFullWidth}
                 />
-                <figcaption className="max-w-xl">
+                <figcaption className="max-w-2xl">
                   <p className="text-xs leading-relaxed text-zinc-500 md:text-sm dark:text-zinc-400">
                     {section.body}
                   </p>
@@ -231,6 +271,8 @@ function CaseStudyContent({ project }) {
           })}
         </div>
       )}
+
+      <ProjectClosingStatement>{project.whatScaled}</ProjectClosingStatement>
     </div>
   );
 }
@@ -248,7 +290,7 @@ function SectionVisual({ visual, title, featured = false, contained = false }) {
 
   return (
     <div
-      className={`relative overflow-hidden after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] ${featured ? "rounded-2xl md:rounded-3xl md:after:rounded-3xl" : "rounded-2xl"}`}
+      className={`relative overflow-hidden after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 dark:after:border-zinc-600/50 after:content-[''] ${featured ? "rounded-2xl md:rounded-3xl md:after:rounded-3xl" : "rounded-2xl"}`}
       style={
         contained
           ? { aspectRatio: getProjectVisualAspectRatio(visual) }
@@ -459,7 +501,7 @@ function ProjectContent({ project, onOpen, priority }) {
         return (
           <div
             key={media.id || index}
-            className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-200 group-hover:scale-102 group-hover:shadow-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl"
+            className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-200 group-hover:scale-102 group-hover:shadow-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 dark:after:border-zinc-600/50 after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl"
           >
             {attachment}
           </div>

@@ -1,4 +1,6 @@
-export function isFullWidthProjectSection(index, total) {
+export function isFullWidthProjectSection(index, total, section) {
+  if (typeof section?.fullWidth === "boolean") return section.fullWidth;
+
   if (total === 1) return true;
   if (total === 2) return false;
 
@@ -11,4 +13,13 @@ export function getProjectVisualAspectRatio(visual) {
 
 export function getVisibleProjectSections(sections = []) {
   return sections.filter((section) => !section.hidden);
+}
+
+export function getProjectInsights(project) {
+  if (project.insights?.length) return project.insights;
+
+  return [
+    project.problem && { label: "Problem", body: project.problem },
+    project.solution && { label: "Solution", body: project.solution },
+  ].filter(Boolean);
 }

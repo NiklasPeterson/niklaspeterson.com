@@ -13,7 +13,12 @@ import FadeIn from "../../components/FadeIn";
 import ProjectNav from "../../components/ProjectNav";
 import ProjectTestimonials from "../../components/ProjectTestimonials";
 import ProjectVideo from "../../components/ProjectVideo";
+import ProjectScope, {
+  ProjectClosingStatement,
+  ProjectDescription,
+} from "../../components/ProjectScope";
 import {
+  getProjectInsights,
   getProjectVisualAspectRatio,
   getVisibleProjectSections,
   isFullWidthProjectSection,
@@ -89,15 +94,15 @@ export default async function ProjectPage({ params }) {
   };
 
   return (
-    <main className="flex w-full max-w-[1440px] flex-col">
+    <main className="flex w-full max-w-360 flex-col">
       <Nav />
 
       <article className="flex flex-col gap-10 px-4 pt-10 pb-20 md:gap-16 md:pt-16 md:pb-32 lg:px-20">
-        <FadeIn position="down" className="flex max-w-3xl flex-col gap-6">
-          <h1 className="text-4xl leading-tight font-semibold text-zinc-950 md:text-6xl dark:text-zinc-50">
+        <FadeIn position="down" className="flex flex-col gap-6">
+          <h1 className="text-4xl leading-tight font-semibold text-zinc-950 md:text-6xl max-w-3xl dark:text-zinc-50">
             {project.title}
           </h1>
-          <p className="text-lg md:text-xl">
+          <p className="text-lg md:text-xl max-w-3xl">
             {project.summary || project.description}
           </p>
 
@@ -118,7 +123,7 @@ export default async function ProjectPage({ params }) {
             {project.year && <span>{project.year}</span>}
             {project.url && (
               <a
-                className="group ml-2 inline-flex items-center gap-1.5 font-medium text-zinc-950 transition-opacity hover:opacity-60 dark:text-zinc-50"
+                className="group ml-2 inline-flex items-center gap-1.5 font-medium text-zinc-950 transition-opacity hover:opacity-60 md:ml-auto dark:text-zinc-50"
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -141,6 +146,8 @@ export default async function ProjectPage({ params }) {
               </a>
             )}
           </div>
+
+          <ProjectScope items={project.scope} />
         </FadeIn>
 
         {project.summary ? (
@@ -151,7 +158,7 @@ export default async function ProjectPage({ params }) {
               <FadeIn
                 key={i}
                 index={i}
-                className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl"
+                className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 dark:after:border-zinc-600/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl"
               >
                 <ProjectMedia
                   media={attachment}
@@ -185,46 +192,50 @@ export default async function ProjectPage({ params }) {
 function CaseStudyContent({ project }) {
   const hero = project.attachments[0];
   const visibleSections = getVisibleProjectSections(project.sections);
+  const insights = getProjectInsights(project);
 
   return (
     <div className="flex flex-col gap-16 md:gap-20">
-      <FadeIn className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl">
-        {hero ? (
-          <ProjectMedia
-            media={hero}
-            title={`${project.title} overview`}
-            priority
-          />
-        ) : (
-          <VisualPlaceholder title={`${project.title} overview`} />
-        )}
+      <FadeIn>
+        <figure className="flex flex-col gap-3">
+          <div className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 dark:after:border-zinc-600/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl">
+            {hero ? (
+              <ProjectMedia
+                media={hero}
+                title={`${project.title} overview`}
+                priority
+              />
+            ) : (
+              <VisualPlaceholder title={`${project.title} overview`} />
+            )}
+          </div>
+          {hero?.caption && (
+            <figcaption className="max-w-2xl">
+              <p className="text-xs leading-relaxed text-zinc-500 md:text-sm dark:text-zinc-400">
+                {hero.caption}
+              </p>
+            </figcaption>
+          )}
+        </figure>
       </FadeIn>
 
       <FadeIn className="grid gap-12 md:grid-cols-[minmax(0,1.65fr)_minmax(18rem,0.75fr)] md:gap-16 lg:gap-24">
         <div className="max-w-3xl">
-          <p className="text-lg leading-relaxed md:text-2xl">
+          <ProjectDescription className="text-lg leading-relaxed md:text-2xl">
             {project.description}
-          </p>
+          </ProjectDescription>
         </div>
 
-        {(project.problem || project.solution) && (
+        {insights.length > 0 && (
           <div className="flex flex-col gap-8 md:pl-10">
-            {project.problem && (
-              <section className="flex flex-col gap-3">
+            {insights.map((insight) => (
+              <section key={insight.label} className="flex flex-col gap-3">
                 <h2 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
-                  Problem
+                  {insight.label}
                 </h2>
-                <p className="leading-relaxed">{project.problem}</p>
+                <p className="leading-relaxed">{insight.body}</p>
               </section>
-            )}
-            {project.solution && (
-              <section className="flex flex-col gap-3">
-                <h2 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
-                  Solution
-                </h2>
-                <p className="leading-relaxed">{project.solution}</p>
-              </section>
-            )}
+            ))}
           </div>
         )}
       </FadeIn>
@@ -235,6 +246,7 @@ function CaseStudyContent({ project }) {
             const isFullWidth = isFullWidthProjectSection(
               index,
               visibleSections.length,
+              section,
             );
 
             return (
@@ -245,16 +257,16 @@ function CaseStudyContent({ project }) {
               >
                 <figure className="flex flex-col gap-3">
                   <div
-                    className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl"
-                    style={
-                      isFullWidth
-                        ? undefined
-                        : {
+                    className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 dark:after:border-zinc-600/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl"
+                  style={
+                    isFullWidth
+                      ? undefined
+                      : {
                             aspectRatio: getProjectVisualAspectRatio(
                               section.visual,
                             ),
-                          }
-                    }
+                        }
+                  }
                   >
                     {section.visual ? (
                       <ProjectMedia
@@ -262,9 +274,9 @@ function CaseStudyContent({ project }) {
                         title={section.title}
                         contained={!isFullWidth}
                       />
-                    ) : (
-                      <VisualPlaceholder title={section.title} />
-                    )}
+                  ) : (
+                    <VisualPlaceholder title={section.title} />
+                  )}
                   </div>
                   <figcaption className="max-w-lg">
                     <p className="text-xs leading-relaxed text-zinc-500 md:text-sm dark:text-zinc-400">
@@ -277,6 +289,8 @@ function CaseStudyContent({ project }) {
           })}
         </div>
       )}
+
+      <ProjectClosingStatement>{project.whatScaled}</ProjectClosingStatement>
     </div>
   );
 }
