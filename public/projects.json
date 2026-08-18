@@ -17,7 +17,7 @@
         "value": "Brand, Product, Marketing, Engineering"
       }
     ],
-    "description": "I led the design and visual direction of LottieFiles’ web presence while contributing to the broader evolution of the brand. The work began with the homepage, Animation pages, and Tools pages, followed later by the Lottie Creator landing page. Across these projects, I shaped the information architecture, UX, UI, interaction, motion, and reusable design patterns that established the updated brand and visual style for the web.\n\nOnce that direction was established, I guided other designers and oversaw its adoption across the rest of the marketing site. This included migrating existing pages and reviewing new pages to ensure they followed the updated brand and styling. I led stakeholder reviews and held final design approval, ensuring that page structure, consistency, and visual quality met the established standard before release.",
+    "description": "I led the design and visual direction of LottieFiles’ web presence while contributing to the broader evolution of the brand. Starting with the homepage, animation pages, and tools pages—and later the Lottie Creator landing page—I shaped the information architecture, UX, UI, interaction, motion, and reusable patterns that defined the updated visual language for the web.\n\nOnce that direction was established, I guided other designers and oversaw its adoption across the wider marketing site. This included migrating existing pages and reviewing new ones to ensure they followed the updated direction. I led stakeholder reviews and provided final design approval, maintaining a consistent standard for structure, visual quality, and release readiness.",
     "insights": [
       {
         "label": "Why it mattered",
@@ -49,7 +49,7 @@
     "sections": [
       {
         "title": "The redesigned web experience",
-        "body": "Established a cohesive web and brand direction.",
+        "body": "Established a cohesive visual direction for the web.",
         "visual": {
           "type": "video",
           "url": "/lottiefiles-web-scroll.mov",
@@ -141,7 +141,7 @@
         "value": "Creator and Plugins"
       }
     ],
-    "description": "I led the UX, UI, and product workflows that expanded LottieFiles Platform to support images, SVGs, videos, and source files alongside animations. I used AI to quickly build an early proof of concept, helping stakeholders, Product, and Engineering align on the core model and workflows before moving into high-fidelity design.\n\nInstead of creating a separate destination, I brought these formats into the organization, status, review, approval, versioning, and delivery workflows teams already used. I also improved everyday asset management through multi-format and folder uploads, multi-file copy and paste, and drag-and-drop organization.\n\nI defined the core Platform experience, guided how it extended into the plugins, and designed the corresponding experience in Lottie Creator, where I also contributed to front-end implementation.",
+    "description": "I led the UX, UI, and product workflows that expanded LottieFiles Platform to support images, SVGs, videos, and source files alongside animations. I built an AI-assisted proof of concept to help stakeholders, product, and engineering align on the core model and workflows before moving into high-fidelity design.\n\nRather than creating a separate destination, I brought these formats into the organization, status, review, approval, versioning, and delivery workflows teams already used. I also improved everyday asset management with support for multi-format and folder uploads, multi-file copy-and-paste, and drag-and-drop organization.\n\nI defined the core Platform experience, guided how it extended into the plugins, and designed the corresponding Lottie Creator experience, where I also contributed to front-end implementation.",
     "insights": [
       {
         "label": "Why it mattered",
@@ -248,7 +248,7 @@
         "value": "Creator and Plugins"
       }
     ],
-    "description": "Building on an initial proof of concept, I led the UX and UI for Motion Systems within LottieFiles Platform. I turned it into a complete experience covering the full lifecycle of a Motion System, from initial setup and brand-guide import to managing principles, tokens, easing curves, presets, and approved assets. Teams could then draft, publish, and track versions of their system. I also contributed directly to front-end implementation within Platform.\n\nPlatform served as the source of truth for creating, managing, publishing, and versioning a Motion System. Lottie Creator, Figma, and After Effects primarily consumed those published standards, making approved tokens, easing curves, presets, and assets available where teams created motion.\n\nI set the direction for how Motion Systems were implemented in Lottie Creator, working closely with its designer and engineers to translate the Platform model into the creation workflow. I also reviewed the Figma and After Effects plugin experiences and provided critical feedback to keep their implementation aligned. Across the coordinated release, I conducted design QA to maintain consistency and quality through implementation.",
+    "description": "Building on an initial proof of concept, I led the UX and UI for Motion Systems within LottieFiles Platform. I developed a complete experience covering the full lifecycle of a motion system, from setup and brand guide import to managing principles, tokens, easing curves, presets, and approved assets. Teams could then draft, publish, and track versions of their systems. I also contributed directly to front-end implementation within Platform.\n\nPlatform served as the source of truth for creating, managing, publishing, and versioning motion systems. Lottie Creator and the Figma and After Effects plugins consumed those published standards, making approved tokens, easing curves, presets, and assets available where teams created motion.\n\nI set the direction for Motion Systems in Lottie Creator, working closely with the Creator designer and engineers to translate the Platform model into the creation workflow. I also reviewed the Figma and After Effects plugin experiences, providing feedback to keep their implementation aligned. Throughout the coordinated release, I conducted design QA to maintain consistency and quality through implementation.",
     "insights": [
       {
         "label": "Why it mattered",
@@ -260,7 +260,7 @@
       },
       {
         "label": "Outcome",
-        "body": "Motion Systems launched with Platform as the governed source of truth and Creator, Figma, and After Effects as the places where teams could access and apply the published standards. Design reviews and QA helped preserve the shared structure and interaction quality through implementation, and the release received positive feedback from external users.\n\nDuring development, we also replaced unpredictable AI-based brand-guide extraction with Brandfetch data, giving the setup flow a more reliable foundation."
+        "body": "Motion Systems launched as a coordinated experience across Platform, Lottie Creator, and the Figma and After Effects plugins. Design reviews and QA maintained consistency through implementation, and the release received positive feedback from external users."
       }
     ],
     "whatScaled": "The Platform model became the foundation for governing Motion Systems, while Creator and the plugins provided a consistent way to consume and apply them across creative workflows.",
@@ -318,7 +318,7 @@
         },
         {
           "title": "Creation flow",
-          "body": "Assisted with aligning UX of Motion Systems isnide the Figma plugin.",
+          "body": "Helped align the Motion Systems UX in the Figma plugin.",
           "fullWidth": true,
           "visual": {
             "type": "video",
@@ -362,7 +362,7 @@
         "value": "Phased A/B rollout"
       }
     ],
-    "description": "Customer feedback and product data showed that developers, particularly those implementing Lottie for the first time, struggled to turn animation assets into working production implementations. Technical details, requirements, and setup guidance were spread across several places, creating friction between receiving an asset and shipping it.\n\nThe project began as an early idea rather than a defined solution. I worked directly with the Head of Product to clarify the problem, explore possible directions, and shape the concept. I built an AI-assisted proof of concept for a focused, full-page handoff experience, used it to align the team, and developed it into a high-fidelity design.\n\nI owned the UX and UI, worked closely with Engineering throughout implementation, and conducted design QA before rollout. The final experience brought asset details, technical specifications, setup instructions, and ready-to-use code into one workspace.",
+    "description": "Customer feedback and product data showed that developers, particularly those implementing Lottie for the first time, struggled to turn animation assets into production-ready implementations. Technical details, requirements, and setup guidance were spread across several places, creating friction between receiving an asset and shipping it.\n\nThe project began as an early idea rather than a defined solution. I worked directly with the Head of Product to clarify the problem, explore possible directions, and shape the concept. I built an AI-assisted proof of concept for a focused, full-page handoff experience, used it to align the team, and developed it into a high-fidelity design.\n\nI owned the UX and UI, worked closely with Engineering throughout implementation, and conducted design QA before rollout. The final experience brought asset details, technical specifications, setup instructions, and ready-to-use code into one workspace.",
     "insights": [
       {
         "label": "Why it mattered",

@@ -124,7 +124,7 @@ export default function Projects({ projects = [] }) {
               </div>
 
               <div className="flex animate-fadeUp flex-col gap-6">
-                <div className="text-md md:text-lg" style={{ maxWidth: 720 }}>
+                <div className="text-md text-pretty md:text-lg" style={{ maxWidth: 720 }}>
                   <p>
                     {selectedProject.summary || selectedProject.description}
                   </p>
@@ -227,7 +227,7 @@ function CaseStudyContent({ project }) {
         </div>
 
         {insights.length > 0 && (
-          <div className="flex flex-col gap-7 md:pl-8">
+          <div className="flex flex-col gap-7 text-pretty md:pl-8">
             {insights.map((insight) => (
               <section key={insight.label} className="flex flex-col gap-2">
                 <h4 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
