@@ -1,12 +1,14 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function ProjectVideo({ media, className = "" }) {
   const videoRef = useRef(null);
   const resumedAfterScrub = useRef(false);
+  const mobileControlsTimeout = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+  const [showMobileControls, setShowMobileControls] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
 
@@ -19,6 +21,29 @@ export default function ProjectVideo({ media, className = "" }) {
     } else {
       video.pause();
     }
+  };
+
+  const revealMobileControls = () => {
+    window.clearTimeout(mobileControlsTimeout.current);
+    setShowMobileControls(true);
+    mobileControlsTimeout.current = window.setTimeout(
+      () => setShowMobileControls(false),
+      2500,
+    );
+  };
+
+  useEffect(
+    () => () => window.clearTimeout(mobileControlsTimeout.current),
+    [],
+  );
+
+  const handleVideoClick = (event) => {
+    if (window.matchMedia("(max-width: 767px)").matches) {
+      event.preventDefault();
+      revealMobileControls();
+      return;
+    }
+    togglePlayback();
   };
 
   const toggleMuted = () => {
@@ -58,7 +83,7 @@ export default function ProjectVideo({ media, className = "" }) {
     <div className="project-video group/video relative h-full w-full">
       <video
         ref={videoRef}
-        className={`${className} ${showControls ? "cursor-pointer" : ""} ${cropEdges ? "scale-[1.004]" : ""}`}
+        className={`${className} ${showControls ? "md:cursor-pointer" : ""} ${cropEdges ? "scale-[1.004]" : ""}`}
         src={media.url}
         poster={media.poster}
         width={media.width}
@@ -68,7 +93,7 @@ export default function ProjectVideo({ media, className = "" }) {
         loop
         playsInline
         preload="metadata"
-        onClick={showControls ? togglePlayback : undefined}
+        onClick={showControls ? handleVideoClick : undefined}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         onVolumeChange={(event) => setIsMuted(event.currentTarget.muted)}
@@ -85,8 +110,12 @@ export default function ProjectVideo({ media, className = "" }) {
       />
 
       {showControls && (
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/55 via-black/10 to-transparent px-2.5 pt-12 pb-2.5 opacity-100 transition-opacity duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] md:opacity-0 md:group-focus-within/video:opacity-100 md:group-hover/video:opacity-100">
-          <div className="pointer-events-auto flex items-center gap-2 rounded-xl border border-white/15 bg-black/55 p-1.5 text-white shadow-lg shadow-black/20 backdrop-blur-xl">
+        <div
+          className={`pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/55 via-black/10 to-transparent px-2.5 pt-12 pb-2.5 opacity-0 transition-opacity duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] md:group-focus-within/video:opacity-100 md:group-hover/video:opacity-100 ${showMobileControls ? "opacity-100 md:opacity-0" : ""}`}
+        >
+          <div
+            className={`flex items-center gap-2 rounded-xl border border-white/15 bg-black/55 p-1.5 text-white shadow-lg shadow-black/20 backdrop-blur-xl ${showMobileControls ? "pointer-events-auto" : "pointer-events-none md:pointer-events-auto"}`}
+          >
             <ControlButton
               label={isPlaying ? "Pause video" : "Play video"}
               onClick={togglePlayback}
