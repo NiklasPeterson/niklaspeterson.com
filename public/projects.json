@@ -37,9 +37,9 @@
     "attachments": [
       {
         "type": "video",
-        "url": "/lottiefiles-homepage.mp4",
+        "url": "/lottiefiles-homepage-2026.mp4",
         "alt": "Screen recording showing the LottieFiles homepage",
-        "poster": "/lottiefiles-homepage-poster.jpg",
+        "poster": "/lottiefiles-homepage-poster-2026.jpg",
         "cropEdges": true,
         "controls": false,
         "width": 1600,
@@ -52,7 +52,7 @@
         "body": "Established a cohesive visual direction for the web.",
         "visual": {
           "type": "video",
-          "url": "/lottiefiles-web-scroll.mov",
+          "url": "/lottiefiles-web-scroll-2026.mp4",
           "alt": "Screen recording showing the redesigned LottieFiles web experience",
           "cropEdges": true,
           "controls": true,
@@ -90,7 +90,7 @@
         "fullWidth": true,
         "visual": {
           "type": "video",
-          "url": "/lottiefiles-animation-listing.mov",
+          "url": "/lottiefiles-animation-listing-2026.mp4",
           "alt": "LottieFiles animation listing experience",
           "controls": false,
           "aspectRatio": "16 / 9",
@@ -104,7 +104,7 @@
         "fullWidth": true,
         "visual": {
           "type": "image",
-          "url": "/lottiefiles-animation-detail2.png",
+          "url": "/lottiefiles-animation-detail2-2026.png",
           "alt": "LottieFiles animation detail experience with playback and download options",
           "aspectRatio": "16 / 9",
           "width": 2880,
@@ -161,8 +161,8 @@
     "attachments": [
       {
         "type": "video",
-        "url": "/lottiefiles-dam.mp4",
-        "poster": "/lottiefiles-dam-poster.png",
+        "url": "/lottiefiles-dam-2026.mp4",
+        "poster": "/lottiefiles-dam-poster-2026.png",
         "alt": "LottieFiles Digital Asset Management product overview",
         "width": 1920,
         "height": 1080,
@@ -282,8 +282,8 @@
           "fullWidth": true,
           "visual": {
             "type": "video",
-        "url": "/lottiefiles-motion-system.m4v",
-        "poster": "/lottiefiles-motion-system-poster.png",
+        "url": "/lottiefiles-motion-system-2026.mp4",
+        "poster": "/lottiefiles-motion-system-poster-2026.png",
         "alt": "LottieFiles Platform showing a Motion System with easing curves and reusable motion presets",
         "width": 1280,
         "height": 720,
@@ -382,7 +382,7 @@
     "attachments": [
       {
         "type": "image",
-        "url": "/lottiefiles-developer-handoff3.png",
+        "url": "/lottiefiles-developer-handoff-2026.png",
         "alt": "LottieFiles Developer Handoff view with implementation guidance",
         "width": 3200,
         "height": 1802
@@ -394,7 +394,7 @@
         "body": "Tailored setup steps and code to each development stack.",
         "visual": {
           "type": "video",
-          "url": "/lottiefiles-developer-handoff.mov",
+          "url": "/lottiefiles-developer-handoff-2026.mp4",
           "alt": "Walkthrough of the LottieFiles Developer Handoff experience",
           "cropEdges": true,
           "width": 3200,
