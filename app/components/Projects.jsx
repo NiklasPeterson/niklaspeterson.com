@@ -6,6 +6,7 @@ import Image from "next/image";
 import FadeIn from "./FadeIn";
 import ProjectTestimonials from "./ProjectTestimonials";
 import ProjectVideo from "./ProjectVideo";
+import ProjectPreviewVideo from "./ProjectPreviewVideo";
 import ProjectScope, {
   ProjectClosingStatement,
   ProjectDescription,
@@ -98,6 +99,7 @@ export default function Projects({ projects = [] }) {
               project={project}
               onOpen={openProject}
               priority={index < 2}
+              fetchPriority={index === 1 ? "high" : undefined}
             />
           </FadeIn>
         ))}
@@ -440,7 +442,7 @@ function Chevron({ dir }) {
   );
 }
 
-function ProjectContent({ project, onOpen, priority }) {
+function ProjectContent({ project, onOpen, priority, fetchPriority }) {
   // Real <Link> so the /projects/[slug] route stays crawlable (SEO) and
   // modifier-clicks open the full page, but prefetch is DISABLED. Next.js's
   // eager route prefetch was loading the media-heavy detail route in the
@@ -487,14 +489,11 @@ function ProjectContent({ project, onOpen, priority }) {
               priority={priority}
             />
           ) : (
-            <video
-              src={media.url}
-              poster={media.poster}
+            <ProjectPreviewVideo
+              media={media}
               className={media.cropEdges === true ? "scale-[1.004]" : undefined}
-              autoPlay
-              muted
-              playsInline
-              loop
+              priority={priority}
+              fetchPriority={fetchPriority}
             />
           );
 

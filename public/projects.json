@@ -37,7 +37,7 @@
     "attachments": [
       {
         "type": "video",
-        "url": "/lottiefiles-homepage.mp4",
+        "url": "/lottiefiles-homepage-2026.mp4",
         "alt": "Screen recording showing the LottieFiles homepage",
         "poster": "/lottiefiles-homepage-poster.jpg",
         "cropEdges": true,
@@ -52,7 +52,7 @@
         "body": "Established a cohesive visual direction for the web.",
         "visual": {
           "type": "video",
-          "url": "/lottiefiles-web-scroll.mov",
+          "url": "/lottiefiles-web-scroll-2026.mp4",
           "alt": "Screen recording showing the redesigned LottieFiles web experience",
           "cropEdges": true,
           "controls": true,
@@ -90,7 +90,7 @@
         "fullWidth": true,
         "visual": {
           "type": "video",
-          "url": "/lottiefiles-animation-listing.mov",
+          "url": "/lottiefiles-animation-listing-2026.mp4",
           "alt": "LottieFiles animation listing experience",
           "controls": false,
           "aspectRatio": "16 / 9",
@@ -161,7 +161,7 @@
     "attachments": [
       {
         "type": "video",
-        "url": "/lottiefiles-dam.mp4",
+        "url": "/lottiefiles-dam-2026.mp4",
         "poster": "/lottiefiles-dam-poster.png",
         "alt": "LottieFiles Digital Asset Management product overview",
         "width": 1920,
@@ -282,7 +282,7 @@
           "fullWidth": true,
           "visual": {
             "type": "video",
-        "url": "/lottiefiles-motion-system.m4v",
+        "url": "/lottiefiles-motion-system-2026.mp4",
         "poster": "/lottiefiles-motion-system-poster.png",
         "alt": "LottieFiles Platform showing a Motion System with easing curves and reusable motion presets",
         "width": 1280,
@@ -394,7 +394,7 @@
         "body": "Tailored setup steps and code to each development stack.",
         "visual": {
           "type": "video",
-          "url": "/lottiefiles-developer-handoff.mov",
+          "url": "/lottiefiles-developer-handoff-2026.mp4",
           "alt": "Walkthrough of the LottieFiles Developer Handoff experience",
           "cropEdges": true,
           "width": 3200,
