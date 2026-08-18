@@ -1,9 +1,8 @@
 import FadeIn from "./FadeIn";
-import LottieAnimation from "./LottieAnimation";
 
 export default function Footer() {
   return (
-    <FadeIn className="flex w-full flex-col gap-10 overflow-hidden px-4 py-20 md:pt-32 lg:px-20">
+    <FadeIn className="relative flex w-full flex-col gap-10 overflow-hidden px-4 py-20 md:pt-32 lg:px-20">
       <div className="flex flex-col gap-20 md:flex-row md:justify-between">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-4">
@@ -135,7 +134,7 @@ export default function Footer() {
         aria-hidden="true"
         className="absolute right-0 bottom-0 left-0 -z-10 flex h-full max-w-full rotate-180 justify-center overflow-hidden blur-[120px]"
       >
-        <LottieAnimation />
+        <img src="/animated-header.svg" alt="Animated Header" />
       </div>
     </FadeIn>
   );
