@@ -98,11 +98,11 @@ export default async function ProjectPage({ params }) {
       <Nav />
 
       <article className="flex flex-col gap-10 px-4 pt-10 pb-20 md:gap-16 md:pt-16 md:pb-32 lg:px-20">
-        <FadeIn position="down" className="flex max-w-3xl flex-col gap-6">
-          <h1 className="text-4xl leading-tight font-semibold text-zinc-950 md:text-6xl dark:text-zinc-50">
+        <FadeIn position="down" className="flex flex-col gap-6">
+          <h1 className="text-4xl leading-tight font-semibold text-zinc-950 md:text-6xl max-w-3xl dark:text-zinc-50">
             {project.title}
           </h1>
-          <p className="text-lg md:text-xl">
+          <p className="text-lg md:text-xl max-w-3xl">
             {project.summary || project.description}
           </p>
 
@@ -123,7 +123,7 @@ export default async function ProjectPage({ params }) {
             {project.year && <span>{project.year}</span>}
             {project.url && (
               <a
-                className="group ml-2 inline-flex items-center gap-1.5 font-medium text-zinc-950 transition-opacity hover:opacity-60 dark:text-zinc-50"
+                className="group ml-2 inline-flex items-center gap-1.5 font-medium text-zinc-950 transition-opacity hover:opacity-60 md:ml-auto dark:text-zinc-50"
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
