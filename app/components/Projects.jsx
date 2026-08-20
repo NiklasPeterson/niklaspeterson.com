@@ -105,7 +105,7 @@ export default function Projects({ projects = [] }) {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="mx-auto flex max-w-360 flex-col gap-16 border-zinc-200 bg-white pt-6 pb-1 md:h-fit md:animate-fadeUp md:rounded-3xl md:border md:pt-10 md:pb-2 dark:border-zinc-600/50 dark:bg-black"
+            className="mx-auto flex max-w-360 flex-col gap-16 border-translucent bg-zinc-50 pt-6 pb-1 md:h-fit md:animate-fadeUp md:rounded-3xl md:border md:pt-10 md:pb-2 dark:bg-zinc-950"
           >
             <ProjectHeader
               project={selectedProject}
@@ -155,7 +155,7 @@ function ModalGallery({ attachments }) {
       {attachments.map((attachment, i) => (
         <div
           key={i}
-          className="relative overflow-hidden rounded-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:border after:border-zinc-200/50 after:content-[''] md:w-full"
+          className="relative overflow-hidden rounded-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:border after:border-translucent after:content-[''] md:w-full"
         >
           {attachment.type === "image" ? (
             <Image
@@ -206,7 +206,7 @@ function NavButton({ project, dir, onNavigate }) {
           {isPrev ? "Previous" : "Next"}
           {!isPrev && <Chevron dir="right" />}
         </span>
-        <span className="max-w-full truncate text-sm font-medium text-zinc-950 md:max-w-[15rem] dark:text-zinc-50">
+        <span className="max-w-full truncate text-sm font-medium text-zinc-950 md:max-w-60 dark:text-zinc-50">
           {project.title}
         </span>
       </span>
@@ -216,7 +216,7 @@ function NavButton({ project, dir, onNavigate }) {
 
 function NavThumb({ media, title }) {
   return (
-    <span className="relative aspect-[16/10] w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 after:pointer-events-none after:absolute after:inset-0 after:rounded-md after:border after:border-zinc-200/50 after:content-[''] md:w-16 dark:bg-zinc-900">
+    <span className="relative aspect-16/10 w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 after:pointer-events-none after:absolute after:inset-0 after:rounded-md after:border after:border-translucent after:content-[''] md:w-16 dark:bg-zinc-900">
       {!media ? null : media.type === "image" ? (
         <Image
           src={media.url}
@@ -321,7 +321,7 @@ function ProjectContent({ project, onOpen, priority, fetchPriority }) {
         return (
           <div
             key={media.id || index}
-            className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-200 group-hover:scale-102 group-hover:shadow-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl dark:after:border-zinc-600/50"
+            className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-200 group-hover:scale-102 group-hover:shadow-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-translucent after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl"
           >
             {attachment}
           </div>

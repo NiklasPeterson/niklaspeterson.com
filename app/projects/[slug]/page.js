@@ -124,7 +124,7 @@ function ProjectGallery({ attachments, title }) {
         <FadeIn
           key={attachment.url}
           index={index}
-          className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl dark:after:border-zinc-600/50"
+          className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-translucent after:content-[''] md:rounded-3xl md:after:rounded-3xl"
         >
           {attachment.type === "image" ? (
             <Image

@@ -3,7 +3,6 @@ import ProjectVideo from "./ProjectVideo";
 import {
   ProjectClosingStatement,
   ProjectDescription,
-  ProjectHighlight,
 } from "./ProjectScope";
 import {
   getProjectInsights,
@@ -40,8 +39,6 @@ export default function ProjectCaseStudyContent({
 
   return (
     <div className={`flex flex-col gap-12 md:gap-16 ${className}`}>
-      {/* <ProjectHighlight highlight={project.highlight} /> */}
-
       <ProjectFigure
         visual={hero}
         title={`${project.title} overview`}
@@ -114,7 +111,7 @@ function ProjectFigure({
   return (
     <figure className="flex flex-col gap-3">
       <div
-        className={`relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] dark:after:border-zinc-600/50 ${variant === "page" ? "md:rounded-3xl md:after:rounded-3xl" : ""}`}
+        className={`relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-translucent after:content-[''] ${variant === "page" ? "md:rounded-3xl md:after:rounded-3xl" : ""}`}
         style={
           contained
             ? { aspectRatio: getProjectVisualAspectRatio(visual) }

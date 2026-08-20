@@ -40,7 +40,7 @@ export function ProjectHighlight({ highlight }) {
   return (
     <section
       aria-labelledby="project-impact"
-      className="rounded-2xl bg-zinc-50 px-5 py-6 md:rounded-3xl md:px-8 md:py-8 dark:bg-zinc-900/40"
+      className="rounded-2xl bg-zinc-50 border border-translucent px-5 py-6 md:rounded-3xl md:px-8 md:py-8 dark:bg-zinc-900"
     >
       <div className="grid gap-5 md:grid-cols-[minmax(0,1.25fr)_minmax(18rem,0.75fr)] md:items-start md:gap-12">
         <div className="flex flex-col gap-3">
@@ -49,7 +49,7 @@ export function ProjectHighlight({ highlight }) {
           </p>
           <h2
             id="project-impact"
-            className="text-xl leading-snug font-medium text-zinc-950 md:text-2xl dark:text-zinc-50"
+            className="text-xl leading-tight font-medium text-balance text-zinc-950 md:text-2xl dark:text-zinc-50"
           >
             {highlight.title}
           </h2>
@@ -65,7 +65,7 @@ export function ProjectHighlight({ highlight }) {
                 <dd className="text-2xl leading-none font-semibold text-zinc-950 md:text-3xl dark:text-zinc-50">
                   {stat.value}
                 </dd>
-                <dt className="mt-2 text-sm leading-snug text-zinc-500 dark:text-zinc-400">
+                <dt className="mt-2 text-sm leading-snug text-pretty text-zinc-500 dark:text-zinc-400">
                   {stat.label}
                 </dt>
               </div>

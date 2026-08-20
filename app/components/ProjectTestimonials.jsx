@@ -6,7 +6,7 @@ export default function ProjectTestimonials({ testimonials = [] }) {
   return (
     <div className="flex w-full justify-center">
       <section
-        className="flex w-full max-w-5xl flex-col items-center gap-7 rounded-3xl border border-zinc-200/50 bg-zinc-50 px-5 py-8 mdmd:gap-8 md:rounded-[2rem] md:px-10 md:py-12 dark:bg-zinc-900/40 dark:border-zinc-600/50"
+        className="flex w-full max-w-5xl flex-col items-center gap-7 rounded-3xl border border-translucent bg-zinc-50 px-5 py-8 md:gap-8 md:rounded-4xl md:px-10 md:py-12 dark:bg-zinc-900"
         aria-label="Project testimonials"
       >
         <div
@@ -30,7 +30,7 @@ export default function ProjectTestimonials({ testimonials = [] }) {
               </div>
 
               <footer className="flex items-center gap-3">
-                <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full after:pointer-events-none after:absolute after:inset-0 after:rounded-full after:border after:border-zinc-200/50 after:content-[''] md:h-14 md:w-14">
+                <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full after:pointer-events-none after:absolute after:inset-0 after:rounded-full after:border after:border-translucent after:content-[''] md:h-14 md:w-14">
                   <Image
                     src={testimonial.avatar}
                     alt={testimonial.name}

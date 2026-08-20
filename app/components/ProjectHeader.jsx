@@ -1,19 +1,19 @@
-import ProjectScope from "./ProjectScope";
-import { ProjectHighlight } from "./ProjectScope";
+import ProjectScope, { ProjectHighlight } from "./ProjectScope";
 
 const HEADER_STYLES = {
   page: {
     container: "flex flex-col gap-6 md:gap-8",
-    details: "flex animate-fadeUp flex-col gap-6",
+    details: "flex flex-col gap-6",
     title:
-      "text-4xl font-semibold text-zinc-950 md:text-6xl dark:text-zinc-50",
-    summary: "max-w-3xl text-lg text-pretty md:text-2xl",
+      "max-w-4xl text-4xl leading-tight font-semibold text-balance text-zinc-950 md:text-6xl dark:text-zinc-50",
+    summary: "max-w-3xl text-lg leading-normal text-pretty md:text-2xl",
   },
   modal: {
     container: "flex flex-col gap-6 px-4 md:gap-8 md:px-10",
-    details: "flex animate-fadeUp flex-col gap-6",
-    title: "text-2xl font-semibold text-zinc-950 md:text-4xl dark:text-zinc-50",
-    summary: "max-w-180 text-md text-pretty md:text-lg",
+    details: "flex flex-col gap-6",
+    title:
+      "min-w-0 text-2xl leading-tight font-semibold text-balance text-zinc-950 md:text-4xl dark:text-zinc-50",
+    summary: "max-w-180 text-md leading-normal text-pretty md:text-lg",
   },
 };
 
@@ -24,9 +24,9 @@ export default function ProjectHeader({ project, variant = "page", action }) {
   return (
     <div className={styles.container}>
       {action ? (
-        <div className="flex items-center justify-between">
+        <div className="flex items-start justify-between gap-4">
           <Title className={styles.title}>{project.title}</Title>
-          {action}
+          <span className="shrink-0">{action}</span>
         </div>
       ) : (
         <Title className={styles.title}>{project.title}</Title>
@@ -54,7 +54,7 @@ export default function ProjectHeader({ project, variant = "page", action }) {
           {project.year && <span>{project.year}</span>}
           {project.url && (
             <a
-              className="group ml-2 inline-flex items-center gap-1.5 font-medium text-zinc-950 transition-opacity hover:opacity-60 md:ml-auto dark:text-zinc-50"
+              className="group ms-2 inline-flex items-center gap-1.5 font-medium text-zinc-950 transition-opacity hover:opacity-60 md:ms-auto dark:text-zinc-50"
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
