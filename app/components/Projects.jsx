@@ -7,17 +7,8 @@ import FadeIn from "./FadeIn";
 import ProjectTestimonials from "./ProjectTestimonials";
 import ProjectVideo from "./ProjectVideo";
 import ProjectPreviewVideo from "./ProjectPreviewVideo";
-import ProjectScope, {
-  ProjectClosingStatement,
-  ProjectDescription,
-  ProjectHighlight,
-} from "./ProjectScope";
-import {
-  getProjectInsights,
-  getProjectVisualAspectRatio,
-  getVisibleProjectSections,
-  isFullWidthProjectSection,
-} from "../lib/project-layout";
+import ProjectHeader from "./ProjectHeader";
+import ProjectCaseStudyContent from "./ProjectCaseStudyContent";
 
 export default function Projects({ projects = [] }) {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -114,72 +105,24 @@ export default function Projects({ projects = [] }) {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="mx-auto flex max-w-360 flex-col gap-10 border-zinc-200 bg-white pt-6 pb-1 md:h-fit md:animate-fadeUp md:rounded-3xl md:border md:pt-10 md:pb-2 dark:border-zinc-600/50 dark:bg-black"
+            className="mx-auto flex max-w-360 flex-col gap-16 border-zinc-200 bg-white pt-6 pb-1 md:h-fit md:animate-fadeUp md:rounded-3xl md:border md:pt-10 md:pb-2 dark:border-zinc-600/50 dark:bg-black"
           >
-            <div className="flex flex-col gap-6 px-4 md:gap-8 md:px-10">
-              <div className="flex items-center justify-between">
-                <h3 className="text-2xl font-semibold text-zinc-950 md:text-4xl dark:text-zinc-50">
-                  {selectedProject.title}
-                </h3>
+            <ProjectHeader
+              project={selectedProject}
+              variant="modal"
+              action={
                 <button className="btn-secondary h-10" onClick={closeProject}>
                   Close
                 </button>
-              </div>
-
-              <div className="flex animate-fadeUp flex-col gap-6">
-                <div className="text-md text-pretty md:text-lg" style={{ maxWidth: 720 }}>
-                  <p>
-                    {selectedProject.summary || selectedProject.description}
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-3 text-sm text-zinc-500 dark:text-zinc-400">
-                  {selectedProject.company && (
-                    <span className="font-medium text-zinc-950 dark:text-zinc-50">
-                      {selectedProject.company}
-                    </span>
-                  )}
-                  {selectedProject.company && selectedProject.year && (
-                    <span
-                      aria-hidden="true"
-                      className="text-zinc-300 dark:text-zinc-700"
-                    >
-                      /
-                    </span>
-                  )}
-                  {selectedProject.year && <span>{selectedProject.year}</span>}
-                  {selectedProject.url && (
-                    <a
-                      className="group ml-2 inline-flex items-center gap-1.5 font-medium text-zinc-950 transition-opacity hover:opacity-60 md:ml-auto dark:text-zinc-50"
-                      href={selectedProject.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Visit project
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        className="h-4 w-4"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                        />
-                      </svg>
-                    </a>
-                  )}
-                </div>
-
-                <ProjectScope items={selectedProject.scope} />
-              </div>
-            </div>
+              }
+            />
 
             {selectedProject.summary ? (
-              <CaseStudyContent project={selectedProject} />
+              <ProjectCaseStudyContent
+                project={selectedProject}
+                variant="modal"
+                className="animate-fadeUp px-4 md:px-10"
+              />
             ) : (
               <ModalGallery attachments={selectedProject.attachments} />
             )}
@@ -200,126 +143,6 @@ export default function Projects({ projects = [] }) {
   );
 }
 
-function CaseStudyContent({ project }) {
-  const hero = project.attachments[0];
-  const visibleSections = getVisibleProjectSections(project.sections);
-  const insights = getProjectInsights(project);
-
-  return (
-    <div className="flex animate-fadeUp flex-col gap-12 px-4 md:gap-16 md:px-10">
-      <ProjectHighlight highlight={project.highlight} />
-
-      <figure className="flex flex-col gap-3">
-        <SectionVisual
-          visual={hero}
-          title={`${project.title} overview`}
-          featured
-        />
-        {hero?.caption && (
-          <figcaption className="max-w-2xl">
-            <p className="text-xs leading-relaxed text-zinc-500 md:text-sm dark:text-zinc-400">
-              {hero.caption}
-            </p>
-          </figcaption>
-        )}
-      </figure>
-
-      <div className="grid gap-10 md:grid-cols-[minmax(0,1.55fr)_minmax(16rem,0.8fr)] md:gap-14">
-        <div className="max-w-3xl">
-          <ProjectDescription className="text-lg leading-relaxed md:text-xl">
-            {project.description}
-          </ProjectDescription>
-        </div>
-
-        {insights.length > 0 && (
-          <div className="flex flex-col gap-7 text-pretty md:pl-8">
-            {insights.map((insight) => (
-              <section key={insight.label} className="flex flex-col gap-2">
-                <h4 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
-                  {insight.label}
-                </h4>
-                <p className="text-sm leading-relaxed md:text-base">
-                  {insight.body}
-                </p>
-              </section>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {visibleSections.length > 0 && (
-        <div className="grid gap-10 md:grid-cols-2">
-          {visibleSections.map((section, index) => {
-            const isFullWidth = isFullWidthProjectSection(
-              index,
-              visibleSections.length,
-              section,
-            );
-
-            return (
-              <figure
-                key={section.title}
-                className={`flex flex-col gap-3 ${isFullWidth ? "md:col-span-2" : ""}`}
-              >
-                <SectionVisual
-                  visual={section.visual}
-                  title={section.title}
-                  contained={!isFullWidth}
-                />
-                <figcaption className="max-w-2xl">
-                  <p className="text-xs leading-relaxed text-zinc-500 md:text-sm dark:text-zinc-400">
-                    {section.body}
-                  </p>
-                </figcaption>
-              </figure>
-            );
-          })}
-        </div>
-      )}
-
-      <ProjectClosingStatement>{project.whatScaled}</ProjectClosingStatement>
-    </div>
-  );
-}
-
-function SectionVisual({ visual, title, featured = false, contained = false }) {
-  if (!visual) {
-    return (
-      <div
-        className={`flex w-full items-center justify-center bg-zinc-100 px-6 text-center text-sm text-zinc-500 dark:bg-zinc-900 dark:text-zinc-400 ${contained ? "aspect-video" : "aspect-video"} ${featured ? "rounded-2xl md:rounded-3xl" : "rounded-2xl"}`}
-      >
-        Visual for {title} was being prepared
-      </div>
-    );
-  }
-
-  return (
-    <div
-      className={`relative overflow-hidden after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 dark:after:border-zinc-600/50 after:content-[''] ${featured ? "rounded-2xl md:rounded-3xl md:after:rounded-3xl" : "rounded-2xl"}`}
-      style={
-        contained
-          ? { aspectRatio: getProjectVisualAspectRatio(visual) }
-          : undefined
-      }
-    >
-      {visual.type === "image" ? (
-        <Image
-          className={`${contained ? "h-full object-contain" : "h-auto"} w-full`}
-          src={visual.url}
-          alt={visual.alt || title}
-          width={visual.width}
-          height={visual.height}
-        />
-      ) : (
-        <ProjectVideo
-          media={visual}
-          className={`${contained ? "h-full object-contain" : "h-auto"} w-full`}
-        />
-      )}
-    </div>
-  );
-}
-
 function ModalGallery({ attachments }) {
   // const isSingle = attachments.length === 1;
   // const itemClass = isSingle ? "relative md:w-full" : "relative md:snap-center";
@@ -329,11 +152,6 @@ function ModalGallery({ attachments }) {
 
   return (
     <div className="flex animate-fadeUp flex-col items-center gap-4 px-4 md:gap-6 md:overflow-x-auto md:px-10">
-      {attachments.length === 0 && (
-        <p className="w-full max-w-3xl rounded-2xl bg-zinc-100 p-8 text-zinc-500 dark:bg-zinc-900 dark:text-zinc-400">
-          Project visuals were being prepared.
-        </p>
-      )}
       {attachments.map((attachment, i) => (
         <div
           key={i}
@@ -503,18 +321,12 @@ function ProjectContent({ project, onOpen, priority, fetchPriority }) {
         return (
           <div
             key={media.id || index}
-            className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-200 group-hover:scale-102 group-hover:shadow-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 dark:after:border-zinc-600/50 after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl"
+            className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-200 group-hover:scale-102 group-hover:shadow-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl dark:after:border-zinc-600/50"
           >
             {attachment}
           </div>
         );
       })}
-
-      {project.attachments.length === 0 && (
-        <div className="flex aspect-video w-full items-center justify-center rounded-2xl bg-zinc-100 px-6 text-center text-sm text-zinc-500 md:rounded-3xl dark:bg-zinc-900 dark:text-zinc-400">
-          Visuals were being prepared
-        </div>
-      )}
 
       <div className="flex max-w-2xl flex-col gap-1">
         <div className="text-xl font-semibold text-zinc-950 dark:text-zinc-50">

@@ -82,7 +82,7 @@ export function ProjectClosingStatement({ children }) {
 
   return (
     <section className="flex max-w-4xl flex-col gap-3">
-      <h2 className={PROJECT_EYEBROW_CLASS}>
+      <h2 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
         What scaled
       </h2>
       <p className="text-lg leading-relaxed md:text-xl">{children}</p>
