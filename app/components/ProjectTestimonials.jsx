@@ -17,7 +17,7 @@ export default function ProjectTestimonials({ testimonials = [] }) {
               key={testimonial.name}
               className="flex h-full flex-col items-start justify-between gap-6 text-left md:gap-8"
             >
-              <div className="flex flex-col items-start gap-4 text-lg leading-snug font-medium text-pretty text-zinc-950 md:gap-5 md:text-2xl dark:text-zinc-50">
+              <div className="flex flex-col items-start gap-4 text-lg leading-snug font-medium text-pretty text-zinc-950 md:gap-5 md:text-xl dark:text-zinc-50">
                 {testimonial.quote
                   .split("\n\n")
                   .map((paragraph, index, parts) => (
