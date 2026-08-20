@@ -17,22 +17,22 @@
         "value": "Brand, Product, Marketing, Engineering"
       }
     ],
-    "description": "I led the design and visual direction for LottieFiles’ web presence, contributing to the wider evolution of the brand. I started with the homepage, animation pages, and tools pages, then worked on the Lottie Creator landing page. Across these projects, I shaped the information architecture, UX, UI, interaction design, motion, and reusable patterns behind the new visual language.\n\nOnce the direction was in place, I helped roll it out across the marketing site. I worked with other designers as existing pages were migrated and new ones were created, making sure the work stayed consistent with the direction. I led stakeholder reviews and gave final design approval before release.",
+    "description": "I led the design and visual direction for LottieFiles’ web presence, helping shape the wider evolution of the brand and raise the standard for design, visuals, and animation across both marketing and product experiences. I started with the homepage, animation pages, and tools pages, then worked on the Lottie Creator landing page. Across these projects, I shaped the information architecture, UX, UI, interaction design, motion, and reusable structural patterns behind the new visual language.\n\nOnce the direction was established, I helped carry it across the wider marketing site. I worked with other designers as existing pages were migrated and new ones were created, providing guidance to keep the work consistent with the new visual language and system. I led stakeholder reviews, ran regular design reviews, and gave final design approval before release.",
     "insights": [
       {
         "label": "Why it mattered",
-        "body": "LottieFiles had grown into a broad ecosystem, but its web presence lacked a consistent story and visual language across products and audiences."
+        "body": "As LottieFiles grew, its web presence needed a more mature and cohesive visual direction without losing its playfulness and focus on motion."
       },
       {
         "label": "Key decision",
-        "body": "Instead of treating each page as a separate campaign, I established reusable visual, structural, and interaction patterns that could evolve across pages and teams."
+        "body": "Created a shared visual direction and flexible structural, interaction, and motion patterns that could be extended consistently across the site."
       },
       {
         "label": "Organizational impact",
-        "body": "The updated direction gave designers and cross-functional teams a shared foundation for creating and reviewing marketing pages. Clearer guidance, regular reviews, and final design QA improved consistency from design through launch."
+        "body": "Raised the standard for design, visuals, and animation across marketing and product, while giving other designers a clearer direction to build from and introducing a stronger review, approval, and QA process."
       }
     ],
-    "whatScaled": "The visual language and reusable patterns expanded from the initial core pages across both migrated and newly created marketing pages.",
+    "whatScaled": "The visual language, structural patterns, interaction principles, and approach to motion became a shared foundation for new and migrated pages, allowing other designers to extend the work consistently.",
     "url": "https://lottiefiles.com/",
     "attachments": [
       {
@@ -141,22 +141,23 @@
         "value": "Creator and Plugins"
       }
     ],
-    "description": "I led the UX, UI, and product workflows that expanded LottieFiles Platform to support images, SVGs, videos, and source files alongside animations. I built an AI-assisted proof of concept to help stakeholders, product, and engineering align on the core model and workflows before moving into high-fidelity design.\n\nRather than creating a separate destination, I brought these formats into the organization, status, review, approval, versioning, and delivery workflows teams already used. I also improved everyday asset management with support for multi-format and folder uploads, multi-file copy-and-paste, and drag-and-drop organization.\n\nI defined the core Platform experience, guided how it extended into the plugins, and designed the corresponding Lottie Creator experience, where I also contributed to front-end implementation.",
+    "description": "I led the UX, UI, and product workflows that expanded LottieFiles Platform to support images, SVGs, videos, and source files alongside animations. Early in the project, I built an AI-assisted proof of concept to make the core model and workflows tangible, helping stakeholders, product, and engineering align before moving into high-fidelity design.\n\nRather than creating a separate destination, I extended the existing asset model so these formats could use the organization, status, review, approval, versioning, and delivery workflows teams already knew. I also improved everyday asset management with multi-format and folder uploads, multi-file copy-and-paste, and drag-and-drop organization.\n\nI defined the core Platform experience, guided how the model extended into the plugins, and designed the corresponding Lottie Creator experience, where I also contributed to front-end implementation.",
     "insights": [
       {
         "label": "Why it mattered",
-        "body": "Team and Enterprise customers, internal product teams, and motion designers were managing related assets across several services. This made complete projects harder to organize, track, and deliver."
+        "body": "Customer requests and our own internal workflows highlighted a broader problem: related project assets were being managed across multiple services, making complete projects harder to organize, track, and deliver."
       },
       {
         "label": "Key decision",
-        "body": "New formats became part of the existing asset model rather than a separate product area. Core behaviors remained familiar, while previews, metadata, and actions adapted to each format."
+        "body": "Built on the existing asset model instead of creating a separate product area, preserving familiar workflows while adapting previews, metadata, and actions to the needs of each format."
       },
       {
         "label": "Outcome",
-        "body": "Internal and external teams adopted the experience, bringing related design assets into one workspace. Stable CDN links and version control also helped teams update deployed assets without redeploying their products."
+        "body": "Internal and external teams adopted the experience, bringing related project assets into one workspace. Stable CDN links and version control also allowed teams to update deployed assets without redeploying their products."
       }
     ],
-    "whatScaled": "The common asset model became a reusable foundation for supporting multiple formats across Lottie Creator, the plugins, CDN delivery, and Motion Systems.",
+    "whatScaled": "The expanded asset model became shared infrastructure across Platform, Creator, and plugins, supporting consistent asset management and delivery across surfaces and later projects like Motion Systems.",
+   
     "url": "https://lottiefiles.com/dam",
     "attachments": [
       {
