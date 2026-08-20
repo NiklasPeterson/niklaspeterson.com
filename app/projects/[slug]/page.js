@@ -16,6 +16,7 @@ import ProjectVideo from "../../components/ProjectVideo";
 import ProjectScope, {
   ProjectClosingStatement,
   ProjectDescription,
+  ProjectHighlight,
 } from "../../components/ProjectScope";
 import {
   getProjectInsights,
@@ -196,6 +197,10 @@ function CaseStudyContent({ project }) {
 
   return (
     <div className="flex flex-col gap-16 md:gap-20">
+      <FadeIn>
+        <ProjectHighlight highlight={project.highlight} />
+      </FadeIn>
+
       <FadeIn>
         <figure className="flex flex-col gap-3">
           <div className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 dark:after:border-zinc-600/50 after:content-[''] md:rounded-3xl md:after:rounded-3xl">

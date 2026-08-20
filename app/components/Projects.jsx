@@ -10,6 +10,7 @@ import ProjectPreviewVideo from "./ProjectPreviewVideo";
 import ProjectScope, {
   ProjectClosingStatement,
   ProjectDescription,
+  ProjectHighlight,
 } from "./ProjectScope";
 import {
   getProjectInsights,
@@ -206,6 +207,8 @@ function CaseStudyContent({ project }) {
 
   return (
     <div className="flex animate-fadeUp flex-col gap-12 px-4 md:gap-20 md:px-10">
+      <ProjectHighlight highlight={project.highlight} />
+
       <figure className="flex flex-col gap-3">
         <SectionVisual
           visual={hero}
