@@ -40,7 +40,7 @@ export function ProjectHighlight({ highlight }) {
   return (
     <section
       aria-labelledby="project-impact"
-      className="rounded-2xl bg-zinc-50 border border-translucent px-5 py-6 md:rounded-3xl md:px-8 md:py-8 dark:bg-zinc-900"
+      className="rounded-2xl bg-zinc-50 border border-translucent px-5 py-6 mt-2 md:rounded-3xl md:px-8 md:py-8 dark:bg-zinc-900"
     >
       <div className="grid gap-5 md:grid-cols-[minmax(0,1.25fr)_minmax(18rem,0.75fr)] md:items-start md:gap-12">
         <div className="flex flex-col gap-3">

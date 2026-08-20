@@ -21,7 +21,7 @@ export default function Header() {
         <h1 className="max-w-4xl text-4xl leading-tight font-semibold text-zinc-950 md:text-[64px] dark:text-zinc-50">
           Bringing digital products to life with pixels and code.
         </h1>
-        <p className="text-xl max-w-5xl md:text-2xl">
+        <p className="text-xl text-pretty max-w-4xl md:text-2xl">
           Niklas Peterson, designer and creator from Sweden, currently shaping
           experiences as a{" "}
           <span className="font-semibold text-zinc-950 dark:text-zinc-50">

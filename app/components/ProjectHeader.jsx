@@ -2,14 +2,14 @@ import ProjectScope, { ProjectHighlight } from "./ProjectScope";
 
 const HEADER_STYLES = {
   page: {
-    container: "flex flex-col gap-6 md:gap-8",
+    container: "flex flex-col gap-6",
     details: "flex flex-col gap-6",
     title:
       "max-w-4xl text-4xl leading-tight font-semibold text-balance text-zinc-950 md:text-6xl dark:text-zinc-50",
-    summary: "max-w-3xl text-lg leading-normal text-pretty md:text-2xl",
+    summary: "max-w-3xl text-lg leading-normal text-pretty md:text-xl",
   },
   modal: {
-    container: "flex flex-col gap-6 px-4 md:gap-8 md:px-10",
+    container: "flex flex-col gap-6 px-4 md:px-10",
     details: "flex flex-col gap-6",
     title:
       "min-w-0 text-2xl leading-tight font-semibold text-balance text-zinc-950 md:text-4xl dark:text-zinc-50",
