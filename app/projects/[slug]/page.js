@@ -196,7 +196,7 @@ function CaseStudyContent({ project }) {
   const insights = getProjectInsights(project);
 
   return (
-    <div className="flex flex-col gap-16 md:gap-20">
+    <div className="flex flex-col gap-12 md:gap-20">
       <FadeIn>
         <ProjectHighlight highlight={project.highlight} />
       </FadeIn>
@@ -246,7 +246,7 @@ function CaseStudyContent({ project }) {
       </FadeIn>
 
       {visibleSections.length > 0 && (
-        <div className="grid gap-12 md:grid-cols-2">
+        <div className="grid gap-10 md:grid-cols-2">
           {visibleSections.map((section, index) => {
             const isFullWidth = isFullWidthProjectSection(
               index,

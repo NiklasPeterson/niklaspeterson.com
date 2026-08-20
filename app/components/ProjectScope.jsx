@@ -81,7 +81,7 @@ export function ProjectClosingStatement({ children }) {
   if (!children) return null;
 
   return (
-    <section className="flex max-w-4xl flex-col gap-3 py-2 md:py-6">
+    <section className="flex max-w-4xl flex-col gap-3">
       <h2 className={PROJECT_EYEBROW_CLASS}>
         What scaled
       </h2>

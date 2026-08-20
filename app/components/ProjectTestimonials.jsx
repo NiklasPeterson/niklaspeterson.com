@@ -4,9 +4,9 @@ export default function ProjectTestimonials({ testimonials = [] }) {
   if (testimonials.length === 0) return null;
 
   return (
-    <div className="flex w-full justify-center md:px-10">
+    <div className="flex w-full justify-center">
       <section
-        className="flex w-full max-w-5xl flex-col items-center gap-7 rounded-3xl border border-zinc-200/50 bg-zinc-50 px-5 py-8 md:my-10 md:gap-8 md:rounded-[2rem] md:px-10 md:py-12 dark:bg-zinc-900/40 dark:border-zinc-600/50"
+        className="flex w-full max-w-5xl flex-col items-center gap-7 rounded-3xl border border-zinc-200/50 bg-zinc-50 px-5 py-8 mdmd:gap-8 md:rounded-[2rem] md:px-10 md:py-12 dark:bg-zinc-900/40 dark:border-zinc-600/50"
         aria-label="Project testimonials"
       >
         <div
@@ -17,7 +17,7 @@ export default function ProjectTestimonials({ testimonials = [] }) {
               key={testimonial.name}
               className="flex h-full flex-col items-start justify-between gap-6 text-left md:gap-8"
             >
-              <div className="flex flex-col items-start gap-4 text-lg leading-[1.4] text-pretty text-zinc-950 md:gap-5 md:text-2xl md:leading-[1.3] dark:text-zinc-50">
+              <div className="flex flex-col items-start gap-4 text-lg leading-snug font-medium text-pretty text-zinc-950 md:gap-5 md:text-2xl dark:text-zinc-50">
                 {testimonial.quote
                   .split("\n\n")
                   .map((paragraph, index, parts) => (
