@@ -221,7 +221,7 @@ function CaseStudyContent({ project }) {
 
       <FadeIn className="grid gap-12 md:grid-cols-[minmax(0,1.65fr)_minmax(18rem,0.75fr)] md:gap-16 lg:gap-24">
         <div className="max-w-3xl">
-          <ProjectDescription className="text-lg leading-relaxed md:text-2xl">
+          <ProjectDescription className="text-lg leading-relaxed md:text-xl">
             {project.description}
           </ProjectDescription>
         </div>

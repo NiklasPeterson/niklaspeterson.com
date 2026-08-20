@@ -39,7 +39,7 @@ export function ProjectClosingStatement({ children }) {
       <h2 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
         What scaled
       </h2>
-      <p className="text-lg leading-relaxed md:text-2xl">{children}</p>
+      <p className="text-lg leading-relaxed md:text-xl">{children}</p>
     </section>
   );
 }
