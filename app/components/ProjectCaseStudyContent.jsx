@@ -22,7 +22,7 @@ const CASE_STUDY_STYLES = {
     narrative:
       "grid gap-10 md:grid-cols-[minmax(0,1.55fr)_minmax(16rem,0.8fr)] md:gap-16",
     insights: "flex flex-col gap-7 text-pretty md:pl-8",
-    insightBody: "text-sm leading-relaxed md:text-base",
+    insightBody: "text-base leading-relaxed",
   },
 };
 
@@ -131,7 +131,7 @@ function ProjectFigure({
       </div>
       {caption && (
         <figcaption className="max-w-2xl">
-          <p className="text-xs leading-relaxed text-zinc-500 md:text-sm dark:text-zinc-400">
+          <p className="text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
             {caption}
           </p>
         </figcaption>

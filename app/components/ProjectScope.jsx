@@ -49,7 +49,7 @@ export function ProjectHighlight({ highlight }) {
           </p>
           <h2
             id="project-impact"
-            className="text-xl leading-tight font-medium text-balance text-zinc-950 md:text-2xl dark:text-zinc-50"
+            className="text-lg leading-tight font-medium text-balance text-zinc-950 md:text-2xl dark:text-zinc-50"
           >
             {highlight.title}
           </h2>
@@ -60,12 +60,12 @@ export function ProjectHighlight({ highlight }) {
             {highlight.stats.map((stat) => (
               <div
                 key={`${stat.value}-${stat.label}`}
-                className="flex min-w-20 flex-col"
+                className="flex min-w-20 flex-col gap-2"
               >
                 <dd className="text-2xl leading-none font-semibold text-zinc-950 md:text-3xl dark:text-zinc-50">
                   {stat.value}
                 </dd>
-                <dt className="mt-2 text-sm leading-snug text-pretty text-zinc-500 dark:text-zinc-400">
+                <dt className="text-sm leading-snug text-pretty text-zinc-500 dark:text-zinc-400">
                   {stat.label}
                 </dt>
               </div>
