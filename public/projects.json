@@ -49,7 +49,7 @@
     "sections": [
       {
         "title": "The redesigned web experience",
-        "body": "Established a cohesive visual direction for the web.",
+        "body": "Set the visual tone and introduced the core product story",
         "visual": {
           "type": "video",
           "url": "/lottiefiles-web-scroll-2026.mp4",
@@ -62,7 +62,7 @@
       },
       {
         "title": "A connected homepage story",
-        "body": "Connected discovery, creation, and team workflows.",
+        "body": "Connected the main ways users discover, create, and work with motion",
         "visual": {
           "type": "image",
           "url": "/lottiefiles-homepage-overview-2026-1.png",
@@ -74,7 +74,7 @@
       },
       {
         "title": "A complete product story",
-        "body": "Unified integrations, AI, performance, and customer proof.",
+        "body": "Brought product capabilities, performance, and customer proof together lower in the page",
         "visual": {
           "type": "image",
           "url": "/lottiefiles-homepage-overview-2026-2.png",
@@ -86,7 +86,7 @@
       },
       {
         "title": "Animations page",
-        "body": "Modernized animation discovery and navigation.",
+        "body": "Modernized animation discovery and navigation",
         "fullWidth": true,
         "visual": {
           "type": "video",
@@ -100,7 +100,7 @@
       },
       {
         "title": "Animation Detail page",
-        "body": "Focused the experience on the animation and key actions.",
+        "body": "Focused the experience on the animation and key actions",
         "fullWidth": true,
         "visual": {
           "type": "image",
@@ -118,6 +118,12 @@
         "role": "Brand Manager & Designer",
         "avatar": "/testimonial-celcea-tifani-2026.png",
         "quote": "Niklas impact spans from redesigning our highest-traffic landing pages, including the core Homepage to driving a major brand evolution that overhauled our design system across typography, color palettes, and asset architecture.\n\nNiklas operates as a true Staff-level leader, seamlessly bridging the gap between design and engineering to optimize cross-functional workflows. He is easily one of the best Product Designers I have ever collaborated with."
+      },
+      {
+        "name": "Inad Hussain",
+        "role": "Design Lead at LottieFiles",
+        "avatar": "/testimonial-inad-hussain-2026.jpeg",
+        "quote": "Niklas is a product designer who combines strong design craft, strategic thinking, and the ability to bring people together around a vision.\n\nA great example of this was the LottieFiles marketing website redesign, where he was the primary product designer driving the work. He collaborated with visual designers, brand, motion designers, marketing, and stakeholders to shape a cleaner and more modern experience."
       }
     ],
     "company": "LottieFiles",
@@ -183,7 +189,7 @@
       {
         "title": "A multi-format workspace",
         "fullWidth": true,
-        "body": "Kept animations, images, SVGs, videos, and source files together inside familiar projects and folders.",
+        "body": "Kept animations, images, SVGs, videos, and source files together in familiar projects and folders",
         "visual": {
           "type": "image",
           "url": "/lottiefiles-dam-mixed-format-library-2026-8.png",
@@ -195,7 +201,7 @@
       {
         "title": "Upload support for more formats",
         "fullWidth": false,
-        "body": "Created one upload flow for individual files, full folders, and mixed asset types.",
+        "body": "Created one upload flow for individual files, full folders, and mixed asset types",
         "visual": {
           "type": "image",
           "url": "/lottiefiles-dam-upload-modal-2026-8.png",
@@ -208,7 +214,7 @@
       {
         "title": "Copy and paste upload",
         "fullWidth": false,
-        "body": "Made it faster to add several copied assets directly to the current folder.",
+        "body": "Made it faster to add several copied assets directly to the current folder",
         "visual": {
           "type": "image",
           "url": "/lottiefiles-dam-copy-paste-upload-2026-8.png",
@@ -235,6 +241,12 @@
         "role": "Product Designer at LottieFiles",
         "avatar": "/testimonial-sanghyo-yee-2026.png",
         "quote": "Niklas was someone I could always trust with an honest design conversation. Whenever I was working through a difficult problem, I knew I could bring it to him and receive a thoughtful, candid perspective.\n\nHe consistently considered how individual decisions would affect the broader customer journey."
+      },
+      {
+        "name": "Inad Hussain",
+        "role": "Design Lead at LottieFiles",
+        "avatar": "/testimonial-inad-hussain-2026.jpeg",
+        "quote": "Niklas is a product designer who combines strong design craft, strategic thinking, and the ability to bring people together around a vision.\n\nHe naturally fits into modern AI-driven product development workflows, where the ability to prototype, experiment, and collaborate closely with engineering is increasingly important."
       }
     ],
     "company": "LottieFiles",
@@ -263,11 +275,11 @@
       "stats": [
         {
           "value": "~600",
-          "label": "users around launch"
+          "label": "Team and Enterprise users around launch"
         },
         {
           "value": "16%",
-          "label": "average monthly open-to-create conversion"
+          "label": "monthly open-to-create rate"
         }
       ]
     },
@@ -283,7 +295,7 @@
       },
       {
         "label": "Outcome",
-        "body": "Motion Systems launched as a coordinated experience across Platform, Creator, Figma, and After Effects, giving teams a consistent way to define, publish, and reuse motion standards."
+        "body": "Motion Systems launched to Team and Enterprise customers as a coordinated experience across Platform, Creator, Figma, and After Effects, giving teams a consistent way to define, publish, and reuse motion standards."
       }
     ],
     "whatScaled": "The model established in Platform became the foundation for governing Motion Systems across the wider LottieFiles ecosystem, giving teams a consistent way to apply standards across creative workflows. It also helped kickstart broader governance initiatives within the Platform team.",
@@ -301,7 +313,7 @@
       "sections": [
         {
           "title": "A shared motion system",
-          "body": "Created a shared home for teams to document, organize, and apply motion foundations.",
+          "body": "Created a shared home for defining and governing motion standards",
           "fullWidth": true,
           "visual": {
             "type": "video",
@@ -315,7 +327,7 @@
         },
         {
           "title": "Motion system foundations",
-          "body": "Connected reusable motion foundations, presets, and animated assets in one system.",
+          "body": "Brought reusable foundations, presets, and animated assets into one system",
           "fullWidth": false,
           "visual": {
             "type": "image",
@@ -328,7 +340,7 @@
         },
         {
           "title": "Published link",
-          "body": "Shared published Motion Systems through a dedicated public link.",
+          "body": "Made published Motion Systems accessible through a dedicated link",
           "fullWidth": false,
           "visual": {
             "type": "image",
@@ -353,7 +365,7 @@
         {
           "title": "Available where teams worked",
           "hidden": true,
-          "body": "Connected LottieFiles Platform with Lottie Creator, Figma, and After Effects."
+          "body": "Extended the Motion Systems experience into the Figma workflow"
         }
       ],
     "testimonials": [
@@ -361,7 +373,13 @@
         "name": "Ahmed Ali",
         "role": "Engineering Manager at LottieFiles",
         "avatar": "/testimonial-ahmed-ali-2026.png",
-        "quote": "Niklas is the kind of product designer engineers actually enjoy working with.\n\nHis craft is excellent. Clean, thoughtful work with the details already resolved before it reaches a build. He was present during implementation, precise about what mattered and what did not, and always willing to adjust when there was a good technical reason to.\n\nStrong designer, even better teammate. I would work with him again without hesitation."
+        "quote": "Niklas is the kind of product designer engineers actually enjoy working with. His craft is excellent. Clean, thoughtful work with the details already resolved before it reaches a build. He was present during implementation, precise about what mattered and what did not, and always willing to adjust when there was a good technical reason to.\n\nStrong designer, even better teammate. I would work with him again without hesitation."
+      },
+      {
+        "name": "Inad Hussain",
+        "role": "Design Lead at LottieFiles",
+        "avatar": "/testimonial-inad-hussain-2026.jpeg",
+        "quote": "He worked closely with designers across teams to ensure these experiences were cohesive across Platform, Creator, plugins, and the wider LottieFiles ecosystem.\n\nHis comfort navigating large codebases created a strong partnership with developers and allowed him to move seamlessly between design and implementation."
       }
     ],
     "company": "LottieFiles",
@@ -419,7 +437,7 @@
       {
         "type": "image",
         "url": "/lottiefiles-developer-handoff-2026.png",
-        "alt": "LottieFiles Developer Handoff view with implementation guidance",
+        "alt": "Tailored setup steps and code to each development stack",
         "width": 3200,
         "height": 1802
       }
