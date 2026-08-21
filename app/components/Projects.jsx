@@ -97,6 +97,7 @@ export default function Projects({ projects = [] }) {
             key={project.slug ?? index}
             className="flex flex-col md:flex-[1_1_40%]"
             index={index}
+            stagger="pair"
           >
             <ProjectContent
               project={project}
@@ -219,9 +220,7 @@ function NavButton({ project, dir, onNavigate }) {
       type="button"
       onClick={() => onNavigate(project)}
       aria-label={`${isPrev ? "Previous" : "Next"} project: ${project.title}`}
-      className={`group flex max-w-[calc(50%-0.5rem)] min-w-0 items-center gap-3 rounded-xl p-2 ${isPrev ? "pr-4" : "pl-4"} transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900 ${
-        isPrev ? "" : "flex-row-reverse"
-      }`}
+      className={`group flex max-w-[calc(50%-0.5rem)] min-w-0 items-center gap-3 rounded-xl p-2 ${isPrev ? "pe-4" : "ps-4 flex-row-reverse"} transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900`}
     >
       <NavThumb media={project.attachments[0]} title={project.title} />
       <span
