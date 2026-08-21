@@ -117,7 +117,7 @@ export default function ProjectTestimonials({
         className={
           hasMultipleTestimonials
             ? "relative w-full"
-            : "flex w-full max-w-5xl flex-col items-center gap-7 rounded-3xl border border-translucent bg-zinc-50 px-5 py-8 md:gap-8 md:rounded-4xl md:px-10 md:py-12 dark:bg-zinc-900"
+            : "flex w-full max-w-5xl flex-col items-center gap-7 rounded-3xl border border-translucent bg-white mx-4 px-5 py-8 md:gap-8 md:rounded-4xl md:mx-10 md:px-10 md:py-12 dark:bg-zinc-900"
         }
         aria-label="Project testimonials"
       >

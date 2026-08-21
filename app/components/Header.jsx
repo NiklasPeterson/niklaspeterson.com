@@ -9,7 +9,7 @@ export default function Header() {
 
       <FadeIn
         position="down"
-        className="flex h-140 flex-col justify-center gap-4 px-4 sm:h-160 lg:px-20 lg:pt-20 overflow-visible"
+        className="relative z-1 flex h-140 flex-col justify-center gap-4 overflow-visible px-4 sm:h-160 lg:px-20 lg:pt-20"
       >
         {/* <div className="absolute top-0 right-0 left-0 -z-10 flex max-w-full justify-center overflow-hidden ">
           <img src="/animated-header.svg" alt="Animated Header" />
