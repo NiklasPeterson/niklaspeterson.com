@@ -17,19 +17,28 @@ const HEADER_STYLES = {
   },
 };
 
-export default function ProjectHeader({ project, variant = "page", action }) {
+export default function ProjectHeader({
+  project,
+  variant = "page",
+  action,
+  titleId,
+}) {
   const styles = HEADER_STYLES[variant];
-  const Title = variant === "modal" ? "h3" : "h1";
+  const Title = variant === "modal" ? "h2" : "h1";
 
   return (
     <div className={styles.container}>
       {action ? (
         <div className="flex items-start justify-between gap-4">
-          <Title className={styles.title}>{project.title}</Title>
+          <Title id={titleId} className={styles.title}>
+            {project.title}
+          </Title>
           <span className="shrink-0">{action}</span>
         </div>
       ) : (
-        <Title className={styles.title}>{project.title}</Title>
+        <Title id={titleId} className={styles.title}>
+          {project.title}
+        </Title>
       )}
 
       <div className={styles.details}>

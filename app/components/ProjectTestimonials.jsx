@@ -125,7 +125,7 @@ export default function ProjectTestimonials({
           <div className="relative w-full">
             <div
               ref={railRef}
-              className={`flex snap-x snap-mandatory scrollbar-none gap-4 overflow-x-auto overscroll-x-contain pb-3 focus-visible:ring-2 focus-visible:ring-zinc-950 focus-visible:ring-offset-2 focus-visible:ring-offset-white focus-visible:outline-none md:gap-6 dark:focus-visible:ring-zinc-50 dark:focus-visible:ring-offset-zinc-950 [&::-webkit-scrollbar]:hidden ${railPaddingClasses}`}
+              className={`flex snap-x snap-mandatory scrollbar-none gap-4 overflow-x-auto overscroll-x-contain pb-3 md:gap-6 [&::-webkit-scrollbar]:hidden ${railPaddingClasses}`}
               role="region"
               aria-label="Testimonials"
               aria-describedby="testimonial-scroll-hint"
@@ -173,7 +173,7 @@ export default function ProjectTestimonials({
                     aria-label={`Show testimonial ${index + 1} of ${testimonials.length}`}
                     aria-pressed={isActive}
                     onClick={() => scrollToTestimonial(index)}
-                    className="flex h-5 w-5 items-center justify-center rounded-full transition-transform duration-150 focus-visible:ring-2 focus-visible:ring-zinc-950 focus-visible:ring-offset-2 focus-visible:ring-offset-white focus-visible:outline-none active:scale-96 dark:focus-visible:ring-zinc-50 dark:focus-visible:ring-offset-zinc-950"
+                    className="flex h-5 w-5 items-center justify-center rounded-full transition-transform duration-150 active:scale-96"
                   >
                     <span
                       aria-hidden="true"

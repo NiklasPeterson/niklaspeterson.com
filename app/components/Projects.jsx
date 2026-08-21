@@ -12,6 +12,7 @@ import ProjectCaseStudyContent from "./ProjectCaseStudyContent";
 
 export default function Projects({ projects = [] }) {
   const [selectedProject, setSelectedProject] = useState(null);
+  const overlayRef = useRef(null);
 
   const openProject = (project) => {
     setSelectedProject(project);
@@ -21,7 +22,17 @@ export default function Projects({ projects = [] }) {
     setSelectedProject(null);
   };
 
-  const overlayRef = useRef(null);
+  useEffect(() => {
+    if (!selectedProject) return;
+
+    const handleOverlayKeyDown = (event) => {
+      if (event.key === "Tab") event.preventDefault();
+      if (event.key === "Escape") closeProject();
+    };
+
+    window.addEventListener("keydown", handleOverlayKeyDown);
+    return () => window.removeEventListener("keydown", handleOverlayKeyDown);
+  }, [selectedProject]);
 
   const navigateTo = (project) => {
     setSelectedProject(project);
@@ -99,19 +110,26 @@ export default function Projects({ projects = [] }) {
 
       {selectedProject && (
         <div
+          role="dialog"
+          aria-labelledby="project-modal-title"
           ref={overlayRef}
-          className="fixed top-0 right-0 bottom-0 left-0 z-10 h-screen w-screen overflow-auto bg-white/25 backdrop-blur-lg md:p-10 dark:bg-black/25"
-          onClick={closeProject}
+          className="fixed inset-0 z-10 h-screen min-h-dvh w-screen overflow-y-auto overscroll-contain bg-white/25 backdrop-blur-lg md:p-10 dark:bg-black/25"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) closeProject();
+          }}
         >
           <div
-            onClick={(e) => e.stopPropagation()}
             className="mx-auto flex max-w-360 flex-col gap-16 border-translucent bg-zinc-50 pt-6 pb-1 md:h-fit md:animate-fadeUp md:rounded-3xl md:border md:pt-10 md:pb-2 dark:bg-zinc-950"
           >
             <ProjectHeader
               project={selectedProject}
               variant="modal"
+              titleId="project-modal-title"
               action={
-                <button className="btn-secondary h-10" onClick={closeProject}>
+                <button
+                  className="btn-secondary h-10"
+                  onClick={closeProject}
+                >
                   Close
                 </button>
               }
