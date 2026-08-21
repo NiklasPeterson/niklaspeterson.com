@@ -114,7 +114,7 @@ export default function ProjectVideo({ media, className = "" }) {
           className={`pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-linear-to-t from-black/55 via-black/10 to-transparent px-2.5 pt-12 pb-2.5 opacity-0 transition-opacity duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] md:group-focus-within/video:opacity-100 md:group-hover/video:opacity-100 ${showMobileControls ? "opacity-100 md:opacity-0" : ""}`}
         >
           <div
-            className={`flex items-center gap-2 rounded-xl border border-zinc-50/15 bg-zinc-950/55 p-1.5 text-zinc-50 shadow-lg shadow-black/20 backdrop-blur-xl ${showMobileControls ? "pointer-events-auto" : "pointer-events-none md:pointer-events-auto"}`}
+            className={`flex items-center gap-2 rounded-xl border border-zinc-50/15 bg-zinc-950/55 p-1.5 pr-3 text-zinc-50 shadow-lg shadow-black/20 backdrop-blur-xl ${showMobileControls ? "pointer-events-auto" : "pointer-events-none md:pointer-events-auto"}`}
           >
             <ControlButton
               label={isPlaying ? "Pause video" : "Play video"}

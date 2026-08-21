@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ProjectVideo from "./ProjectVideo";
+import FadeIn from "./FadeIn";
 import {
   ProjectClosingStatement,
   ProjectDescription,
@@ -39,36 +40,41 @@ export default function ProjectCaseStudyContent({
 
   return (
     <div className={`flex flex-col gap-12 md:gap-16 ${className}`}>
-      <ProjectFigure
+      <FadeIn>
+        <ProjectFigure
         visual={hero}
         title={`${project.title} overview`}
         caption={hero?.caption}
         variant={variant}
         priority={priority}
-      />
-
-      <div className={styles.narrative}>
-        <div className="max-w-3xl">
-          <ProjectDescription className="text-lg leading-relaxed md:text-xl">
-            {project.description}
-          </ProjectDescription>
-        </div>
-
-        {insights.length > 0 && (
-          <div className={styles.insights}>
-            {insights.map((insight) => (
-              <section key={insight.label} className="flex flex-col gap-3">
-                <h2 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
-                  {insight.label}
-                </h2>
-                <p className={styles.insightBody}>{insight.body}</p>
-              </section>
-            ))}
+        />
+      </FadeIn>
+      
+      <FadeIn>
+        <div className={styles.narrative}>
+          <div className="max-w-3xl">
+            <ProjectDescription className="text-lg leading-relaxed md:text-xl">
+              {project.description}
+            </ProjectDescription>
           </div>
-        )}
-      </div>
+
+          {insights.length > 0 && (
+            <div className={styles.insights}>
+              {insights.map((insight) => (
+                <section key={insight.label} className="flex flex-col gap-3">
+                  <h2 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
+                    {insight.label}
+                  </h2>
+                  <p className={styles.insightBody}>{insight.body}</p>
+                </section>
+              ))}
+            </div>
+          )}
+        </div>
+      </FadeIn>
 
       {visibleSections.length > 0 && (
+        
         <div className="grid gap-10 md:grid-cols-2">
           {visibleSections.map((section, index) => {
             const isFullWidth = isFullWidthProjectSection(
@@ -82,6 +88,7 @@ export default function ProjectCaseStudyContent({
                 key={section.title}
                 className={isFullWidth ? "md:col-span-2" : ""}
               >
+                <FadeIn>
                 <ProjectFigure
                   visual={section.visual}
                   title={section.title}
@@ -89,13 +96,16 @@ export default function ProjectCaseStudyContent({
                   variant={variant}
                   contained={!isFullWidth}
                 />
+                </FadeIn>
               </div>
             );
           })}
         </div>
-      )}
 
-      <ProjectClosingStatement>{project.whatScaled}</ProjectClosingStatement>
+      )}
+      <FadeIn>
+        <ProjectClosingStatement>{project.whatScaled}</ProjectClosingStatement>
+      </FadeIn>
     </div>
   );
 }

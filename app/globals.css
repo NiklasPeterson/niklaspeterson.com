@@ -60,7 +60,7 @@ body {
 }
 
 @utility btn-secondary {
-  @apply flex cursor-pointer items-center gap-1 rounded-full border border-translucent shadow-xs px-5 py-3 font-medium text-zinc-950 transition-transform duration-160 ease-out hover:bg-zinc-200 active:scale-[96%] dark:text-zinc-50 dark:hover:bg-zinc-800;
+  @apply flex cursor-pointer items-center gap-1 rounded-full border border-translucent shadow-xs px-5 py-3 font-medium text-zinc-950 transition-transform duration-160 ease-out bg-white hover:bg-zinc-200 active:scale-[96%] dark:text-zinc-50 dark:hover:bg-zinc-800;
 }
 
 @utility btn-ghost {
