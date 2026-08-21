@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useReducedMotion } from "motion/react";
 
 export default function ProjectVideo({ media, className = "" }) {
   const videoRef = useRef(null);
@@ -11,6 +12,11 @@ export default function ProjectVideo({ media, className = "" }) {
   const [showMobileControls, setShowMobileControls] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (reduceMotion) videoRef.current?.pause();
+  }, [reduceMotion]);
 
   const togglePlayback = () => {
     const video = videoRef.current;
@@ -88,9 +94,10 @@ export default function ProjectVideo({ media, className = "" }) {
         poster={media.poster}
         width={media.width}
         height={media.height}
-        autoPlay
+        aria-label={media.alt || undefined}
+        autoPlay={!reduceMotion}
         muted
-        loop
+        loop={!reduceMotion}
         playsInline
         preload="metadata"
         onClick={showControls ? handleVideoClick : undefined}

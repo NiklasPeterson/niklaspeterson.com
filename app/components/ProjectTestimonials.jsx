@@ -87,7 +87,7 @@ export default function ProjectTestimonials({
         ))}
       </div>
 
-      <footer className="flex items-center gap-3">
+      <div className="flex items-center gap-3">
         <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full after:pointer-events-none after:absolute after:inset-0 after:rounded-full after:border after:border-translucent after:content-[''] md:h-14 md:w-14">
           <Image
             src={testimonial.avatar}
@@ -107,7 +107,7 @@ export default function ProjectTestimonials({
             </span>
           )}
         </cite>
-      </footer>
+      </div>
     </blockquote>
   );
 
@@ -126,10 +126,6 @@ export default function ProjectTestimonials({
             <div
               ref={railRef}
               className={`flex snap-x snap-mandatory scrollbar-none gap-4 overflow-x-auto overscroll-x-contain pb-3 md:gap-6 [&::-webkit-scrollbar]:hidden ${railPaddingClasses}`}
-              role="region"
-              aria-label="Testimonials"
-              aria-describedby="testimonial-scroll-hint"
-              tabIndex={0}
             >
               {testimonials.map((testimonial) => (
                 <div
@@ -187,11 +183,6 @@ export default function ProjectTestimonials({
                 );
               })}
             </div>
-
-            <p id="testimonial-scroll-hint" className="sr-only">
-              Scroll horizontally to read all {testimonials.length}{" "}
-              testimonials.
-            </p>
 
             <p className="sr-only" role="status" aria-live="polite">
               Showing testimonial {activeIndex + 1} of {testimonials.length}

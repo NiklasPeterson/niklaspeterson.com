@@ -1,14 +1,17 @@
 "use client";
 import React, { useState, useRef } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 
 const HoverThumbnail = ({ text, images }) => {
   const [hovered, setHovered] = useState(false);
   const [hasEntered, setHasEntered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const textRef = useRef(null);
+  const reduceMotion = useReducedMotion();
 
   const handleMouseMove = (e) => {
+    if (reduceMotion) return;
+
     if (textRef.current) {
       const rect = textRef.current.getBoundingClientRect();
       setMousePosition({
@@ -19,6 +22,8 @@ const HoverThumbnail = ({ text, images }) => {
   };
 
   const handleMouseEnter = () => {
+    if (reduceMotion) return;
+
     setHovered(true);
     setTimeout(() => setHasEntered(true), images.length * 100);
   };

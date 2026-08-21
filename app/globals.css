@@ -102,6 +102,17 @@ svg#logo path {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-fadeUp,
+  svg#logo path {
+    animation: none;
+  }
+
+  svg#logo path {
+    stroke-dashoffset: 0;
+  }
+}
+
 .project-video-scrubber {
   height: 1.25rem;
   cursor: pointer;
