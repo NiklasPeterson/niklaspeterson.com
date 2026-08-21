@@ -13,21 +13,25 @@ export default function AnalyticsTracker() {
       const sessionId = getSessionId();
       const referrer = document.referrer;
 
-      await fetch("/api/analytics/pageview", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          page: pathname,
-          visitorId,
-          sessionId,
-          referrer,
-        }),
-      });
+      try {
+        await fetch("/api/analytics/pageview", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            page: pathname,
+            visitorId,
+            sessionId,
+            referrer,
+          }),
+        });
+      } catch {
+        // Analytics is optional; a failed request must not affect navigation.
+      }
     }
 
-    trackPageview();
+    void trackPageview();
   }, [pathname]);
 
   return null;

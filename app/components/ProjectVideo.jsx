@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useReducedMotion } from "motion/react";
 
 export default function ProjectVideo({ media, className = "" }) {
   const videoRef = useRef(null);
@@ -11,6 +12,11 @@ export default function ProjectVideo({ media, className = "" }) {
   const [showMobileControls, setShowMobileControls] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (reduceMotion) videoRef.current?.pause();
+  }, [reduceMotion]);
 
   const togglePlayback = () => {
     const video = videoRef.current;
@@ -88,9 +94,10 @@ export default function ProjectVideo({ media, className = "" }) {
         poster={media.poster}
         width={media.width}
         height={media.height}
-        autoPlay
+        aria-label={media.alt || undefined}
+        autoPlay={!reduceMotion}
         muted
-        loop
+        loop={!reduceMotion}
         playsInline
         preload="metadata"
         onClick={showControls ? handleVideoClick : undefined}
@@ -111,10 +118,10 @@ export default function ProjectVideo({ media, className = "" }) {
 
       {showControls && (
         <div
-          className={`pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/55 via-black/10 to-transparent px-2.5 pt-12 pb-2.5 opacity-0 transition-opacity duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] md:group-focus-within/video:opacity-100 md:group-hover/video:opacity-100 ${showMobileControls ? "opacity-100 md:opacity-0" : ""}`}
+          className={`pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-linear-to-t from-black/55 via-black/10 to-transparent px-2.5 pt-12 pb-2.5 opacity-0 transition-opacity duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] md:group-focus-within/video:opacity-100 md:group-hover/video:opacity-100 ${showMobileControls ? "opacity-100 md:opacity-0" : ""}`}
         >
           <div
-            className={`flex items-center gap-2 rounded-xl border border-white/15 bg-black/55 p-1.5 text-white shadow-lg shadow-black/20 backdrop-blur-xl ${showMobileControls ? "pointer-events-auto" : "pointer-events-none md:pointer-events-auto"}`}
+            className={`flex items-center gap-2 rounded-xl border border-zinc-50/15 bg-zinc-950/55 p-1.5 pr-3 text-zinc-50 shadow-lg shadow-black/20 backdrop-blur-xl ${showMobileControls ? "pointer-events-auto" : "pointer-events-none md:pointer-events-auto"}`}
           >
             <ControlButton
               label={isPlaying ? "Pause video" : "Play video"}
@@ -148,7 +155,7 @@ export default function ProjectVideo({ media, className = "" }) {
               onPointerCancel={finishScrubbing}
             />
 
-            <span className="min-w-[4.75rem] pr-1 text-right text-[11px] leading-none font-medium tracking-tight text-white/75 tabular-nums">
+            <span className="min-w-19 pr-1 text-right text-[11px] leading-none font-medium tracking-tight text-zinc-300 tabular-nums">
               {formatTime(currentTime)} / {formatTime(duration)}
             </span>
           </div>
@@ -162,7 +169,7 @@ function ControlButton({ label, onClick, children }) {
   return (
     <button
       type="button"
-      className="flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded-lg text-white transition-[background-color,transform] duration-150 ease-out hover:bg-white/12 focus-visible:bg-white/12 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-white active:scale-[0.96]"
+      className="flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded-lg text-white transition-[background-color,transform] duration-150 ease-out hover:bg-zinc-100/12 focus-visible:bg-zinc-100/12 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-white active:scale-[0.96]"
       aria-label={label}
       title={label}
       onClick={onClick}

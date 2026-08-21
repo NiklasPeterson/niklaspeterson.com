@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useReducedMotion } from "motion/react";
 
 export default function ProjectPreviewVideo({
   media,
@@ -9,7 +10,9 @@ export default function ProjectPreviewVideo({
   fetchPriority,
 }) {
   const containerRef = useRef(null);
+  const videoRef = useRef(null);
   const [shouldLoad, setShouldLoad] = useState(priority);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     if (shouldLoad || !containerRef.current) return;
@@ -32,18 +35,23 @@ export default function ProjectPreviewVideo({
     return () => observer.disconnect();
   }, [shouldLoad]);
 
+  useEffect(() => {
+    if (reduceMotion) videoRef.current?.pause();
+  }, [reduceMotion]);
+
   return (
     <div ref={containerRef} className="h-full w-full bg-zinc-100 dark:bg-zinc-900">
       <video
+        ref={videoRef}
         className={className}
         src={shouldLoad ? media.url : undefined}
         poster={media.poster}
         width={media.width}
         height={media.height}
-        autoPlay={shouldLoad}
+        autoPlay={shouldLoad && !reduceMotion}
         muted
         playsInline
-        loop
+        loop={!reduceMotion}
         preload={shouldLoad ? "auto" : "none"}
         fetchPriority={fetchPriority}
         aria-label={media.alt || undefined}
