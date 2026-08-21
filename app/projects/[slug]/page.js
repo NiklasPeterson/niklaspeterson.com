@@ -89,9 +89,7 @@ export default async function ProjectPage({ params }) {
         </FadeIn>
 
         {project.summary ? (
-          <FadeIn>
-            <ProjectCaseStudyContent project={project} priority />
-          </FadeIn>
+          <ProjectCaseStudyContent project={project} priority />
         ) : (
           <ProjectGallery
             attachments={project.attachments}
@@ -99,8 +97,13 @@ export default async function ProjectPage({ params }) {
           />
         )}
 
-        <ProjectTestimonials testimonials={project.testimonials} />
-        <ProjectNav prev={prev} next={next} />
+        <FadeIn>
+          <ProjectTestimonials testimonials={project.testimonials} />
+        </FadeIn>
+
+        <FadeIn>
+          <ProjectNav prev={prev} next={next} />
+        </FadeIn>
       </article>
 
       <Footer />
