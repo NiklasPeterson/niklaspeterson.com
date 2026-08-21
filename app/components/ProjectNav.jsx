@@ -63,7 +63,7 @@ function NavLink({ project, dir }) {
       prefetch={false}
       aria-label={`${isPrev ? "Previous" : "Next"} project: ${project.title}`}
       className={`group flex max-w-[calc(50%-0.5rem)] min-w-0 items-center gap-3 rounded-xl p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900 ${
-        isPrev ? "pr-3" : "flex-row-reverse pl-3"
+        isPrev ? "pe-3" : "flex-row-reverse ps-3"
       }`}
     >
       <Thumb media={project.attachments[0]} title={project.title} />

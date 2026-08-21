@@ -15,14 +15,14 @@ import {
 const CASE_STUDY_STYLES = {
   page: {
     narrative:
-      "grid gap-12 md:grid-cols-[minmax(0,1.65fr)_minmax(18rem,0.75fr)] md:gap-20",
-    insights: "flex flex-col gap-8 md:pl-10",
+      "grid gap-12 lg:grid-cols-[minmax(0,1.65fr)_minmax(18rem,0.75fr)] lg:gap-20",
+    insights: "flex flex-col gap-8 lg:ps-10",
     insightBody: "leading-relaxed",
   },
   modal: {
     narrative:
-      "grid gap-10 md:grid-cols-[minmax(0,1.55fr)_minmax(16rem,0.8fr)] md:gap-16",
-    insights: "flex flex-col gap-7 text-pretty md:pl-8",
+      "grid gap-10 lg:grid-cols-[minmax(0,1.55fr)_minmax(16rem,0.8fr)] lg:gap-16",
+    insights: "flex flex-col gap-7 text-pretty lg:ps-8",
     insightBody: "text-base leading-relaxed",
   },
 };
