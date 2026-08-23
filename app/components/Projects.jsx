@@ -118,7 +118,7 @@ export default function Projects({ projects = [] }) {
 
   return (
     <>
-      <div className="flex flex-wrap gap-12 px-4 pb-20 md:pb-32 lg:px-20">
+      <div className="flex flex-wrap gap-12 px-4 pb-20 md:pb-32 md:px-20">
         {projects.map((project, index) => (
           <FadeIn
             key={project.slug ?? index}

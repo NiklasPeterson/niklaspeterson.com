@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <FadeIn className="relative flex w-full flex-col gap-10 overflow-hidden px-4 py-20 md:pt-32 lg:px-20">
+    <FadeIn className="relative flex w-full flex-col gap-10 overflow-hidden px-4 py-20 md:pt-32 md:px-20">
       <div className="flex flex-col gap-20 md:flex-row md:justify-between">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-4">

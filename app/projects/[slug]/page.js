@@ -83,7 +83,7 @@ export default async function ProjectPage({ params }) {
     <main className="flex w-full max-w-360 flex-col">
       <Nav />
 
-      <article className="flex flex-col gap-10 px-4 pt-10 pb-20 md:gap-16 md:pt-16 md:pb-32 lg:px-20">
+      <article className="flex flex-col gap-10 px-4 pt-10 pb-20 md:gap-16 md:py-32 md:px-20">
         <FadeIn position="down">
           <ProjectHeader project={project} />
         </FadeIn>
