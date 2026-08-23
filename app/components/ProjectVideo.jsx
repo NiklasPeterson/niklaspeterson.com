@@ -38,10 +38,7 @@ export default function ProjectVideo({ media, className = "" }) {
     );
   };
 
-  useEffect(
-    () => () => window.clearTimeout(mobileControlsTimeout.current),
-    [],
-  );
+  useEffect(() => () => window.clearTimeout(mobileControlsTimeout.current), []);
 
   const handleVideoClick = (event) => {
     if (window.matchMedia("(max-width: 767px)").matches) {
@@ -140,7 +137,7 @@ export default function ProjectVideo({ media, className = "" }) {
             )}
 
             <input
-              className="project-video-scrubber min-w-0 flex-1"
+              className="min-w-0 flex-1 cursor-pointer appearance-none bg-transparent focus-visible:rounded-full focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white [&::-moz-range-progress]:h-[3px] [&::-moz-range-progress]:rounded-full [&::-moz-range-progress]:bg-white/95 [&::-moz-range-thumb]:size-2.5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:shadow-[0_1px_4px_rgb(0_0_0_/_0.3)] [&::-moz-range-track]:h-[3px] [&::-moz-range-track]:rounded-full [&::-moz-range-track]:bg-white/28 [&::-webkit-slider-runnable-track]:h-[3px] [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-runnable-track]:bg-[linear-gradient(to_right,rgb(255_255_255_/_0.95)_0,rgb(255_255_255_/_0.95)_var(--video-progress),rgb(255_255_255_/_0.28)_var(--video-progress),rgb(255_255_255_/_0.28)_100%)] [&::-webkit-slider-thumb]:mt-[-3.5px] [&::-webkit-slider-thumb]:size-2.5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-0 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow-[0_1px_4px_rgb(0_0_0_/_0.3)] [&::-webkit-slider-thumb]:transition-[opacity,transform] [&::-webkit-slider-thumb]:duration-150 [&::-webkit-slider-thumb]:ease-[cubic-bezier(0.23,1,0.32,1)] [@media(hover:hover)_and_(pointer:fine)]:[&::-webkit-slider-thumb]:scale-75 [@media(hover:hover)_and_(pointer:fine)]:[&::-webkit-slider-thumb]:opacity-0 [@media(hover:hover)_and_(pointer:fine)]:group-hover/video:[&::-webkit-slider-thumb]:scale-100 [@media(hover:hover)_and_(pointer:fine)]:group-hover/video:[&::-webkit-slider-thumb]:opacity-100 [@media(hover:hover)_and_(pointer:fine)]:focus-visible:[&::-webkit-slider-thumb]:scale-100 [@media(hover:hover)_and_(pointer:fine)]:focus-visible:[&::-webkit-slider-thumb]:opacity-100"
               type="range"
               min="0"
               max={duration || 1}
