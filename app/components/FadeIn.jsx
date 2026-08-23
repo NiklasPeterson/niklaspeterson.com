@@ -45,7 +45,7 @@ export default function FadeIn(props) {
               delay,
             }
       }
-      className={props.className}
+      className={`${props.className ?? ""}${props.desktopOnly ? " max-md:transform-none! max-md:opacity-100!" : ""}`}
     >
       {props.children}
     </motion.div>

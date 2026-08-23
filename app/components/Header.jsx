@@ -9,6 +9,7 @@ export default function Header() {
 
       <FadeIn
         position="down"
+        desktopOnly
         className="relative z-1 flex h-140 flex-col justify-center gap-4 overflow-visible px-4 sm:h-160 lg:px-20 lg:pt-20"
       >
         {/* <div className="absolute top-0 right-0 left-0 -z-10 flex max-w-full justify-center overflow-hidden ">
@@ -21,7 +22,7 @@ export default function Header() {
         <h1 className="max-w-4xl text-4xl leading-tight font-semibold text-zinc-950 md:text-[64px] dark:text-zinc-50">
           Bringing digital products to life with pixels and code.
         </h1>
-        <p className="text-xl text-pretty max-w-4xl md:text-2xl">
+        <p className="max-w-4xl text-xl text-pretty md:text-2xl">
           Niklas Peterson, designer and creator from Sweden, currently shaping
           experiences as a{" "}
           <span className="font-semibold text-zinc-950 dark:text-zinc-50">
