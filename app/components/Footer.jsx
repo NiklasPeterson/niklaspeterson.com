@@ -1,4 +1,5 @@
 import FadeIn from "./FadeIn";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -132,9 +133,14 @@ export default function Footer() {
 
       <div
         aria-hidden="true"
-        className="absolute right-0 bottom-0 left-0 -z-10 flex h-full max-w-full rotate-180 justify-center overflow-hidden blur-[120px]"
+        className="absolute right-0 bottom-0 left-0 -z-10 flex h-full max-w-full rotate-180 justify-center overflow-hidden"
       >
-        <img src="/animated-header.svg" alt="Animated Header" />
+        <Image
+          fill={true}
+          src="/animated-header.svg"
+          alt="Animated Header"
+          className="blur-[120px]"
+        />
       </div>
     </FadeIn>
   );
