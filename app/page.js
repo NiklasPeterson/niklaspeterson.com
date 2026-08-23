@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <main className="flex w-full max-w-360 flex-col">
       <div>
-        <div className="absolute top-0 right-0 left-0 -z-10 flex max-w-full justify-center blur-[120px] md:pr-60">
+        <div className="absolute top-0 right-0 left-0 -z-10 flex max-w-full justify-center md:pr-60">
           <img src="/animated-header.svg" alt="Animated Header" className="blur-[120px]" />
         </div>
       <Header />

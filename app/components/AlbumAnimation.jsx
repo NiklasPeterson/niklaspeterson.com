@@ -56,7 +56,7 @@ export default function AlbumAnimation() {
           variants={variants}
           initial="initial"
           animate="animate"
-          className="-m-3 h-12 w-12 rounded-lg border-2 border-gray-100 shadow-lg"
+          className="-m-3 h-12 w-12 rounded-lg after:border-2 after:border-translucent after:content-[''] shadow-lg"
         />
       ))}
     </motion.div>

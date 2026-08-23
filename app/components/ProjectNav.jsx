@@ -63,7 +63,7 @@ function NavLink({ project, dir }) {
       prefetch={false}
       aria-label={`${isPrev ? "Previous" : "Next"} project: ${project.title}`}
       className={`group flex max-w-[calc(50%-0.5rem)] min-w-0 items-center gap-3 rounded-xl p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900 ${
-        isPrev ? "pr-3" : "flex-row-reverse pl-3"
+        isPrev ? "pe-3" : "flex-row-reverse ps-3"
       }`}
     >
       <Thumb media={project.attachments[0]} title={project.title} />
@@ -85,7 +85,7 @@ function NavLink({ project, dir }) {
 
 function Thumb({ media, title }) {
   return (
-    <span className="relative aspect-16/10 w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 after:pointer-events-none after:absolute after:inset-0 after:rounded-md after:border after:border-zinc-200/50 after:content-[''] md:w-16 dark:after:border-zinc-600/50 dark:bg-zinc-900">
+    <span className="relative aspect-16/10 w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 after:pointer-events-none after:absolute after:inset-0 after:rounded-md after:border after:border-translucent after:content-[''] md:w-16 dark:bg-zinc-900">
       {!media ? null : media.type === "image" ? (
         <Image
           src={media.url}

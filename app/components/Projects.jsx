@@ -1,25 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useLayoutEffect, useState, useRef } from "react";
 import Image from "next/image";
 import FadeIn from "./FadeIn";
 import ProjectTestimonials from "./ProjectTestimonials";
 import ProjectVideo from "./ProjectVideo";
 import ProjectPreviewVideo from "./ProjectPreviewVideo";
-import ProjectScope, {
-  ProjectClosingStatement,
-  ProjectDescription,
-} from "./ProjectScope";
-import {
-  getProjectInsights,
-  getProjectVisualAspectRatio,
-  getVisibleProjectSections,
-  isFullWidthProjectSection,
-} from "../lib/project-layout";
+import ProjectHeader from "./ProjectHeader";
+import ProjectCaseStudyContent from "./ProjectCaseStudyContent";
 
 export default function Projects({ projects = [] }) {
   const [selectedProject, setSelectedProject] = useState(null);
+  const overlayRef = useRef(null);
 
   const openProject = (project) => {
     setSelectedProject(project);
@@ -29,7 +22,44 @@ export default function Projects({ projects = [] }) {
     setSelectedProject(null);
   };
 
-  const overlayRef = useRef(null);
+  useEffect(() => {
+    if (!selectedProject) return;
+
+    const handleOverlayKeyDown = (event) => {
+      if (event.key === "Tab") event.preventDefault();
+      if (event.key === "Escape") closeProject();
+    };
+
+    window.addEventListener("keydown", handleOverlayKeyDown);
+    return () => window.removeEventListener("keydown", handleOverlayKeyDown);
+  }, [selectedProject]);
+
+  useLayoutEffect(() => {
+    if (!selectedProject) return;
+
+    const scrollY = window.scrollY;
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+    const bodyStyle = document.body.style;
+    const previousStyles = {
+      overflow: bodyStyle.overflow,
+      paddingRight: bodyStyle.paddingRight,
+      position: bodyStyle.position,
+      top: bodyStyle.top,
+      width: bodyStyle.width,
+    };
+
+    bodyStyle.overflow = "hidden";
+    bodyStyle.position = "fixed";
+    bodyStyle.top = `-${scrollY}px`;
+    bodyStyle.width = "100%";
+    if (scrollbarWidth > 0) bodyStyle.paddingRight = `${scrollbarWidth}px`;
+
+    return () => {
+      Object.assign(bodyStyle, previousStyles);
+      window.scrollTo(0, scrollY);
+    };
+  }, [selectedProject]);
 
   const navigateTo = (project) => {
     setSelectedProject(project);
@@ -94,6 +124,7 @@ export default function Projects({ projects = [] }) {
             key={project.slug ?? index}
             className="flex flex-col md:flex-[1_1_40%]"
             index={index}
+            stagger="pair"
           >
             <ProjectContent
               project={project}
@@ -107,213 +138,62 @@ export default function Projects({ projects = [] }) {
 
       {selectedProject && (
         <div
+          role="dialog"
+          aria-labelledby="project-modal-title"
           ref={overlayRef}
-          className="fixed top-0 right-0 bottom-0 left-0 z-10 h-screen w-screen overflow-auto bg-white/25 backdrop-blur-lg md:p-10 dark:bg-black/25"
-          onClick={closeProject}
+          className="fixed inset-0 z-10 h-screen min-h-dvh w-screen overflow-y-auto overscroll-contain bg-white/25 backdrop-blur-lg md:p-10 dark:bg-black/25"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) closeProject();
+          }}
         >
           <div
-            onClick={(e) => e.stopPropagation()}
-            className="mx-auto flex max-w-360 flex-col gap-10 border-zinc-200 bg-white pt-6 pb-1 md:h-fit md:animate-fadeUp md:rounded-3xl md:border md:pt-10 md:pb-2 dark:border-zinc-600/50 dark:bg-black"
+            className="mx-auto flex max-w-360 flex-col gap-16 border-translucent bg-zinc-50 pt-6 pb-1 md:h-fit md:animate-fadeUp md:rounded-3xl md:border md:pt-10 md:pb-2 dark:bg-zinc-950"
           >
-            <div className="flex flex-col gap-6 px-4 md:gap-8 md:px-10">
-              <div className="flex items-center justify-between">
-                <h3 className="text-2xl font-semibold text-zinc-950 md:text-4xl dark:text-zinc-50">
-                  {selectedProject.title}
-                </h3>
-                <button className="btn-secondary h-10" onClick={closeProject}>
+            <ProjectHeader
+              project={selectedProject}
+              variant="modal"
+              titleId="project-modal-title"
+              action={
+                <button
+                  className="btn-secondary h-10"
+                  onClick={closeProject}
+                >
                   Close
                 </button>
-              </div>
-
-              <div className="flex animate-fadeUp flex-col gap-6">
-                <div className="text-md text-pretty md:text-lg" style={{ maxWidth: 720 }}>
-                  <p>
-                    {selectedProject.summary || selectedProject.description}
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-3 text-sm text-zinc-500 dark:text-zinc-400">
-                  {selectedProject.company && (
-                    <span className="font-medium text-zinc-950 dark:text-zinc-50">
-                      {selectedProject.company}
-                    </span>
-                  )}
-                  {selectedProject.company && selectedProject.year && (
-                    <span
-                      aria-hidden="true"
-                      className="text-zinc-300 dark:text-zinc-700"
-                    >
-                      /
-                    </span>
-                  )}
-                  {selectedProject.year && <span>{selectedProject.year}</span>}
-                  {selectedProject.url && (
-                    <a
-                      className="group ml-2 inline-flex items-center gap-1.5 font-medium text-zinc-950 transition-opacity hover:opacity-60 md:ml-auto dark:text-zinc-50"
-                      href={selectedProject.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Visit project
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        className="h-4 w-4"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                        />
-                      </svg>
-                    </a>
-                  )}
-                </div>
-
-                <ProjectScope items={selectedProject.scope} />
-              </div>
-            </div>
+              }
+            />
 
             {selectedProject.summary ? (
-              <CaseStudyContent project={selectedProject} />
+              <ProjectCaseStudyContent
+                project={selectedProject}
+                variant="modal"
+                className="animate-fadeUp px-4 md:px-10"
+              />
             ) : (
               <ModalGallery attachments={selectedProject.attachments} />
             )}
 
-            <ProjectTestimonials testimonials={selectedProject.testimonials} />
+            <FadeIn>
+              <ProjectTestimonials
+                key={selectedProject.slug ?? selectedProject.title}
+                testimonials={selectedProject.testimonials}
+                variant="modal"
+              />
+            </FadeIn>
 
             {prevProject && nextProject && prevProject !== nextProject && (
-              <ModalNav
-                prev={prevProject}
-                next={nextProject}
-                onNavigate={navigateTo}
-              />
+              <FadeIn>
+                <ModalNav
+                  prev={prevProject}
+                  next={nextProject}
+                  onNavigate={navigateTo}
+                />
+              </FadeIn>
             )}
           </div>
         </div>
       )}
     </>
-  );
-}
-
-function CaseStudyContent({ project }) {
-  const hero = project.attachments[0];
-  const visibleSections = getVisibleProjectSections(project.sections);
-  const insights = getProjectInsights(project);
-
-  return (
-    <div className="flex animate-fadeUp flex-col gap-12 px-4 md:gap-20 md:px-10">
-      <figure className="flex flex-col gap-3">
-        <SectionVisual
-          visual={hero}
-          title={`${project.title} overview`}
-          featured
-        />
-        {hero?.caption && (
-          <figcaption className="max-w-2xl">
-            <p className="text-xs leading-relaxed text-zinc-500 md:text-sm dark:text-zinc-400">
-              {hero.caption}
-            </p>
-          </figcaption>
-        )}
-      </figure>
-
-      <div className="grid gap-10 md:grid-cols-[minmax(0,1.55fr)_minmax(16rem,0.8fr)] md:gap-14">
-        <div className="max-w-3xl">
-          <ProjectDescription className="text-lg leading-relaxed md:text-xl">
-            {project.description}
-          </ProjectDescription>
-        </div>
-
-        {insights.length > 0 && (
-          <div className="flex flex-col gap-7 text-pretty md:pl-8">
-            {insights.map((insight) => (
-              <section key={insight.label} className="flex flex-col gap-2">
-                <h4 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
-                  {insight.label}
-                </h4>
-                <p className="text-sm leading-relaxed md:text-base">
-                  {insight.body}
-                </p>
-              </section>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {visibleSections.length > 0 && (
-        <div className="grid gap-12 md:grid-cols-2">
-          {visibleSections.map((section, index) => {
-            const isFullWidth = isFullWidthProjectSection(
-              index,
-              visibleSections.length,
-              section,
-            );
-
-            return (
-              <figure
-                key={section.title}
-                className={`flex flex-col gap-3 ${isFullWidth ? "md:col-span-2" : ""}`}
-              >
-                <SectionVisual
-                  visual={section.visual}
-                  title={section.title}
-                  contained={!isFullWidth}
-                />
-                <figcaption className="max-w-2xl">
-                  <p className="text-xs leading-relaxed text-zinc-500 md:text-sm dark:text-zinc-400">
-                    {section.body}
-                  </p>
-                </figcaption>
-              </figure>
-            );
-          })}
-        </div>
-      )}
-
-      <ProjectClosingStatement>{project.whatScaled}</ProjectClosingStatement>
-    </div>
-  );
-}
-
-function SectionVisual({ visual, title, featured = false, contained = false }) {
-  if (!visual) {
-    return (
-      <div
-        className={`flex w-full items-center justify-center bg-zinc-100 px-6 text-center text-sm text-zinc-500 dark:bg-zinc-900 dark:text-zinc-400 ${contained ? "aspect-video" : "aspect-video"} ${featured ? "rounded-2xl md:rounded-3xl" : "rounded-2xl"}`}
-      >
-        Visual for {title} was being prepared
-      </div>
-    );
-  }
-
-  return (
-    <div
-      className={`relative overflow-hidden after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 dark:after:border-zinc-600/50 after:content-[''] ${featured ? "rounded-2xl md:rounded-3xl md:after:rounded-3xl" : "rounded-2xl"}`}
-      style={
-        contained
-          ? { aspectRatio: getProjectVisualAspectRatio(visual) }
-          : undefined
-      }
-    >
-      {visual.type === "image" ? (
-        <Image
-          className={`${contained ? "h-full object-contain" : "h-auto"} w-full`}
-          src={visual.url}
-          alt={visual.alt || title}
-          width={visual.width}
-          height={visual.height}
-        />
-      ) : (
-        <ProjectVideo
-          media={visual}
-          className={`${contained ? "h-full object-contain" : "h-auto"} w-full`}
-        />
-      )}
-    </div>
   );
 }
 
@@ -326,15 +206,10 @@ function ModalGallery({ attachments }) {
 
   return (
     <div className="flex animate-fadeUp flex-col items-center gap-4 px-4 md:gap-6 md:overflow-x-auto md:px-10">
-      {attachments.length === 0 && (
-        <p className="w-full max-w-3xl rounded-2xl bg-zinc-100 p-8 text-zinc-500 dark:bg-zinc-900 dark:text-zinc-400">
-          Project visuals were being prepared.
-        </p>
-      )}
       {attachments.map((attachment, i) => (
         <div
           key={i}
-          className="relative overflow-hidden rounded-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:border after:border-zinc-200/50 after:content-[''] md:w-full"
+          className="relative overflow-hidden rounded-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:border after:border-translucent after:content-[''] md:w-full"
         >
           {attachment.type === "image" ? (
             <Image
@@ -372,9 +247,7 @@ function NavButton({ project, dir, onNavigate }) {
       type="button"
       onClick={() => onNavigate(project)}
       aria-label={`${isPrev ? "Previous" : "Next"} project: ${project.title}`}
-      className={`group flex max-w-[calc(50%-0.5rem)] min-w-0 items-center gap-3 rounded-xl p-2 ${isPrev ? "pr-4" : "pl-4"} transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900 ${
-        isPrev ? "" : "flex-row-reverse"
-      }`}
+      className={`group flex max-w-[calc(50%-0.5rem)] min-w-0 items-center gap-3 rounded-xl p-2 ${isPrev ? "pe-4" : "ps-4 flex-row-reverse"} transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900`}
     >
       <NavThumb media={project.attachments[0]} title={project.title} />
       <span
@@ -385,7 +258,7 @@ function NavButton({ project, dir, onNavigate }) {
           {isPrev ? "Previous" : "Next"}
           {!isPrev && <Chevron dir="right" />}
         </span>
-        <span className="max-w-full truncate text-sm font-medium text-zinc-950 md:max-w-[15rem] dark:text-zinc-50">
+        <span className="max-w-full truncate text-sm font-medium text-zinc-950 md:max-w-60 dark:text-zinc-50">
           {project.title}
         </span>
       </span>
@@ -395,7 +268,7 @@ function NavButton({ project, dir, onNavigate }) {
 
 function NavThumb({ media, title }) {
   return (
-    <span className="relative aspect-[16/10] w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 after:pointer-events-none after:absolute after:inset-0 after:rounded-md after:border after:border-zinc-200/50 after:content-[''] md:w-16 dark:bg-zinc-900">
+    <span className="relative aspect-16/10 w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 after:pointer-events-none after:absolute after:inset-0 after:rounded-md after:border after:border-translucent after:content-[''] md:w-16 dark:bg-zinc-900">
       {!media ? null : media.type === "image" ? (
         <Image
           src={media.url}
@@ -500,18 +373,12 @@ function ProjectContent({ project, onOpen, priority, fetchPriority }) {
         return (
           <div
             key={media.id || index}
-            className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-200 group-hover:scale-102 group-hover:shadow-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-zinc-200/50 dark:after:border-zinc-600/50 after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl"
+            className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-150 group-hover:scale-102 group-hover:shadow-md after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-translucent after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl"
           >
             {attachment}
           </div>
         );
       })}
-
-      {project.attachments.length === 0 && (
-        <div className="flex aspect-video w-full items-center justify-center rounded-2xl bg-zinc-100 px-6 text-center text-sm text-zinc-500 md:rounded-3xl dark:bg-zinc-900 dark:text-zinc-400">
-          Visuals were being prepared
-        </div>
-      )}
 
       <div className="flex max-w-2xl flex-col gap-1">
         <div className="text-xl font-semibold text-zinc-950 dark:text-zinc-50">
