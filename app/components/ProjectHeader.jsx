@@ -1,3 +1,5 @@
+import { HugeiconsIcon } from "@hugeicons/react";
+import { SquareArrowUpRightIcon } from "@hugeicons/core-free-icons";
 import ProjectScope, { ProjectHighlight } from "./ProjectScope";
 
 export default function ProjectHeader({
@@ -22,15 +24,15 @@ export default function ProjectHeader({
           {action && <span className="shrink-0">{action}</span>}
         </div>
 
-        <p className={`leading-normal text-pretty ${isModal ? "max-w-180 text-md  md:text-lg" : "max-w-3xl text-lg md:text-xl"}`}>
+        <p
+          className={`leading-normal text-pretty ${isModal ? "text-md max-w-180 md:text-lg" : "max-w-3xl text-lg md:text-xl"}`}
+        >
           {project.summary}
         </p>
 
         <div className="flex flex-wrap items-center gap-x-3 gap-y-3 text-sm text-muted">
           {project.company && (
-            <span className="font-medium text-primary">
-              {project.company}
-            </span>
+            <span className="font-medium text-primary">{project.company}</span>
           )}
           {project.company && project.year && (
             <span
@@ -49,20 +51,12 @@ export default function ProjectHeader({
               rel="noopener noreferrer"
             >
               Visit project
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
+              <HugeiconsIcon
+                icon={SquareArrowUpRightIcon}
+                strokeWidth={2}
                 className="h-4 w-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                />
-              </svg>
+                aria-hidden="true"
+              />
             </a>
           )}
         </div>

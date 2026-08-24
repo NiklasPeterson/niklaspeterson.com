@@ -2,6 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "motion/react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  PauseIcon,
+  PlayIcon,
+  VolumeHighIcon,
+  VolumeMute02Icon,
+} from "@hugeicons/core-free-icons";
 
 export default function ProjectVideoPlayer({ media, className = "" }) {
   const videoRef = useRef(null);
@@ -124,7 +131,12 @@ export default function ProjectVideoPlayer({ media, className = "" }) {
               label={isPlaying ? "Pause video" : "Play video"}
               onClick={togglePlayback}
             >
-              {isPlaying ? <PauseIcon /> : <PlayIcon />}
+              <HugeiconsIcon
+                icon={isPlaying ? PauseIcon : PlayIcon}
+                strokeWidth={2}
+                className="h-4 w-4"
+                aria-hidden="true"
+              />
             </ControlButton>
 
             {media.hasAudio && (
@@ -132,7 +144,12 @@ export default function ProjectVideoPlayer({ media, className = "" }) {
                 label={isMuted ? "Unmute video" : "Mute video"}
                 onClick={toggleMuted}
               >
-                {isMuted ? <MutedIcon /> : <VolumeIcon />}
+                <HugeiconsIcon
+                  icon={isMuted ? VolumeMute02Icon : VolumeHighIcon}
+                  strokeWidth={2}
+                  className="h-4 w-4"
+                  aria-hidden="true"
+                />
               </ControlButton>
             )}
 
@@ -173,58 +190,6 @@ function ControlButton({ label, onClick, children }) {
     >
       {children}
     </button>
-  );
-}
-
-function PlayIcon() {
-  return (
-    <svg viewBox="0 0 20 20" className="h-4 w-4" aria-hidden="true">
-      <path d="M6.5 4.75v10.5L15 10 6.5 4.75Z" fill="currentColor" />
-    </svg>
-  );
-}
-
-function PauseIcon() {
-  return (
-    <svg viewBox="0 0 20 20" className="h-4 w-4" aria-hidden="true">
-      <path d="M5.75 4.5h3v11h-3v-11Zm5.5 0h3v11h-3v-11Z" fill="currentColor" />
-    </svg>
-  );
-}
-
-function VolumeIcon() {
-  return (
-    <svg
-      viewBox="0 0 20 20"
-      className="h-4 w-4"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M3.5 8v4h3l4 3.25V4.75L6.5 8h-3Z" />
-      <path d="M13 7.25a4 4 0 0 1 0 5.5M15 5.25a6.75 6.75 0 0 1 0 9.5" />
-    </svg>
-  );
-}
-
-function MutedIcon() {
-  return (
-    <svg
-      viewBox="0 0 20 20"
-      className="h-4 w-4"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M3.5 8v4h3l4 3.25V4.75L6.5 8h-3Z" />
-      <path d="m13.25 8 3.5 4m0-4-3.5 4" />
-    </svg>
   );
 }
 
