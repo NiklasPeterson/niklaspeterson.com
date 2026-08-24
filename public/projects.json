@@ -124,10 +124,18 @@
         "role": "Design Lead at LottieFiles",
         "avatar": "/testimonial-inad-hussain-2026.jpeg",
         "quote": "Niklas is a product designer who combines strong design craft, strategic thinking, and the ability to bring people together around a vision.\n\nA great example of this was the LottieFiles marketing website redesign, where he was the primary product designer driving the work. He collaborated with visual designers, brand, motion designers, marketing, and stakeholders to shape a cleaner and more modern experience."
+      },
+      {
+        "name": "Nattu Adnan",
+        "role": "Co-founder & CTO at LottieFiles",
+        "avatar": "/testimonial-nattu-adnan-2026.jpeg",
+        "quote": "Niklas is one of those rare designers who raises the bar without making it a thing. He helped drive the design direction of a product millions of designers rely on, and he did it with taste, speed, and zero ego.\n\nHe’s also just a joy to work with. Super friendly, gets it immediately. Any team would be lucky to have him."
       }
     ],
     "company": "LottieFiles",
-    "year": "2024–2025"
+    "year": "2024–2025",
+    "updatedYear": 2026,
+    "updatedAt": "2025-07-10"
   },
   {
     "slug": "lottiefiles-digital-asset-management",
@@ -250,7 +258,9 @@
       }
     ],
     "company": "LottieFiles",
-    "year": "2025–2026"
+    "year": "2025–2026",
+    "updatedYear": 2026,
+    "updatedAt": "2026-02-11"
   },
   {
     "slug": "lottiefiles-motion-systems",
@@ -383,7 +393,9 @@
       }
     ],
     "company": "LottieFiles",
-    "year": "2026"
+    "year": "2026",
+    "updatedYear": 2026,
+    "updatedAt": "2026-06-16"
   },
   {
     "slug": "lottiefiles-developer-handoff",
@@ -457,7 +469,8 @@
       }
     ],
     "company": "LottieFiles",
-    "year": "2026"
+    "year": "2026",
+    "updatedYear": 2026
   },
   {
     "slug": "lummi-figma-plugin",
@@ -498,7 +511,8 @@
       }
     ],
     "company": "Blush Design Inc.",
-    "year": 2024
+    "year": 2024,
+    "updatedYear": 2024
   },
   {
     "slug": "lummi-web",
@@ -561,7 +575,8 @@
       }
     ],
     "company": "Blush Design Inc.",
-    "year": 2024
+    "year": 2024,
+    "updatedYear": 2024
   },
   {
     "slug": "musho",
@@ -626,7 +641,8 @@
       }
     ],
     "company": "Blush Design Inc.",
-    "year": 2023
+    "year": 2023,
+    "updatedYear": 2023
   },
   {
     "slug": "musho-figma-plugin",
@@ -654,7 +670,8 @@
       }
     ],
     "company": "Blush Design Inc.",
-    "year": 2023
+    "year": 2023,
+    "updatedYear": 2023
   },
   {
     "slug": "buenoverse",
@@ -674,7 +691,8 @@
       }
     ],
     "company": "Blush Design Inc.",
-    "year": 2023
+    "year": 2023,
+    "updatedYear": 2023
   },
   {
     "slug": "bueno-drops-figma-plugin",
@@ -694,6 +712,7 @@
       }
     ],
     "company": "Blush Design Inc.",
-    "year": 2023
+    "year": 2023,
+    "updatedYear": 2023
   }
 ]

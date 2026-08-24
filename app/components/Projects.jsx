@@ -118,7 +118,13 @@ export default function Projects({ projects = [] }) {
 
   return (
     <>
-      <div className="flex flex-wrap gap-12 px-4 pb-20 md:pb-32 md:px-20">
+      <section
+        className="flex flex-wrap gap-12 px-4 pb-20 md:pb-32 md:px-20"
+        aria-labelledby="selected-work-heading"
+      >
+        <h2 id="selected-work-heading" className="sr-only">
+          Selected product design case studies
+        </h2>
         {projects.map((project, index) => (
           <FadeIn
             key={project.slug ?? index}
@@ -134,7 +140,7 @@ export default function Projects({ projects = [] }) {
             />
           </FadeIn>
         ))}
-      </div>
+      </section>
 
       {selectedProject && (
         <div
@@ -381,9 +387,9 @@ function ProjectContent({ project, onOpen, priority, fetchPriority }) {
       })}
 
       <div className="flex max-w-2xl flex-col gap-1">
-        <div className="text-xl font-semibold text-zinc-950 dark:text-zinc-50">
+        <h3 className="text-xl font-semibold text-zinc-950 dark:text-zinc-50">
           {project.title}
-        </div>
+        </h3>
 
         <div className="text-md line-clamp-2 md:text-lg">
           {project.summary || project.description}
