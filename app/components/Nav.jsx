@@ -7,7 +7,7 @@ export default function Nav({ className = "" }) {
     <FadeIn
       position="down"
       desktopOnly
-      className={`flex w-full max-w-360 items-center justify-between px-4 py-4 lg:px-20 ${className}`}
+      className={`flex w-full max-w-360 items-center justify-between px-4 py-4 md:px-20 ${className}`}
     >
       <Link href="/" aria-label="Niklas Peterson home">
         <Logo />

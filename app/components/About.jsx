@@ -3,7 +3,7 @@ import FadeIn from "./FadeIn";
 
 export default function About() {
   return (
-    <FadeIn className="my-20 flex w-full flex-col-reverse justify-between md:items-center gap-10 px-4 md:my-32 md:flex-row lg:gap-40 lg:px-20">
+    <FadeIn className="py-20 flex w-full flex-col-reverse justify-between md:items-center gap-10 px-4 md:py-32 md:flex-row md:gap-40 md:px-20">
       <div className="flex max-w-2xl flex-col gap-8">
         <div className="flex flex-col gap-4">
           <h2 className="text-4xl leading-tight font-semibold text-zinc-950 md:text-6xl dark:text-zinc-50">
