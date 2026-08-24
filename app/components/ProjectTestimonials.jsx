@@ -130,7 +130,7 @@ export default function ProjectTestimonials({
               {testimonials.map((testimonial) => (
                 <div
                   key={testimonial.name}
-                  className="shrink-0 basis-[84%] snap-start snap-always md:basis-[72%]"
+                  className="shrink-0 basis-[84%] snap-center snap-always md:basis-[72%]"
                 >
                   {renderTestimonial(
                     testimonial,
