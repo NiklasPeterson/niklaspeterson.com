@@ -1,54 +1,34 @@
 import ProjectScope, { ProjectHighlight } from "./ProjectScope";
 
-const HEADER_STYLES = {
-  page: {
-    container: "flex flex-col gap-6",
-    details: "flex flex-col gap-6",
-    title:
-      "max-w-4xl text-4xl leading-tight font-semibold text-balance text-zinc-950 md:text-6xl dark:text-zinc-50",
-    summary: "max-w-3xl text-lg leading-normal text-pretty md:text-xl",
-  },
-  modal: {
-    container: "flex flex-col gap-6 px-4 md:px-10",
-    details: "flex flex-col gap-6",
-    title:
-      "min-w-0 text-2xl leading-tight font-semibold text-balance text-zinc-950 md:text-4xl dark:text-zinc-50",
-    summary: "max-w-180 text-md leading-normal text-pretty md:text-lg",
-  },
-};
-
 export default function ProjectHeader({
   project,
   variant = "page",
   action,
   titleId,
 }) {
-  const styles = HEADER_STYLES[variant];
-  const Title = variant === "modal" ? "h2" : "h1";
+  const isModal = variant === "modal";
+  const Title = isModal ? "h2" : "h1";
 
   return (
-    <div className={styles.container}>
-      {action ? (
+    <div className={`flex flex-col gap-12 ${isModal ? "px-4 md:px-10" : ""}`}>
+      <div className="flex flex-col gap-6">
         <div className="flex items-start justify-between gap-4">
-          <Title id={titleId} className={styles.title}>
+          <Title
+            id={titleId}
+            className={`leading-tight font-semibold text-balance text-primary ${isModal ? "min-w-0 text-2xl md:text-4xl" : "max-w-4xl text-4xl md:text-6xl"}`}
+          >
             {project.title}
           </Title>
-          <span className="shrink-0">{action}</span>
+          {action && <span className="shrink-0">{action}</span>}
         </div>
-      ) : (
-        <Title id={titleId} className={styles.title}>
-          {project.title}
-        </Title>
-      )}
 
-      <div className={styles.details}>
-        <p className={styles.summary}>
-          {project.summary || project.description}
+        <p className={`leading-normal text-pretty ${isModal ? "max-w-180 text-md  md:text-lg" : "max-w-3xl text-lg md:text-xl"}`}>
+          {project.summary}
         </p>
 
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-3 text-sm text-zinc-500 dark:text-zinc-400">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-3 text-sm text-muted">
           {project.company && (
-            <span className="font-medium text-zinc-950 dark:text-zinc-50">
+            <span className="font-medium text-primary">
               {project.company}
             </span>
           )}
@@ -63,7 +43,7 @@ export default function ProjectHeader({
           {project.year && <span>{project.year}</span>}
           {project.url && (
             <a
-              className="group ms-2 inline-flex items-center gap-1.5 font-medium text-zinc-950 transition-opacity hover:opacity-60 md:ms-auto dark:text-zinc-50"
+              className="group ms-2 inline-flex items-center gap-1.5 font-medium text-primary transition-opacity hover:opacity-60 md:ms-auto"
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -86,7 +66,6 @@ export default function ProjectHeader({
             </a>
           )}
         </div>
-
         <ProjectScope items={project.scope} />
       </div>
       <ProjectHighlight highlight={project.highlight} />

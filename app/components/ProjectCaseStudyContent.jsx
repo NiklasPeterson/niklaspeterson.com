@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ProjectVideo from "./ProjectVideo";
+import ProjectVideoPlayer from "./ProjectVideoPlayer";
 import FadeIn from "./FadeIn";
 import {
   ProjectClosingStatement,
@@ -52,17 +52,17 @@ export default function ProjectCaseStudyContent({
       
       <FadeIn>
         <div className={styles.narrative}>
-          <div className="max-w-3xl">
-            <ProjectDescription className="text-lg leading-relaxed md:text-xl">
+          {project.description && (
+            <ProjectDescription className="text-lg leading-relaxed max-w-3xl md:text-xl">
               {project.description}
             </ProjectDescription>
-          </div>
+          )}
 
           {insights.length > 0 && (
             <div className={styles.insights}>
               {insights.map((insight) => (
                 <section key={insight.label} className="flex flex-col gap-3">
-                  <h2 className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
+                  <h2 className="text-xs font-medium tracking-widest uppercase text-muted">
                     {insight.label}
                   </h2>
                   <p className={styles.insightBody}>{insight.body}</p>
@@ -84,11 +84,10 @@ export default function ProjectCaseStudyContent({
             );
 
             return (
-              <div
+              <FadeIn
                 key={section.title}
-                className={isFullWidth ? "md:col-span-2" : ""}
+                className={isFullWidth ? "md:col-span-2" : undefined}
               >
-                <FadeIn>
                 <ProjectFigure
                   visual={section.visual}
                   title={section.title}
@@ -96,8 +95,7 @@ export default function ProjectCaseStudyContent({
                   variant={variant}
                   contained={!isFullWidth}
                 />
-                </FadeIn>
-              </div>
+              </FadeIn>
             );
           })}
         </div>
@@ -141,7 +139,7 @@ function ProjectFigure({
       </div>
       {caption && (
         <figcaption className="max-w-2xl">
-          <p className="text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+          <p className="text-sm leading-relaxed text-muted">
             {caption}
           </p>
         </figcaption>
@@ -161,7 +159,7 @@ function ProjectMedia({ media, title, priority, contained }) {
       priority={priority}
     />
   ) : (
-    <ProjectVideo
+    <ProjectVideoPlayer
       media={media}
       className={`${contained ? "h-full object-contain" : "h-auto"} w-full`}
     />
@@ -170,7 +168,7 @@ function ProjectMedia({ media, title, priority, contained }) {
 
 function VisualPlaceholder({ title }) {
   return (
-    <div className="flex aspect-video w-full items-center justify-center bg-zinc-100 px-6 text-center text-sm text-zinc-500 dark:bg-zinc-900 dark:text-zinc-400">
+    <div className="flex aspect-video w-full items-center justify-center bg-zinc-100 px-6 text-center text-sm text-muted dark:bg-zinc-900">
       Visual for {title} was being prepared
     </div>
   );

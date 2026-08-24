@@ -1,6 +1,7 @@
 [
   {
     "slug": "lottiefiles-web-marketing",
+    "preload": true,
     "title": "LottieFiles Web & Marketing",
     "summary": "Evolved LottieFiles’ web presence into a more mature, cohesive expression of the brand and its motion-first identity",
     "scope": [
@@ -139,6 +140,7 @@
   },
   {
     "slug": "lottiefiles-digital-asset-management",
+    "preload": true,
     "title": "LottieFiles Digital Asset Management",
     "summary": "Expanded LottieFiles Platform beyond animation into a workspace for managing and delivering multiple asset formats",
     "scope": [
@@ -400,6 +402,7 @@
   },
   {
     "slug": "lottiefiles-developer-handoff",
+    "preload": true,
     "title": "LottieFiles Developer Handoff",
     "summary": "Turned fragmented implementation guidance into a context-aware handoff tailored to each developer’s stack",
     "scope": [
