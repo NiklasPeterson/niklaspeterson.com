@@ -245,17 +245,18 @@
     ],
     "testimonials": [
       {
-        "name": "SangHyo Yee",
-        "role": "Product Designer at LottieFiles",
-        "avatar": "/testimonial-sanghyo-yee-2026.png",
-        "quote": "Niklas was someone I could always trust with an honest design conversation. Whenever I was working through a difficult problem, I knew I could bring it to him and receive a thoughtful, candid perspective.\n\nHe consistently considered how individual decisions would affect the broader customer journey."
-      },
-      {
         "name": "Inad Hussain",
         "role": "Design Lead at LottieFiles",
         "avatar": "/testimonial-inad-hussain-2026.jpeg",
         "quote": "Niklas is a product designer who combines strong design craft, strategic thinking, and the ability to bring people together around a vision.\n\nHe naturally fits into modern AI-driven product development workflows, where the ability to prototype, experiment, and collaborate closely with engineering is increasingly important."
+      },
+      {
+        "name": "SangHyo Yee",
+        "role": "Product Designer at LottieFiles",
+        "avatar": "/testimonial-sanghyo-yee-2026.png",
+        "quote": "Niklas was someone I could always trust with an honest design conversation. Whenever I was working through a difficult problem, I knew I could bring it to him and receive a thoughtful, candid perspective.\n\nHe consistently considered how individual decisions would affect the broader customer journey."
       }
+      
     ],
     "company": "LottieFiles",
     "year": "2025–2026",
