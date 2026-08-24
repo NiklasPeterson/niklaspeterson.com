@@ -1,7 +1,12 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import AnalyticsTracker from "./components/AnalyticsTracker";
-import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION } from "./lib/site";
+import {
+  SITE_URL,
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  SITE_UPDATED_YEAR,
+} from "./lib/site";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,11 +17,22 @@ export const metadata = {
   alternates: {
     canonical: "/",
   },
+  openGraph: {
+    type: "website",
+    url: "/",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [{ url: "/opengraph-image.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ["/twitter-image.png"],
+  },
 };
 
 export default function RootLayout({ children }) {
-  const dateModified = new Date().toISOString().split("T")[0];
-
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -62,7 +78,7 @@ export default function RootLayout({ children }) {
     description: SITE_DESCRIPTION,
     author: { "@id": `${SITE_URL}/#person` },
     publisher: { "@id": `${SITE_URL}/#organization` },
-    dateModified,
+    dateModified: String(SITE_UPDATED_YEAR),
     inLanguage: "en",
   };
 

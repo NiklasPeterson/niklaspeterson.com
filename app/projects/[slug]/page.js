@@ -38,6 +38,12 @@ export async function generateMetadata({ params }) {
       images: [{ url: ogImage }],
       type: "article",
     },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | Niklas Peterson`,
+      description: project.summary || project.description,
+      images: [ogImage],
+    },
   };
 }
 
@@ -46,7 +52,6 @@ export default async function ProjectPage({ params }) {
   const project = getProjectBySlug(slug);
   if (!project) notFound();
 
-  const dateModified = new Date().toISOString().split("T")[0];
   const firstImage = project.attachments.find((a) => a.type === "image");
   const { prev, next } = getAdjacentProjects(slug);
 
@@ -56,8 +61,7 @@ export default async function ProjectPage({ params }) {
     name: project.title,
     description: project.description,
     url: `${SITE_URL}/projects/${project.slug}`,
-    ...(project.year && { dateCreated: String(project.year) }),
-    dateModified,
+    dateModified: project.updatedAt ?? String(project.updatedYear),
     creator: { "@id": `${SITE_URL}/#person` },
     ...(firstImage && { image: `${SITE_URL}${firstImage.url}` }),
     ...(project.company && {
