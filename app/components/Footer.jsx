@@ -1,9 +1,9 @@
 import FadeIn from "./FadeIn";
-import Image from "next/image";
+import DeferredFooterBackground from "./DeferredFooterBackground";
 
 export default function Footer() {
   return (
-    <FadeIn className="relative flex w-full flex-col gap-10 overflow-hidden px-4 py-20 md:pt-32 md:px-20">
+    <FadeIn className="relative flex w-full flex-col gap-10 overflow-hidden px-4 py-20 md:px-20 md:pt-32">
       <div className="flex flex-col gap-20 md:flex-row md:justify-between">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-4">
@@ -131,17 +131,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div
-        aria-hidden="true"
-        className="absolute right-0 bottom-0 left-0 -z-10 flex h-full max-w-full rotate-180 justify-center overflow-hidden"
-      >
-        <Image
-          fill={true}
-          src="/animated-header.svg"
-          alt="Animated Header"
-          className="blur-[120px]"
-        />
-      </div>
+      <DeferredFooterBackground />
     </FadeIn>
   );
 }
