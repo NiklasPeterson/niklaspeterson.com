@@ -1,18 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useLayoutEffect, useState, useRef } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import FadeIn from "./FadeIn";
-import ProjectTestimonials from "./ProjectTestimonials";
-import ProjectVideo from "./ProjectVideo";
-import ProjectPreviewVideo from "./ProjectPreviewVideo";
-import ProjectHeader from "./ProjectHeader";
-import ProjectCaseStudyContent from "./ProjectCaseStudyContent";
+import ProjectThumbnailVideo from "./ProjectThumbnailVideo";
+import ProjectModal from "./ProjectModal";
 
 export default function Projects({ projects = [] }) {
   const [selectedProject, setSelectedProject] = useState(null);
-  const overlayRef = useRef(null);
 
   const openProject = (project) => {
     setSelectedProject(project);
@@ -20,50 +16,6 @@ export default function Projects({ projects = [] }) {
 
   const closeProject = () => {
     setSelectedProject(null);
-  };
-
-  useEffect(() => {
-    if (!selectedProject) return;
-
-    const handleOverlayKeyDown = (event) => {
-      if (event.key === "Tab") event.preventDefault();
-      if (event.key === "Escape") closeProject();
-    };
-
-    window.addEventListener("keydown", handleOverlayKeyDown);
-    return () => window.removeEventListener("keydown", handleOverlayKeyDown);
-  }, [selectedProject]);
-
-  useLayoutEffect(() => {
-    if (!selectedProject) return;
-
-    const scrollY = window.scrollY;
-    const scrollbarWidth =
-      window.innerWidth - document.documentElement.clientWidth;
-    const bodyStyle = document.body.style;
-    const previousStyles = {
-      overflow: bodyStyle.overflow,
-      paddingRight: bodyStyle.paddingRight,
-      position: bodyStyle.position,
-      top: bodyStyle.top,
-      width: bodyStyle.width,
-    };
-
-    bodyStyle.overflow = "hidden";
-    bodyStyle.position = "fixed";
-    bodyStyle.top = `-${scrollY}px`;
-    bodyStyle.width = "100%";
-    if (scrollbarWidth > 0) bodyStyle.paddingRight = `${scrollbarWidth}px`;
-
-    return () => {
-      Object.assign(bodyStyle, previousStyles);
-      window.scrollTo(0, scrollY);
-    };
-  }, [selectedProject]);
-
-  const navigateTo = (project) => {
-    setSelectedProject(project);
-    if (overlayRef.current) overlayRef.current.scrollTop = 0;
   };
 
   const currentIndex = selectedProject
@@ -81,45 +33,10 @@ export default function Projects({ projects = [] }) {
   const nextProject =
     currentIndex >= 0 ? projects[(currentIndex + 1) % projects.length] : null;
 
-  useEffect(() => {
-    if (!selectedProject || !prevProject || !nextProject) return;
-
-    const handleKeyDown = (event) => {
-      const target = event.target;
-
-      if (
-        event.defaultPrevented ||
-        event.metaKey ||
-        event.ctrlKey ||
-        event.altKey ||
-        event.shiftKey ||
-        (target instanceof Element &&
-          target.closest(
-            "input, textarea, select, video, audio, [contenteditable='true'], [role='slider']",
-          ))
-      ) {
-        return;
-      }
-
-      if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        navigateTo(prevProject);
-      }
-
-      if (event.key === "ArrowRight") {
-        event.preventDefault();
-        navigateTo(nextProject);
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedProject, prevProject, nextProject]);
-
   return (
     <>
       <section
-        className="flex flex-wrap gap-12 px-4 pb-20 md:pb-32 md:px-20"
+        className="flex flex-wrap gap-12 px-4 pb-24 md:pb-32 md:px-20"
         aria-labelledby="selected-work-heading"
       >
         <h2 id="selected-work-heading" className="sr-only">
@@ -135,200 +52,29 @@ export default function Projects({ projects = [] }) {
             <ProjectContent
               project={project}
               onOpen={openProject}
-              priority={index < 2}
-              fetchPriority={index === 1 ? "high" : undefined}
+              priority={project.preload}
+              fetchPriority={project.preload ? "high" : undefined}
             />
           </FadeIn>
         ))}
       </section>
 
       {selectedProject && (
-        <div
-          role="dialog"
-          aria-labelledby="project-modal-title"
-          ref={overlayRef}
-          className="fixed inset-0 z-10 h-screen min-h-dvh w-screen overflow-y-auto overscroll-contain bg-white/25 backdrop-blur-lg md:p-10 dark:bg-black/25"
-          onClick={(event) => {
-            if (event.target === event.currentTarget) closeProject();
-          }}
-        >
-          <div
-            className="mx-auto flex max-w-360 flex-col gap-16 border-translucent bg-zinc-50 pt-6 pb-1 md:h-fit md:animate-fadeUp md:rounded-3xl md:border md:pt-10 md:pb-2 dark:bg-zinc-950"
-          >
-            <ProjectHeader
-              project={selectedProject}
-              variant="modal"
-              titleId="project-modal-title"
-              action={
-                <button
-                  className="btn-secondary h-10"
-                  onClick={closeProject}
-                >
-                  Close
-                </button>
-              }
-            />
-
-            {selectedProject.summary ? (
-              <ProjectCaseStudyContent
-                project={selectedProject}
-                variant="modal"
-                className="animate-fadeUp px-4 md:px-10"
-              />
-            ) : (
-              <ModalGallery attachments={selectedProject.attachments} />
-            )}
-
-            <FadeIn>
-              <ProjectTestimonials
-                key={selectedProject.slug ?? selectedProject.title}
-                testimonials={selectedProject.testimonials}
-                variant="modal"
-              />
-            </FadeIn>
-
-            {prevProject && nextProject && prevProject !== nextProject && (
-              <FadeIn>
-                <ModalNav
-                  prev={prevProject}
-                  next={nextProject}
-                  onNavigate={navigateTo}
-                />
-              </FadeIn>
-            )}
-          </div>
-        </div>
+        <ProjectModal
+          project={selectedProject}
+          prev={prevProject}
+          next={nextProject}
+          onClose={closeProject}
+          onNavigate={setSelectedProject}
+        />
       )}
     </>
   );
 }
 
-function ModalGallery({ attachments }) {
-  // const isSingle = attachments.length === 1;
-  // const itemClass = isSingle ? "relative md:w-full" : "relative md:snap-center";
-  // const mediaClass = isSingle
-  //     ? "rounded-lg w-auto max-h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:w-full md:h-auto md:max-w-full md:max-h-none"
-  //     : "rounded-lg w-auto max-h-[60vh] max-h-[600px] max-w-[calc(100vw-32px)] md:max-w-[80vw]";
-
-  return (
-    <div className="flex animate-fadeUp flex-col items-center gap-4 px-4 md:gap-6 md:overflow-x-auto md:px-10">
-      {attachments.map((attachment, i) => (
-        <div
-          key={i}
-          className="relative overflow-hidden rounded-lg after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:border after:border-translucent after:content-[''] md:w-full"
-        >
-          {attachment.type === "image" ? (
-            <Image
-              className="w-auto max-w-[calc(100vw-32px)] rounded-lg md:h-auto md:max-h-none md:w-full md:max-w-full"
-              src={attachment.url}
-              alt={attachment.alt}
-              height={attachment.height}
-              width={attachment.width}
-            />
-          ) : (
-            <ProjectVideo
-              media={attachment}
-              className="w-auto max-w-[calc(100vw-32px)] rounded-lg md:h-auto md:max-h-none md:w-full md:max-w-full"
-            />
-          )}
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function ModalNav({ prev, next, onNavigate }) {
-  return (
-    <div className="flex items-center justify-between gap-4 px-2 py-6 md:px-8">
-      <NavButton project={prev} dir="prev" onNavigate={onNavigate} />
-      <NavButton project={next} dir="next" onNavigate={onNavigate} />
-    </div>
-  );
-}
-
-function NavButton({ project, dir, onNavigate }) {
-  const isPrev = dir === "prev";
-  return (
-    <button
-      type="button"
-      onClick={() => onNavigate(project)}
-      aria-label={`${isPrev ? "Previous" : "Next"} project: ${project.title}`}
-      className={`group flex max-w-[calc(50%-0.5rem)] min-w-0 items-center gap-3 rounded-xl p-2 ${isPrev ? "pe-4" : "ps-4 flex-row-reverse"} transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900`}
-    >
-      <NavThumb media={project.attachments[0]} title={project.title} />
-      <span
-        className={`flex min-w-0 flex-col gap-0.5 ${isPrev ? "items-start" : "items-end"}`}
-      >
-        <span className="flex items-center gap-1 text-[11px] font-normal tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
-          {isPrev && <Chevron dir="left" />}
-          {isPrev ? "Previous" : "Next"}
-          {!isPrev && <Chevron dir="right" />}
-        </span>
-        <span className="max-w-full truncate text-sm font-medium text-zinc-950 md:max-w-60 dark:text-zinc-50">
-          {project.title}
-        </span>
-      </span>
-    </button>
-  );
-}
-
-function NavThumb({ media, title }) {
-  return (
-    <span className="relative aspect-16/10 w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 after:pointer-events-none after:absolute after:inset-0 after:rounded-md after:border after:border-translucent after:content-[''] md:w-16 dark:bg-zinc-900">
-      {!media ? null : media.type === "image" ? (
-        <Image
-          src={media.url}
-          alt={title}
-          fill
-          sizes="64px"
-          className="object-cover"
-        />
-      ) : (
-        // #t=0.1 nudges the browser to render the first frame as a still poster
-        <video
-          src={`${media.url}#t=0.1`}
-          poster={media.poster}
-          className="h-full w-full object-cover"
-          muted
-          playsInline
-          preload="metadata"
-        />
-      )}
-    </span>
-  );
-}
-
-function Chevron({ dir }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      stroke="currentColor"
-      className="h-3.5 w-3.5"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d={
-          dir === "left"
-            ? "M15.75 19.5 8.25 12l7.5-7.5"
-            : "m8.25 4.5 7.5 7.5-7.5 7.5"
-        }
-      />
-    </svg>
-  );
-}
-
 function ProjectContent({ project, onOpen, priority, fetchPriority }) {
-  // Real <Link> so the /projects/[slug] route stays crawlable (SEO) and
-  // modifier-clicks open the full page, but prefetch is DISABLED. Next.js's
-  // eager route prefetch was loading the media-heavy detail route in the
-  // background and freezing Safari's main thread ~1-2s on open; prefetch={false}
-  // fixes that. On desktop, a plain left-click opens the modal instead of
-  // navigating; below Tailwind's `md` breakpoint it follows the detail-page
-  // link so the full project view has room to breathe on smaller screens.
+  const preview = project.attachments[0];
+
   return (
     <Link
       href={`/projects/${project.slug}`}
@@ -355,44 +101,34 @@ function ProjectContent({ project, onOpen, priority, fetchPriority }) {
       }}
       aria-label={`Open ${project.title} project`}
     >
-      {project.attachments.map((media, index) => {
-        if (index !== 0) return null;
-
-        const attachment =
-          media.type === "image" ? (
+      {preview && (
+        <div className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-150 group-hover:scale-102 group-hover:shadow-md after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-translucent after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl">
+          {preview.type === "image" ? (
             <Image
-              width={media.width}
-              height={media.height}
-              src={media.url}
-              alt={media.alt}
+              width={preview.width}
+              height={preview.height}
+              src={preview.url}
+              alt={preview.alt}
               priority={priority}
             />
           ) : (
-            <ProjectPreviewVideo
-              media={media}
-              className={media.cropEdges === true ? "scale-[1.004]" : undefined}
+            <ProjectThumbnailVideo
+              media={preview}
+              className={preview.cropEdges === true ? "scale-[1.004]" : undefined}
               priority={priority}
               fetchPriority={fetchPriority}
             />
-          );
-
-        return (
-          <div
-            key={media.id || index}
-            className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-150 group-hover:scale-102 group-hover:shadow-md after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-translucent after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl"
-          >
-            {attachment}
-          </div>
-        );
-      })}
+          )}
+        </div>
+      )}
 
       <div className="flex max-w-2xl flex-col gap-1">
-        <h3 className="text-xl font-semibold text-zinc-950 dark:text-zinc-50">
+        <h3 className="text-xl font-semibold text-primary">
           {project.title}
         </h3>
 
         <div className="text-md line-clamp-2 md:text-lg">
-          {project.summary || project.description}
+          {project.summary}
         </div>
       </div>
     </Link>

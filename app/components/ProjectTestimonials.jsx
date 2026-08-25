@@ -72,55 +72,8 @@ export default function ProjectTestimonials({
     });
   };
 
-  const renderTestimonial = (testimonial, className = "") => (
-    <blockquote
-      key={testimonial.name}
-      className={`flex h-full flex-col items-start justify-between gap-6 text-left md:gap-8 ${className}`}
-    >
-      <div className="flex flex-col items-start gap-4 text-lg leading-snug font-medium text-pretty text-zinc-950 md:gap-5 md:text-xl dark:text-zinc-50">
-        {testimonial.quote.split("\n\n").map((paragraph, index, parts) => (
-          <p key={paragraph} className="relative">
-            {index === 0 ? "“" : null}
-            {paragraph}
-            {index === parts.length - 1 ? "”" : null}
-          </p>
-        ))}
-      </div>
-
-      <div className="flex items-center gap-3">
-        <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full after:pointer-events-none after:absolute after:inset-0 after:rounded-full after:border after:border-translucent after:content-[''] md:h-14 md:w-14">
-          <Image
-            src={testimonial.avatar}
-            alt={testimonial.name}
-            width={56}
-            height={56}
-            className="h-full w-full object-cover"
-          />
-        </span>
-        <cite className="flex flex-col gap-0.5 text-left not-italic">
-          <span className="font-medium text-zinc-950 dark:text-zinc-50">
-            {testimonial.name}
-          </span>
-          {testimonial.role && (
-            <span className="text-sm text-zinc-500 dark:text-zinc-400">
-              {testimonial.role}
-            </span>
-          )}
-        </cite>
-      </div>
-    </blockquote>
-  );
-
   return (
-    <div className="flex w-full justify-center">
-      <section
-        className={
-          hasMultipleTestimonials
-            ? "relative w-full"
-            : "flex w-full max-w-5xl flex-col items-center gap-7 rounded-3xl border border-translucent bg-white mx-4 px-5 py-8 md:gap-8 md:rounded-4xl md:mx-10 md:px-10 md:py-12 dark:bg-zinc-900"
-        }
-        aria-label="Project testimonials"
-      >
+    <section className="relative w-full" aria-label="Project testimonials">
         {hasMultipleTestimonials ? (
           <div className="relative w-full">
             <div
@@ -132,10 +85,10 @@ export default function ProjectTestimonials({
                   key={testimonial.name}
                   className="shrink-0 basis-[84%] snap-center snap-always md:basis-[72%]"
                 >
-                  {renderTestimonial(
-                    testimonial,
-                    "min-h-80 rounded-3xl border border-translucent bg-white px-5 py-8 dark:bg-zinc-900 md:rounded-4xl md:px-10 md:py-12",
-                  )}
+                  <TestimonialCard
+                    testimonial={testimonial}
+                    className="min-h-80 items-start"
+                  />
                 </div>
               ))}
             </div>
@@ -155,7 +108,7 @@ export default function ProjectTestimonials({
             )}
 
             <div
-              className="hidden justify-center pt-1 md:flex"
+              className="flex justify-center pt-1"
               role="group"
               aria-label="Choose a testimonial"
             >
@@ -189,11 +142,56 @@ export default function ProjectTestimonials({
             </p>
           </div>
         ) : (
-          <div className="w-full max-w-4xl">
-            {renderTestimonial(testimonials[0])}
-          </div>
+          <TestimonialCard
+            testimonial={testimonials[0]}
+            className="mx-auto w-[calc(100%-2rem)] max-w-5xl md:w-[calc(100%-5rem)]"
+          />
         )}
-      </section>
-    </div>
+    </section>
+  );
+}
+
+function TestimonialCard({
+  testimonial,
+  className = "",
+}) {
+  return (
+    <blockquote
+      className={`flex h-full flex-col justify-between gap-6 rounded-3xl border border-translucent bg-white px-5 py-8 text-left dark:bg-zinc-900 md:gap-8 md:rounded-4xl md:px-10 md:py-12 ${className}`}
+    >
+      <div
+        className="flex flex-col w-full max-w-4xl items-start gap-4 text-lg leading-snug font-medium text-pretty text-primary md:gap-5 md:text-xl"
+      >
+        {testimonial.quote.split("\n\n").map((paragraph, index, parts) => (
+          <p key={paragraph} className="relative">
+            {index === 0 ? "“" : null}
+            {paragraph}
+            {index === parts.length - 1 ? "”" : null}
+          </p>
+        ))}
+      </div>
+
+      <div className="flex items-center gap-3 w-full max-w-4xl">
+        <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full after:pointer-events-none after:absolute after:inset-0 after:rounded-full after:border after:border-translucent after:content-[''] md:h-14 md:w-14">
+          <Image
+            src={testimonial.avatar}
+            alt={testimonial.name}
+            width={56}
+            height={56}
+            className="h-full w-full object-cover"
+          />
+        </span>
+        <cite className="flex flex-col gap-0.5 text-left not-italic">
+          <span className="font-medium text-primary">
+            {testimonial.name}
+          </span>
+          {testimonial.role && (
+            <span className="text-sm text-muted">
+              {testimonial.role}
+            </span>
+          )}
+        </cite>
+      </div>
+    </blockquote>
   );
 }

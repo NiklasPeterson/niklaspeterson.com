@@ -1,13 +1,25 @@
 import FadeIn from "./FadeIn";
 import DeferredFooterBackground from "./DeferredFooterBackground";
 
+const SIDE_PROJECTS = [
+  { title: "Hydrify", href: "https://apps.apple.com/app/hydrify/id6450311759" },
+  { title: "Titls", href: "https://apps.apple.com/app/titls/id1579078964" },
+  { title: "Timestamps", href: "https://timestamps.app" },
+];
+
+const CONTACT_LINKS = [
+  { title: "x.com", href: "https://x.com/niklas_peterson" },
+  { title: "LinkedIn", href: "https://www.linkedin.com/in/niklaspeterson" },
+  { title: "Buy me a coffee", href: "https://www.buymeacoffee.com/niklaspeterson" },
+];
+
 export default function Footer() {
   return (
-    <FadeIn className="relative flex w-full flex-col gap-10 overflow-hidden px-4 py-20 md:px-20 md:pt-32">
+    <FadeIn className="relative flex w-full flex-col gap-10 overflow-hidden px-4 pb-20 md:px-20 md:pb-20">
       <div className="flex flex-col gap-20 md:flex-row md:justify-between">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-4">
-            <h2 className="max-w-xl text-4xl leading-tight font-semibold text-zinc-950 md:text-6xl dark:text-zinc-50">
+            <h2 className="max-w-xl text-4xl leading-tight font-semibold text-primary md:text-5xl">
               Let&apos;s get to know each other!
             </h2>
             <p className="text-lg md:text-xl">
@@ -36,7 +48,7 @@ export default function Footer() {
               />
             </svg>
           </a>
-          <div className="flex gap-2 text-zinc-950 dark:text-zinc-50">
+          <div className="flex gap-2 text-primary">
             {[
               [
                 "1",
@@ -85,45 +97,28 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex gap-20 font-medium text-zinc-950 dark:text-zinc-50">
+        <div className="flex gap-20">
           <div className="flex flex-col items-start gap-6">
-            <div className="text-xs font-normal tracking-widest text-zinc-600 uppercase dark:text-zinc-300">
+            <div className="text-xs font-medium tracking-widest uppercase text-muted">
               Side-projects
             </div>
-            {[
-              [
-                "1",
-                "Hydrify",
-                "https://apps.apple.com/app/hydrify/id6450311759",
-              ],
-              ["2", "Titls", "https://apps.apple.com/app/titls/id1579078964"],
-              ["3", "Timestamps", "https://timestamps.app"],
-            ].map(([key, title, url]) => (
-              <a href={url} target="_blank" rel="noopener" key={key}>
+            {SIDE_PROJECTS.map(({ title, href }) => (
+              <a href={href} target="_blank" rel="noopener" key={title}>
                 <div className="btn-link">
                   {title}
-                  {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-                  </svg> */}
                 </div>
               </a>
             ))}
           </div>
 
           <div className="flex flex-col items-start gap-6">
-            <div className="text-xs font-normal tracking-widest text-zinc-600 uppercase dark:text-zinc-300">
+            <div className="text-xs font-medium tracking-widest uppercase text-muted">
               Contact
             </div>
-            {[
-              ["1", "x.com", "https://x.com/niklas_peterson"],
-              ["2", "LinkedIn", "https://www.linkedin.com/in/niklaspeterson"],
-            ].map(([key, title, url]) => (
-              <a href={url} target="_blank" rel="noopener" key={key}>
+            {CONTACT_LINKS.map(({ title, href }) => (
+              <a href={href} target="_blank" rel="noopener" key={title}>
                 <div className="btn-link">
                   {title}
-                  {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-                  </svg> */}
                 </div>
               </a>
             ))}

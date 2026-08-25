@@ -1,3 +1,5 @@
+import { SITE_URL } from "./lib/site";
+
 export default function robots() {
   return {
     rules: [
@@ -7,7 +9,7 @@ export default function robots() {
       { userAgent: "PerplexityBot", allow: "/" },
       { userAgent: "Google-Extended", allow: "/" },
     ],
-    sitemap: "https://www.niklaspeterson.com/sitemap.xml",
-    host: "https://www.niklaspeterson.com",
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

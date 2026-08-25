@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "motion/react";
 
-export default function ProjectPreviewVideo({
+export default function ProjectThumbnailVideo({
   media,
   className,
   priority = false,

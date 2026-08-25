@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   motion,
   AnimatePresence,
@@ -89,10 +89,6 @@ const HoverThumbnail = ({ text, images }) => {
   const canShowPreview = () =>
     window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-  const handleMouseMove = (e) => {
-    updateMousePosition(e);
-  };
-
   const handleMouseEnter = (e) => {
     if (reduceMotion || !canShowPreview()) return;
 
@@ -117,7 +113,7 @@ const HoverThumbnail = ({ text, images }) => {
       className="relative"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onMouseMove={handleMouseMove}
+      onMouseMove={updateMousePosition}
     >
       {text}
       <AnimatePresence>

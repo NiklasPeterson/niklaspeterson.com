@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "motion/react";
 
-export default function ProjectVideo({ media, className = "" }) {
+export default function ProjectVideoPlayer({ media, className = "" }) {
   const videoRef = useRef(null);
   const resumedAfterScrub = useRef(false);
   const mobileControlsTimeout = useRef(null);

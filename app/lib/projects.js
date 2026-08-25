@@ -1,6 +1,6 @@
 import projectsData from "../../public/projects.json";
 
-export function slugify(text) {
+function slugify(text) {
   return String(text)
     .toLowerCase()
     .trim()
@@ -9,11 +9,13 @@ export function slugify(text) {
     .replace(/-+/g, "-");
 }
 
+const projects = projectsData.map((project) => ({
+  ...project,
+  slug: project.slug ?? slugify(project.title),
+}));
+
 export function getAllProjects() {
-  return projectsData.map((project) => ({
-    ...project,
-    slug: project.slug ?? slugify(project.title),
-  }));
+  return projects;
 }
 
 export function getProjectBySlug(slug) {

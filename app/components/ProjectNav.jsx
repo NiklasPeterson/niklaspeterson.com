@@ -2,84 +2,100 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 
-// Prev/next pager for the project detail page. Mirrors the modal's ModalNav
-// design, but navigates between pages. prefetch={false} keeps Safari/Next from
-// eagerly loading the (media-heavy) neighbor route on hover.
-export default function ProjectNav({ prev, next }) {
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!prev || !next || prev.slug === next.slug) return;
-
-    const handleKeyDown = (event) => {
-      const target = event.target;
-
-      if (
-        event.defaultPrevented ||
-        event.metaKey ||
-        event.ctrlKey ||
-        event.altKey ||
-        event.shiftKey ||
-        (target instanceof Element &&
-          target.closest(
-            "input, textarea, select, video, audio, [contenteditable='true'], [role='slider']",
-          ))
-      ) {
-        return;
-      }
-
-      if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        router.push(`/projects/${prev.slug}`);
-      }
-
-      if (event.key === "ArrowRight") {
-        event.preventDefault();
-        router.push(`/projects/${next.slug}`);
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [next, prev, router]);
+// Prev/next pager for both the project detail page and project modal.
+// prefetch={false} keeps Safari/Next from eagerly loading the media-heavy
+// neighbor route on hover.
+export default function ProjectNav({
+  prev,
+  next,
+  variant = "page",
+  onNavigate,
+}) {
+  const isModal = variant === "modal";
 
   if (!prev || !next || prev.slug === next.slug) return null;
+
   return (
-    <nav className="flex items-center justify-between gap-4">
-      <NavLink project={prev} dir="prev" />
-      <NavLink project={next} dir="next" />
+    <nav
+      className={`flex items-center justify-between gap-4 ${
+        isModal ? "px-2 py-6 md:px-8" : ""
+      }`}
+      aria-label="Project navigation"
+    >
+      <NavControl
+        project={prev}
+        dir="prev"
+        variant={variant}
+        onNavigate={onNavigate}
+      />
+      <NavControl
+        project={next}
+        dir="next"
+        variant={variant}
+        onNavigate={onNavigate}
+      />
     </nav>
   );
 }
 
-function NavLink({ project, dir }) {
+function NavControl({ project, dir, variant, onNavigate }) {
   const isPrev = dir === "prev";
+  const isModal = variant === "modal";
+  const className = `group flex max-w-[calc(50%-0.5rem)] min-w-0 items-center gap-3 rounded-xl p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900 ${
+    isPrev
+      ? isModal
+        ? "pe-4"
+        : "pe-3"
+      : isModal
+        ? "flex-row-reverse ps-4"
+        : "flex-row-reverse ps-3"
+  }`;
+
+  if (isModal) {
+    return (
+      <button
+        type="button"
+        onClick={() => onNavigate(project)}
+        aria-label={`${isPrev ? "Previous" : "Next"} project: ${project.title}`}
+        className={className}
+      >
+        <ProjectNavContent project={project} dir={dir} />
+      </button>
+    );
+  }
+
   return (
     <Link
       href={`/projects/${project.slug}`}
       prefetch={false}
       aria-label={`${isPrev ? "Previous" : "Next"} project: ${project.title}`}
-      className={`group flex max-w-[calc(50%-0.5rem)] min-w-0 items-center gap-3 rounded-xl p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900 ${
-        isPrev ? "pe-3" : "flex-row-reverse ps-3"
-      }`}
+      className={className}
     >
+      <ProjectNavContent project={project} dir={dir} />
+    </Link>
+  );
+}
+
+function ProjectNavContent({ project, dir }) {
+  const isPrev = dir === "prev";
+
+  return (
+    <>
       <Thumb media={project.attachments[0]} title={project.title} />
       <span
         className={`flex min-w-0 flex-col gap-0.5 ${isPrev ? "items-start" : "items-end"}`}
       >
-        <span className="flex items-center gap-1 text-[11px] font-normal tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
+        <span className="flex items-center gap-1 text-[11px] font-medium tracking-widest uppercase text-muted">
           {isPrev && <Chevron dir="left" />}
           {isPrev ? "Previous" : "Next"}
           {!isPrev && <Chevron dir="right" />}
         </span>
-        <span className="max-w-full truncate text-sm font-medium text-zinc-950 md:max-w-60 dark:text-zinc-50">
+        <span className="max-w-full truncate text-sm font-medium text-primary md:max-w-60">
           {project.title}
         </span>
       </span>
-    </Link>
+    </>
   );
 }
 

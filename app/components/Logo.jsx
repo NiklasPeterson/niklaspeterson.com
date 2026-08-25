@@ -1,7 +1,7 @@
 export default function Logo() {
   return (
     <svg
-      className="text-zinc-950 dark:text-zinc-50"
+      className="text-primary"
       id="logo"
       width="58"
       height="40"

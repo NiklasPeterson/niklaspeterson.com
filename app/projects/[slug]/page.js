@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   getAllProjects,
@@ -11,7 +10,6 @@ import Nav from "../../components/Nav";
 import FadeIn from "../../components/FadeIn";
 import ProjectNav from "../../components/ProjectNav";
 import ProjectTestimonials from "../../components/ProjectTestimonials";
-import ProjectVideo from "../../components/ProjectVideo";
 import ProjectHeader from "../../components/ProjectHeader";
 import ProjectCaseStudyContent from "../../components/ProjectCaseStudyContent";
 
@@ -29,11 +27,11 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${project.title} | Niklas Peterson`,
-    description: project.summary || project.description,
+    description: project.summary,
     alternates: { canonical: `/projects/${project.slug}` },
     openGraph: {
       title: `${project.title} | Niklas Peterson`,
-      description: project.summary || project.description,
+      description: project.summary,
       url: `${SITE_URL}/projects/${project.slug}`,
       images: [{ url: ogImage }],
       type: "article",
@@ -41,7 +39,7 @@ export async function generateMetadata({ params }) {
     twitter: {
       card: "summary_large_image",
       title: `${project.title} | Niklas Peterson`,
-      description: project.summary || project.description,
+      description: project.summary,
       images: [ogImage],
     },
   };
@@ -52,6 +50,7 @@ export default async function ProjectPage({ params }) {
   const project = getProjectBySlug(slug);
   if (!project) notFound();
 
+  const hasTestimonials = project.testimonials?.length > 0;
   const firstImage = project.attachments.find((a) => a.type === "image");
   const { prev, next } = getAdjacentProjects(slug);
 
@@ -87,23 +86,22 @@ export default async function ProjectPage({ params }) {
     <main className="flex w-full max-w-360 flex-col">
       <Nav />
 
-      <article className="flex flex-col gap-10 px-4 pt-10 pb-20 md:gap-16 md:py-32 md:px-20">
-        <FadeIn position="down">
+      <article className="flex flex-col px-4 pt-20 pb-24 md:py-32 md:px-20">
+        <FadeIn position="down" className="mb-16 md:mb-20">
           <ProjectHeader project={project} />
         </FadeIn>
 
-        {project.summary ? (
-          <ProjectCaseStudyContent project={project} priority />
-        ) : (
-          <ProjectGallery
-            attachments={project.attachments}
-            title={project.title}
-          />
-        )}
+        <ProjectCaseStudyContent
+          project={project}
+          priority
+          className="mb-16 md:mb-20"
+        />
 
-        <FadeIn>
-          <ProjectTestimonials testimonials={project.testimonials} />
-        </FadeIn>
+        {hasTestimonials && (
+          <FadeIn className="mb-16 md:mb-20">
+            <ProjectTestimonials testimonials={project.testimonials} />
+          </FadeIn>
+        )}
 
         <FadeIn>
           <ProjectNav prev={prev} next={next} />
@@ -121,32 +119,5 @@ export default async function ProjectPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
     </main>
-  );
-}
-
-function ProjectGallery({ attachments, title }) {
-  return (
-    <div className="flex flex-col gap-4 md:gap-6">
-      {attachments.map((attachment, index) => (
-        <FadeIn
-          key={attachment.url}
-          index={index}
-          className="relative overflow-hidden rounded-2xl after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-translucent after:content-[''] md:rounded-3xl md:after:rounded-3xl"
-        >
-          {attachment.type === "image" ? (
-            <Image
-              className="h-auto w-full"
-              src={attachment.url}
-              alt={attachment.alt || title}
-              width={attachment.width}
-              height={attachment.height}
-              priority={index === 0}
-            />
-          ) : (
-            <ProjectVideo media={attachment} className="h-auto w-full" />
-          )}
-        </FadeIn>
-      ))}
-    </div>
   );
 }

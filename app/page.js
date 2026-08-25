@@ -10,7 +10,7 @@ import { preload } from "react-dom";
 export default function Home() {
   // This is the LCP video in the initial project grid. Preloading it keeps the
   // request on the critical path instead of waiting for video scheduling.
-  preload("/lottiefiles-dam.mp4", {
+  preload("/lottiefiles-dam-2026.mp4", {
     as: "video",
     fetchPriority: "high",
   });
@@ -36,8 +36,12 @@ export default function Home() {
   return (
     <main className="relative flex w-full max-w-360 flex-col">
       <Nav />
-      <div className="absolute top-0 right-0 left-0 -z-10 flex max-w-full justify-center h-100 md:pr-60 md:h-auto">
-        <img src="/animated-header.svg" alt="Animated Header" className="blur-[120px]" />
+      <div className="absolute top-0 right-0 left-0 -z-10 flex h-100 max-w-full justify-center overflow-hidden md:h-110 md:pr-60">
+        <img
+          src="/animated-header.svg"
+          alt="Animated Header"
+          className="h-full w-full object-cover blur-[120px] lg:object-contain"
+        />
       </div>
       <Header />
       <Projects projects={projects} />
