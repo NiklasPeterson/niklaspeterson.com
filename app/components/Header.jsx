@@ -18,20 +18,17 @@ export default function Header() {
           Staff Product Designer
         </span>{" "}
         at{" "}
-        <span className="inline-block font-semibold text-primary">
-          LottieFiles
-        </span>
-        .
+        <span className="font-semibold text-primary">LottieFiles</span>.
       </p>
       <p className="text-lg md:text-xl">
         In my free time I&apos;m building{" "}
         <a
           href="https://apps.apple.com/app/hydrify/id6450311759"
           target="_blank"
-          className="inline-block font-semibold text-primary"
         >
           <HoverThumbnail
             text="Hydrify"
+            appIcon="/hydrify.png"
             images={["/hydrify-screen-1.png", "/hydrify-screen-2.png"]}
           />
         </a>{" "}
@@ -39,18 +36,18 @@ export default function Header() {
         <a
           href="https://apps.apple.com/app/titls/id1579078964"
           target="_blank"
-          className="inline-block font-semibold text-primary"
         >
           <HoverThumbnail
             text="Titls"
+            appIcon="/titls.png"
+            iconRotation="-rotate-12"
             images={[
               "/titls-screen-2.png",
               "/titls-screen-3.png",
               "/titls-screen-1.png",
             ]}
           />
-        </a>
-        .
+        </a>.
       </p>
     </FadeIn>
   );

@@ -2,11 +2,11 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import {
   FigmaIcon,
   GithubIcon,
-  MessageCircleIcon,
   ThreadsIcon,
   TwitterIcon,
 } from "@hugeicons/core-free-icons";
 import FadeIn from "./FadeIn";
+import ContactButton from "./ContactButton";
 import DeferredFooterBackground from "./DeferredFooterBackground";
 
 const SIDE_PROJECTS = [
@@ -61,19 +61,7 @@ export default function Footer() {
               I&apos;m all ears for cool and creative ideas!
             </p>
           </div>
-          <a
-            href="mailto:mail@niklaspeterson.com?subject=Contact"
-            className="btn-primary w-fit px-5 py-3 text-base"
-            aria-label="Contact"
-          >
-            <span className="mx-1">Contact</span>
-            <HugeiconsIcon
-              icon={MessageCircleIcon}
-              strokeWidth={2}
-              className="h-4.5 w-4.5"
-              aria-hidden="true"
-            />
-          </a>
+          <ContactButton />
           <div className="flex gap-2 text-primary">
             {SOCIAL_LINKS.map(({ href, icon, label }) => (
               <a
