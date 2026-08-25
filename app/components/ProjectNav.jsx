@@ -2,6 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "@hugeicons/core-free-icons";
 
 // Prev/next pager for both the project detail page and project modal.
 // prefetch={false} keeps Safari/Next from eagerly loading the media-heavy
@@ -42,7 +47,7 @@ export default function ProjectNav({
 function NavControl({ project, dir, variant, onNavigate }) {
   const isPrev = dir === "prev";
   const isModal = variant === "modal";
-  const className = `group flex max-w-[calc(50%-0.5rem)] min-w-0 items-center gap-3 rounded-xl p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-900 ${
+  const className = `group flex max-w-[calc(50%-0.5rem)] min-w-0 items-center gap-3 rounded-xl p-2 transition-colors hover:bg-zinc-200 dark:hover:bg-zinc-800 ${
     isPrev
       ? isModal
         ? "pe-4"
@@ -127,23 +132,11 @@ function Thumb({ media, title }) {
 
 function Chevron({ dir }) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      stroke="currentColor"
+    <HugeiconsIcon
+      icon={dir === "left" ? ChevronLeftIcon : ChevronRightIcon}
+      strokeWidth={2}
       className="h-3.5 w-3.5"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d={
-          dir === "left"
-            ? "M15.75 19.5 8.25 12l7.5-7.5"
-            : "m8.25 4.5 7.5 7.5-7.5 7.5"
-        }
-      />
-    </svg>
+      aria-hidden="true"
+    />
   );
 }
