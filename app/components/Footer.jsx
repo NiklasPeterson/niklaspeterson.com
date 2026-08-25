@@ -53,12 +53,11 @@ export default function Footer() {
       <div className="flex flex-col gap-20 md:flex-row md:justify-between">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-4">
-            <h2 className="max-w-xl text-4xl leading-tight font-semibold text-primary md:text-5xl">
+            <h2 className="max-w-xl text-4xl leading-tight text-pretty font-semibold text-primary md:text-5xl">
               Let&apos;s get to know each other!
             </h2>
-            <p className="text-lg md:text-xl">
-              Feel free to drop me a message anytime. <br />
-              I&apos;m all ears for cool and creative ideas!
+            <p className="text-lg max-w-lg text-balance md:text-xl ">
+              Feel free to drop me a message anytime. I&apos;m all ears for cool and creative ideas!
             </p>
           </div>
           <ContactButton />
