@@ -50,12 +50,12 @@ export default function ContactButton({ tooltipPosition = "top" }) {
             />
           }
         >
-          <HugeiconsIcon
+          {/* <HugeiconsIcon
             icon={MessageCircleIcon}
             strokeWidth={2}
             className="h-4.5 w-4.5"
             aria-hidden="true"
-          />
+          /> */}
           <span className="mx-1">Contact</span>
         </TooltipTrigger>
         <TooltipTrigger
