@@ -43,8 +43,7 @@ export default function Header() {
               "/titls-screen-1.png",
             ]}
           />
-        </a>
-        .
+        </a>.
       </p>
     </FadeIn>
   );
