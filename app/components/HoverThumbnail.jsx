@@ -62,7 +62,13 @@ function HoverThumbnailPreview({
   );
 }
 
-const HoverThumbnail = ({ text, images }) => {
+const HoverThumbnail = ({
+  text,
+  images,
+  appIcon,
+  iconRotation = "rotate-12",
+  hasTrailingSpacing = true,
+}) => {
   const [hovered, setHovered] = useState(false);
   const [hasEntered, setHasEntered] = useState(false);
   const textRef = useRef(null);
@@ -71,10 +77,7 @@ const HoverThumbnail = ({ text, images }) => {
   const mouseY = useMotionValue(0);
   const reduceMotion = useReducedMotion();
 
-  useEffect(
-    () => () => window.clearTimeout(staggerTimeoutRef.current),
-    [],
-  );
+  useEffect(() => () => window.clearTimeout(staggerTimeoutRef.current), []);
 
   const updateMousePosition = (e) => {
     if (reduceMotion || !canShowPreview()) return;
@@ -110,12 +113,21 @@ const HoverThumbnail = ({ text, images }) => {
   return (
     <span
       ref={textRef}
-      className="relative"
+      className={`group relative inline-block ${hasTrailingSpacing ? "mx-1" : "ml-1"}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseMove={updateMousePosition}
     >
-      {text}
+      <span
+        className={`mr-1.5 inline-flex h-7 w-7 -translate-y-0.5 align-middle ${iconRotation} overflow-clip rounded-md shadow-md transition-transform duration-160 ease-out motion-reduce:transition-none dark:shadow-none [@media(hover:hover)_and_(pointer:fine)]:group-hover:scale-110`}
+      >
+        <img
+          src={appIcon}
+          alt={`${text} app icon`}
+          className="h-full w-full object-cover"
+        />
+      </span>
+      <span className="font-semibold text-primary">{text}</span>
       <AnimatePresence>
         {hovered &&
           images.map((imageSrc, index) => (
