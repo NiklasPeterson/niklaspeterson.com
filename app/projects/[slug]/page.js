@@ -86,7 +86,7 @@ export default async function ProjectPage({ params }) {
     <main className="flex w-full max-w-360 flex-col">
       <Nav />
 
-      <article className="flex flex-col px-4 pt-20 pb-24 md:py-32 md:px-20">
+      <article className="flex flex-col px-4 pt-20 pb-24 md:px-20 md:py-32">
         <FadeIn position="down" className="mb-16 md:mb-20">
           <ProjectHeader project={project} />
         </FadeIn>
@@ -98,12 +98,12 @@ export default async function ProjectPage({ params }) {
         />
 
         {hasTestimonials && (
-          <FadeIn className="mb-16 md:mb-20">
+          <FadeIn className="-mx-4 mb-16 w-[calc(100%+2rem)] md:mx-0 md:mb-20 md:w-auto">
             <ProjectTestimonials testimonials={project.testimonials} />
           </FadeIn>
         )}
 
-        <FadeIn>
+        <FadeIn className="mb-16 md:mb-20">
           <ProjectNav prev={prev} next={next} />
         </FadeIn>
       </article>
