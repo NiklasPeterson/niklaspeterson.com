@@ -3,7 +3,7 @@ import {
   FigmaIcon,
   GithubIcon,
   ThreadsIcon,
-  TwitterIcon,
+  NewTwitterIcon,
 } from "@hugeicons/core-free-icons";
 import FadeIn from "./FadeIn";
 import ContactButton from "./ContactButton";
@@ -27,7 +27,7 @@ const CONTACT_LINKS = [
 const SOCIAL_LINKS = [
   {
     href: "https://x.com/niklas_peterson",
-    icon: TwitterIcon,
+    icon: NewTwitterIcon,
     label: "X profile",
   },
   {
