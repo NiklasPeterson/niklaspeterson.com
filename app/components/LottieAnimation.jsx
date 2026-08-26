@@ -9,7 +9,7 @@ export function LottieAnimation() {
       autoplay
       loop
       aria-hidden="true"
-      style={{ minWidth: "1440px", width: "1440px", height: "800px" }}
+      className="w-full h-fit"
     />
   );
 }
