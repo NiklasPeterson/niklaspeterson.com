@@ -3,7 +3,7 @@
     "slug": "lottiefiles-web-marketing",
     "preload": true,
     "title": "LottieFiles Web & Marketing",
-    "summary": "Evolved LottieFiles’ web presence into a more mature, cohesive expression of the brand and its motion-first identity",
+    "summary": "Evolved LottieFiles’ web presence into a more mature, cohesive experience for discovering, creating, and working with animation",
     "scope": [
       {
         "label": "Responsibility",
@@ -18,11 +18,24 @@
         "value": "Brand, Product, Marketing"
       }
     ],
-    "description": "I led the design and visual direction for LottieFiles’ web presence, helping shape the wider evolution of the brand and raise the standard for design, visuals, and animation across both marketing and product experiences. I started with the homepage, animation pages, and tools pages, then worked on the Lottie Creator landing page. Across these projects, I shaped the information architecture, UX, UI, interaction design, motion, and reusable structural patterns behind the new visual language.\n\nOnce the direction was established, I guided its rollout across the wider marketing site. I worked with other designers as existing pages were migrated and new ones were created, providing guidance to keep the work consistent with the new visual language and system. I led stakeholder reviews, ran regular design reviews, conducted design QA, and gave final design approval before release.",
+    "highlight": {
+      "title": "Made animation discovery and navigation a clearer part of the LottieFiles experience, helping users find and engage with content across the site.",
+      "stats": [
+        {
+          "value": "+316%",
+          "label": "monthly search volume"
+        },
+         {
+          "value": "+35%",
+          "label": "monthly file views"
+        }
+      ]
+    },
+    "description": "I led the design and visual direction for LottieFiles’ web presence, helping shape the wider evolution of the brand while improving how users discover and engage with animation across the site. I started with the homepage, animation pages, and tools pages, then worked on the Lottie Creator landing page.\n\nFor animation discovery, I reworked the browsing, search, and detail experiences to make finding and navigating content clearer. Across the wider web experience, I shaped the information architecture, UX, UI, interaction design, motion, and reusable structural patterns behind the new visual language.\n\nOnce the direction was established, I helped carry it across the wider marketing site. I worked with other designers as existing pages were migrated and new ones were created, providing guidance to keep the work consistent with the new visual language and system. I led stakeholder reviews, ran regular design reviews, conducted design QA, and gave final design approval before release.",
     "insights": [
       {
         "label": "Why it mattered",
-        "body": "As LottieFiles grew, its web presence needed a more mature and cohesive visual direction without losing its playfulness and focus on motion."
+        "body": "As LottieFiles grew, its web presence needed a more mature and cohesive visual direction, while making it easier for users to discover and engage with animation across the site."
       },
       {
         "label": "Key decision",
@@ -30,10 +43,10 @@
       },
       {
         "label": "Outcome",
-        "body": "The new direction gave other designers a clearer foundation to build from, while stronger review, approval, and QA processes helped maintain consistency and quality as the work expanded."
+        "body": "Established a shared foundation for the web experience that improved animation discovery while giving other designers a clearer system to build from."
       }
     ],
-    "whatScaled": "The visual language, structural patterns, interaction principles, and approach to motion became a reusable system for new and migrated pages, allowing other designers to extend the work consistently.",
+    "whatScaled": "The visual language, structural patterns, interaction principles, and approach to motion became a shared foundation for new and migrated pages, allowing other designers to extend the work consistently.",
     "url": "https://lottiefiles.com/",
     "attachments": [
       {
@@ -166,7 +179,7 @@
         },
          {
           "value": "+20%",
-          "label": "increase in asset uploads in the month after launch"
+          "label": "asset uploads in the month after launch"
         }
       ]
     },
