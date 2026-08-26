@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import { getAllProjects } from "./lib/projects";
 import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION } from "./lib/site";
 import { preload } from "react-dom";
+import { AnimatedHeader } from "./components/AnimatedHeader";
 
 export default function Home() {
   // This is the LCP video in the initial project grid. Preloading it keeps the
@@ -36,12 +37,13 @@ export default function Home() {
   return (
     <main className="relative flex w-full max-w-360 flex-col">
       <Nav />
-      <div className="absolute top-0 right-0 left-0 -z-10 flex h-100 max-w-full justify-center overflow-hidden md:h-110 md:pr-60">
-        <img
-          src="/animated-header.svg"
+      <div className="absolute top-0 right-0 left-0 -z-10 flex h-100 max-w-full justify-center overflow-hidden blur-[120px] md:h-110 md:pr-60">
+        {/* <img
+          src="/animated-header2.svg"
           alt="Animated Header"
-          className="h-full w-full object-cover blur-[120px] lg:object-contain"
-        />
+          className="h-full w-full object-cover blur-[100px] lg:object-contain"
+        /> */}
+        <AnimatedHeader/>
       </div>
       <Header />
       <Projects projects={projects} />
