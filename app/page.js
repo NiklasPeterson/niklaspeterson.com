@@ -37,13 +37,8 @@ export default function Home() {
   return (
     <main className="relative flex w-full max-w-360 flex-col">
       <Nav />
-      <div className="absolute top-0 right-0 left-0 -z-10 flex h-100 max-w-full justify-center overflow-hidden md:h-110 md:pr-60">
-        {/* <img
-          src="/animated-header2.svg"
-          alt="Animated Header"
-          className="h-full w-full object-cover blur-[100px] lg:object-contain"
-        /> */}
-        <AnimatedHeader/>
+      <div className="absolute top-0 right-0 left-0 -z-10 flex h-100 max-w-full justify-center blur-[80px] will-change-[filter] md:h-110 md:pr-60">
+        <AnimatedHeader />
       </div>
       <Header />
       <Projects projects={projects} />
