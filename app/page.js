@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import { getAllProjects } from "./lib/projects";
 import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION } from "./lib/site";
 import { preload } from "react-dom";
+import { LottieAnimation } from "./components/LottieAnimation";
 
 export default function Home() {
   // This is the LCP video in the initial project grid. Preloading it keeps the
@@ -36,12 +37,8 @@ export default function Home() {
   return (
     <main className="relative flex w-full max-w-360 flex-col">
       <Nav />
-      <div className="absolute top-0 right-0 left-0 -z-10 flex h-100 max-w-full justify-center overflow-hidden md:h-110 md:pr-60">
-        <img
-          src="/animated-header.svg"
-          alt="Animated Header"
-          className="h-full w-full object-cover blur-[120px] lg:object-contain"
-        />
+      <div className="absolute top-0 right-0 left-0 -z-10 flex h-full max-w-full overflow-x-hidden justify-center pr-12 md:pr-40">
+        <LottieAnimation />
       </div>
       <Header />
       <Projects projects={projects} />
