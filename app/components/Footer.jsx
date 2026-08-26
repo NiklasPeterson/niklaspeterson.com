@@ -110,7 +110,7 @@ export default function Footer() {
       {/* <DeferredFooterBackground /> */}
       <div
         aria-hidden="true"
-        className="absolute right-0 bottom-0 left-0 -z-10 flex h-full max-w-full rotate-180 justify-center blur-[120px]"
+        className="absolute right-0 bottom-0 left-0 -z-10 flex h-full max-w-full rotate-180 justify-center"
       >
         <LottieAnimation />
       </div>
