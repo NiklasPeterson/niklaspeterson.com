@@ -3,7 +3,7 @@
     "slug": "lottiefiles-web-marketing",
     "preload": true,
     "title": "LottieFiles Web & Marketing",
-    "summary": "Evolved LottieFiles’ web presence into a more mature, cohesive experience for discovering, creating, and working with animation",
+    "summary": "Evolved LottieFiles’ web presence into a more mature, cohesive experience for discovering and engaging with animation",
     "scope": [
       {
         "label": "Responsibility",
@@ -19,7 +19,7 @@
       }
     ],
     "highlight": {
-      "title": "Made animation discovery and navigation a clearer part of the LottieFiles experience, helping users find and engage with content across the site.",
+      "title": "Made animation discovery and navigation clearer across LottieFiles, helping users find and engage with animations across the site.",
       "stats": [
         {
           "value": "+316%",
@@ -31,7 +31,7 @@
         }
       ]
     },
-    "description": "I led the design and visual direction for LottieFiles’ web presence, helping shape the wider evolution of the brand while improving how users discover and engage with animation across the site. I started with the homepage, animation pages, and tools pages, then worked on the Lottie Creator landing page.\n\nFor animation discovery, I reworked the browsing, search, and detail experiences to make finding and navigating content clearer. Across the wider web experience, I shaped the information architecture, UX, UI, interaction design, motion, and reusable structural patterns behind the new visual language.\n\nOnce the direction was established, I helped carry it across the wider marketing site. I worked with other designers as existing pages were migrated and new ones were created, providing guidance to keep the work consistent with the new visual language and system. I led stakeholder reviews, ran regular design reviews, conducted design QA, and gave final design approval before release.",
+    "description": "I led the design and visual direction for LottieFiles’ web presence, helping shape the wider evolution of the brand and raise the standard for design, visuals, and animation across both marketing and product experiences.\n\nAlongside this, I reworked how users discover and navigate animation across the site. I redesigned the browsing, search, and animation detail experiences to make animations easier to find, improve navigation between results and individual assets, and keep the focus on the animation and its key actions.\n\nI started with the homepage, animation pages, and tools pages, then worked on the Lottie Creator landing page. Across these projects, I shaped the information architecture, UX, UI, interaction design, motion, and reusable structural patterns behind the new visual language.\n\nOnce the direction was established, I guided its rollout across the wider marketing site. I worked with other designers as existing pages were migrated and new ones were created, providing guidance to keep the work consistent with the new visual language and system. I led stakeholder reviews, ran regular design reviews, conducted design QA, and gave final design approval before release.",
     "insights": [
       {
         "label": "Why it mattered",
@@ -43,7 +43,7 @@
       },
       {
         "label": "Outcome",
-        "body": "Established a shared foundation for the web experience that improved animation discovery while giving other designers a clearer system to build from."
+        "body": "The new direction created a more cohesive web experience, while stronger review, approval, and QA processes helped maintain consistency and quality as the work expanded."
       }
     ],
     "whatScaled": "The visual language, structural patterns, interaction principles, and approach to motion became a shared foundation for new and migrated pages, allowing other designers to extend the work consistently.",
@@ -75,32 +75,8 @@
         }
       },
       {
-        "title": "A connected homepage story",
-        "body": "Connected the main ways users discover, create, and work with motion",
-        "visual": {
-          "type": "image",
-          "url": "/lottiefiles-homepage-overview-2026-1.png",
-          "alt": "LottieFiles homepage compositions showing animation discovery, creation tools, and team workflows",
-          "aspectRatio": "16 / 12",
-          "width": 3840,
-          "height": 2880
-        }
-      },
-      {
-        "title": "A complete product story",
-        "body": "Brought product capabilities, performance, and customer proof together lower in the page",
-        "visual": {
-          "type": "image",
-          "url": "/lottiefiles-homepage-overview-2026-2.png",
-          "alt": "LottieFiles homepage compositions showing AI tools, customer work, testimonials, and product value",
-          "aspectRatio": "16 / 12",
-          "width": 3840,
-          "height": 2880
-        }
-      },
-      {
         "title": "Animations page",
-        "body": "Modernized animation discovery and navigation",
+        "body": "Modernized animation browsing, search, and discovery",
         "fullWidth": true,
         "visual": {
           "type": "video",
@@ -114,7 +90,7 @@
       },
       {
         "title": "Animation Detail page",
-        "body": "Focused the experience on the animation and key actions",
+        "body": "Focused animation details on the asset and its key actions",
         "fullWidth": true,
         "visual": {
           "type": "image",
@@ -123,6 +99,30 @@
           "aspectRatio": "16 / 9",
           "width": 2880,
           "height": 1620
+        }
+      },
+      {
+        "title": "A connected homepage story",
+        "body": "Homepage connected discovery, creation, and team workflows",
+        "visual": {
+          "type": "image",
+          "url": "/lottiefiles-homepage-overview-2026-1.png",
+          "alt": "LottieFiles homepage compositions showing animation discovery, creation tools, and team workflows",
+          "aspectRatio": "16 / 12",
+          "width": 3840,
+          "height": 2880
+        }
+      },
+      {
+        "title": "A complete product story",
+        "body": "Then carried the story through product capabilities, performance, and customer proof",
+        "visual": {
+          "type": "image",
+          "url": "/lottiefiles-homepage-overview-2026-2.png",
+          "alt": "LottieFiles homepage compositions showing AI tools, performance, customer work, and testimonials",
+          "aspectRatio": "16 / 12",
+          "width": 3840,
+          "height": 2880
         }
       }
     ],
