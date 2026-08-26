@@ -7,7 +7,7 @@ import {
 } from "@hugeicons/core-free-icons";
 import FadeIn from "./FadeIn";
 import ContactButton from "./ContactButton";
-import DeferredFooterBackground from "./DeferredFooterBackground";
+import { LottieAnimation } from "./LottieAnimation";
 
 const SIDE_PROJECTS = [
   { title: "Hydrify", href: "https://apps.apple.com/app/hydrify/id6450311759" },
@@ -107,7 +107,14 @@ export default function Footer() {
         </div>
       </div>
 
-      <DeferredFooterBackground />
+      {/* <DeferredFooterBackground /> */}
+      <div
+        aria-hidden="true"
+        className="absolute right-0 bottom-0 left-0 -z-10 flex h-full max-w-full rotate-180 justify-center blur-[120px]"
+      >
+        <LottieAnimation />
+      </div>
+
     </FadeIn>
   );
 }
