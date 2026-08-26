@@ -31,7 +31,7 @@ export function AnimatedHeader() {
       preserveAspectRatio="xMidYMin meet"
       role="presentation"
       aria-hidden="true"
-      className="w-full blur-[100px]"
+      className="w-full blur-[120px]"
       xmlns="http://www.w3.org/2000/svg"
     >
       <style>{animationStyles}</style>
