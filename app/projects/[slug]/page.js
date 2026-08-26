@@ -103,7 +103,7 @@ export default async function ProjectPage({ params }) {
           </FadeIn>
         )}
 
-        <FadeIn className="mb-16 md:mb-20">
+        <FadeIn>
           <ProjectNav prev={prev} next={next} />
         </FadeIn>
       </article>
