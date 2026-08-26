@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <main className="relative flex w-full max-w-360 flex-col">
       <Nav />
-      <div className="absolute top-0 right-0 left-0 -z-10 flex h-full max-w-fulljustify-center">
+      <div className="absolute top-0 right-0 left-0 -z-10 flex h-full max-w-full overflow-x-hidden justify-center pr-12 md:pr-40">
         <LottieAnimation />
       </div>
       <Header />
