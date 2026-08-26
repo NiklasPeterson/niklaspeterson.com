@@ -9,7 +9,7 @@ export function LottieAnimation() {
       autoplay
       loop
       aria-hidden="true"
-      className="w-full h-fit blur-[120px]"
+      className="w-full h-fit blur-3xl md:blur-[120px]"
     />
   );
 }
