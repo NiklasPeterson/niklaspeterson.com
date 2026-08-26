@@ -53,7 +53,7 @@ export function ProjectHighlight({ highlight }) {
       </div>
 
       {highlight.stats?.length > 0 && (
-        <dl className="flex flex-wrap gap-x-8 gap-y-5 md:self-center">
+        <dl className="flex flex-col gap-x-8 gap-y-5 md:self-center">
           {highlight.stats.map((stat) => (
             <div
               key={`${stat.value}-${stat.label}`}

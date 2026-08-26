@@ -18,6 +18,19 @@
         "value": "Brand, Product, Marketing"
       }
     ],
+    "highlight": {
+      "title": "Made animation discovery and navigation a clearer part of the LottieFiles experience, helping users find and engage with content across the site.",
+      "stats": [
+        {
+          "value": "+316%",
+          "label": "monthly search volume"
+        },
+         {
+          "value": "+35%",
+          "label": "monthly file views"
+        }
+      ]
+    },
     "description": "I led the design and visual direction for LottieFiles’ web presence, helping shape the wider evolution of the brand and raise the standard for design, visuals, and animation across both marketing and product experiences. I started with the homepage, animation pages, and tools pages, then worked on the Lottie Creator landing page. Across these projects, I shaped the information architecture, UX, UI, interaction design, motion, and reusable structural patterns behind the new visual language.\n\nOnce the direction was established, I guided its rollout across the wider marketing site. I worked with other designers as existing pages were migrated and new ones were created, providing guidance to keep the work consistent with the new visual language and system. I led stakeholder reviews, ran regular design reviews, conducted design QA, and gave final design approval before release.",
     "insights": [
       {
@@ -166,7 +179,7 @@
         },
          {
           "value": "+20%",
-          "label": "increase in asset uploads in the month after launch"
+          "label": "asset uploads in the month after launch"
         }
       ]
     },
