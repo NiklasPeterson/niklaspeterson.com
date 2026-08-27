@@ -14,6 +14,7 @@ export default function ProjectVideoPlayer({ media, className = "" }) {
   const videoRef = useRef(null);
   const resumedAfterScrub = useRef(false);
   const mobileControlsTimeout = useRef(null);
+  const playbackFrame = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [showMobileControls, setShowMobileControls] = useState(false);
@@ -24,6 +25,57 @@ export default function ProjectVideoPlayer({ media, className = "" }) {
   useEffect(() => {
     if (reduceMotion) videoRef.current?.pause();
   }, [reduceMotion]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const syncCurrentSecond = () => {
+      const nextSecond = Math.floor(video.currentTime);
+      setCurrentTime((previousSecond) =>
+        previousSecond === nextSecond ? previousSecond : nextSecond,
+      );
+    };
+
+    const syncMetadata = () => {
+      setDuration(video.duration || 0);
+      syncCurrentSecond();
+    };
+
+    const trackPlayback = () => {
+      syncCurrentSecond();
+      playbackFrame.current = window.requestAnimationFrame(trackPlayback);
+    };
+
+    const startTracking = () => {
+      window.cancelAnimationFrame(playbackFrame.current);
+      trackPlayback();
+    };
+
+    const stopTracking = () => {
+      window.cancelAnimationFrame(playbackFrame.current);
+      playbackFrame.current = null;
+      syncCurrentSecond();
+    };
+
+    video.addEventListener("play", startTracking);
+    video.addEventListener("pause", stopTracking);
+    video.addEventListener("ended", stopTracking);
+    video.addEventListener("loadedmetadata", syncMetadata);
+    video.addEventListener("durationchange", syncMetadata);
+
+    if (video.readyState >= 1) syncMetadata();
+    if (!video.paused) startTracking();
+
+    return () => {
+      window.cancelAnimationFrame(playbackFrame.current);
+      video.removeEventListener("play", startTracking);
+      video.removeEventListener("pause", stopTracking);
+      video.removeEventListener("ended", stopTracking);
+      video.removeEventListener("loadedmetadata", syncMetadata);
+      video.removeEventListener("durationchange", syncMetadata);
+    };
+  }, []);
 
   const togglePlayback = () => {
     const video = videoRef.current;
@@ -108,16 +160,6 @@ export default function ProjectVideoPlayer({ media, className = "" }) {
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         onVolumeChange={(event) => setIsMuted(event.currentTarget.muted)}
-        onLoadedMetadata={(event) => {
-          setDuration(event.currentTarget.duration || 0);
-          setCurrentTime(event.currentTarget.currentTime || 0);
-        }}
-        onDurationChange={(event) =>
-          setDuration(event.currentTarget.duration || 0)
-        }
-        onTimeUpdate={(event) =>
-          setCurrentTime(event.currentTarget.currentTime)
-        }
       />
 
       {showControls && (
@@ -158,7 +200,7 @@ export default function ProjectVideoPlayer({ media, className = "" }) {
               type="range"
               min="0"
               max={duration || 1}
-              step="0.01"
+              step="1"
               value={Math.min(currentTime, duration || 0)}
               aria-label="Video progress"
               aria-valuetext={`${formatTime(currentTime)} of ${formatTime(duration)}`}
