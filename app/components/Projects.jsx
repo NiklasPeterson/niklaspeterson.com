@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { AnimatePresence } from "motion/react";
 import Image from "next/image";
 import FadeIn from "./FadeIn";
 import ProjectThumbnailVideo from "./ProjectThumbnailVideo";
@@ -59,15 +60,17 @@ export default function Projects({ projects = [] }) {
         ))}
       </section>
 
-      {selectedProject && (
-        <ProjectModal
-          project={selectedProject}
-          prev={prevProject}
-          next={nextProject}
-          onClose={closeProject}
-          onNavigate={setSelectedProject}
-        />
-      )}
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectModal
+            project={selectedProject}
+            prev={prevProject}
+            next={nextProject}
+            onClose={closeProject}
+            onNavigate={setSelectedProject}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 }
@@ -102,7 +105,7 @@ function ProjectContent({ project, onOpen, priority, fetchPriority }) {
       aria-label={`Open ${project.title} project`}
     >
       {preview && (
-        <div className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-150 group-hover:scale-102 group-hover:shadow-md after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-translucent after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl">
+        <div className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-150 [@media(hover:hover)_and_(pointer:fine)]:group-hover:scale-102 [@media(hover:hover)_and_(pointer:fine)]:group-hover:shadow-md after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-translucent after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl">
           {preview.type === "image" ? (
             <Image
               width={preview.width}

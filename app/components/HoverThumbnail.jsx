@@ -29,7 +29,7 @@ function HoverThumbnailPreview({
     <motion.span
       initial={{
         opacity: 0,
-        scale: 0.8,
+        scale: 0.96,
       }}
       animate={{
         opacity: 1,
@@ -42,6 +42,14 @@ function HoverThumbnailPreview({
           stiffness: 360,
           damping: 20,
           delay: !hasEntered ? index * 0.1 : 0,
+        },
+      }}
+      exit={{
+        opacity: 0,
+        scale: 0.96,
+        transition: {
+          duration: 0.16,
+          ease: [0.23, 1, 0.32, 1],
         },
       }}
       className="pointer-events-none absolute z-10 hidden w-40 overflow-hidden rounded-xl shadow-xl sm:flex"
