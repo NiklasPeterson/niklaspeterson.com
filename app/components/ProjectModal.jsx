@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useLayoutEffect, useRef } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import FadeIn from "./FadeIn";
 import ProjectCaseStudyContent from "./ProjectCaseStudyContent";
 import ProjectHeader from "./ProjectHeader";
@@ -15,6 +16,13 @@ export default function ProjectModal({
   onNavigate,
 }) {
   const overlayRef = useRef(null);
+  const reduceMotion = useReducedMotion();
+  const contentInitial = reduceMotion
+    ? { opacity: 0 }
+    : { opacity: 0, transform: "translateY(12px) scale(0.98)" };
+  const contentSettled = reduceMotion
+    ? { opacity: 1 }
+    : { opacity: 1, transform: "translateY(0) scale(1)" };
 
   useEffect(() => {
     const handleOverlayKeyDown = (event) => {
@@ -95,16 +103,32 @@ export default function ProjectModal({
   }, [navigateTo, next, prev]);
 
   return (
-    <div
+    <motion.div
       role="dialog"
       aria-labelledby="project-modal-title"
       ref={overlayRef}
       className="fixed inset-0 z-10 h-screen min-h-dvh w-screen overflow-y-auto overscroll-contain bg-white/25 backdrop-blur-lg md:p-10 dark:bg-black/25"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{
+        opacity: 0,
+        transition: { duration: 0.16, ease: [0.23, 1, 0.32, 1] },
+      }}
+      transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
       onClick={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
     >
-      <div className="mx-auto flex max-w-360 flex-col gap-16 border-translucent bg-zinc-50 pt-6 pb-1 md:h-fit md:animate-fadeUp md:rounded-3xl md:border md:pt-10 md:pb-2 dark:bg-zinc-950">
+      <motion.div
+        className="mx-auto flex max-w-360 flex-col gap-16 border-translucent bg-zinc-50 pt-6 pb-1 md:h-fit md:rounded-3xl md:border md:pt-10 md:pb-2 dark:bg-zinc-950"
+        initial={contentInitial}
+        animate={contentSettled}
+        exit={{
+          ...contentInitial,
+          transition: { duration: 0.16, ease: [0.23, 1, 0.32, 1] },
+        }}
+        transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
+      >
         <ProjectHeader
           project={project}
           variant="modal"
@@ -119,7 +143,7 @@ export default function ProjectModal({
         <ProjectCaseStudyContent
           project={project}
           variant="modal"
-          className="animate-fadeUp px-4 md:px-10"
+          className="px-4 md:px-10"
         />
 
         {project.testimonials?.length > 0 && (
@@ -142,7 +166,7 @@ export default function ProjectModal({
             />
           </FadeIn>
         )}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
