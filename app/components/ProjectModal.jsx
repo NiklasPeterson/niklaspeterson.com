@@ -104,7 +104,7 @@ export default function ProjectModal({
         if (event.target === event.currentTarget) onClose();
       }}
     >
-      <div className="mx-auto flex max-w-360 flex-col gap-16 border-translucent bg-zinc-50 pt-6 pb-1 md:h-fit md:animate-fadeUp md:rounded-3xl md:border md:pt-10 md:pb-2 dark:bg-zinc-950">
+      <div className="mx-auto flex max-w-340 flex-col gap-16 border-translucent bg-zinc-50 pt-6 pb-1 md:h-fit md:animate-fadeUp md:rounded-3xl md:border md:pt-10 md:pb-2 dark:bg-zinc-950">
         <ProjectHeader
           project={project}
           variant="modal"
