@@ -119,7 +119,7 @@ const HoverThumbnail = ({
       onMouseMove={updateMousePosition}
     >
       <span
-        className={`mr-1.5 inline-flex h-7 w-7 -translate-y-0.5 align-middle ${iconRotation} overflow-clip rounded-md shadow-md transition-transform duration-160 ease-out motion-reduce:transition-none dark:shadow-none [@media(hover:hover)_and_(pointer:fine)]:group-hover:scale-110`}
+        className={`relative mr-1.5 inline-flex h-7 w-7 -translate-y-0.5 align-middle ${iconRotation} overflow-clip rounded-md shadow-md transition-transform duration-160 ease-out after:pointer-events-none after:absolute after:inset-0 after:rounded-md after:border after:border-translucent after:content-[''] motion-reduce:transition-none dark:shadow-none [@media(hover:hover)_and_(pointer:fine)]:group-hover:scale-110`}
       >
         <img
           src={appIcon}
