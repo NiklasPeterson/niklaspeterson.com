@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: { qualities: [75, 100] },
   allowedDevOrigins: ["192.168.50.87"],
   async headers() {
     const mediaCacheHeader = {

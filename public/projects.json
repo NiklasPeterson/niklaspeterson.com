@@ -94,7 +94,7 @@
         "fullWidth": true,
         "visual": {
           "type": "image",
-          "url": "/media/lottiefiles-animation-detail2-2026-f3f519f80215.png",
+          "url": "/media/lottiefiles-animation-detail2-2026-92b2e2c82576.webp",
           "alt": "LottieFiles animation detail experience with playback and download options",
           "aspectRatio": "16 / 9",
           "width": 2880,
@@ -106,7 +106,7 @@
         "body": "Homepage connected discovery, creation, and team workflows",
         "visual": {
           "type": "image",
-          "url": "/media/lottiefiles-homepage-overview-2026-1-fa5daf6a4d3f.png",
+          "url": "/media/lottiefiles-homepage-overview-2026-1-77081a783cb4.webp",
           "alt": "LottieFiles homepage compositions showing animation discovery, creation tools, and team workflows",
           "aspectRatio": "16 / 12",
           "width": 3840,
@@ -118,7 +118,7 @@
         "body": "Then carried the story through product capabilities, performance, and customer proof",
         "visual": {
           "type": "image",
-          "url": "/media/lottiefiles-homepage-overview-2026-2-edf728bbec1e.png",
+          "url": "/media/lottiefiles-homepage-overview-2026-2-60cc955a4587.webp",
           "alt": "LottieFiles homepage compositions showing AI tools, performance, customer work, and testimonials",
           "aspectRatio": "16 / 12",
           "width": 3840,
@@ -128,10 +128,10 @@
     ],
     "testimonials": [
       {
-        "name": "Celcea Tifani",
-        "role": "Brand Manager & Designer",
-        "avatar": "/media/testimonial-celcea-tifani-2026-892acb62505e.png",
-        "quote": "Niklas impact spans from redesigning our highest-traffic landing pages, including the core Homepage to driving a major brand evolution that overhauled our design system across typography, color palettes, and asset architecture.\n\nNiklas operates as a true Staff-level leader, seamlessly bridging the gap between design and engineering to optimize cross-functional workflows. He is easily one of the best Product Designers I have ever collaborated with."
+        "name": "Nattu Adnan",
+        "role": "Co-founder & CTO at LottieFiles",
+        "avatar": "/media/testimonial-nattu-adnan-2026-5e0fb13935e9.jpeg",
+        "quote": "Niklas is one of those rare designers who raises the bar without making it a thing. He helped drive the design direction of a product millions of designers rely on, and he did it with taste, speed, and zero ego.\n\nHe’s also just a joy to work with. Super friendly, gets it immediately. Any team would be lucky to have him."
       },
       {
         "name": "Inad Hussain",
@@ -140,10 +140,10 @@
         "quote": "Niklas is a product designer who combines strong design craft, strategic thinking, and the ability to bring people together around a vision.\n\nA great example of this was the LottieFiles marketing website redesign, where he was the primary product designer driving the work. He collaborated with visual designers, brand, motion designers, marketing, and stakeholders to shape a cleaner and more modern experience."
       },
       {
-        "name": "Nattu Adnan",
-        "role": "Co-founder & CTO at LottieFiles",
-        "avatar": "/media/testimonial-nattu-adnan-2026-5e0fb13935e9.jpeg",
-        "quote": "Niklas is one of those rare designers who raises the bar without making it a thing. He helped drive the design direction of a product millions of designers rely on, and he did it with taste, speed, and zero ego.\n\nHe’s also just a joy to work with. Super friendly, gets it immediately. Any team would be lucky to have him."
+        "name": "Celcea Tifani",
+        "role": "Brand Manager & Designer",
+        "avatar": "/media/testimonial-celcea-tifani-2026-b0def119434c.webp",
+        "quote": "Niklas impact spans from redesigning our highest-traffic landing pages, including the core Homepage to driving a major brand evolution that overhauled our design system across typography, color palettes, and asset architecture.\n\nNiklas operates as a true Staff-level leader, seamlessly bridging the gap between design and engineering to optimize cross-functional workflows. He is easily one of the best Product Designers I have ever collaborated with."
       }
     ],
     "company": "LottieFiles",
@@ -231,7 +231,7 @@
         "body": "Created one upload flow for individual files, full folders, and mixed asset types",
         "visual": {
           "type": "image",
-          "url": "/media/lottiefiles-dam-upload-modal-2026-8-cee4678e3558.png",
+          "url": "/media/lottiefiles-dam-upload-modal-2026-8-5ea3ab896fa0.webp",
           "alt": "LottieFiles upload modal showing support for motion, image, and source files",
           "aspectRatio": "16 / 9",
           "width": 3200,
@@ -244,7 +244,7 @@
         "body": "Made it faster to add several copied assets directly to the current folder",
         "visual": {
           "type": "image",
-          "url": "/media/lottiefiles-dam-copy-paste-upload-2026-8-60edfac16eb1.png",
+          "url": "/media/lottiefiles-dam-copy-paste-upload-2026-8-d1b2f0b7dd05.webp",
           "alt": "LottieFiles dialog showing multiple copied assets ready to upload into the current folder",
           "aspectRatio": "16 / 9",
           "width": 3200,
@@ -272,8 +272,14 @@
       {
         "name": "SangHyo Yee",
         "role": "Product Designer at LottieFiles",
-        "avatar": "/media/testimonial-sanghyo-yee-2026-4109e82908e1.png",
+        "avatar": "/media/testimonial-sanghyo-yee-2026-bc978bd8faa1.webp",
         "quote": "Niklas was someone I could always trust with an honest design conversation. Whenever I was working through a difficult problem, I knew I could bring it to him and receive a thoughtful, candid perspective.\n\nHe consistently considered how individual decisions would affect the broader customer journey."
+      },
+      {
+        "name": "Nattu Adnan",
+        "role": "Co-founder & CTO at LottieFiles",
+        "avatar": "/media/testimonial-nattu-adnan-2026-5e0fb13935e9.jpeg",
+        "quote": "Niklas is one of those rare designers who raises the bar without making it a thing. He helped drive the design direction of a product millions of designers rely on, and he did it with taste, speed, and zero ego.\n\nHe’s also just a joy to work with. Super friendly, gets it immediately. Any team would be lucky to have him."
       }
       
     ],
@@ -334,7 +340,7 @@
       {
         
             "type": "image",
-            "url": "/media/lottiefiles-motion-system-overview-2026-8-18-33c3c86a273d.png",
+            "url": "/media/lottiefiles-motion-system-overview-2026-8-18-10503bd445ad.webp",
             "alt": "LottieFiles Platform showing an editable Motion System with documentation, publishing controls, version history, and reusable motion assets",
             "width": 3200,
             "height": 1800
@@ -361,7 +367,7 @@
           "fullWidth": false,
           "visual": {
             "type": "image",
-            "url": "/media/lottiefiles-motion-system-foundations-2026-8-18-1a143b1f8c13.png",
+            "url": "/media/lottiefiles-motion-system-foundations-2026-8-18-aaa11dcee40d.webp",
             "alt": "LottieFiles Platform showing easing curves, motion presets, and animated assets inside a Motion System",
             "aspectRatio": "16 / 12",
             "width": 3200,
@@ -374,7 +380,7 @@
           "fullWidth": false,
           "visual": {
             "type": "image",
-            "url": "/media/lottiefiles-motion-system-published-link-2026-8-18-0f6dd3231fe0.png",
+            "url": "/media/lottiefiles-motion-system-published-link-2026-8-18-5f67c35aded6.webp",
             "alt": "Published Design Haus Motion System with shared documentation and reusable brand assets",
             "aspectRatio": "16 / 12",
             "width": 3200,
@@ -402,7 +408,7 @@
       {
         "name": "Ahmed Ali",
         "role": "Engineering Manager at LottieFiles",
-        "avatar": "/media/testimonial-ahmed-ali-2026-d90bbc5f2d75.png",
+        "avatar": "/media/testimonial-ahmed-ali-2026-0a528e1ee80d.webp",
         "quote": "Niklas is the kind of product designer engineers actually enjoy working with. His craft is excellent. Clean, thoughtful work with the details already resolved before it reaches a build. He was present during implementation, precise about what mattered and what did not, and always willing to adjust when there was a good technical reason to.\n\nStrong designer, even better teammate. I would work with him again without hesitation."
       },
       {
@@ -468,7 +474,7 @@
     "attachments": [
       {
         "type": "image",
-        "url": "/media/lottiefiles-developer-handoff-2026-dea7a54da8ca.png",
+        "url": "/media/lottiefiles-developer-handoff-2026-7771cdd188b9.webp",
         "alt": "Tailored setup steps and code to each development stack",
         "width": 3200,
         "height": 1802
@@ -503,7 +509,7 @@
     "attachments": [
       {
         "type": "image",
-        "url": "/media/lummi-plugin-1759670e79c7.png",
+        "url": "/media/lummi-plugin-5efa2a2e3435.webp",
         "alt": "Image showing Lummi's Figma plugin",
         "width": 1600,
         "height": 900
@@ -526,7 +532,7 @@
       {
         "name": "Sjoerd Huisman",
         "role": "Staff Product Designer at Coursera",
-        "avatar": "/media/testimonial-sjoerd-huisman-2026-565d6b97f4ac.png",
+        "avatar": "/media/testimonial-sjoerd-huisman-2026-6e00ce264e35.webp",
         "quote": "Niklas stands out as a highly skilled designer and a driven professional, always bringing valuable insights and expertise that help push projects forward. His technical knowledge is outstanding; he has a remarkable ability to build complex design systems and prototypes using cutting-edge techniques.\n\nNiklas is someone you can always rely on to elevate the work."
       }
     ],
@@ -545,7 +551,7 @@
     "attachments": [
       {
         "type": "image",
-        "url": "/media/lummi-startpage-e8552f40907d.png",
+        "url": "/media/lummi-startpage-1fe084b19cb6.webp",
         "alt": "Image showing the startpage of Lummi",
         "width": 1600,
         "height": 900
@@ -557,7 +563,7 @@
         "body": "Made image details and actions easier to understand.",
         "visual": {
           "type": "image",
-          "url": "/media/lummi-detail-page-1ce5c563df95.png",
+          "url": "/media/lummi-detail-page-1382443cf347.webp",
           "alt": "The Lummi image detail experience",
           "width": 1600,
           "height": 900
@@ -568,7 +574,7 @@
         "body": "Connected visual discovery with the people behind the work.",
         "visual": {
           "type": "image",
-          "url": "/media/lummi-creator-profile-9bbc991ddbbc.png",
+          "url": "/media/lummi-creator-profile-37fb75b2e002.webp",
           "alt": "A creator profile in Lummi",
           "width": 1600,
           "height": 900
@@ -590,7 +596,7 @@
       {
         "name": "Pablo Stanley",
         "role": "Design and Code at v0 / Vercel",
-        "avatar": "/media/testimonial-pablo-stanley-2026-9a85c5ed5dbe.png",
+        "avatar": "/media/testimonial-pablo-stanley-2026-9f7391685f95.webp",
         "quote": "Niklas consistently brought creativity, precision, and a keen eye for detail to every project. He would champion the user while also caring about the company goals and had a bias to shipping.\n\nNiklas is a true pro who would be an asset to any design team."
       }
     ],
@@ -609,7 +615,7 @@
     "attachments": [
       {
         "type": "image",
-        "url": "/media/musho-3ccb8b735c4f.png",
+        "url": "/media/musho-825579944ba9.webp",
         "alt": "Image showing the UI for Musho's website ",
         "width": 1600,
         "height": 900
@@ -632,7 +638,7 @@
         "body": "Built a visual system that carried across the product story.",
         "visual": {
           "type": "image",
-          "url": "/media/musho-grid-1-9ba9d7fee522.png",
+          "url": "/media/musho-grid-1-19cd63bfc530.webp",
           "alt": "The first part of the Musho website",
           "aspectRatio": "16 / 12",
           "width": 2048,
@@ -644,7 +650,7 @@
         "body": "Extended the same rhythm and personality throughout the experience.",
         "visual": {
           "type": "image",
-          "url": "/media/musho-grid-2-39a32e886ba7.png",
+          "url": "/media/musho-grid-2-c289378e7cf5.webp",
           "alt": "The second part of the Musho website",
           "aspectRatio": "16 / 12",
           "width": 2048,
@@ -656,7 +662,7 @@
       {
         "name": "Sjoerd Huisman",
         "role": "Staff Product Designer at Coursera",
-        "avatar": "/media/testimonial-sjoerd-huisman-2026-565d6b97f4ac.png",
+        "avatar": "/media/testimonial-sjoerd-huisman-2026-6e00ce264e35.webp",
         "quote": "Niklas stands out as a highly skilled designer and a driven professional, always bringing valuable insights and expertise that help push projects forward. His technical knowledge is outstanding; he has a remarkable ability to build complex design systems and prototypes using cutting-edge techniques.\n\nNiklas is someone you can always rely on to elevate the work."
       }
     ],
@@ -686,7 +692,7 @@
       {
         "name": "Maria Teresa Vallenilla",
         "role": "Product Manager at Udemy",
-        "avatar": "/media/testimonial-maria-teresa-vallenilla-2026-a8745d5c822c.png",
+        "avatar": "/media/testimonial-maria-teresa-vallenilla-2026-bae9cf6646fb.webp",
         "quote": "His attention to detail is outstanding, and he’s always ready to collaborate. He gives constructive feedback that really helps the team, and he’s just as open to feedback himself.\n\nI feel fortunate to have worked with Niklas, and any company that brings him on board will be lucky."
       }
     ],

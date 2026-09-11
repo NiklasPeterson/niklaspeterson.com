@@ -54,10 +54,13 @@ function HoverThumbnailPreview({
         border: "1px solid rgba(255, 255, 255, 0.1)",
       }}
     >
-      <img
+      <Image
         src={imageSrc}
+        sizes="160px"
+        quality={100}
+        loading="eager"
         alt={`${text} UI ${index + 1}`}
-        className="h-full object-fill"
+        className="h-auto w-full"
       />
     </motion.span>
   );
@@ -120,7 +123,7 @@ const HoverThumbnail = ({
       onMouseMove={updateMousePosition}
     >
       <span
-        className={`mr-1.5 inline-flex h-7 w-7 -translate-y-0.5 align-middle ${iconRotation} overflow-clip rounded-md shadow-md transition-transform duration-160 ease-out motion-reduce:transition-none dark:shadow-none [@media(hover:hover)_and_(pointer:fine)]:group-hover:scale-110`}
+        className={`mr-1.5 inline-flex h-7 w-7 -translate-y-0.5 align-middle ${iconRotation} overflow-clip rounded-md shadow-md transition-transform duration-160 ease-out motion-reduce:transition-none dark:shadow-none [@media(hover:hover)_and_(pointer:fine)]:group-hover:scale-115`}
       >
         <Image
           width={28}
