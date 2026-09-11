@@ -16,6 +16,16 @@ const nextConfig = {
         source: "/:path(.*\\.mov)",
         headers: [mediaCacheHeader],
       },
+      {
+        // Content-hashed media can be cached permanently.
+        source: "/media/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
     ];
   },
   async redirects() {

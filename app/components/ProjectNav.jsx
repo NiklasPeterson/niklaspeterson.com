@@ -107,9 +107,9 @@ function ProjectNavContent({ project, dir }) {
 function Thumb({ media, title }) {
   return (
     <span className="relative aspect-16/10 w-14 shrink-0 overflow-hidden rounded-md bg-zinc-100 after:pointer-events-none after:absolute after:inset-0 after:rounded-md after:border after:border-translucent after:content-[''] md:w-16 dark:bg-zinc-900">
-      {!media ? null : media.type === "image" ? (
+      {!media ? null : media.type === "image" || media.poster ? (
         <Image
-          src={media.url}
+          src={media.poster || media.url}
           alt={title}
           fill
           sizes="64px"

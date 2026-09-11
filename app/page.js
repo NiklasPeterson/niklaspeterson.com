@@ -5,17 +5,9 @@ import Projects from "./components/Projects";
 import Nav from "./components/Nav";
 import { getAllProjects } from "./lib/projects";
 import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION } from "./lib/site";
-import { preload } from "react-dom";
 import { LottieAnimation } from "./components/LottieAnimation";
 
 export default function Home() {
-  // This is the LCP video in the initial project grid. Preloading it keeps the
-  // request on the critical path instead of waiting for video scheduling.
-  preload("/lottiefiles-dam-2026.mp4", {
-    as: "video",
-    fetchPriority: "high",
-  });
-
   const projects = getAllProjects();
 
   const profilePageSchema = {

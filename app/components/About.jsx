@@ -51,10 +51,10 @@ export default function About() {
 
       <div className="relative h-100 w-full overflow-hidden rounded-2xl sm:w-[320px] md:rounded-3xl">
         <Image
-          src="/niklas-peterson.jpg"
+          src="/media/niklas-peterson-32e2a7d67acc.jpg"
           alt="Picture of Niklas Peterson"
           fill={true}
-          unoptimized
+          sizes="(max-width: 639px) calc(100vw - 32px), 320px"
           className="object-cover"
         />
       </div>

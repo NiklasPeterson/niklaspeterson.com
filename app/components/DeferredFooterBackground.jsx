@@ -30,7 +30,7 @@ export default function DeferredFooterBackground() {
       aria-hidden="true"
       className="absolute right-0 bottom-0 left-0 -z-10 flex h-full max-w-full rotate-180 justify-center overflow-hidden blur-[120px]"
     >
-      {shouldRender ? <img src="/animated-header.svg" alt="" /> : null}
+      {shouldRender ? <img src="/media/animated-header-74c8820fc66e.svg" alt="" /> : null}
     </div>
   );
 }

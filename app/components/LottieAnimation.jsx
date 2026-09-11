@@ -5,7 +5,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 export function LottieAnimation() {
   return (
     <DotLottieReact
-      src="/animation.lottie"
+      src="/media/animation-247c0e5643e9.lottie"
       autoplay
       loop
       aria-hidden="true"
