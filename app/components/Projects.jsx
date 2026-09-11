@@ -5,7 +5,9 @@ import { useState } from "react";
 import Image from "next/image";
 import FadeIn from "./FadeIn";
 import ProjectThumbnailVideo from "./ProjectThumbnailVideo";
-import ProjectModal from "./ProjectModal";
+import dynamic from "next/dynamic";
+
+const ProjectModal = dynamic(() => import("./ProjectModal"));
 
 export default function Projects({ projects = [] }) {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -53,7 +55,6 @@ export default function Projects({ projects = [] }) {
               project={project}
               onOpen={openProject}
               priority={project.preload}
-              fetchPriority={project.preload ? "high" : undefined}
             />
           </FadeIn>
         ))}
@@ -72,7 +73,7 @@ export default function Projects({ projects = [] }) {
   );
 }
 
-function ProjectContent({ project, onOpen, priority, fetchPriority }) {
+function ProjectContent({ project, onOpen, priority }) {
   const preview = project.attachments[0];
 
   return (
@@ -110,13 +111,13 @@ function ProjectContent({ project, onOpen, priority, fetchPriority }) {
               src={preview.url}
               alt={preview.alt}
               priority={priority}
+              sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1439px) calc((100vw - 208px) / 2), 616px"
             />
           ) : (
             <ProjectThumbnailVideo
               media={preview}
-              className={preview.cropEdges === true ? "scale-[1.004]" : undefined}
+              className={`${preview.cropEdges === true ? "scale-[1.004]" : undefined} ${preview.extraZoom ? "scale-[1.07]" : ""}`}
               priority={priority}
-              fetchPriority={fetchPriority}
             />
           )}
         </div>

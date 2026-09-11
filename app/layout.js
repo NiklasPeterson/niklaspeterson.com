@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
     "@id": `${SITE_URL}/#person`,
     name: "Niklas Peterson",
     url: SITE_URL,
-    image: `${SITE_URL}/niklas-peterson.jpg`,
+    image: `${SITE_URL}/media/niklas-peterson-32e2a7d67acc.jpg`,
     jobTitle: "Product Designer",
     nationality: "Sweden",
     sameAs: [

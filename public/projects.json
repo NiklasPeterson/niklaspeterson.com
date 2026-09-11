@@ -51,9 +51,9 @@
     "attachments": [
       {
         "type": "video",
-        "url": "/lottiefiles-homepage-2026.mp4",
+        "url": "/media/lottiefiles-homepage-2026-c0881e03c168.mp4",
         "alt": "Screen recording showing the LottieFiles homepage",
-        "poster": "/lottiefiles-homepage-poster-2026.jpg",
+        "poster": "/media/lottiefiles-homepage-poster-2026-dc1c4ad4d6b3.jpg",
         "cropEdges": true,
         "controls": false,
         "width": 1600,
@@ -66,7 +66,7 @@
         "body": "Set the visual tone and introduced the core product story",
         "visual": {
           "type": "video",
-          "url": "/lottiefiles-web-scroll-2026.mp4",
+          "url": "/media/lottiefiles-web-scroll-2026-a5ff46758ddd.mp4",
           "alt": "Screen recording showing the redesigned LottieFiles web experience",
           "cropEdges": true,
           "controls": true,
@@ -80,7 +80,7 @@
         "fullWidth": true,
         "visual": {
           "type": "video",
-          "url": "/lottiefiles-animation-listing-2026.mp4",
+          "url": "/media/lottiefiles-animation-listing-2026-38788f297783.mp4",
           "alt": "LottieFiles animation listing experience",
           "controls": false,
           "aspectRatio": "16 / 9",
@@ -94,7 +94,7 @@
         "fullWidth": true,
         "visual": {
           "type": "image",
-          "url": "/lottiefiles-animation-detail2-2026.png",
+          "url": "/media/lottiefiles-animation-detail2-2026-f3f519f80215.png",
           "alt": "LottieFiles animation detail experience with playback and download options",
           "aspectRatio": "16 / 9",
           "width": 2880,
@@ -106,7 +106,7 @@
         "body": "Homepage connected discovery, creation, and team workflows",
         "visual": {
           "type": "image",
-          "url": "/lottiefiles-homepage-overview-2026-1.png",
+          "url": "/media/lottiefiles-homepage-overview-2026-1-fa5daf6a4d3f.png",
           "alt": "LottieFiles homepage compositions showing animation discovery, creation tools, and team workflows",
           "aspectRatio": "16 / 12",
           "width": 3840,
@@ -118,7 +118,7 @@
         "body": "Then carried the story through product capabilities, performance, and customer proof",
         "visual": {
           "type": "image",
-          "url": "/lottiefiles-homepage-overview-2026-2.png",
+          "url": "/media/lottiefiles-homepage-overview-2026-2-edf728bbec1e.png",
           "alt": "LottieFiles homepage compositions showing AI tools, performance, customer work, and testimonials",
           "aspectRatio": "16 / 12",
           "width": 3840,
@@ -130,19 +130,19 @@
       {
         "name": "Celcea Tifani",
         "role": "Brand Manager & Designer",
-        "avatar": "/testimonial-celcea-tifani-2026.png",
+        "avatar": "/media/testimonial-celcea-tifani-2026-892acb62505e.png",
         "quote": "Niklas impact spans from redesigning our highest-traffic landing pages, including the core Homepage to driving a major brand evolution that overhauled our design system across typography, color palettes, and asset architecture.\n\nNiklas operates as a true Staff-level leader, seamlessly bridging the gap between design and engineering to optimize cross-functional workflows. He is easily one of the best Product Designers I have ever collaborated with."
       },
       {
         "name": "Inad Hussain",
         "role": "Design Lead at LottieFiles",
-        "avatar": "/testimonial-inad-hussain-2026.jpeg",
+        "avatar": "/media/testimonial-inad-hussain-2026-ce24b8d34a96.jpeg",
         "quote": "Niklas is a product designer who combines strong design craft, strategic thinking, and the ability to bring people together around a vision.\n\nA great example of this was the LottieFiles marketing website redesign, where he was the primary product designer driving the work. He collaborated with visual designers, brand, motion designers, marketing, and stakeholders to shape a cleaner and more modern experience."
       },
       {
         "name": "Nattu Adnan",
         "role": "Co-founder & CTO at LottieFiles",
-        "avatar": "/testimonial-nattu-adnan-2026.jpeg",
+        "avatar": "/media/testimonial-nattu-adnan-2026-5e0fb13935e9.jpeg",
         "quote": "Niklas is one of those rare designers who raises the bar without making it a thing. He helped drive the design direction of a product millions of designers rely on, and he did it with taste, speed, and zero ego.\n\nHe’s also just a joy to work with. Super friendly, gets it immediately. Any team would be lucky to have him."
       }
     ],
@@ -204,8 +204,8 @@
     "attachments": [
       {
         "type": "video",
-        "url": "/lottiefiles-dam-2026.mp4",
-        "poster": "/lottiefiles-dam-poster-2026.png",
+        "url": "/media/lottiefiles-dam-2026-35bd5cd94af8.mp4",
+        "poster": "/media/lottiefiles-dam-poster-2026-a5d14da85a68.webp",
         "alt": "LottieFiles Digital Asset Management product overview",
         "width": 1920,
         "height": 1080,
@@ -219,7 +219,7 @@
         "body": "Kept animations, images, SVGs, videos, and source files together in familiar projects and folders",
         "visual": {
           "type": "image",
-          "url": "/lottiefiles-dam-mixed-format-library-2026-8.png",
+          "url": "/media/lottiefiles-dam-mixed-format-library-2026-8-9b38ff1dc952.png",
           "alt": "LottieFiles Platform workspace showing folders and mixed-format brand assets",
           "width": 3200,
           "height": 1800
@@ -231,7 +231,7 @@
         "body": "Created one upload flow for individual files, full folders, and mixed asset types",
         "visual": {
           "type": "image",
-          "url": "/lottiefiles-dam-upload-modal-2026-8.png",
+          "url": "/media/lottiefiles-dam-upload-modal-2026-8-cee4678e3558.png",
           "alt": "LottieFiles upload modal showing support for motion, image, and source files",
           "aspectRatio": "16 / 9",
           "width": 3200,
@@ -244,7 +244,7 @@
         "body": "Made it faster to add several copied assets directly to the current folder",
         "visual": {
           "type": "image",
-          "url": "/lottiefiles-dam-copy-paste-upload-2026-8.png",
+          "url": "/media/lottiefiles-dam-copy-paste-upload-2026-8-60edfac16eb1.png",
           "alt": "LottieFiles dialog showing multiple copied assets ready to upload into the current folder",
           "aspectRatio": "16 / 9",
           "width": 3200,
@@ -266,13 +266,13 @@
       {
         "name": "Inad Hussain",
         "role": "Design Lead at LottieFiles",
-        "avatar": "/testimonial-inad-hussain-2026.jpeg",
+        "avatar": "/media/testimonial-inad-hussain-2026-ce24b8d34a96.jpeg",
         "quote": "Niklas is a product designer who combines strong design craft, strategic thinking, and the ability to bring people together around a vision.\n\nHe naturally fits into modern AI-driven product development workflows, where the ability to prototype, experiment, and collaborate closely with engineering is increasingly important."
       },
       {
         "name": "SangHyo Yee",
         "role": "Product Designer at LottieFiles",
-        "avatar": "/testimonial-sanghyo-yee-2026.png",
+        "avatar": "/media/testimonial-sanghyo-yee-2026-4109e82908e1.png",
         "quote": "Niklas was someone I could always trust with an honest design conversation. Whenever I was working through a difficult problem, I knew I could bring it to him and receive a thoughtful, candid perspective.\n\nHe consistently considered how individual decisions would affect the broader customer journey."
       }
       
@@ -334,7 +334,7 @@
       {
         
             "type": "image",
-            "url": "/lottiefiles-motion-system-overview-2026-8-18.png",
+            "url": "/media/lottiefiles-motion-system-overview-2026-8-18-33c3c86a273d.png",
             "alt": "LottieFiles Platform showing an editable Motion System with documentation, publishing controls, version history, and reusable motion assets",
             "width": 3200,
             "height": 1800
@@ -347,8 +347,8 @@
           "fullWidth": true,
           "visual": {
             "type": "video",
-        "url": "/lottiefiles-motion-system-2026.mp4",
-        "poster": "/lottiefiles-motion-system-poster-2026.png",
+        "url": "/media/lottiefiles-motion-system-2026-2373e07a5efd.mp4",
+        "poster": "/media/lottiefiles-motion-system-poster-2026-79c6441eeae8.webp",
         "alt": "LottieFiles Platform showing a Motion System with easing curves and reusable motion presets",
         "width": 1280,
         "height": 720,
@@ -361,7 +361,7 @@
           "fullWidth": false,
           "visual": {
             "type": "image",
-            "url": "/lottiefiles-motion-system-foundations-2026-8-18.png",
+            "url": "/media/lottiefiles-motion-system-foundations-2026-8-18-1a143b1f8c13.png",
             "alt": "LottieFiles Platform showing easing curves, motion presets, and animated assets inside a Motion System",
             "aspectRatio": "16 / 12",
             "width": 3200,
@@ -374,7 +374,7 @@
           "fullWidth": false,
           "visual": {
             "type": "image",
-            "url": "/lottiefiles-motion-system-published-link-2026-8-18.png",
+            "url": "/media/lottiefiles-motion-system-published-link-2026-8-18-0f6dd3231fe0.png",
             "alt": "Published Design Haus Motion System with shared documentation and reusable brand assets",
             "aspectRatio": "16 / 12",
             "width": 3200,
@@ -387,7 +387,7 @@
           "fullWidth": true,
           "visual": {
             "type": "video",
-            "url": "/lottiefiles-motion-system-creation-flow-2026.mp4",
+            "url": "/media/lottiefiles-motion-system-creation-flow-2026-8dbff7f1536f.mp4",
             "alt": "Using a published LottieFiles Motion System inside Figma",
             "hasAudio": true
           }
@@ -402,13 +402,13 @@
       {
         "name": "Ahmed Ali",
         "role": "Engineering Manager at LottieFiles",
-        "avatar": "/testimonial-ahmed-ali-2026.png",
+        "avatar": "/media/testimonial-ahmed-ali-2026-d90bbc5f2d75.png",
         "quote": "Niklas is the kind of product designer engineers actually enjoy working with. His craft is excellent. Clean, thoughtful work with the details already resolved before it reaches a build. He was present during implementation, precise about what mattered and what did not, and always willing to adjust when there was a good technical reason to.\n\nStrong designer, even better teammate. I would work with him again without hesitation."
       },
       {
         "name": "Inad Hussain",
         "role": "Design Lead at LottieFiles",
-        "avatar": "/testimonial-inad-hussain-2026.jpeg",
+        "avatar": "/media/testimonial-inad-hussain-2026-ce24b8d34a96.jpeg",
         "quote": "He worked closely with designers across teams to ensure these experiences were cohesive across Platform, Creator, plugins, and the wider LottieFiles ecosystem.\n\nHis comfort navigating large codebases created a strong partnership with developers and allowed him to move seamlessly between design and implementation."
       }
     ],
@@ -468,7 +468,7 @@
     "attachments": [
       {
         "type": "image",
-        "url": "/lottiefiles-developer-handoff-2026.png",
+        "url": "/media/lottiefiles-developer-handoff-2026-dea7a54da8ca.png",
         "alt": "Tailored setup steps and code to each development stack",
         "width": 3200,
         "height": 1802
@@ -480,7 +480,7 @@
         "body": "Tailored setup steps and code to each development stack.",
         "visual": {
           "type": "video",
-          "url": "/lottiefiles-developer-handoff-2026.mp4",
+          "url": "/media/lottiefiles-developer-handoff-2026-75ab30221ed8.mp4",
           "alt": "Walkthrough of the LottieFiles Developer Handoff experience",
           "cropEdges": true,
           "width": 3200,
@@ -503,7 +503,7 @@
     "attachments": [
       {
         "type": "image",
-        "url": "/lummi-plugin.png",
+        "url": "/media/lummi-plugin-1759670e79c7.png",
         "alt": "Image showing Lummi's Figma plugin",
         "width": 1600,
         "height": 900
@@ -515,7 +515,7 @@
         "body": "Made image discovery and insertion feel native to Figma.",
         "visual": {
           "type": "video",
-          "url": "/lummi-plugin.mp4",
+          "url": "/media/lummi-plugin-066c75334ffe.mp4",
           "alt": "A walkthrough of the Lummi Figma plugin",
           "width": 1600,
           "height": 900
@@ -526,7 +526,7 @@
       {
         "name": "Sjoerd Huisman",
         "role": "Staff Product Designer at Coursera",
-        "avatar": "/testimonial-sjoerd-huisman-2026.png",
+        "avatar": "/media/testimonial-sjoerd-huisman-2026-565d6b97f4ac.png",
         "quote": "Niklas stands out as a highly skilled designer and a driven professional, always bringing valuable insights and expertise that help push projects forward. His technical knowledge is outstanding; he has a remarkable ability to build complex design systems and prototypes using cutting-edge techniques.\n\nNiklas is someone you can always rely on to elevate the work."
       }
     ],
@@ -545,7 +545,7 @@
     "attachments": [
       {
         "type": "image",
-        "url": "/lummi-startpage.png",
+        "url": "/media/lummi-startpage-e8552f40907d.png",
         "alt": "Image showing the startpage of Lummi",
         "width": 1600,
         "height": 900
@@ -557,7 +557,7 @@
         "body": "Made image details and actions easier to understand.",
         "visual": {
           "type": "image",
-          "url": "/lummi-detail-page.png",
+          "url": "/media/lummi-detail-page-1ce5c563df95.png",
           "alt": "The Lummi image detail experience",
           "width": 1600,
           "height": 900
@@ -568,7 +568,7 @@
         "body": "Connected visual discovery with the people behind the work.",
         "visual": {
           "type": "image",
-          "url": "/lummi-creator-profile.png",
+          "url": "/media/lummi-creator-profile-9bbc991ddbbc.png",
           "alt": "A creator profile in Lummi",
           "width": 1600,
           "height": 900
@@ -579,7 +579,7 @@
         "body": "Brought the complete browsing experience together through interaction.",
         "visual": {
           "type": "video",
-          "url": "/lummi.mp4",
+          "url": "/media/lummi-4bd6aee2c397.mp4",
           "alt": "A walkthrough of the Lummi web experience",
           "width": 1600,
           "height": 900
@@ -590,7 +590,7 @@
       {
         "name": "Pablo Stanley",
         "role": "Design and Code at v0 / Vercel",
-        "avatar": "/testimonial-pablo-stanley-2026.png",
+        "avatar": "/media/testimonial-pablo-stanley-2026-9a85c5ed5dbe.png",
         "quote": "Niklas consistently brought creativity, precision, and a keen eye for detail to every project. He would champion the user while also caring about the company goals and had a bias to shipping.\n\nNiklas is a true pro who would be an asset to any design team."
       }
     ],
@@ -609,7 +609,7 @@
     "attachments": [
       {
         "type": "image",
-        "url": "/musho.png",
+        "url": "/media/musho-3ccb8b735c4f.png",
         "alt": "Image showing the UI for Musho's website ",
         "width": 1600,
         "height": 900
@@ -621,7 +621,7 @@
         "body": "Used motion and interaction to make the product feel immediate and playful.",
         "visual": {
           "type": "video",
-          "url": "/musho.mov",
+          "url": "/media/musho-93f37ac1b30d.mov",
           "alt": "A walkthrough of the Musho website",
           "width": 1600,
           "height": 900
@@ -632,7 +632,7 @@
         "body": "Built a visual system that carried across the product story.",
         "visual": {
           "type": "image",
-          "url": "/musho-grid-1.png",
+          "url": "/media/musho-grid-1-9ba9d7fee522.png",
           "alt": "The first part of the Musho website",
           "aspectRatio": "16 / 12",
           "width": 2048,
@@ -644,7 +644,7 @@
         "body": "Extended the same rhythm and personality throughout the experience.",
         "visual": {
           "type": "image",
-          "url": "/musho-grid-2.png",
+          "url": "/media/musho-grid-2-39a32e886ba7.png",
           "alt": "The second part of the Musho website",
           "aspectRatio": "16 / 12",
           "width": 2048,
@@ -656,7 +656,7 @@
       {
         "name": "Sjoerd Huisman",
         "role": "Staff Product Designer at Coursera",
-        "avatar": "/testimonial-sjoerd-huisman-2026.png",
+        "avatar": "/media/testimonial-sjoerd-huisman-2026-565d6b97f4ac.png",
         "quote": "Niklas stands out as a highly skilled designer and a driven professional, always bringing valuable insights and expertise that help push projects forward. His technical knowledge is outstanding; he has a remarkable ability to build complex design systems and prototypes using cutting-edge techniques.\n\nNiklas is someone you can always rely on to elevate the work."
       }
     ],
@@ -675,7 +675,8 @@
     "attachments": [
       {
         "type": "video",
-        "url": "/musho-plugin.mov",
+        "url": "/media/musho-plugin-c75df8198941.mov",
+        "poster": "/media/musho-plugin-poster-f9f9c9c70204.webp",
         "alt": "",
         "width": 1600,
         "height": 900
@@ -685,7 +686,7 @@
       {
         "name": "Maria Teresa Vallenilla",
         "role": "Product Manager at Udemy",
-        "avatar": "/testimonial-maria-teresa-vallenilla-2026.png",
+        "avatar": "/media/testimonial-maria-teresa-vallenilla-2026-a8745d5c822c.png",
         "quote": "His attention to detail is outstanding, and he’s always ready to collaborate. He gives constructive feedback that really helps the team, and he’s just as open to feedback himself.\n\nI feel fortunate to have worked with Niklas, and any company that brings him on board will be lucky."
       }
     ],
@@ -704,8 +705,10 @@
     "attachments": [
       {
         "type": "video",
-        "url": "/buenoverse.mov",
+        "url": "/media/buenoverse-9ae95cbd41f8.mov",
+        "poster": "/media/buenoverse-poster-51af28b663db.webp",
         "alt": "",
+        "extraZoom": true,
         "width": 1600,
         "height": 900
       }
@@ -725,7 +728,8 @@
     "attachments": [
       {
         "type": "video",
-        "url": "/bueno-drops.mov",
+        "url": "/media/bueno-drops-58cf50952483.mov",
+        "poster": "/media/bueno-drops-poster-3dca40cdc689.webp",
         "alt": "",
         "width": 1600,
         "height": 900

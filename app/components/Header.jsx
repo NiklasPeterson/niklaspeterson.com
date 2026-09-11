@@ -26,21 +26,21 @@ export default function Header() {
         >
           <HoverThumbnail
             text="Hydrify"
-            appIcon="/hydrify.png"
-            images={["/hydrify-screen-1.png", "/hydrify-screen-2.png"]}
+            appIcon="/media/hydrify-bfc28ff69bce.png"
+            images={["/media/hydrify-screen-1-bf6331860f14.png", "/media/hydrify-screen-2-6363b1306ae7.png"]}
           />
         </a>{" "}
         and{" "}
         <a href="https://apps.apple.com/app/titls/id1579078964" target="_blank">
           <HoverThumbnail
             text="Titls"
-            appIcon="/titls.png"
+            appIcon="/media/titls-8997273b7921.png"
             iconRotation="-rotate-12"
             hasTrailingSpacing={false}
             images={[
-              "/titls-screen-2.png",
-              "/titls-screen-3.png",
-              "/titls-screen-1.png",
+              "/media/titls-screen-2-f7896240f34f.png",
+              "/media/titls-screen-3-4b046518ef87.png",
+              "/media/titls-screen-1-fb3c1eb1b9b1.png",
             ]}
           />
         </a>.

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import {
   motion,
@@ -121,7 +122,10 @@ const HoverThumbnail = ({
       <span
         className={`mr-1.5 inline-flex h-7 w-7 -translate-y-0.5 align-middle ${iconRotation} overflow-clip rounded-md shadow-md transition-transform duration-160 ease-out motion-reduce:transition-none dark:shadow-none [@media(hover:hover)_and_(pointer:fine)]:group-hover:scale-110`}
       >
-        <img
+        <Image
+          width={28}
+          height={28}
+          sizes="56px"
           src={appIcon}
           alt={`${text} app icon`}
           className="h-full w-full object-cover"
