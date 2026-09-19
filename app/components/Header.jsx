@@ -38,9 +38,9 @@ export default function Header() {
             iconRotation="-rotate-12"
             hasTrailingSpacing={false}
             images={[
-              "/media/titls-screen-2-f7896240f34f.png",
-              "/media/titls-screen-3-4b046518ef87.png",
-              "/media/titls-screen-1-fb3c1eb1b9b1.png",
+              "/media/titls-screen-2-fb3c1eb1b9b1.png",
+              "/media/titls-screen-3-f7896240f34f.png",
+              "/media/titls-screen-1-4b046518ef87.png",
             ]}
           />
         </a>.
