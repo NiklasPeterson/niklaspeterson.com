@@ -106,8 +106,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      {/* <DeferredFooterBackground /> */}
       <div
         aria-hidden="true"
         className="absolute right-0 bottom-0 left-0 -z-10 flex h-full max-w-full rotate-180 justify-center"
