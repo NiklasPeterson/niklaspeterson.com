@@ -1,3 +1,8 @@
+import previewImage1 from "../../public/media/hydrify-screen-1-4770c7a49ef8.webp";
+import previewImage2 from "../../public/media/hydrify-screen-2-add4de8285bb.webp";
+import previewImage3 from "../../public/media/titls-screen-2-d3c3c2b1ad09.webp";
+import previewImage4 from "../../public/media/titls-screen-3-bbe82d29c34a.webp";
+import previewImage5 from "../../public/media/titls-screen-1-a26cc5882529.webp";
 import FadeIn from "./FadeIn";
 import HoverThumbnail from "./HoverThumbnail";
 
@@ -26,21 +31,21 @@ export default function Header() {
         >
           <HoverThumbnail
             text="Hydrify"
-            appIcon="/media/hydrify-bfc28ff69bce.png"
-            images={["/media/hydrify-screen-1-bf6331860f14.png", "/media/hydrify-screen-2-6363b1306ae7.png"]}
+            appIcon="/media/hydrify-95450c59dcbe.webp"
+            images={[previewImage1, previewImage2]}
           />
         </a>{" "}
         and{" "}
         <a href="https://apps.apple.com/app/titls/id1579078964" target="_blank">
           <HoverThumbnail
             text="Titls"
-            appIcon="/media/titls-8997273b7921.png"
+            appIcon="/media/titls-635c65c5369d.webp"
             iconRotation="-rotate-12"
             hasTrailingSpacing={false}
             images={[
-              "/media/titls-screen-2-fb3c1eb1b9b1.png",
-              "/media/titls-screen-3-f7896240f34f.png",
-              "/media/titls-screen-1-4b046518ef87.png",
+              previewImage3,
+              previewImage4,
+              previewImage5,
             ]}
           />
         </a>.
