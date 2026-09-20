@@ -1,8 +1,8 @@
 import previewImage1 from "../../public/media/hydrify-screen-1-4770c7a49ef8.webp";
 import previewImage2 from "../../public/media/hydrify-screen-2-add4de8285bb.webp";
-import previewImage3 from "../../public/media/titls-screen-2-2a96d4ea581e.webp";
-import previewImage4 from "../../public/media/titls-screen-3-5016696219cc.webp";
-import previewImage5 from "../../public/media/titls-screen-1-12d0f8e0263e.webp";
+import previewImage3 from "../../public/media/titls-screen-2-fb3c1eb1b9b1.png";
+import previewImage4 from "../../public/media/titls-screen-3-f7896240f34f.png";
+import previewImage5 from "../../public/media/titls-screen-1-4b046518ef87.png"";
 import FadeIn from "./FadeIn";
 import HoverThumbnail from "./HoverThumbnail";
 
