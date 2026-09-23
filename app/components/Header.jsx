@@ -13,18 +13,21 @@ export default function Header() {
       desktopOnly
       className="h-content relative z-1 flex flex-col justify-center gap-4 overflow-visible px-4 pt-20 pb-24 md:px-20 md:py-32"
     >
+      <div className="inline-flex w-fit items-center gap-2 rounded-full bg-zinc-200/60 px-3 py-1.5 text-sm font-medium text-primary dark:bg-zinc-800">
+        <span
+          className="relative size-2 rounded-full bg-emerald-500 after:absolute after:inset-0 after:animate-ping after:rounded-full after:bg-emerald-500 after:opacity-60 after:content-[''] after:[animation-duration:1.8s] after:[animation-timing-function:cubic-bezier(0,0,0.35,1)] motion-reduce:after:animate-none"
+          aria-hidden="true"
+        />
+        <span>Open for work</span>
+      </div>
       <h1 className="max-w-4xl text-4xl leading-tight font-semibold text-pretty text-primary md:text-6xl">
-        Bringing digital products to life with pixels and code.
+        Bringing digital products to life with pixels and code
       </h1>
-      <p className="max-w-3xl text-xl md:text-2xl">
-        Niklas Peterson, designer and creator from Sweden, currently shaping experiences as a{" "}
-        <span className="font-semibold text-primary">
-          Staff Product Designer
-        </span>{" "}
-        at <span className="font-semibold text-primary">LottieFiles</span>.
+      <p className="max-w-4xl text-xl text-pretty md:text-2xl">
+        I’m Niklas Peterson, a product designer and design engineer from Sweden. Most recently, I was a <span className="font-semibold text-primary">Staff Product Designer at LottieFiles</span>.
       </p>
       <p className="text-lg md:text-xl">
-        In my free time I&apos;m building{" "}
+        In my free time I’m building{" "}
         <a
           href="https://apps.apple.com/app/hydrify/id6450311759"
           target="_blank"
@@ -42,11 +45,7 @@ export default function Header() {
             appIcon="/media/titls-635c65c5369d.webp"
             iconRotation="-rotate-12"
             hasTrailingSpacing={false}
-            images={[
-              previewImage3,
-              previewImage4,
-              previewImage5,
-            ]}
+            images={[previewImage3, previewImage4, previewImage5]}
           />
         </a>.
       </p>
