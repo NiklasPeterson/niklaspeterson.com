@@ -60,7 +60,10 @@ export default function ProjectThumbnailVideo({
       )}
       <video
         ref={videoRef}
-        className={"absolute inset-0 h-full w-full " + (className || "")}
+        className={
+          "absolute inset-0 h-full w-full transition-opacity duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none " +
+          (className || "")
+        }
         style={{ opacity: playing && !reduceMotion ? 1 : 0 }}
         src={shouldLoad ? media.url : undefined}
         width={media.width}

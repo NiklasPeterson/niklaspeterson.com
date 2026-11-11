@@ -38,7 +38,7 @@ export default function Projects({ projects = [] }) {
   return (
     <>
       <section
-        className="flex flex-wrap gap-12 px-4 pb-24 md:pb-32 md:px-20"
+        className="flex flex-wrap gap-12 px-4 pb-24 md:px-20 md:pb-32"
         aria-labelledby="selected-work-heading"
       >
         <h2 id="selected-work-heading" className="sr-only">
@@ -103,34 +103,32 @@ function ProjectContent({ project, onOpen, priority }) {
       aria-label={`Open ${project.title} project`}
     >
       {preview && (
-        <div className="relative w-full overflow-hidden rounded-2xl shadow-none transition-transform duration-150 group-hover:scale-102 group-hover:shadow-md after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-translucent after:content-[''] active:scale-99 md:rounded-3xl after:md:rounded-3xl">
-          {preview.type === "image" ? (
-            <Image
-              width={preview.width}
-              height={preview.height}
-              src={preview.url}
-              alt={preview.alt}
-              priority={priority}
-              sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1439px) calc((100vw - 208px) / 2), 616px"
-            />
-          ) : (
-            <ProjectThumbnailVideo
-              media={preview}
-              className={`${preview.cropEdges === true ? "scale-[1.004]" : undefined} ${preview.extraZoom ? "scale-[1.07]" : ""}`}
-              priority={priority}
-            />
-          )}
+        <div className="relative w-full transform-[translateZ(0)_scale(1)] rounded-2xl transition-transform duration-250 ease-[cubic-bezier(0.4,0,0.2,1)] before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:opacity-0 before:shadow-md before:transition-opacity before:duration-250 before:ease-[cubic-bezier(0.4,0,0.2,1)] before:content-[''] after:pointer-events-none after:absolute after:inset-0 after:rounded-2xl after:border after:border-translucent after:content-[''] motion-safe:active:transform-[translateZ(0)_scale(var(--card-press-scale,0.98))]! motion-reduce:transition-none md:rounded-3xl after:md:rounded-3xl [@media(hover:hover)_and_(pointer:fine)]:[--card-press-scale:1] [@media(hover:hover)_and_(pointer:fine)]:group-hover:before:opacity-100 [@media(hover:hover)_and_(pointer:fine)_and_(prefers-reduced-motion:no-preference)]:group-hover:transform-[translateZ(0)_scale(1.015)]">
+          <div className="overflow-hidden rounded-[inherit]">
+            {preview.type === "image" ? (
+              <Image
+                width={preview.width}
+                height={preview.height}
+                src={preview.url}
+                alt={preview.alt}
+                priority={priority}
+                sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1439px) calc((100vw - 208px) / 2), 616px"
+              />
+            ) : (
+              <ProjectThumbnailVideo
+                media={preview}
+                className={`${preview.cropEdges === true ? "scale-[1.004]" : undefined} ${preview.extraZoom ? "scale-[1.07]" : ""}`}
+                priority={priority}
+              />
+            )}
+          </div>
         </div>
       )}
 
       <div className="flex max-w-2xl flex-col gap-1">
-        <h3 className="text-xl font-semibold text-primary">
-          {project.title}
-        </h3>
+        <h3 className="text-xl font-semibold text-primary">{project.title}</h3>
 
-        <div className="text-md line-clamp-2 md:text-lg">
-          {project.summary}
-        </div>
+        <div className="text-md line-clamp-2 md:text-lg">{project.summary}</div>
       </div>
     </Link>
   );
