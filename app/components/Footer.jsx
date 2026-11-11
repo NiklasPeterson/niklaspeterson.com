@@ -31,7 +31,7 @@ const SOCIAL_LINKS = [
     label: "X profile",
   },
   {
-    href: "https://www.threads.net/@niklas.peterson",
+    href: "https://www.threads.net/@niklaspeterson",
     icon: ThreadsIcon,
     label: "Threads profile",
   },
