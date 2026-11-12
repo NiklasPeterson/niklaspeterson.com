@@ -3,8 +3,8 @@ import FadeIn from "./FadeIn";
 
 export default function About() {
   return (
-    <FadeIn className="flex w-full flex-col-reverse justify-between gap-10 px-4 pb-24 md:items-center md:flex-row md:gap-40 md:px-20 md:pb-32">
-      <div className="flex max-w-2xl flex-col gap-4">
+    <FadeIn className="flex w-full flex-col-reverse justify-between gap-10 px-4 pb-24 md:items-center md:flex-row md:flex-wrap md:px-20 md:pb-32 lg:gap-20 xl:gap-40">
+      <div className="flex min-w-0 max-w-2xl flex-col gap-4 md:min-w-80 md:flex-1">
         <h2 className="text-4xl leading-tight font-semibold text-primary md:text-5xl">
           About me
         </h2>
@@ -49,7 +49,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="relative h-100 w-full overflow-hidden rounded-2xl sm:w-[320px] md:rounded-3xl">
+      <div className="relative h-100 w-full overflow-hidden rounded-2xl sm:w-[320px] sm:min-w-80 md:rounded-3xl">
         <Image
           src="/media/niklas-peterson-32e2a7d67acc.jpg"
           alt="Picture of Niklas Peterson"
