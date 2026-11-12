@@ -5,7 +5,7 @@ import Projects from "./components/Projects";
 import Nav from "./components/Nav";
 import { getAllProjects } from "./lib/projects";
 import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION } from "./lib/site";
-import { LottieAnimation } from "./components/LottieAnimation";
+import GradientGlow from "./components/GradientGlow";
 
 export default function Home() {
   const projects = getAllProjects();
@@ -27,14 +27,18 @@ export default function Home() {
   };
 
   return (
-    <main className="relative flex w-full max-w-360 flex-col">
-      <Nav />
-      <div className="absolute top-0 right-0 left-0 -z-10 flex h-full max-w-full overflow-x-hidden justify-center pr-12 md:pr-40">
-        <LottieAnimation />
+    <main className="relative flex w-full flex-col">
+      <header className="relative">
+        <GradientGlow />
+        <div className="mx-auto w-full max-w-360">
+          <Nav />
+          <Header />
+        </div>
+      </header>
+      <div className="mx-auto flex w-full max-w-360 flex-col">
+        <Projects projects={projects} />
+        <About />
       </div>
-      <Header />
-      <Projects projects={projects} />
-      <About />
       <Footer />
       <script
         type="application/ld+json"

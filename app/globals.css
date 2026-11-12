@@ -2,6 +2,7 @@
 
 @theme {
   --animate-fadeUp: fadeUp 0.4s ease-out;
+  --animate-gradient-glow: gradient-glow-orbit 32s linear infinite;
 
   @keyframes fadeUp {
     0% {
@@ -63,6 +64,60 @@
 }
 
 /* custom CSS */
+
+/* Keep each SVG blur static and animate only its surrounding HTML layer. */
+.gradient-glow-layer {
+  transform: translateZ(0) translate(var(--glow-position)) translateX(0px)
+    translate(var(--glow-pivot)) rotate(0rad)
+    translate(var(--glow-pivot-inverse)) rotate(var(--glow-angle))
+    skewX(var(--glow-skew, 0rad));
+}
+
+.gradient-glow-orange {
+  --glow-position: 16.356875cqw, 10.859375cqw;
+  --glow-pivot: 16.2830555556cqw, -16.0536805556cqw;
+  --glow-pivot-inverse: -16.2830555556cqw, 16.0536805556cqw;
+  --glow-angle: -1.532rad;
+  --glow-skew: 0.000007rad;
+  --glow-travel: 44.9996527778cqw;
+  --glow-turn: 4.189rad;
+}
+
+.gradient-glow-pink {
+  --glow-position: 55.2902777778cqw, 18.2438194444cqw;
+  --glow-pivot: -0.0531944444cqw, -23.2186805556cqw;
+  --glow-pivot-inverse: 0.0531944444cqw, 23.2186805556cqw;
+  --glow-angle: -2.348rad;
+  --glow-travel: -24.4445833333cqw;
+  --glow-turn: 2.618rad;
+}
+
+.gradient-glow-blue {
+  --glow-position: 64.5833333333cqw, 21.5433333333cqw;
+  --glow-pivot: 3.5470138889cqw, -23.6188888889cqw;
+  --glow-pivot-inverse: -3.5470138889cqw, 23.6188888889cqw;
+  --glow-angle: -2.22rad;
+  --glow-skew: -0.000008rad;
+  --glow-travel: -18.8886805556cqw;
+  --glow-turn: 3.32rad;
+  --glow-return: 0.0002083333cqw;
+}
+
+@keyframes gradient-glow-orbit {
+  50% {
+    transform: translateZ(0) translate(var(--glow-position)) translateX(var(--glow-travel))
+      translate(var(--glow-pivot)) rotate(var(--glow-turn))
+      translate(var(--glow-pivot-inverse)) rotate(var(--glow-angle))
+      skewX(var(--glow-skew, 0rad));
+  }
+
+  100% {
+    transform: translateZ(0) translate(var(--glow-position)) translateX(var(--glow-return, 0px))
+      translate(var(--glow-pivot)) rotate(0rad)
+      translate(var(--glow-pivot-inverse)) rotate(var(--glow-angle))
+      skewX(var(--glow-skew, 0rad));
+  }
+}
 
 @keyframes draw {
   to {
