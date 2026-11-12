@@ -2,7 +2,7 @@
 
 @theme {
   --animate-fadeUp: fadeUp 0.4s ease-out;
-  --animate-gradient-glow: gradient-glow-orbit 40s linear infinite;
+  --animate-gradient-glow: gradient-glow-orbit 32s linear infinite;
 
   @keyframes fadeUp {
     0% {
